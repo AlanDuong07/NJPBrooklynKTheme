@@ -1,0 +1,13 @@
+{{#if product.options}}
+    {{#unless product.out_of_stock_message }}
+        <a class="halo-toggle-options button button--secondary" href="#">Choose Options</a>
+        <div class="halo-detail-options" data-fbt-option-change>
+            <a href="#" class="halo-option-close" aria-label="Close" role="button">
+                <span aria-hidden="true">×</span>
+            </a>
+            {{#each product.options}}
+                {{{dynamicComponent 'components/halothemes/options'}}}
+            {{/each}}
+        </div>
+    {{/unless}}
+{{/if}}

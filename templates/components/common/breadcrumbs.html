@@ -1,0 +1,13 @@
+<div id="breadcrumbs-wrapper">
+    <div class="container">
+        <ul class="breadcrumbs">
+            {{#each breadcrumbs}}
+            <li class="breadcrumb {{#if @last}}is-active{{/if}}">
+                {{#if url}}
+                <a href="{{url}}" class="breadcrumb-label">{{name}}</a> {{else}}
+                <span class="breadcrumb-label">{{name}}</span> {{/if}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

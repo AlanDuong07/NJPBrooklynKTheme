@@ -1,0 +1,15 @@
+{{#if banner '==' 'home-top-banners'}}
+    {{> components/halothemes/home-layout-banner find="homeTopCustomBlock"}}
+{{/if}}
+
+{{#if banner '==' 'home-bottom-custom-block'}}
+    {{> components/halothemes/home-layout-banner find="homeBottomCustomBlock"}}
+{{/if}}
+
+{{#if banner '==' 'home-brand-slider'}}
+    {{> components/halothemes/home-layout-banner find="homeBrands"}}
+{{/if}}
+
+{{#if banner '==' 'custom-cms-block'}}
+    {{> components/halothemes/home-layout-banner find="customCMSBlock"}}
+{{/if}}

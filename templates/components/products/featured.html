@@ -1,0 +1,10 @@
+<section id="homeFeaturedProducts" class="module-wrapper {{#if theme_settings.halothemes_lazy_loading_effect}}wow fadeIn{{/if}}">
+	<div class="container">
+		<h2 class="module-heading"><span>{{lang 'products.featured' }}</span></h2>
+		{{#if settings.data_tag_enabled}}
+			{{> components/products/carousel products=products list="Featured Products"}}
+		{{else}}
+			{{> components/products/carousel products=products}}
+		{{/if}}
+	</div>
+</section>

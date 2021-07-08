@@ -1,0 +1,3 @@
+{
+  "components/halothemes/top-page-promotion": "<section id=\"top-page-promotion\">\r\n    <div class=\"container-fluid\">\r\n        <p>{{theme_settings.halo_top_page_promotion_text}}</p>\r\n    </div>\r\n    <svg aria-label=\"{{lang 'common.close'}}\"><use xlink:href=\"#icon-close\"></use></svg>\r\n</section>\r\n"
+}

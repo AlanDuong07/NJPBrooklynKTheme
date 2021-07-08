@@ -1,0 +1,19 @@
+<nav aria-label="Navigation Product SideBar">
+    <!-- BEGIN Side All Categories -->
+    {{> components/halothemes/side-all-categories}}
+    <!-- END Side All Categories -->
+
+    {{#if shop_by_brand}}
+        {{> components/category/side-shop-by-brand}}
+    {{/if}}
+
+    <!-- BEGIN Side Top Seller -->
+    {{#if products.featured}}
+        {{> components/products/sidebar-slider products=products.featured }}
+    {{/if}}    
+    <!-- END Side Top Seller -->
+
+    <!-- BEGIN Side Custom CMS Block -->
+    {{> components/halothemes/side-custom-block}}
+    <!-- END Side Custom CMS Block -->
+</nav>

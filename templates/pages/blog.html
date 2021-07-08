@@ -1,0 +1,56 @@
+---
+products:
+    top_sellers:
+         limit: {{theme_settings.side_top_products_count}}
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.side_featured_products_count}}
+blog:
+    posts:
+        limit: 3
+        pages: 3
+        summary: 450
+---
+{{#partial "page"}}
+    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<div class="container">
+
+    <div class="category-heading">
+        <h1 class="page-heading">{{ blog.name }}</h1>
+    </div>
+
+    <div class="page row">
+        <aside class="page-sidebar col-sm-3" id="faceted-search-container">
+            {{> components/halothemes/sidebar-toggle-mobile layout_sidebar="slide"}}
+            <nav aria-label="Navigation SideBar Blog">
+                <div id="sideRecentPosts" class="sidebarBlock">
+                    <h5 class="side-module-heading">{{lang 'blog.recent_posts'}}</h5>
+                    <ul class="navList">
+                        {{#each blog.posts}}
+                            <li><a href="{{this.url}}">{{this.title}}</a></li>
+                        {{/each}}
+                    </ul>
+                </div>
+
+                <!-- BEGIN Side Top Seller -->
+                {{#if products.top_sellers}}
+                    {{> components/products/sidebar-slider products=products.top_sellers}}
+                {{/if}}
+                <!-- END Side Top Seller -->
+
+                <!-- BEGIN Side Custom CMS Block -->
+                {{> components/halothemes/side-custom-block}}
+                <!-- END Side Custom CMS Block -->
+            </nav>
+        </aside>
+        <main class="page-content col-sm-9">
+            {{#each blog.posts}}
+                {{> components/blog/post post=this settings=../settings show_tags=true}}
+            {{/each}}
+            {{> components/common/paginator pagination.blog}}
+        </main>
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}

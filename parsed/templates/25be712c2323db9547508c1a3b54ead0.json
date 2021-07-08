@@ -1,0 +1,3 @@
+{
+  "components/halothemes/sidebar-toggle-mobile": "{{#if layout_sidebar '==' 'slide'}}\n\t<div id=\"sidebar-toggle-mb\">\n        <a class=\"sidebar-toggle-mbBtn\" href=\"javascript:void(0);\" aria-label=\"Button Show Sidebar\">\n            <span class=\"sidebar_title\">Sidebar</span>\n            <span class=\"sidebar_icon\">\n                <svg aria-hidden=\"true\"><use xlink:href=\"#icon-sidebar\" /></svg>\n            </span>\n        </a>\n    </div>\n{{else}}\n\t<div id=\"sidebar-toggle\" class=\"hide\"><a class=\"btn btn-alt\" href=\"javascript:void(0);\">SHOW SIDEBAR <i class=\"fa fa-plus\"></i></a></div>\n{{/if}}"
+}

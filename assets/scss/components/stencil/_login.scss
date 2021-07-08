@@ -1,0 +1,108 @@
+// =============================================================================
+// LOGIN (CSS)
+// =============================================================================
+
+
+.login{
+    .page-heading{
+        border-bottom: 0;
+        padding-bottom: 30px;
+    }
+}
+
+.login-form {
+    padding-top: 57px;
+    .form-label {
+        margin-bottom: 10px;
+    }
+    .form-input {
+        max-width: 470px;
+    }
+    .form-actions {
+        text-align: left;
+        input.btn {
+            min-width: 145px;
+            @media (max-width: 480px) {
+                width: 100%;
+                display: block;
+                margin-bottom: 1rem;
+            }
+        }
+        input.btn, a.forgot-password {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        a.forgot-password {
+            margin-left: 36px;
+            border-bottom: 1px dotted #000;
+            display: inline;
+            &:hover {
+                border-color: $anchor-font-color-hover;
+            }
+            @media (max-width: 480px) {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.new-customer {
+    @media (max-width: 767px) {
+        padding-top: 20px;
+    }
+    & .panel {
+        background-color: #f8f8f8;
+        display: block;
+        @media (max-width: 767px) {
+            padding: 0 15px;
+        }
+    }
+    & .panel-header {
+        background: transparent;
+        padding-top: 53px;
+        padding-left: 60px;
+        & .panel-title {
+            font-size: 16px;
+            text-transform: capitalize;
+            margin-bottom: 2px;
+        }
+        @media (max-width: 767px) {
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 25px;
+        }
+    }
+    & .panel-body {
+        background: transparent;
+        padding: 10px 60px 60px;
+        color: #464646;
+        & .btn-checkout {
+            min-width: 240px;
+            @media (max-width: 480px) {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        @media (max-width: 767px) {
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 25px;
+        }
+    }
+}
+
+.new-customer-intro {
+    margin-bottom: 0;
+    line-height: 30px;
+}
+
+.new-customer-fact-list {
+       margin-top: 8px;
+    margin-left: 33px;
+    margin-bottom: 27px;
+}
+
+.new-customer-fact {
+        padding-left: 2px;
+    line-height: 25px;
+}

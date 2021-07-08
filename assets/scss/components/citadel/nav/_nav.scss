@@ -1,0 +1,292 @@
+// =============================================================================
+// NAV (CSS)
+// =============================================================================
+// Citadel inline messages
+// -----------------------------------------------------------------------------
+//
+// 1. Remove the margin-left we add to default lists.
+//
+// -----------------------------------------------------------------------------
+.navList,
+.navBar {
+    margin-left: 0; // 1
+}
+
+.navList-action,
+.navBar-action {
+    text-decoration: none;
+    font-size: fontSize("base");
+}
+
+.navList-action.is-active {
+    font-weight: $navList-action-fontWeight--active;
+}
+
+// NavList action checkbox
+// -----------------------------------------------------------------------------
+//
+// Purpose: Display a checkbox next to an actionable link, without actually using
+// a checkbox element.
+//
+// 1. Position checkbox so it is vertically centered
+//
+// -----------------------------------------------------------------------------
+.navList-action--checkbox {
+    @include checkRadioBase();
+    @include checkBox-base();
+    &:before,
+    &:after {
+        top: 50%; // 1
+    }
+    &:before {
+        margin-top: -$checkRadio-outerSize / 2;
+    }
+    &:after {
+        margin-top: -$checkRadio-outerSize / 2 + remCalc(1);
+    }
+    &:focus {
+        @include checkRadioBase--focus();
+    }
+    &.is-disabled {
+        @include checkRadioBase--disabled();
+    }
+    &.is-checked,
+    &.is-selected {
+        @include checkRadioBase--checked();
+    }
+}
+
+// NavList action close
+// -----------------------------------------------------------------------------
+//
+.navList-action-close {
+    background: $navList-action-close-background;
+    border-radius: $navList-action-close-borderRadius;
+    display: inline-block;
+    float: right;
+    line-height: 0;
+    opacity: 0;
+    padding: $navList-action-close-padding;
+    transition: $navList-action-close-transition;
+    visibility: hidden;
+    .icon {
+        @include square($navList-action-close-iconSize);
+        fill: stencilColor("color-textLink");
+    }
+    .navList-action.is-selected:hover & {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+// Page Subnavigation
+// -----------------------------------------------------------------------------
+nav.navBar--sub {
+    display: block;
+    margin-top: 15px;
+}
+
+nav.navBar--sub ul.navBar-section {
+    position: relative;
+    margin-bottom: 37px;
+    border: 0;
+    width: 100%;
+    &::after {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        content: '';
+        background: #d0d0d0;
+    }
+    & li.navBar-item {
+        position: relative;
+        z-index: 1;
+        display: table;
+        float: left;
+        height: 52px;
+        margin-left: -1px;
+        border: 0;
+        &:first-child {
+            margin-left: 0;
+        }
+        & a {
+            font-family: $fontFamily-headings;
+            font-size: 13px;
+            font-weight: 700;
+            display: block;
+            display: table-cell;
+            padding: 8px 30px 3px;
+            -webkit-transition: background .3s ease 0s;
+            -moz-transition: background .3s ease 0s;
+            -ms-transition: background .3s ease 0s;
+            -o-transition: background .3s ease 0s;
+            transition: background .3s ease 0s;
+            vertical-align: middle;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #000;
+            border: 1px solid #e5e5e5;
+            background: #f7f8f9;
+            text-decoration: none !important;
+            span.count-number {
+                background-color: #ff7677;
+                width: 22px;
+                height: 22px;
+                color: #fff;
+                display: inline-block;
+                text-align: center;
+                line-height: 22px;
+                font-weight: 500;
+                border-radius: 50%;
+                font-size: fontSize("base");
+                position: relative;
+                top: -28px;
+                @media (max-width: 1000px){
+                    position: static;
+                    margin-left: 8px;
+                }
+            }
+        }
+        &.is-active a {
+            border-bottom-color: #fff;
+            background: #fff;
+            position: relative;
+            &:before {
+                content: '';
+                height: 2px;
+                width: 100%;
+                background-color: #000;
+                position: absolute;
+                top: -1px;
+                left: 0;
+            }
+        }
+    }
+}
+
+nav.navBar--sub~main {
+    & h3 {
+        font-size: 18px;
+        letter-spacing: 0.02em;
+        font-weight: 700;
+        margin-top: 0;
+        border-bottom: 0;
+        margin-bottom: 7px;
+        text-transform: capitalize;
+    }
+    & h2 {
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        margin-top: 0;
+        text-transform: capitalize;
+    }
+}
+
+@media (max-width: 991px) {
+    nav.navBar--sub ul.navBar-section.account-navigation {
+        display: flex;
+        flex-wrap: wrap;
+        & li.navBar-item {
+            width: 100%;
+            margin-left: 0;
+            margin-bottom: -1px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    nav.navBar--sub.navBar--account ul.navBar-section {
+        display: flex;
+        flex-wrap: wrap;
+        & li.navBar-item {
+            width: 33.33%;
+            margin-bottom: -1px;
+            &:nth-child(4) {
+                margin-left: 0;
+            }
+            &:nth-child(4),
+            &:nth-child(5),
+            &:nth-child(6) {
+                margin-bottom: 0;
+            }
+            @media (max-width: 767px) {
+                width: 100%;
+                margin-left: 0;
+                &:nth-child(4),
+                &:nth-child(5) {
+                    margin-bottom: -1px;
+                }
+            }
+        }
+    }
+}
+
+.page-sidebar {
+    .navBar-action {
+        padding: 15px 0;
+    }
+    li.navBar-item {
+        border-top: 1px solid #eee;
+        width: 100%;
+        &.is-active {
+            a {
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+.account .info {
+    font-weight: 500;
+    margin-top: 22px;
+    line-height: 1.3;
+    padding-bottom: 22px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #eee;
+}
+
+.form.gift-certificate-form {
+    margin-top: 40px;
+    & .form-row {
+        margin-left: -10px;
+        margin-right: -10px;
+        & .form-field {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        & .form-column {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}
+
+.form-row .form-field.certificate_theme {
+    padding: 20px !important;
+}
+
+[name="certificate_theme"]+.form-label {
+    margin-bottom: 11px;
+}
+
+[name="certificate_theme"]+.form-label:last-of-type {
+    margin-bottom: 0px;
+}
+
+input#gift-certificate-preview {
+    min-width: 152px;
+    display: inline-block;
+    text-align: center;
+}
+
+input#gift-certificate-submit {
+    min-width: 296px;
+    display: inline-block;
+    text-align: center;
+}

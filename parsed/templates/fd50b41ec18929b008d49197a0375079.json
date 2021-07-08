@@ -1,0 +1,3 @@
+{
+  "components/common/breadcrumbs": "<div id=\"breadcrumbs-wrapper\">\r\n    <div class=\"container\">\r\n        <ul class=\"breadcrumbs\">\r\n            {{#each breadcrumbs}}\r\n            <li class=\"breadcrumb {{#if @last}}is-active{{/if}}\">\r\n                {{#if url}}\r\n                <a href=\"{{url}}\" class=\"breadcrumb-label\">{{name}}</a> {{else}}\r\n                <span class=\"breadcrumb-label\">{{name}}</span> {{/if}}\r\n            </li>\r\n            {{/each}}\r\n        </ul>\r\n    </div>\r\n</div>\n"
+}

@@ -1,0 +1,3 @@
+{
+  "components/halothemes/options-2/input-checkbox": "<div class=\"form-field\" data-product-attribute=\"input-checkbox\">\n    <input type=\"hidden\" name=\"attribute[{{id}}]\" value=\"{{noValue}}\" />\n    <input\n        class=\"form-checkbox\"\n        type=\"checkbox\"\n        name=\"attribute[{{id}}]\"\n        id=\"ed_attribute-check-{{id}}\"\n        value=\"{{value}}\"\n        {{#if checked}}\n            checked\n            data-default\n        {{/if}}\n        {{#if required}}required{{/if}}>\n\n    <label class=\"form-label {{class}}\" for=\"fbt_attribute-check-{{id}}\">{{label}}</label>\n</div>\n"
+}

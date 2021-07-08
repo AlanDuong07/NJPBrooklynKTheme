@@ -1,0 +1,8 @@
+<div class="form-field" data-product-attribute="set-select" data-product-option-id="{{id}}">
+    <select class="form-select" name="attribute[{{this.id}}]" id="ed_attribute_select_{{id}}" {{#if required}}required{{/if}}>
+        <option value="">{{lang 'products.choose_options'}}</option>
+        {{#each this.values}}
+            <option data-product-attribute-value="{{id}}" value="{{id}}" data-title="{{label}}" data-index="{{@index}}" {{#if selected}}selected data-default{{/if}}>{{label}}</option>
+        {{/each}}
+    </select>
+</div>

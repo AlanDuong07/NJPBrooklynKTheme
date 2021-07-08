@@ -1,0 +1,28 @@
+<nav aria-label="Navigation Categories SideBar">
+    {{#if theme_settings.show_subcategories}} {{#if category.subcategories}}
+    <!-- <div class="sidebarBlock">
+        <h5 class="side-module-heading"><span>Categories</span></h5>
+        <ul class="navList">
+            {{#each category.subcategories}}
+            <li class="navList-item">
+                <a class="navList-action" href="{{url}}" alt="{{name}}" title="{{name}}">{{name}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </div> -->
+    {{/if}} {{/if}}
+
+    <!-- BEGIN Side All Categories -->
+    {{> components/halothemes/side-all-categories}}
+    <!-- END Side All Categories -->
+    
+    {{#if category.faceted_search_enabled}} {{> components/faceted-search/index category}} {{else}} {{> components/category/shop-by-price shop_by_price=category.shop_by_price category_url=category.url}} {{/if}} {{#if brand.faceted_search_enabled}} {{> components/faceted-search/index brand}} {{else}} {{#if shop_by_brand}} {{> components/category/side-shop-by-brand}} {{/if}} {{/if}}
+   <!-- BEGIN Side Top Seller -->
+     {{#if products.featured}}
+        {{> components/products/sidebar-featured products=products.featured }}
+    {{/if}}    
+    <!-- END Side Top Seller -->
+    <!-- BEGIN Side Custom CMS Block -->
+    {{> components/halothemes/side-custom-block}}
+    <!-- END Side Custom CMS Block -->
+</nav>

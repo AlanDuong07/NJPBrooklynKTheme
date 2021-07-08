@@ -1,0 +1,56 @@
+<nav class="navPages" role="navigation" aria-label="Main Navigation">
+    <ul class="navPages-list navPages-list-desktop">
+        <li class="navPages-item"><a href="{{urls.home}}"><span class="text-menu">Home</span></a></li>
+        {{#each categories}}
+            <li class="navPages-item">
+                {{> components/common/navigation-list}}
+            </li>
+        {{/each}}
+        {{#unless theme_settings.hide_content_navigation}}
+            {{#each pages}}
+                <li class="navPages-item navPages-item-page">
+                    <a class="navPages-action" href="{{url}}"><span class="text-menu">{{name}}</span></a>
+                </li>
+            {{/each}}
+        {{/unless}}
+    </ul>
+    <ul class="navPages-list navPages-list-mobile">
+        <li class="navPages-item">
+            <a class="navPages-action wishlists" href="{{urls.account.wishlists.all}}"><span class="text-menu"><i class="fa fa-heart-o"></i> {{lang 'account.nav.wishlists'}}</span></a>
+        </li>
+        {{#if settings.gift_certificates_enabled}}
+        <li class="navPages-item giftcertificates">
+            <a class="navPages-action" href="/giftcertificates.php" aria-label="{{lang 'common.gift_cert'}}"><span class="text-menu"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-gift"/></svg> {{lang 'common.gift_cert'}}</span></a>
+        </li>
+        {{/if}}
+        <li class="navPages-item phone_number">
+            <a class="navPages-action" href="tel:{{settings.phone_number}}" aria-label="Phone Number"><span class="text-menu"><svg aria-hidden="true" class="icon"><use xlink:href="#icon-telephone"/></svg> Contact us: {{settings.phone_number}}</span></a>
+        </li>
+        {{#if currency_selector.currencies.length '>' 1}}
+            <li class="navPages-item">
+                <a id="currency_dropdown" href="#" aria-label="Currency Selector">
+                    {{{currency_selector.active_currency_flag}}}<span class="text-menu">{{currency_selector.active_currency_code}}</span>
+                    <i class="icon navPages-action-moreIcon" aria-hidden="true"><svg aria-hidden="true"><use xlink:href="#icon-chevron-down" /></svg></i>
+                </a>
+                <div class="navPage-subMenu">
+                    <ul class="navPage-subMenu-list">
+                        {{#each currency_selector.currencies}}
+                        <li class="navPage-subMenu-item">
+                            <a class="navPage-subMenu-action navPages-action" href="{{{switch_url}}}">
+                                {{#if is_active}}
+                                {{{flag}}} <span class="text-menu"><strong>{{name}}</strong></span>
+                                {{else}}
+                                {{{flag}}} <span class="text-menu">{{name}}</span>
+                                {{/if}}
+                            </a>
+                        </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </li>
+        {{/if}}
+        <li class="navPages-item">
+            {{> components/common/social-links}}
+        </li>
+    </ul>
+</nav>

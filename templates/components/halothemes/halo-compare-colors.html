@@ -1,0 +1,54 @@
+{{#if theme_settings.halo_compare_colors}}
+    {{#if product.options.length}}
+        {{#each product.options}}
+            {{#if type '===' 'Configurable_PickList_Swatch'}}
+                <div class="halo-compareColors">
+                    <a class="halo-compareColors-link link link-hover" href="#" data-reveal-id="compare-color-popup" aria-label="Button Compare Colors">
+                        <span class="icon-compare-color"></span>
+                        <span class="halo-compareColors-title">{{lang 'products.compare_colors'}}</span>
+                    </a>
+                    <div id="compare-color-popup" class="modal modal--medium" data-reveal>
+                        <div class="modal-content">
+                            <div class="modal-header modal-header3">
+                                <h2 class="modal-header-title">{{lang 'products.compare_colors_title'}}</h2>
+                                <a href="#" class="modal-close" aria-label="Close" role="button">
+                                    <span aria-hidden="true"><svg><use xlink:href="#icon-close"></use></svg></span>
+                                </a>
+                            </div>
+                            <div class="modal-body modal-body2">
+                                <div class="halo-compareColors-swatch" data-compare-color>
+                                    {{#each this.values}}
+                                        <label class="form-option form-option-swatch" data-product-swatch-value="{{id}}">
+                                            {{#if image}}
+                                                <span class='form-option-variant form-option-variant--pattern' title="{{this.label}}" style="background-image: url('{{getImage image "24x24"}}');"></span>
+                                            {{/if}}
+                                            {{#if data.[2]}}
+                                                <span class='form-option-variant form-option-variant--color3' title="{{this.label}}">
+                                                    <span style="background-color: #{{data.[0]}}"></span>
+                                                    <span style="background-color: #{{data.[1]}}"></span>
+                                                    <span style="background-color: #{{data.[2]}}"></span>
+                                                </span>
+                                            {{else}}
+                                                {{#if data.[1]}}
+                                                    <span class='form-option-variant form-option-variant--color2' title="{{this.label}}">
+                                                        <span style="background-color: #{{data.[0]}}"></span>
+                                                        <span style="background-color: #{{data.[1]}}"></span>
+                                                    </span>
+                                                {{else}}
+                                                    {{#if data.[0]}}
+                                                        <span class='form-option-variant form-option-variant--color' title="{{this.label}}" style="background-color: #{{data.[0]}}"></span>
+                                                    {{/if}}
+                                                {{/if}}
+                                            {{/if}}
+                                        </label>
+                                    {{/each}}
+                                </div>
+                                <div id="color-swatch-image" class="halo-compareColors-image"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/if}}
+        {{/each}}
+    {{/if}}
+{{/if}}

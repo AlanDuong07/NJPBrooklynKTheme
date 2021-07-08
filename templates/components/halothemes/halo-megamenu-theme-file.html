@@ -1,0 +1,112 @@
+<script>
+    var url_iconLoad = "{{cdn 'img/loading.svg'}}";
+    var url_scriptMenu = "{{cdn '/assets/js/theme/halothemes/haloMegaMenu.js'}}";
+    var position_label = '6,7,5';
+
+    function menuItems() {
+        /* Megamenu Settings */
+
+        //Collections 
+        menuItem(2).HaloMegaMenu({
+            dropAlign: 'fullWidth',   // Dropdown MegaMenu Alignment: left, right, center, fullWidth
+            dropWidth: '100%',       // Width of Dropdown MegaMenu (if dropAlign: fullWidth => dropWidth auto set 100%)
+            dropType: 'imageLeft',    // Type of Dropdown MegaMenu content: imageLeft, imageRight, noImage
+            imageAreaWidth: '40%',    // width of images area
+            cateAreaWidth: '60%',     // width of categories area
+            cateColumns: 3,           // columns of categories area - max 5 columns
+            // contents for images column (HTML supported)
+            images: '<a href="#" aria-label="Menu Link Image 1"><img class="lazyload" src="'+url_iconLoad+'" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/megamenu-1.jpg" alt="Menu Image 1"/></a>',
+             // information at bottom categories
+            bottomMegamenu: '<p>Nam mollis lacus quis turpis facilisis De vestibulum mi sodales</p>'
+
+        });
+        menuItem(3).HaloMegaMenu({
+            dropAlign: 'fullWidth',   // Dropdown MegaMenu Alignment: left, right, center, fullWidth
+            dropWidth: '100%',       // Width of Dropdown MegaMenu (if dropAlign: fullWidth => dropWidth auto set 100%)
+            dropType: 'imageTop',     // Type of Dropdown MegaMenu content: imageLeft, imageRight, noImage
+            imageAreaWidth: '0%',     // width of images area
+            cateAreaWidth: '100%',    // width of categories area
+            cateColumns: 5,           // columns of categories area - max 5 columns
+            // contents for images column (HTML supported)
+            imagesTop: ['<a href="#" aria-label="Menu Link Image 2"><img class="lazyload" src="'+url_iconLoad+'" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/megamenu-2.jpg" alt="Menu Image 2"/></a>',
+                '<a href="#" aria-label="Menu Link Image 3"><img class="lazyload" src="'+url_iconLoad+'" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/megamenu-3.jpg" alt="Menu Image 3"/></a>',
+                '<a href="#" aria-label="Menu Link Image 4"><img class="lazyload" src="'+url_iconLoad+'" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/megamenu-4.jpg" alt="Menu Image 4"/></a>',
+                '<a href="#" aria-label="Menu Link Image 5"><img class="lazyload" src="'+url_iconLoad+'" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/megamenu-5.jpg" alt="Menu Image 5"/></a>',
+                '<a href="#" aria-label="Menu Link Image 6"><img class="lazyload" src="'+url_iconLoad+'" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/megamenu-6.jpg" alt="Menu Image 6"/></a>'
+            ]
+        });
+
+        menuItem(4).HaloMegaMenu({
+            dropAlign: 'fullWidth',   // Dropdown MegaMenu Alignment: left, right, center, fullWidth
+            dropWidth: '100%',       // Width of Dropdown MegaMenu (if dropAlign: fullWidth => dropWidth auto set 100%)
+            dropType: 'imageRight',   // Type of Dropdown MegaMenu content: imageLeft, imageRight, noImage
+            imageAreaWidth: '40%',    // width of images area
+            cateAreaWidth: '60%',     // width of categories area
+            cateColumns: 3,           // columns of categories area - max 5 columns
+            // contents for images column (HTML supported)
+            images: '<div class="col-left">\
+                        <div class="widget-featured-product">\
+                            <h3 class="title"><span>Featured Products</span></h3>\
+                            <a href="#" aria-label="Menu Product Link"><img class="lazyload" src="'+url_iconLoad+'" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/megamenu-product.jpg" alt="Menu Product Image"/></a>\
+                            <figcaption class="prod-desc">\
+                                <h4 class="prod-name">\
+                                    <a href="/coco-lee-coins-are-kumis-brown-leather-bag/" aria-label="Menu Product Link">Coco Lee, coins are Kumis brown leather bag</a>\
+                                </h4>\
+                                <div class="rating-compare">\
+                                    <div class="star-rating" data-test-info-type="productRating">\
+                                        <div class="rating--small">\
+                                            <i class="fa fa-star"></i>\
+                                            <i class="fa fa-star"></i>\
+                                            <i class="fa fa-star"></i>\
+                                            <i class="fa fa-star"></i>\
+                                            <i class="fa fa-star"></i>\
+                                        </div>\
+                                    </div>\
+                                </div>\
+                                <div class="prod-price" data-test-info-type="price">\
+                                    <div class="price-section price-section--withoutTax ">\
+                                        <span data-product-price-without-tax="" class="price price--withoutTax">$510.00</span>\
+                                    </div>\
+                                </div>\
+                                <a href="#" class="mega-shopNow" aria-label="Menu Product Link">Shop Now</a>\
+                            </figcaption>\
+                        </div>\
+                   </div>\
+                   <div class="col-right">\
+                       <a href="#" aria-label="Menu Link Image 7"><img class="lazyload" src="'+url_iconLoad+'" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/megamenu-7.jpg" alt="Menu Image 7"/></a>\
+                   </div>'
+        });
+
+        menuItem(5).HaloMegaMenu({
+            dropAlign: 'fullWidth',   // Dropdown MegaMenu Alignment: left, right, center, fullWidth
+            dropWidth: '100%',       // Width of Dropdown MegaMenu (if dropAlign: fullWidth => dropWidth auto set 100%)
+            dropType: 'imageRight',   // Type of Dropdown MegaMenu content: imageLeft, imageRight, noImage
+            imageAreaWidth: '40%',    // width of images area
+            cateAreaWidth: '60%',     // width of categories area
+            cateColumns: 3,         // columns of categories area - max 5 columns
+            // contents for images column (HTML supported)
+            images: '<div class="col-left">\
+                       <a href="#" aria-label="Menu Link Image 8"><img class="lazyload" src="'+url_iconLoad+'" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/megamenu-8.jpg" alt="Menu Image 8"/></a>\
+                       <a href="#" aria-label="Menu Link Image 9"><img class="lazyload" src="'+url_iconLoad+'" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/megamenu-9.jpg" alt="Menu Image 9"/></a>\
+                   </div>\
+                   <div class="col-right">\
+                       <a href="#" aria-label="Menu Link Image 10"><img class="lazyload" src="'+url_iconLoad+'" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/megamenu-10.jpg" alt="Menu Image 10"/></a>\
+                   </div>'
+        });
+
+        menuItem(6).HaloMegaMenu({
+            label: 'new',                   // Type of Menu Lablel: sale, hot, new
+            disabled: true,
+        });
+
+        menuItem(7).HaloMegaMenu({
+            label: 'hot',                    // Type of Menu Lablel: sale, hot, new
+            disabled: true,
+        });
+
+        menuItem(5).HaloMegaMenu({
+            label: 'sale',                  // Type of Menu Lablel: sale, hot, new
+            disabled: true,
+        });
+    }
+</script>

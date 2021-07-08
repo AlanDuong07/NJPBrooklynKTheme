@@ -1,0 +1,83 @@
+// =============================================================================
+// MODAL (CSS)
+// =============================================================================
+
+
+.modal {
+    // scss-lint:disable ImportantRule
+    left: 50%;
+    margin: 0 auto;
+    max-height: 90%;
+    max-width: 95%;
+    min-height: 240px;
+    outline: none;
+    overflow: hidden;
+    padding: 0;
+    right: 0;
+    top: 50% !important;
+    transform: translate(-50%, -50%);
+}
+
+.modal--large {
+    @include breakpoint("large") {
+        width: $modal-width--large;
+    }
+}
+
+.modal-header {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 1.5rem 0;
+    padding-left: $reveal-modal-paddingHorizontal;
+    padding-right: remCalc($reveal-close-height) + $reveal-close-side;
+}
+
+.modal-header-title {
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: $headings-letter-spacing;
+    text-transform: uppercase;
+}
+.decs-header{
+    margin: 50px 35px 20px 50px;
+    @media (max-width: 600px){
+        margin: 10px;
+    }
+}
+.popup-close,
+.modal-close {
+    @include square($reveal-close-height);
+    color: stencilColor("button--modal-close-color");
+    font-size: 0;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    text-align: center;
+    text-decoration: none !important;
+    z-index: zIndex("high");
+    background: stencilColor("button--modal-close-bgColor");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & svg {
+        @include square($reveal-close-height);
+        padding: 7px;
+        fill: stencilColor("button--modal-close-color");
+        stroke: stencilColor("button--modal-close-color");
+    }
+    &:hover {
+        color: stencilColor("button--modal-close-colorHover");
+         text-decoration: none;
+         background: stencilColor("button--modal-close-bgColorHover");
+         & svg {
+            fill: stencilColor("button--modal-close-colorHover");
+            stroke: stencilColor("button--modal-close-colorHover");
+         }
+    }
+}
+
+.modal-body {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: $reveal-modal-padding;
+}

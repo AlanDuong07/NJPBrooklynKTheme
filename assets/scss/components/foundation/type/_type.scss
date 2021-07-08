@@ -1,0 +1,107 @@
+// =============================================================================
+// TYPE (CSS)
+// =============================================================================
+// Stencil type component additions
+// -----------------------------------------------------------------------------
+body {
+    font-size: $body-fontSize;
+    font-weight: $body-font-weight;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: $header-font-weight;
+    margin-top: $heading-marginTop;
+    letter-spacing: $headings-letter-spacing;
+}
+
+h5,
+h6 {
+    text-transform: $heading-textTransform;
+}
+
+a {
+    transition: $anchor-transition;
+}
+
+body {
+    line-height: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.body {
+    margin: 0;
+    padding: 0px;
+    min-height: 400px;
+}
+
+* {
+    outline: none;
+}
+
+button,
+input[type="button"],
+input[type="submit"] {
+    -moz-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+a,
+img {
+    text-decoration: none;
+    -webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -ms-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
+    &:hover {
+        text-decoration: none;
+        -webkit-transition: all .3s ease 0s;
+        -moz-transition: all .3s ease 0s;
+        -ms-transition: all .3s ease 0s;
+        -o-transition: all .3s ease 0s;
+        transition: all .3s ease 0s;
+    }
+    &:focus,
+    &:active {
+        text-decoration: none;
+    }
+}
+
+cite {
+    line-height: $blockquote-cite-lineHeight;
+    margin: $blockquote-cite-margin;
+}
+
+.page-heading {
+    font-size: $h1-font-size;
+    margin: 0 0 spacing("double");
+    text-align: center;
+}
+
+.definitionList {
+    @include clearfix;
+}
+
+.definitionList-key {
+    color: stencilColor("color-textSecondary");
+    float: left;
+    font-weight: 600;
+    margin: 0 spacing("quarter") 0 0;
+    padding: 3px 0;
+}
+
+.definitionList-value {
+    margin: 0;
+    padding: 3px 0;
+    font-weight: 500;
+    color: #848484;
+}

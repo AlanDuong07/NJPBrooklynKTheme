@@ -1,0 +1,12 @@
+{{#if layout_sidebar '==' 'slide'}}
+	<div id="sidebar-toggle-mb">
+        <a class="sidebar-toggle-mbBtn" href="javascript:void(0);" aria-label="Button Show Sidebar">
+            <span class="sidebar_title">Sidebar</span>
+            <span class="sidebar_icon">
+                <svg aria-hidden="true"><use xlink:href="#icon-sidebar" /></svg>
+            </span>
+        </a>
+    </div>
+{{else}}
+	<div id="sidebar-toggle" class="hide"><a class="btn btn-alt" href="javascript:void(0);">SHOW SIDEBAR <i class="fa fa-plus"></i></a></div>
+{{/if}}

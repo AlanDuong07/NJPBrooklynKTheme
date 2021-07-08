@@ -1,0 +1,8 @@
+<h2 class="module-heading"><span>{{lang 'products.trend' }}</span></h2>
+<div class="productBlockContainer columns-{{ columns }}">
+   {{#each products}}
+   <div class="prod-item {{#if theme_settings.halothemes_lazy_loading_effect}}wow fadeIn{{/if}}" data-wow-delay="{{multiply @index 3}}0ms">
+        {{> components/products/card theme_settings=../theme_settings customer=../customer}}
+   </div>
+   {{/each}}
+</div>

@@ -1,0 +1,18 @@
+// =============================================================================
+// PANELS (CSS)
+// =============================================================================
+
+
+.panel-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.panel--large {
+
+    .panel-body {
+        margin-bottom: spacing("single") + spacing("third");
+        padding: spacing("single") + spacing("third");
+    }
+}

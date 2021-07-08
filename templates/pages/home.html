@@ -1,0 +1,60 @@
+---
+products:
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+carousel: {{theme_settings.homepage_show_carousel}}
+category:
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+blog:
+    recent_posts:
+        limit: {{theme_settings.homepage_blog_posts_count}}
+---
+{{#partial "hero"}}
+    {{{region name="home_below_menu"}}}
+    {{#if carousel}}
+        {{> components/carousel}}
+    {{/if}}
+    {{{snippet 'home_content'}}}
+    {{{region name="home_below_carousel"}}}
+{{/partial}}
+
+{{#partial "page"}}
+
+    {{#each shipping_messages}}
+        <div class="container">{{> components/common/alert-info message}}</div>
+    {{/each}}
+
+<div class="main full">
+    {{> components/halothemes/home-banners banner="home-top-banners"}}
+    {{{region name="home_below_home_top_custom_block"}}}
+
+    {{#if products.top_sellers}}
+        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_new_products_column_count}}
+    {{/if}}
+    {{{region name="home_below_top_products"}}}
+    
+    <div class="module-wrapper">
+        <div class="container">           
+           {{> components/halothemes/halo-products-by-category cateId=theme_settings.halo_products_by_category_id}}
+        </div>
+    </div>
+    {{{region name="home_below_halo_products_by_category"}}}
+    
+    {{> components/halothemes/home-banners banner="home-bottom-custom-block"}}
+    {{{region name="home_below_home_bottom_custom_block"}}}
+
+    {{> components/halothemes/home-banners banner="home-brand-slider"}}
+    {{{region name="home_below_home_brand_slider"}}}
+
+    {{#if theme_settings.halo_home_instafeed}}
+        {{> components/halothemes/home-instagram}}
+    {{/if}}
+    {{{region name="home_below_home_instagram"}}}
+</div>
+{{/partial}}
+{{> layout/base}}

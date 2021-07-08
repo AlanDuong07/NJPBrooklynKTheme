@@ -1,0 +1,3 @@
+{
+  "components/halothemes/header-phone-number": "<a href=\"tel:{{settings.phone_number}}\"><span>{{settings.phone_number}}</span></a>\n"
+}

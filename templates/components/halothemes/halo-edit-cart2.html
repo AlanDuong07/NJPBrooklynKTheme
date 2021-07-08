@@ -1,0 +1,12 @@
+{{#each options}}
+    {{#or (if type '===' 'Configurable_PickList_Swatch') (if type '===' 'Configurable_PickList_Set') (if type '===' 'Configurable_PickList_Product')}}
+        <td class="cart-edit-option text-center" data-cart-edit-item-option>
+            {{> components/halothemes/options-2/set-select-custom}}
+        </td>
+    {{/or}}
+    {{#all (if type '!=' 'Configurable_PickList_Swatch') (if type '!=' 'Configurable_PickList_Set') (if type '!=' 'Configurable_PickList_Product')}}
+        <td class="cart-edit-option text-center" data-cart-edit-item-option>
+            {{{dynamicComponent 'components/halothemes/options-2'}}}
+        </td>
+    {{/all}}
+{{/each}}

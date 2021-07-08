@@ -1,0 +1,3 @@
+{
+  "components/halothemes/halo-products-by-category": "\r\n{{#each categories}}\r\n  {{#if id '==' ../cateId}}\r\n     <section class=\"haloProductsByCategory\" id=\"product-by-category-{{id}}\" data-prod-by-cat-name=\"{{name}}\" data-prod-by-cat-url=\"{{this.url}}\">\r\n      <h2 class=\"module-heading\"><span>{{name}}</span></h2>\r\n      <div class=\"category-products\">\r\n          <div class=\"productBlockContainer productCarousel columns-4\"></div>\r\n      </div>\r\n\r\n  </section>\r\n  {{/if}}\r\n{{/each}}\r\n\r\n\r\n"
+}

@@ -1,0 +1,43 @@
+---
+products:
+    top_sellers:
+         limit: {{theme_settings.side_top_products_count}}
+---
+{{#partial "page"}}
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<div class="container">
+<h1 class="page-heading">{{lang 'gift_certificate.heading' }}</h1>
+<div class="row">
+{{> components/gift-certificate/navigation gift_page='balance'}}
+<main class="account account--fixed col-sm-8 col-md-9">
+    <h3>{{lang 'gift_certificate.balance.heading'}}</h3>
+    <p>
+        <strong>{{lang 'gift_certificate.balance.intro' }}</strong>
+    </p>
+
+    {{#if gift_certificate}}
+        {{#if gift_certificate.error}}
+            {{> components/common/alert-error gift_certificate.error}}
+        {{else}}
+            <h1>{{gift_certificate.balance.formatted}}</h1>
+            <h3>{{gift_certificate.code}}</h3>
+        {{/if}}
+    {{/if}}
+
+    <form class="form form--oneField" id="gift-certificate-balance" method="get">
+        <input type="hidden" name="action" value="balance">
+        <div class="form-field">
+            <label class="form-label" for="giftcertificatecode">
+                {{lang 'forms.gift_certificate.balance.code' }}
+            </label>
+            <div class="form-prefixPostfix wrap">
+                <input class="form-input" id="giftcertificatecode" name="giftcertificatecode">
+                <input type="submit" class="btn btn-primary form-prefixPostfix-button--postfix" value="{{lang 'forms.gift_certificate.balance.submit_value' }}">
+            </div>
+        </div>
+    </form>
+</main>
+</div>
+</div>
+{{/partial}}
+{{> layout/base}}

@@ -1,0 +1,42 @@
+---
+products:
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+---
+
+{{inject 'passwordRequirements' settings.password_requirements}}
+{{#partial "page"}}
+    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<div class="container">
+    <h1 class="page-heading">{{lang 'create_account.heading' }}</h1>
+
+    <div class="account account--fixed">
+        <div class="account-body">
+            {{#if forms.create_account.error}}
+                {{> components/common/alert-error forms.create_account.error}}
+            {{/if}}
+            <form action="{{urls.auth.save_new_account}}" data-create-account-form method="post" class="form">
+                <div class="form-row form-row--half">
+                    {{#each forms.create_account.account_fields }}
+                        {{{dynamicComponent 'components/common/forms'}}}
+                    {{/each}}
+                    {{#each forms.create_account.address_fields }}
+                        {{{dynamicComponent 'components/common/forms'}}}
+                    {{/each}}
+                    {{inject 'required' (lang 'common.required')}}
+                    {{inject 'state_error' (lang 'errors.state_error')}}
+                </div>
+                {{{ forms.create_account.recaptcha.markup}}}
+                <div class="form-actions">
+                    <input type="submit" class="btn btn-checkout" value="{{lang 'forms.create_account.submit_value' }}" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}

@@ -1,0 +1,72 @@
+// =============================================================================
+// FORMS (CSS)
+// =============================================================================
+.form-input::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: stencilColor('input-placeholder-color');
+}
+
+.form-input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: stencilColor('input-placeholder-color');
+}
+
+.form-input:-ms-input-placeholder {
+    /* IE 10+ */
+    color: stencilColor('input-placeholder-color');
+}
+
+.form-input:-moz-placeholder {
+    /* Firefox 18- */
+    color: stencilColor('input-placeholder-color');
+}
+
+// Select boxes
+// -----------------------------------------------------------------------------
+
+.form-select {
+    appearance: none;
+    background-color: #ffffff;
+    background-image: url('../img/select-arr.png');
+    border-radius: $select-borderRadius;
+    padding: $select-padding;
+    border-color: #dedede;
+    height: 3.5em;
+    &:hover {
+        border-color: $select-hover-borderColor;
+    }
+    &:focus {
+        background-image: url('../img/select-arr-focus.png');
+    }
+}
+
+
+// Form labels
+// -----------------------------------------------------------------------------
+
+.form-label {
+
+    small {
+        font-style: italic;
+        text-transform: none;
+        color: #e95144;
+        font-size: fontSize("base");
+        font-weight: 600;
+    }
+}
+
+
+// Form labels (inline small text)
+// -----------------------------------------------------------------------------
+
+.form-label--inlineSmall {
+
+    small {
+        color: red;
+        float: none;
+        font-size: 11px;
+        font-weight: fontWeight("normal");
+        margin-right: spacing("quarter");
+        text-transform: none;
+    }
+}

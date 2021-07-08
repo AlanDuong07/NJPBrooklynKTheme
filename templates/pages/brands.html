@@ -1,0 +1,47 @@
+---
+brands:
+    limit: {{theme_settings.homepage_brands_count}}
+products:
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+---
+
+{{#partial "page"}}
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<div class="container">
+
+<main class="page">
+    <h1 class="page-heading">{{lang 'brand.label'}}</h1>
+    {{{region name="brands_below_header"}}}
+    {{#if theme_settings.halothemes_brandlayout '===' 'aztable'}}
+        {{> components/halothemes/halo-azbrand}}
+    {{else}}
+        <ul class="brandGrid">
+            {{#each brands}}
+                <li class="brand">
+                    <article class="card {{#if alternate}}card--alternate{{/if}}">
+                        <figure class="card-figure">
+                            <a href="{{url}}">
+                                <img class="card-image" src="{{getImage image 'brand_size' (cdn ../theme_settings.default_image_brand)}}" alt="{{name}}" title="{{name}}">
+                            </a>
+                        </figure>
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a href="{{url}}">{{name}}</a>
+                            </h4>
+                        </div>
+                    </article>
+                </li>
+            {{/each}}
+        </ul>
+        {{> components/common/paginator pagination.brands}}
+    {{/if}}
+    {{{region name="brands_below_content"}}}
+</main>
+</div>
+{{/partial}}
+{{> layout/base}}

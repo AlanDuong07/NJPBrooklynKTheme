@@ -1,0 +1,160 @@
+// =============================================================================
+// COMPARE (CSS)
+// =============================================================================
+
+
+// Compare table layout
+// -----------------------------------------------------------------------------
+//
+// 1. Foundation Magellan plugin.
+//
+// -----------------------------------------------------------------------------
+
+.compareTable {
+    border-top: container("border");
+    table-layout: fixed;
+    width: 100%;
+}
+
+.compareTable-row {
+    vertical-align: top;
+
+    + .compareTable-row {
+
+        // scss-lint:disable NestingDepth
+        .compareTable-heading,
+        .compareTable-item {
+            border-top: container("border");
+        }
+
+        .compareTable-heading:empty {
+            border-top: 0;
+        }
+    }
+}
+
+
+// Compare table headings
+// -----------------------------------------------------------------------------
+
+.compareTable-heading {
+    font-family: fontFamily("headingSans");
+    font-size: 13px;
+    font-weight: fontWeight("normal");
+    padding: 25px 1rem 25px;
+    position: relative;
+    text-align: right;
+    width: 0;
+
+    @include breakpoint("medium") {
+        width: grid-calc(3, $total-columns);
+    }
+
+    @media (max-width: 767px) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.compareTable-headingText {
+    white-space: nowrap;
+    @include breakpoint("medium") {
+        position: inherit;
+        top: inherit;
+    }
+}
+
+
+// Compare table item
+// -----------------------------------------------------------------------------
+
+.compareTable-item {
+    padding: 25px 1rem 25px;
+    @media (max-width: 767px) {
+        padding-top: 55px;
+    }
+}
+
+
+// Remove product
+// -----------------------------------------------------------------------------
+
+.compareTable-removeProduct {
+    background-color: container("fill", "dark");
+    border-radius: 50%;
+    height: spacing("single") + spacing("base");
+    position: absolute;
+    right: -(spacing("base"));
+    top: -(spacing("base"));
+    transition: background-color 0.15s ease;
+    width: spacing("single") + spacing("base");
+    text-align: center;
+    .icon {
+        fill: stencilColor("icon-color");
+        height: spacing("single");
+        margin-top: spacing("third");
+        width: spacing("single");
+    }
+}
+
+
+// Compare product card
+// -----------------------------------------------------------------------------
+
+.compareTable-product {
+    font-weight: fontWeight("normal");
+    padding: (spacing("single") + spacing("third")) spacing("base") (spacing("base") + spacing("sixth"));
+    .card-text a {
+        color: #848484;
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+    .card-title {
+        margin-bottom: 10px;
+        line-height: 20px;
+        font-size: 13px;
+        a {
+            color: #000  ;
+        }
+    }
+    .card {
+        margin-bottom: 0;
+    }
+
+    .card-body {
+        min-height: spacing("single") * 4;
+        padding-top: spacing("base");
+    }
+    .price-section {
+        font-family: stencilFontFamily('card-title-font'), Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 25px;
+        margin-bottom: 5px;
+        color: stencilColor('basic-price-color');
+        & .price--rrp {
+            font-size: fontSize("base");
+            margin-right: 10px;
+            color: stencilColor('retail-price-color');
+            &~.price--withoutTax {
+                font-weight: 700;
+                color: stencilColor('sale-price-color');
+            }
+        }
+    }
+}
+
+
+// Compare action
+// -----------------------------------------------------------------------------
+
+.compareTable-action {
+    padding: 0 spacing("base") spacing("base");
+    @media (max-width: 767px) {
+        & .btn {
+            width: 100%;
+            white-space: normal;
+            padding: 6px 15px 7px;
+            height: auto;
+        }
+    }
+}

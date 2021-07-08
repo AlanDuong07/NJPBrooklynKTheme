@@ -1,0 +1,19 @@
+{{#if currency_selector.currencies.length '>' 1}}
+<li id="currency-converter">
+    <a class="navUser-action has-dropdown" href="#" data-dropdown="currencySelection" aria-controls="currencySelection" aria-expanded="false">{{{currency_selector.active_currency_flag}}}<span>{{currency_selector.active_currency_code}}</span><i class="fa fa-angle-down"></i></a>
+    <ul class="dropdown-menu" id="currencySelection" data-dropdown-content aria-hidden="true" tabindex="-1">
+        <div class="triangle-with-shadow"></div>
+        {{#each currency_selector.currencies}}
+        <li class="dropdown-menu-item">
+            <a href="{{{switch_url}}}">
+                {{#if is_active}}
+                {{{flag}}} <strong>{{name}}</strong>
+                {{else}}
+                {{{flag}}} {{name}}
+                {{/if}}
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+</li>
+{{/if}}

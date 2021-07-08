@@ -1,0 +1,71 @@
+---
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    top_sellers:
+         limit: {{theme_settings.side_top_products_count}}
+    featured:
+        limit: {{theme_settings.side_featured_products_count}}
+product:
+    videos:
+        limit: {{theme_settings.productpage_videos_count}}
+    reviews:
+        limit: {{theme_settings.productpage_reviews_count}}
+    related_products:
+        limit: {{theme_settings.productpage_related_products_count}}
+    similar_by_views:
+        limit: {{theme_settings.productpage_similar_by_views_count}}
+---
+
+{{#partial "page"}}
+    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<div class="container">
+    {{> components/halothemes/halo-prev-next-product}}
+
+    {{#each product.shipping_messages}}
+        {{> components/common/alert-info message}}
+    {{/each}}
+    <div class="page row{{#if theme_settings.product_page_layout '==' 'nosidebar'}} pp-not-sidebar{{/if}}{{#if theme_settings.product_page_layout '==' 'vertical'}} productPage-verticalThumbnails{{/if}}">
+        {{#if theme_settings.product_page_layout '==' 'sidebar'}}
+        <aside class="page-sidebar col-sm-3" id="faceted-search-container">
+            {{> components/halothemes/sidebar-toggle-mobile layout_sidebar="slide"}}
+            {{> components/category/sidebar}}
+        </aside>
+        {{/if}}
+        <main itemscope itemtype="http://schema.org/Product" class="page-content{{#if theme_settings.product_page_layout '==' 'sidebar'}} col-sm-9{{/if}}">
+
+            {{#if theme_settings.product_page_layout '==' 'vertical'}}
+                {{> components/products/product-view-2 schema=true}}
+            {{else}}
+                {{> components/products/product-view schema=true}}
+            {{/if}}
+
+            {{{region name="product_below_content"}}}
+
+            <div class="productViewBottom">                
+                {{#if product.related_products}}
+                <div id="relatedProducts" class="module-wrapper">
+                    <h3><span>{{lang 'products.related_products'}}</span></h3>
+                    {{#if theme_settings.product_page_layout '==' 'sidebar'}}
+                        {{> components/products/related-carousel products=product.related_products columns=3 productsnew=products.new}}
+                    {{else}}
+                        {{> components/products/related-carousel products=product.related_products columns=4 productsnew=products.new}}
+                    {{/if}}
+                </div>
+                {{/if}}
+                {{#if product.similar_by_views}}
+                <div id="similarByViews" class="module-wrapper">
+                    <h3><span>{{lang 'products.similar_by_views'}}</span></h3>
+                    {{#if theme_settings.product_page_layout '==' 'sidebar'}}
+                        {{> components/products/similar-by-views-carousel products=product.similar_by_views columns=3 productsnew=products.new}}
+                    {{else}}
+                        {{> components/products/similar-by-views-carousel products=product.similar_by_views columns=4 productsnew=products.new}}
+                    {{/if}}
+                </div>
+                {{/if}}
+            </div>
+        </main>
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}

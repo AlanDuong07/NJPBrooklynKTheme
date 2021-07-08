@@ -1,0 +1,47 @@
+// =============================================================================
+// WRITE A REVIEW (CSS)
+// =============================================================================
+
+.writeReview-productDetails {
+    position: relative;
+    @include breakpoint("medium") {
+        @include grid-column(6);
+    }
+    @media (max-width: 767px) {
+        text-align: center;
+    }
+    img {
+        margin-bottom: 23px;
+        @media (max-width: 767px) {
+            max-width: 200px;
+        }
+    }
+    .new-badge,
+    .sale-badge,
+    .soldout-badge{
+        left: 30px;
+    }
+    .product-brand {
+        color: #a0a0a0;
+        margin: 0 0 14px;
+        text-transform: uppercase;
+        font-size: fontSize("base");
+        text-align: center;
+    }
+    .product-title {
+        margin-top: 0;
+        text-transform: none;
+        font-size: fontSize("base");
+        line-height: normal;
+        color: #000;
+        letter-spacing: 0.02em;
+        text-align: center;
+        font-family: $fontFamily-sans;
+    }
+}
+
+.writeReview-form {
+    @include breakpoint("medium") {
+        @include grid-column(6);
+    }
+}

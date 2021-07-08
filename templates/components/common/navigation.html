@@ -1,0 +1,47 @@
+<nav class="navUser" aria-label="Navigation Users">
+    <ul>
+        {{> components/common/currency-selector}}
+        {{#if customer.store_credit.value '>' 0}}
+        <li class="hidden-mobile" id="storeCredit-toggle">
+            <a class="navUser-action--storeCredit" data-dropdown="storeCredit-dropdown" data-options="align:bottom" href="{{urls.cart}}">
+                <span class="navUser-action-divider">{{lang 'common.store_credit_overview' credit=customer.store_credit.formatted}}</span>
+            </a>
+            <div class="dropdown-menu" id="storeCredit-dropdown" data-dropdown-content aria-hidden="true">
+                <div class="triangle-with-shadow"></div>
+                {{{lang 'common.store_credit' store_credit=customer.store_credit.formatted}}}
+            </div>
+        </li>
+        {{/if}}
+        <li class="account-link hidden-mobile">
+            <a href="{{urls.account.index}}"><span>{{lang 'common.account'}}</span></a>
+        </li>
+        {{#if customer}}
+        <li id="accountDropdown" class="hidden-mobile">
+            {{#if settings.account_creation_enabled}}
+                {{#if customer}}
+                <a class="navUser-action has-dropdown" href="#" data-dropdown="accountSelection" aria-controls="accountSelection" aria-expanded="false"><span>{{lang 'Hello,'}} <strong>{{customer.name}}. </strong></span><i class="fa fa-angle-down"></i></a>
+                {{/if}}
+            {{/if}}
+            <ul class="dropdown-menu" id="accountSelection" data-dropdown-content aria-hidden="true" tabindex="-1">
+                <div class="triangle-with-shadow"></div>
+                <li><a href="{{urls.account.orders.all}}">{{lang 'account.nav.orders'}}</a></li>
+                {{#if settings.returns_enabled}}
+                <li><a href="{{urls.account.returns}}">{{lang 'account.nav.returns'}}</a></li>
+                {{/if}}
+                <li><a href="{{urls.account.inbox}}">{{lang 'account.mobile_nav.messages'}}</a></li>
+                <li><a href="{{urls.account.addresses}}">{{lang 'account.nav.addresses'}}</a></li>
+                <li><a href="{{urls.account.recent_items}}">{{lang 'account.nav.recently_viewed'}}</a></li>
+                <li><a href="{{urls.account.details}}">{{lang 'account.nav.settings'}}</a></li>
+            </ul>
+        </li>
+        <li class="hidden-mobile"><a href="{{urls.auth.logout}}"><span>{{lang 'common.logout'}}</span></a></li>
+        {{else}}
+        <li class="hidden-mobile"><a href="{{urls.auth.login}}" {{#if page_type '!==' 'login'}}data-reveal-id="halo-login-popup"{{/if}}><span>{{lang 'common.login'}}</span><i class="fa fa-angle-down"></i></a></li>
+        <li class="hidden-mobile"><a href="{{urls.auth.create_account}}"><span>{{lang 'common.sign_up'}}</span></a></li>
+        {{/if}}
+
+        <li id="mobileAccountSidebar" class="hidden-desktop">
+            <a class="account-icon" data-effect="st-effect-2" href="javascript:void(0);" aria-label="Button Open Account Sidebar"><i class="icon-user"><svg><use xlink:href="#icon-user"></use></svg></i></a></li>
+
+    </ul>
+</nav>

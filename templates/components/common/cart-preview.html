@@ -1,0 +1,140 @@
+<div class="previewCart">
+    <div class="previewCart-header" data-cart-quantity="{{cart.quantity}}">
+        <div class="preview-cart-titles">
+            <h3>Review your cart</h3>
+            <a class="previewCart-icon-close" aria-label="{{lang 'common.close'}}">
+                <svg aria-hidden="true"><use xlink:href="#icon-close"></svg>
+            </a>
+        </div>
+    </div>
+    {{#if cart.items.length}}
+        <ul class="previewCartList">
+            {{#each cart.items}}
+                <li class="previewCartItem">
+                    <div class="item-info">
+                        <div class="previewCartItem-image">
+                            {{#if type '==' 'GiftCertificate'}}
+                                <img src="{{cdn ../../theme_settings.default_image_gift_certificate}}" alt="GiftCertificate" title="GiftCertificate">
+                            {{else}}
+                                <img src="{{getImage image 'productthumb_size' (cdn ../../theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+                            {{/if}}
+                        </div>
+
+                        <div class="previewCartItem-name">
+                            {{#if brand.name}}
+                            <p class="previewCartItem-brand">
+                                <span >{{brand.name}}</span>
+                            </p>
+                            {{/if}}
+                            <h6><a href="{{url}}" alt="{{name}}" title="{{name}}">{{name}}</a></h6>
+                            {{#if options}}
+                                <div class="previewCartItem-option">
+                                    <span>-</span>
+                                    {{#each options}}
+                                        <span class="option-value">
+                                            {{#if is_file}}
+                                                <a href="/viewfile.php?attributeId={{../id}}&cartitem={{../../id}}">{{{value}}}</a>
+                                            {{else}}
+                                                {{{ sanitize value}}}
+                                            {{/if}}
+                                        </span>
+                                    {{/each}}
+                                    <a class="btn-editPreCart" data-cart-edit-id="{{product_id}}" data-cart-itemid="{{id}}" data-cart-edit-price="{{price.formatted}}" data-cart-edit-quantity="{{quantity}}"><svg class="icon"><use xlink:href="#icon-edit"></use></svg></a>
+                                </div>
+                            {{/if}}
+                            <div class="item-price">
+                                {{price.formatted}}
+                            </div>
+                            <div class="qty-group">
+                                <label class="form-label cart-item-label" for="qty-{{id}}">{{lang 'products.quantity'}}</label>
+                                <div class="form-increment">
+                                    {{# if can_modify}}
+                                        <button class="button button--icon" data-cart-update data-cart-itemid="{{id}}" data-action="dec">
+                                            <span class="is-srOnly">{{lang 'products.quantity_decrease'}}</span>
+                                            <i class="fa fa-angle-down"></i>
+                                        </button>
+                                    {{/if}}
+                                    <input data-cart-itemid="{{id}}" class="form-input form-input--incrementTotal"
+                                           id="qty-{{id}}"
+                                           name="qty-{{id}}"
+                                           type="tel"
+                                           value="{{quantity}}"
+                                           data-quantity-min="{{min_purchase_quantity}}"
+                                           data-quantity-max="{{max_purchase_quantity}}"
+                                           data-quantity-min-error="{{lang 'products.quantity_min' quantity=min_purchase_quantity}}"
+                                           data-quantity-max-error="{{lang 'products.quantity_max' quantity=max_purchase_quantity}}"
+                                           min="1"
+                                           pattern="[0-9]*"
+                                           aria-live="polite"{{#unless can_modify}} disabled{{/unless}}>
+                                    {{# if can_modify}}
+                                        <button class="button button--icon" data-cart-update data-cart-itemid="{{id}}" data-action="inc">
+                                            <span class="is-srOnly">{{lang 'products.quantity_increase'}}</span>
+                                            <i class="fa fa-angle-up"></i>
+                                        </button>
+                                    {{/if}}
+                                </div>
+                                <div class="previewCart-removeItem">
+                                    <a class="btn-removeItem" data-cart-itemid="{{id}}" data-confirm-delete="{{lang 'cart.confirm_delete'}}">Remove</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+        <div class="preview-cart-total">
+            <div class="cart-total-label">
+                <strong>{{lang 'cart.checkout.subtotal'}}:</strong>
+            </div>
+            <div class="cart-total-value">
+                <span>{{cart.sub_total.formatted}}</span>
+            </div>
+        </div>
+        <div class="preview-cart-grand-total">
+             <div class="cart-total-label">
+                <strong>{{lang 'cart.checkout.grand_total'}}:</strong>
+            </div>
+            <div class="cart-total-value cart-total-grandTotal">
+                <span>{{cart.grand_total.formatted}}</span>
+            </div>
+        </div>
+
+        <div class="previewCartAction">
+            {{#if cart.show_primary_checkout_button}}
+                <div class="previewCartAction-checkout">
+                    <a href="{{urls.checkout.single_address}}" class="btn btn-primary btn-lg">
+                        {{lang 'cart.preview.checkout_now'}}
+                    </a>
+                </div>
+            {{/if}}
+
+
+            {{#if cart.show_multiple_address_shipping}}
+                <div class="previewCartAction-checkoutMultiple">
+                    <a href="{{urls.checkout.multiple_address}}">
+                        {{lang 'cart.preview.checkout_multiple'}}
+                    </a>
+                </div>
+            {{/if}}
+
+            {{#if cart.additional_checkout_buttons}}
+                <div class="clear"></div>
+                <div class="cart-additionalCheckoutButtons">
+                    {{#each cart.additional_checkout_buttons}}
+                        {{{this}}}
+                    {{/each}}
+                </div>
+            {{/if}}
+
+            <div class="previewCartAction-viewCart{{#unless cart.show_primary_checkout_button}} previewCartAction-viewCart--sole{{/unless}}">
+                <a href="{{urls.cart}}" class="btn btn-alt btn-lg">
+                    {{lang 'cart.preview.view_cart'}}
+                </a>
+            </div>
+        </div>
+    {{else}}
+        <div class="previewCart-emptyBody">
+            <div class="alert alert-warning text-center">{{lang 'cart.checkout.empty_cart'}}</div>
+        </div>
+    {{/if}}
+</div>

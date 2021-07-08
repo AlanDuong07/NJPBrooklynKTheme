@@ -1,0 +1,59 @@
+<aside class="page-sidebar col-sm-4 col-md-3">
+    {{> components/halothemes/sidebar-toggle-mobile layout_sidebar="slide"}}
+    <nav >
+        <div class="navBars">
+            <h5 class="side-module-heading">Manage Gift Certificates</h5>
+            <ul class="navList">
+                {{#if gift_page '===' 'purchase'}}
+                    <li class="navBar-item is-active">
+                        <a class="navBar-action" href="{{urls.gift_certificate.purchase}}">
+                            {{lang 'gift_certificate.purchase.heading'}}
+                        </a>
+                    </li>
+                {{else}}
+                    <li class="navBar-item">
+                        <a class="navBar-action" href="{{urls.gift_certificate.purchase}}">
+                            {{lang 'gift_certificate.purchase.heading'}}
+                        </a>
+                    </li>
+                {{/if}}
+                {{#if gift_page '===' 'redeem'}}
+                    <li class="navBar-item is-active">
+                        <a class="navBar-action" href="{{urls.gift_certificate.redeem}}">
+                            {{lang 'gift_certificate.redeem.heading'}}
+                        </a>
+                    </li>
+                {{else}}
+                    <li class="navBar-item">
+                        <a class="navBar-action" href="{{urls.gift_certificate.redeem}}">
+                            {{lang 'gift_certificate.redeem.heading'}}
+                        </a>
+                    </li>
+                {{/if}}
+                {{#if gift_page '===' 'balance'}}
+                    <li class="navBar-item is-active">
+                        <a class="navBar-action" href="{{urls.gift_certificate.balance}}">
+                            {{lang 'gift_certificate.balance.heading'}}
+                        </a>
+                    </li>
+                {{else}}
+                    <li class="navBar-item">
+                        <a class="navBar-action" href="{{urls.gift_certificate.balance}}">
+                            {{lang 'gift_certificate.balance.heading'}}
+                        </a>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+       <!-- BEGIN Side Top Seller -->
+      {{#if products.top_sellers}}
+          {{> components/products/sidebar-slider products=products.top_sellers}}
+      {{/if}}
+      <!-- END Side Top Seller -->
+
+      <!-- BEGIN Side Custom CMS Block -->
+      {{> components/halothemes/side-custom-block}}
+      <!-- END Side Custom CMS Block -->
+    </nav>
+    
+</aside>

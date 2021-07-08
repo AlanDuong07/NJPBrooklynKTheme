@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ locale_name }}">
+    <head>
+        <title>{{ head.title }}</title>
+        {{{ head.meta_tags }}}
+        {{{ head.config }}}
+        {{#block "head"}} {{/block}}
+        <link href="{{ head.favicon }}" rel="shortcut icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {{{stylesheet '/assets/css/theme.css'}}}
+
+        {{{head.scripts}}}
+        {{{head.rsslinks}}}
+
+        {{inject 'themeSettings' theme_settings}}
+        {{inject 'genericError' (lang 'common.generic_error')}}
+        {{inject 'maintenanceMode' settings.maintenance}}
+        {{inject 'urls' urls}}
+        {{~inject 'token' settings.storefront_api.token}}
+        {{{snippet 'htmlhead'}}}
+    </head>
+    <body class="page-type-{{page_type}} {{#if customer}}wl-login{{/if}}">
+        <div id="st-container" class="st-container">
+            <!-- content push wrapper -->
+            <div class="st-pusher">
+                <div class="st-menu st-effect st-effect-1" id="mobile-categories">
+                    <div class="themevale_close">
+                        <a href="javascript:void(0)" class="close">×</a>
+                    </div>
+                    <nav class="navPages" role="navigation" aria-label="Main Navigation">
+                    </nav>
+                </div>
+                <div class="st-menu st-effect st-effect-2" id="mobile-customer">
+                    <div class="themevale_close">
+                        <a href="javascript:void(0)" class="close">×</a>
+                    </div>
+                    <nav class="navPages-customer" role="navigation" aria-label="Customer Navigation">
+                        <ul class="navPages">
+                            {{#if customer}}
+                                <li><a class="navPages-action" href="{{urls.account.index}}">{{lang 'Welcome back,'}} <strong>{{customer.name}}.</strong></a></li>
+                                <li><a class="navPages-action" href="{{urls.account.orders.all}}">{{lang 'account.nav.orders'}}</a></li>
+                                {{#if settings.returns_enabled}}
+                                <li><a class="navPages-action" href="{{urls.account.returns}}">{{lang 'account.nav.returns'}}</a></li>
+                                {{/if}}
+                                <li><a class="navPages-action" href="{{urls.account.inbox}}">{{lang 'account.mobile_nav.messages'}}</a></li>
+                                <li><a class="navPages-action" href="{{urls.account.addresses}}">{{lang 'account.nav.addresses'}}</a></li>
+                                {{#if settings.show_wishlist}}
+                                <li><a class="navPages-action" href="{{urls.account.wishlists.all}}">{{lang 'account.mobile_nav.wishlists'}}</a></li>
+                                {{/if}}
+                                <li><a class="navPages-action" href="{{urls.account.recent_items}}">{{lang 'account.nav.recently_viewed'}}</a></li>
+                                <li><a class="navPages-action" href="{{urls.account.details}}">{{lang 'account.nav.settings'}}</a></li>
+                                <li><a class="navPages-action" href="{{urls.auth.logout}}">{{lang 'common.logout'}}</a></li>
+                            {{else}}
+                                <li class="navPages-item">
+                                    <p class="navPage-subMenu-action navPages-action navPage-subMenu-title">
+                                        <span class="text">
+                                            <svg class="icon"><use xlink:href="#icon-user"/></svg>
+                                            Customer Login
+                                        </span>
+                                    </p>
+                                    {{#if page_type '!==' 'login'}}
+                                    <div class="login-content">
+                                        <p class="login-intro">{{lang 'login.new_customer.intro2' }}</p>
+                                        <form class="login-form form" action="{{settings.secure_base_url}}/login.php?action=check_login" method="post">
+                                            {{inject 'useValidEmail' (lang 'forms.validate.common.email_address')}}
+                                            {{inject 'enterPass' (lang 'forms.validate.common.password')}}
+                                            <div class="form-field">
+                                                <label class="form-label" for="login_email3">{{lang 'login.field_email'}}</label>
+                                                <input class="form-input" name="login_email" id="login_email3" type="email">
+                                            </div>
+                                            <div class="form-field">
+                                                <label class="form-label" for="login_pass3">{{lang 'login.field_password'}}</label>
+                                                <input class="form-input" id="login_pass3" type="password" name="login_pass">
+                                            </div>
+                                            <div class="form-actions">
+                                                <a class="forgot-password" href="{{urls.auth.forgot_password}}">{{lang 'login.forgot_password' }}</a>
+                                                <input type="submit" class="button button--transparent" value="{{lang 'login.button' }}">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    {{/if}}
+                                    <div class="new-customer">
+                                        {{#if settings.account_creation_enabled}}
+                                            <p class="new-customer-intro">{{lang 'login.new_customer.intro3' }}</p>
+                                            <a class="button button--primary" href="{{urls.auth.create_account}}">{{lang 'create_account.button' }}</a>
+                                        {{/if}}
+                                    </div>
+                                </li>
+                            {{/if}}
+                        </ul>
+                    </nav>
+                </div>
+                <div class="st-menu st-effect st-effect-3" id="mobile-sidebar">
+                    <div class="themevale_close">
+                        <a href="javascript:void(0)" class="close">×</a>
+                    </div>
+                </div>
+                {{{snippet 'header'}}}
+                <div class="icons-svg-sprite">{{> components/common/icons/icon-defs }}</div>
+
+                {{#if settings.privacy_cookie}}
+                    {{> components/common/cookie}}
+                {{/if}}
+
+                {{> components/common/header }}
+                {{> components/common/body }}
+                {{> components/common/footer }}
+                <div class="bg-mobile"></div>
+
+                <script src="{{cdn '/assets/modernizr-custom.js'}}"></script>
+                <script>
+                    window.__webpack_public_path__ = "{{cdn 'assets/dist/'}}";
+                    window.__image_public_path__ = "{{cdn 'assets/img/'}}";
+                </script>
+                <script src="{{cdn 'assets/dist/theme-bundle.main.js'}}"></script>
+                <script>
+                    // Exported in app.js
+                    window.stencilBootstrap("{{page_type}}", {{jsContext}}).load();
+                </script>
+
+                {{#if theme_settings.halothemes_newsletter_popup}}
+                    {{> components/halothemes/newsletter-popup}}
+                {{/if}}
+
+                {{#if theme_settings.halothemes_megamenu}}
+                    <!-- Begin HaloThemes MegaMenu -->
+                    {{> components/halothemes/halo-megamenu }}
+                    <!-- End HaloThemes MegaMenu -->
+                {{/if}}
+
+                {{{footer.scripts}}}
+                {{{snippet 'footer'}}}
+
+            </div>
+
+            {{#unless customer}}
+                {{#if page_type '!==' 'login'}}
+                    {{> components/halothemes/halo-login-popup}}
+                {{/if}}
+            {{/unless}}
+
+            {{> components/halothemes/recently-viewed-products }}
+
+            {{> components/halothemes/before-you-leave }}
+
+            <div id="previewModal" class="modal modal--large" data-reveal>
+                <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
+                    <span aria-hidden="true"><svg><use xlink:href="#icon-close"></use></svg></span>
+                </a>
+                <div class="modal-content"></div>
+                <div class="loadingOverlay"></div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+{{#if product_results.products}}
+<h3 class="search-product-total">{{lang 'search.results.search_result' count=pagination.product_results.total search_query=forms.search.query}}</h3>
+<section class="productItems productCarousel owl-carousel" {{#if settings.data_tag_enabled}} data-list-name="Quick Search Results" {{/if}} data-owl='{
+        "nav": true,
+        "dots": false,
+        "items": 4,
+        "margin": 30,
+        "slideBy": 4,
+        "responsive": {
+         "0": {
+            "items": 2,
+            "slideBy": 2,
+            "margin": 20
+         },
+         "480": {
+            "items": 2,
+            "slideBy": 2
+         },
+         "641": {
+            "items": 3,
+            "slideBy": 3
+         },
+         "768": {
+            "items": 3,
+            "slideBy": 3
+         },
+         "992": {
+            "items": 4,
+            "slideBy": 4,
+            "margin": 30
+         },
+         "1200": {
+            "items": 4,
+            "slideBy": 4,
+            "margin": 30
+         }
+      },
+      "responsiveRefreshRate": 0
+    }'>
+   {{#each product_results.products}}
+   <div class="product prod-item">
+      {{> components/products/quick-search-products alternate=true show_compare=../show_compare theme_settings=../theme_settings settings=../settings event="list" position=(add @index 1)}}
+   </div>
+   {{/each}}
+</section>
+<div class="viewAll-searchProducts">
+	<a class="viewAllSP-btn btn btn-primary" aria-label="View All Search Products">{{lang 'common.view_all'}}</a>
+</div>
+{{else}}
+<div class="alert alert-warning">
+   <p class="quickSearchMessage">
+      {{lang 'search.results.quick_count' count=pagination.product_results.total search_query=forms.search.query}}
+   </p>
+</div>
+{{/if}}

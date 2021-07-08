@@ -1,0 +1,94 @@
+---
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    top_sellers:
+         limit: {{theme_settings.side_top_products_count}}
+    featured:
+        limit: {{theme_settings.side_featured_products_count}}
+category:
+    shop_by_price: true
+    products:
+        limit: {{theme_settings.categorypage_products_per_page}}
+---
+{{inject "categoryProductsPerPage" theme_settings.categorypage_products_per_page}}
+
+{{#partial "head"}}
+    {{#if pagination.category.previous}}
+        <link rel="prev" href="{{pagination.category.previous}}">
+    {{/if}}
+    {{#if pagination.category.next}}
+        <link rel="next" href="{{pagination.category.next}}">
+    {{/if}}
+{{/partial}}
+
+{{#partial "page"}}
+    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<div class="container">
+
+    <div class="page row">
+        {{#or category.subcategories category.faceted_search_enabled}}
+            <aside class="page-sidebar col-sm-3" id="faceted-search-container">
+                {{> components/category/sidebar}}
+            </aside>
+        {{else}}
+            <aside class="page-sidebar col-sm-3" id="faceted-search-container">
+                {{> components/category/sidebar}}
+            </aside>
+        {{/or}}
+
+        <main class="page-content col-sm-9">
+            
+
+            {{#if category.image}}
+                <div class="category-image"><img src="{{getImage category.image 'zoom_size'}}" alt="{{category.name}}"></div>
+            {{/if}}
+            <div class="category-heading">
+                <h1 class="page-heading">{{category.name}}</h1>
+                {{{region name="category_below_header"}}}
+            </div>
+            {{#if category.description}}
+                <div class="category-description">
+                    {{{category.description}}}
+                </div>
+            {{/if}}
+
+            {{#if category.subcategories}}
+                <div class="halo-sub-categories">
+                    <h2 class="subCategories-heading">Sub Categories</h2>
+                    <div class="sub-cate-col">
+                        {{#each category.subcategories}}
+                            <div class="sub-cate-item">
+                                <div class="sub-cate-tab">
+                                    {{#if image}}
+                                    <div class="sub-cate-img"><a href="{{url}}" aria-label="Button Go To Sub Category {{name}}"><img src="{{getImage image '80x80'}}" alt="{{name}}"></a></div>
+                                    {{else}}
+                                    <div class="sub-cate-img"><a href="{{url}}" aria-label="Button Go To Sub Category {{name}}"><img src="https://cdn11.bigcommerce.com/s-d8768tzdj/stencil/332cfbc0-23b8-0137-9598-0242ac110010/e/66f4f850-23b8-0137-de4a-0242ac110012/img/CategoryDefault.jpg" alt="{{name}}"></a></div>
+                                    {{/if}}
+                                    <div class="sub-cate-content">
+                                        <a class="sub-cat-name" href="{{url}}" aria-label="Button Go To Sub Category {{name}}">{{name}}</a>
+                                        <div class="sub-cate-count">{{product_count}} {{#if product_count '>=' 2}}items{{else}} item {{/if}} </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            {{/if}}
+
+            <div id="product-listing-container" class="showMoreCat">
+                {{{snippet 'categories'}}}
+
+                {{#if category.products}}
+                    {{> components/category/product-listing}}
+                {{else}}
+                    <div class="alert alert-warning text-center"><p>{{lang 'categories.no_products'}}</p></div>
+                {{/if}}
+            </div>
+            {{{region name="category_below_content"}}}
+        </main>
+    </div>
+    {{> components/halothemes/home-banners banner="custom-cms-block"}}
+</div>
+{{/partial}}
+{{> layout/base}}

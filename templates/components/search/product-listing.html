@@ -1,0 +1,46 @@
+{{#if product_results.products.length}}
+<div class="product-pagination top">
+    {{#if product_results.faceted_search_enabled}}
+        {{> components/halothemes/sidebar-toggle-mobile layout_sidebar="slide"}}
+    {{/if}}
+    {{> components/halothemes/product-display-mode-buttons}}
+    {{> components/products/filter sort=pagination.product_results.sort}}
+</div>
+{{/if}}
+
+<form action="{{urls.compare}}" method='POST' {{#if settings.data_tag_enabled}} data-list-name="Search Results" {{/if}} data-product-compare>
+    {{#if theme_settings.product_list_display_mode '===' 'grid'}}
+        {{#if product_results.faceted_search_enabled}}
+            {{#if settings.data_tag_enabled}}
+                {{> components/products/grid products=product_results.products show_compare=product_results.show_compare theme_settings=theme_settings columns=theme_settings.categorypage_products_column_count productsnew=../products.new event="list"}}
+            {{else}}
+                {{> components/products/grid products=product_results.products show_compare=product_results.show_compare theme_settings=theme_settings columns=theme_settings.categorypage_products_column_count productsnew=../products.new}}
+            {{/if}}
+        {{else}}
+            {{#if settings.data_tag_enabled}}
+                {{> components/products/grid products=product_results.products show_compare=product_results.show_compare theme_settings=theme_settings columns=theme_settings.categorypage_full_no_sidebar_products_column_count  productsnew=../products.new event="list"}}
+            {{else}}
+                {{> components/products/grid products=product_results.products show_compare=product_results.show_compare theme_settings=theme_settings columns=theme_settings.categorypage_full_no_sidebar_products_column_count  productsnew=../products.new}}
+            {{/if}}
+        {{/if}}
+    {{else}}
+        {{#if settings.data_tag_enabled}}
+            {{> components/products/list products=product_results.products show_compare=product_results.show_compare theme_settings=theme_settings columns=theme_settings.categorypage_products_column_count productsnew=../products.new event="list"}}
+        {{else}}
+            {{> components/products/list products=product_results.products show_compare=product_results.show_compare theme_settings=theme_settings columns=theme_settings.categorypage_products_column_count productsnew=../products.new}}
+        {{/if}}
+    {{/if}}
+</form>
+
+
+{{#if product_results.products.length}}
+<div class="product-pagination bottom">
+    {{> components/common/paginator pagination.product_results}}
+    {{#if product_results.show_compare}}
+    <div class="compare-link">
+        <a class="btn btn-alt" href="{{urls.compare}}" data-compare-nav><span class="compare-text">Compare Selected</span><span class="countPill countPill--positive countPill--alt"></span></a>
+    </div>
+    {{/if}}
+
+</div>
+{{/if}}

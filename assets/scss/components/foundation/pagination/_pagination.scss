@@ -1,0 +1,246 @@
+// =============================================================================
+// PAGINATION (CSS)
+// =============================================================================
+// Pagination list items
+// -----------------------------------------------------------------------------
+//
+// 1. Centred list via inline-block. Font-size: 0; to remove white-space.
+// 2. Specificity overrides for Foundation's inadequate selectors.
+//
+// -----------------------------------------------------------------------------
+.product-pagination {
+    margin-bottom: 25px;
+    text-align: right;
+    &.top {
+        @media (max-width: 991px) {
+            justify-content: space-between;
+        }
+    }
+    &.top .pagination {
+        width: calc(100% - 300px);
+        text-align: center;
+        @media (max-width: 991px) {
+            order: 3;
+            width: 100%;
+            padding-top: 15px;
+        }
+    }
+    &.bottom {
+        padding-top: 30px;
+        border-top: 1px solid #e5e5e5;
+        position: relative;
+        @media (max-width: 991px){
+            display: flex;
+            justify-content: center;
+        }
+        @media (max-width: 767px) {
+            .pagination {
+                width: 100%;
+            }
+        }   
+
+    }
+    &.bottom .pagination {
+        width: calc(100% - 200px);
+        text-align: center;
+        @media (max-width: 991px) {
+           width: 100%;
+        }
+        @media (max-width: 767px) {
+            padding-bottom: 20px;
+            text-align: center;
+        }
+    }
+    @media (max-width: 991px) {
+        flex-wrap: wrap;
+        
+    }
+}
+
+.page-type-account_recentitems {
+    & .product-pagination.bottom {
+        justify-content: flex-end;
+        margin-top: 10px;
+    }
+}
+
+.pagination-list--small{
+    text-align: right !important;
+    .pagination-item--previous{
+        float: none !important;
+        margin-right: 25px !important;
+    }
+    .pagination-item--next{
+        margin-left: 25px !important;
+    }
+    .paginaton-title{
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-right: 25px !important;
+    }
+}
+.pagination-list {
+    @include clearfix;
+    display: inline-block;
+    font-size: 0; // 1
+    margin-bottom: 0;
+    text-align: center;
+    .pagination-item {
+        display: inline-block;
+        margin: 0;
+        cursor: default;
+        padding: 0 12px;
+        & a {
+            display: inline;
+            font-size: fontSize("base");
+            color: $anchor-font-color;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            border-radius: 0;
+            padding: 5px 0;
+            &:hover {
+                text-decoration: none;
+                color: $anchor-font-color-hover;
+            }
+        }
+        &.pagination-item--previous{
+            float: left;
+            padding: 0;
+            margin-right: 12px;
+        }
+        &.pagination-item--next {
+            float: right;
+            padding: 0;      
+            margin-left: 12px;      
+        }
+        &.pagination-item--previous a,
+        &.pagination-item--next a {
+            color: $anchor-font-color;
+            font-family: $fontFamily-headings;
+            font-size: fontSize("base");
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            & span {
+                border-bottom: 1px dotted $anchor-font-color;
+            }
+            &:hover {
+                color: $anchor-font-color-hover;
+                & span {
+                    border-bottom-color: $anchor-font-color-hover;
+                }
+            }
+            & i.fa {
+                font-size: 14px;
+                vertical-align: -1px;
+                padding: 0 8px;
+            }
+        }
+        &.pagination-item--current a {
+            color: $anchor-font-color;
+            border-bottom: 1px dotted $anchor-font-color;
+            font-weight: 700;
+            margin: 5px;
+            padding: 0;
+        }
+    }
+}
+.compare-link-top {
+    width: 150px;
+    text-align: right;
+    @media (max-width: 991px) {
+        width: auto;
+    }
+    & a {
+        font-family: $fontFamily-headings;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: $headings-letter-spacing;
+        text-transform: uppercase;
+    }
+}
+.compare-link {
+    align-self: stretch;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;    
+    @media(max-width: 991px){
+        display: none;
+    }
+    @media(min-width: 992px){
+        position: fixed;
+        top: -webkit-calc(50% + 265px);
+        top: -moz-calc(50% + 265px);
+        top: -ms-calc(50% + 265px);
+        top: calc(50% + 265px);
+        right: 60px;
+        min-width: 80px;
+        z-index: 10;
+    }
+   
+     @media (max-width: 400px) {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+     }
+    & a {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        letter-spacing: $headings-letter-spacing;
+        font-size: fontSize("base");
+        border:  0 !important;
+        height: 32px;
+        margin-top: -2px;
+        text-decoration: none;
+
+        &.btn-alt {
+            min-width: 80px;
+            padding: 7px 15px;
+            background-color: #fff;
+            border: 1px solid #fff;
+            border-radius: 3px;
+            -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.12);
+            -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.12);
+            -ms-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.12);
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.12);
+
+            &:hover, &:active, &:focus {
+                color: #fff;
+                background-color: #000;
+                border-color: #000;
+            }
+        }
+
+        @media (max-width: 400px) {
+            width: 100%;
+        }
+        & .countPill {
+            display: none;
+        }
+    }
+    &.link-show {
+        a {
+            display: flex;
+        }
+        & .countPill {
+            display: inline-block;
+        }
+    }
+}
+
+.compare-link .countPill {
+    display: inline-block;
+    min-width: 24px;
+    margin-left: 10px;
+    padding: 0 4px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #da5b4c;
+    color: #fff !important;
+    line-height: 24px;
+    font-size: 11px;
+    font-weight: 700;
+}

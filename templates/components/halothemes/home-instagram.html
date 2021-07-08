@@ -1,0 +1,172 @@
+{{#if theme_settings.halo_home_instafeed}}
+<section id="InstagramGallery" class="module-wrapper {{#if theme_settings.halothemes_lazy_loading_effect}}wow fadeIn{{/if}}">
+    <div class="container">
+        <div class="widget-title">
+        	<h3><i class="fa fa-instagram"></i><span>{{theme_settings.home_instafeed_title}}</span></h3>
+        	<label class="underText">{{theme_settings.home_instafeed_title_under}}</label>
+            {{#if theme_settings.home_instafeed_text}}
+        	<div class="instagram-des">
+        		<p>{{theme_settings.home_instafeed_des_1}}</p>
+        		<p>{{theme_settings.home_instafeed_des_2}}{{theme_settings.home_instafeed_des_2_1}}</p>
+        	</div>
+            {{/if}}
+        </div>
+
+        {{#if theme_settings.home_instagram_layout '==' 'gallery'}}
+            <div id="instafeed" class="owl-carousel" data-owl='{
+                "nav": true,
+                "dots": false,
+                "items": 4,
+                "margin": 30,
+                "slideBy": 4,
+                "responsive": {
+                    "0": {
+                        "items": 2,
+                        "slideBy": 2
+                    },
+                    "420": {
+                        "items": 2,
+                        "slideBy": 2
+                    },
+                    "560": {
+                        "items": 3,
+                        "slideBy": 3
+                    },
+                    "768": {
+                        "items": 4,
+                        "slideBy": 4
+                    },
+                    "992": {
+                        "items": 4,
+                        "slideBy": 4
+                    },
+                    "1200": {
+                        "items": 4,
+                        "slideBy": 4
+                    }
+                },
+                "responsiveRefreshRate": 0
+            }'>
+                <div class="feed-item-wrap animated fadeIn">
+                    <div class="feed-item">
+                        <div class="feed-itemImg">
+                            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_1}}" title="Instagram Photo" alt="Instagram Photo"/>
+                        </div>
+                        <div class="feed-action">
+                            <a data-toggle="tooltip" title="View Detail" target="_blank" class="btn btn-primary" href="{{theme_settings.home_instafeed_item_link_1}}" aria-label="Open link in a new tab"><i class="fa fa-link"></i></a>
+                            <a data-toggle="tooltip" title="Quick View" class="btn btn-primary btn-quickview" data-mfp-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_1}}"><i class="fa fa-photo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="feed-item-wrap animated fadeIn">
+                    <div class="feed-item">
+                        <div class="feed-itemImg">
+                            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_2}}" title="Instagram Photo" alt="Instagram Photo"/>
+                        </div>
+                        <div class="feed-action">
+                            <a data-toggle="tooltip" title="View Detail" target="_blank" class="btn btn-primary" href="{{theme_settings.home_instafeed_item_link_2}}" aria-label="Open link in a new tab"><i class="fa fa-link"></i></a>
+                            <a data-toggle="tooltip" title="Quick View" class="btn btn-primary btn-quickview" data-mfp-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_2}}"><i class="fa fa-photo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="feed-item-wrap animated fadeIn">
+                    <div class="feed-item">
+                        <div class="feed-itemImg">
+                            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_3}}" title="Instagram Photo" alt="Instagram Photo"/>
+                        </div>
+                        <div class="feed-action">
+                            <a data-toggle="tooltip" title="View Detail" target="_blank" class="btn btn-primary" href="{{theme_settings.home_instafeed_item_link_3}}" aria-label="Open link in a new tab"><i class="fa fa-link"></i></a>
+                            <a data-toggle="tooltip" title="Quick View" class="btn btn-primary btn-quickview" data-mfp-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_3}}"><i class="fa fa-photo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="feed-item-wrap animated fadeIn">
+                    <div class="feed-item">
+                        <div class="feed-itemImg">
+                            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_4}}" title="Instagram Photo" alt="Instagram Photo"/>
+                        </div>
+                        <div class="feed-action">
+                            <a data-toggle="tooltip" title="View Detail" target="_blank" class="btn btn-primary" href="{{theme_settings.home_instafeed_item_link_4}}" aria-label="Open link in a new tab"><i class="fa fa-link"></i></a>
+                            <a data-toggle="tooltip" title="Quick View" class="btn btn-primary btn-quickview" data-mfp-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_4}}"><i class="fa fa-photo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="feed-item-wrap animated fadeIn">
+                    <div class="feed-item">
+                        <div class="feed-itemImg">
+                            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_5}}" title="Instagram Photo" alt="Instagram Photo"/>
+                        </div>
+                        <div class="feed-action">
+                            <a data-toggle="tooltip" title="View Detail" target="_blank" class="btn btn-primary" href="{{theme_settings.home_instafeed_item_link_5}}" aria-label="Open link in a new tab"><i class="fa fa-link"></i></a>
+                            <a data-toggle="tooltip" title="Quick View" class="btn btn-primary btn-quickview" data-mfp-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_5}}"><i class="fa fa-photo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="feed-item-wrap animated fadeIn">
+                    <div class="feed-item">
+                        <div class="feed-itemImg">
+                            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_6}}" title="Instagram Photo" alt="Instagram Photo"/>
+                        </div>
+                        <div class="feed-action">
+                            <a data-toggle="tooltip" title="View Detail" target="_blank" class="btn btn-primary" href="{{theme_settings.home_instafeed_item_link_6}}" aria-label="Open link in a new tab"><i class="fa fa-link"></i></a>
+                            <a data-toggle="tooltip" title="Quick View" class="btn btn-primary btn-quickview" data-mfp-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_6}}"><i class="fa fa-photo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="feed-item-wrap animated fadeIn">
+                    <div class="feed-item">
+                        <div class="feed-itemImg">
+                            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_7}}" title="Instagram Photo" alt="Instagram Photo"/>
+                        </div>
+                        <div class="feed-action">
+                            <a data-toggle="tooltip" title="View Detail" target="_blank" class="btn btn-primary" href="{{theme_settings.home_instafeed_item_link_7}}" aria-label="Open link in a new tab"><i class="fa fa-link"></i></a>
+                            <a data-toggle="tooltip" title="Quick View" class="btn btn-primary btn-quickview" data-mfp-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_7}}"><i class="fa fa-photo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="feed-item-wrap animated fadeIn">
+                    <div class="feed-item">
+                        <div class="feed-itemImg">
+                            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_8}}" title="Instagram Photo" alt="Instagram Photo"/>
+                        </div>
+                        <div class="feed-action">
+                            <a data-toggle="tooltip" title="View Detail" target="_blank" class="btn btn-primary" href="{{theme_settings.home_instafeed_item_link_8}}" aria-label="Open link in a new tab"><i class="fa fa-link"></i></a>
+                            <a data-toggle="tooltip" title="Quick View" class="btn btn-primary btn-quickview" data-mfp-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_8}}"><i class="fa fa-photo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="feed-item-wrap animated fadeIn">
+                    <div class="feed-item">
+                        <div class="feed-itemImg">
+                            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_9}}" title="Instagram Photo" alt="Instagram Photo"/>
+                        </div>
+                        <div class="feed-action">
+                            <a data-toggle="tooltip" title="View Detail" target="_blank" class="btn btn-primary" href="{{theme_settings.home_instafeed_item_link_9}}" aria-label="Open link in a new tab"><i class="fa fa-link"></i></a>
+                            <a data-toggle="tooltip" title="Quick View" class="btn btn-primary btn-quickview" data-mfp-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_9}}"><i class="fa fa-photo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="feed-item-wrap animated fadeIn">
+                    <div class="feed-item">
+                        <div class="feed-itemImg">
+                            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_10}}" title="Instagram Photo" alt="Instagram Photo"/>
+                        </div>
+                        <div class="feed-action">
+                            <a data-toggle="tooltip" title="View Detail" target="_blank" class="btn btn-primary" href="{{theme_settings.home_instafeed_item_link_10}}" aria-label="Open link in a new tab"><i class="fa fa-link"></i></a>
+                            <a data-toggle="tooltip" title="Quick View" class="btn btn-primary btn-quickview" data-mfp-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.home_instafeed_item_img_10}}"><i class="fa fa-photo"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+            <div id="instafeed">
+                {{#if theme_settings.home_instagram_app_code}}
+                    <script src='https://snapppt.com/widgets/widget_loader/{{theme_settings.home_instagram_app_code}}' defer class='snapppt-widget'></script>
+                {{/if}}
+            </div>
+        {{/if}}
+
+       <a href="{{theme_settings.home_instafeed_link_1}}" target="_blank" class="btn btn-primary insta-btn" aria-label="Open instagram in a new tab"><span>{{theme_settings.home_instafeed_button_1}}</span></a>
+    </div>
+</section>
+{{/if}}

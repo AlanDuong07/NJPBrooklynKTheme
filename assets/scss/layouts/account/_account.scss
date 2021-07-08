@@ -1,0 +1,88 @@
+// =============================================================================
+// ACCOUNT
+// =============================================================================
+
+
+// Account layouts
+// -----------------------------------------------------------------------------
+
+.account {
+    margin-bottom: spacing("single");
+    .form-actions .btn-lg {
+        min-width: 210px;
+    }
+}
+
+.account-head {
+    margin-bottom: spacing("double");
+    text-align: center;
+
+    .alertBox {
+        padding-left: spacing("double");
+        padding-right: spacing("double");
+        text-align: left;
+    }
+}
+
+.account-body {
+    //@include grid-row($behavior: "nest");
+}
+
+.account-content {
+   /* @include grid-column(12);*/
+}
+
+.account-content--fixed {
+
+    @include breakpoint("medium") {
+        width: grid-calc(8, $total-columns);
+    }
+}
+
+.account-content--fixedSmall {
+
+    @include breakpoint("medium") {
+        width: grid-calc(6, $total-columns);
+    }
+}
+
+.account-sidebar {
+    @include grid-column(12);
+
+    @include breakpoint("medium") {
+        width: grid-calc(4, $total-columns);
+
+        .account-content--fixedSmall + & {
+            float: right;
+        }
+    }
+}
+.page-type-createaccount {
+    & form[data-create-account-form] {
+        padding-top: 10px;
+        & .form-row {
+            margin-left: -10px;
+            margin-right: -10px;
+            & .form-field {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        & .form-actions {
+
+            & .btn.btn-checkout {
+                min-width: 238px;
+            }
+            @media (max-width: 480px) {
+                margin-top: 20px;
+                & .btn.btn-checkout {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+    .g-recaptcha ~ br {
+        display: none;
+    }
+}

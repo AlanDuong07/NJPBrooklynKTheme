@@ -1,0 +1,3 @@
+{
+  "components/halothemes/home-layout-banner": "{{!--\r\nArguments:\r\n    - find (string)\r\n--}}\r\n{{#if banners.top}}\r\n    {{#each banners.top}}\r\n        {{#if (occurrences this ../find) '>' 0}}\r\n            {{{this}}}\r\n        {{/if}}\r\n    {{/each}}\r\n{{/if}}\r\n{{#if banners.bottom}}\r\n    {{#each banners.bottom}}\r\n        {{#if (occurrences this ../find) '>' 0}}\r\n            {{{this}}}\r\n        {{/if}}\r\n    {{/each}}\r\n{{/if}}\r\n"
+}

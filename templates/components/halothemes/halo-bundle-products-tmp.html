@@ -1,0 +1,27 @@
+{{#if product.can_purchase}}
+    <div class="halo-product-item isChecked" data-product-id="{{product.id}}">
+        <div class="halo-product-image">
+            <a class="halo-product-link" href="{{product.url}}" aria-label="Go To {{product.main_image.alt}}">
+                <div class="card-img-container">
+                    <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage product.main_image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}">
+                </div>
+            </a>
+        </div>
+        <div class="halo-product-content">
+            <form method="post" action="/cart.php" enctype="multipart/form-data">
+                <input type="hidden" name="action" value="add">
+                <input type="hidden" name="product_id" value="{{product.id}}">
+                <input type="hidden" name="qty[]" value="1">
+                <div class="halo-detail-field">
+                    <input class="halo-detail-checkbox form-checkbox" type="checkbox" id="fbt_product{{product.id}}" {{#if product.can_purchase}}checked{{else}}disabled{{/if}}>
+                    <label class="halo-detail-label form-label" for="fbt_product{{product.id}}">
+                        <span class="halo-detail-name">{{product.title}}</span>
+                        <span class="halo-detai-price">
+                            {{> components/products/price price=product.price}}
+                        </span>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </div>
+{{/if}}

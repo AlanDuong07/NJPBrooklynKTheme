@@ -1,0 +1,303 @@
+// =============================================================================
+// PRODUCT LIST (CSS)
+// =============================================================================
+// Product list
+// -----------------------------------------------------------------------------
+.productList {
+    @include u-listBullets("none");
+    .product {
+        // scss-lint:disable NestingDepth
+        + .product {
+            margin-top: spacing("base") * 4;
+        }
+    }
+}
+
+// Product list item
+// -----------------------------------------------------------------------------
+.listItem {
+    @include breakpoint("small") {
+        @include grid-row($behavior: "nest");
+        display: table;
+    }
+}
+
+.listItem-figure,
+.listItem-body {
+    @include breakpoint("small") {
+        display: table-cell;
+        vertical-align: top;
+    }
+    @include breakpoint("large") {
+        vertical-align: middle;
+    }
+}
+
+// List figure
+// -----------------------------------------------------------------------------
+.listItem-figure {
+    margin: 0 0 spacing("single");
+    @include breakpoint("small") {
+        margin-bottom: 0;
+        @include breakpoint("small") {
+            padding-left: spacing("half");
+            padding-right: spacing("half");
+            width: grid-calc(3, $total-columns);
+        }
+    }
+}
+
+.listItem-image {
+    width: 100%;
+}
+
+.listItem-body {
+    @include breakpoint("small") {
+        padding-left: spacing("base") + spacing("sixth");
+        padding-right: spacing("half");
+        width: grid-calc(9, $total-columns);
+    }
+}
+
+// List content
+// -----------------------------------------------------------------------------
+.listItem-content {
+    @include breakpoint("large") {
+        display: table;
+    }
+}
+
+.listItem-details,
+.listItem-actions {
+    @include breakpoint("large") {
+        display: table-cell;
+        vertical-align: top;
+    }
+}
+
+// List details
+// -----------------------------------------------------------------------------
+.listItem-details {
+    @include breakpoint("large") {
+        padding-right: spacing("double") * 2;
+        >:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.listItem-rating {
+    margin-bottom: spacing("quarter");
+}
+
+.listItem-brand {
+    color: color("greys", "light");
+    font-size: fontSize("base");
+    margin: 0 0 spacing("eighth");
+    @include breakpoint("medium") {
+        font-size: fontSize("smaller");
+        margin-bottom: 0;
+    }
+}
+
+.listItem-title {
+    font-size: fontSize("smaller");
+    margin: 0 0 spacing("eighth");
+    @include breakpoint("medium") {
+        font-size: fontSize("small");
+    }
+    > a {
+        text-decoration: none;
+    }
+}
+
+.listItem-price {
+    margin-bottom: spacing("base");
+    @include breakpoint("medium") {
+        font-size: fontSize("small");
+    }
+}
+
+// List actions
+// -----------------------------------------------------------------------------
+//
+// 1. Magic number width to align closer to the intended design.
+//
+// -----------------------------------------------------------------------------
+.listItem-actions {
+    @include breakpoint("large") {
+        vertical-align: middle;
+        width: 22%; // 1
+        .button--compare {
+            @include buttonSize("small");
+        }
+    }
+    .button {
+        margin-bottom: 0;
+        @include breakpoint("large") {
+            width: 100%;
+            // scss-lint:disable NestingDepth
+            + .button {
+                margin: spacing("half") 0 0;
+            }
+        }
+    }
+}
+
+// Product list when sidebar is present
+// -----------------------------------------------------------------------------
+.page-sidebar + .page-content {
+    .productList {
+        // scss-lint:disable SelectorDepth, NestingDepth
+        .listItem-details {
+            @include breakpoint("large") {
+                padding-right: spacing("double");
+            }
+        }
+        .listItem-actions {
+            @include breakpoint("large") {
+                width: 30%;
+            }
+        }
+    }
+}
+
+.module-wrapper.productList .productBlockContainer .prod-item {
+    width: 100% !important;
+    padding: 0 15px;
+    margin-bottom: 40px;
+    & .card-figure {
+        display: block;
+        width: 100%;
+        & .prod-image {
+            display: inline-block;
+            width: 210px;
+            margin-bottom: 0;
+            vertical-align: top;
+
+            .card-img-container {
+                display: inline-block;
+            }
+            & > a{
+                max-height: 280px;
+              }
+            & .btnATC,
+            .star-rating {
+                display: none !important;
+            }
+            .btn-compare {
+                display: none;
+            }
+            @media (max-width: 480px) {
+                width: 40%;
+                min-width: 40%;
+                margin-right: 0;
+                & .btnQV {
+                    display: none;
+                }
+            }
+        }
+        & .prod-desc {
+            display: inline-block;
+            width: calc(100% - 210px);
+            text-align: left;
+            vertical-align: top;
+            padding-left: 30px;
+
+            @media (max-width: 480px){
+                width: 60%;
+                padding-left: 20px;
+            }
+            & h4.prod-name {
+                margin-bottom: 10px;
+            }
+            & .prod-summary {
+                display: block;
+                & p {
+                    color: stencilColor('color-textBase');
+                    margin-bottom: 12px;
+                    font-size: 12px;
+                }
+            }
+            & .star-rating {
+                display: block !important;
+            }
+            & .btnATC {
+                display: inline-block !important;
+                margin-right: 40px;
+                width: auto;
+                min-width: 260px;
+                @media (max-width: 991px) {
+                    width: 100%;
+                    min-width: auto;
+                    margin-bottom: 25px;
+                }
+            }
+            & a.btnWL {
+                display: inline-flex;
+                margin-right: 20px;
+                
+                & > i {
+                  vertical-align: middle;
+                  position: relative;
+                  line-height: 21px;
+                  font-size: 16px;
+                    }
+               & > span {
+                  display: inline;
+                  font-weight: 500;
+                  font-size: fontSize("base");
+                  letter-spacing: 0.02em;
+                  vertical-align: middle;
+                  margin-left: 8px;
+                  border-bottom: 1px dotted #000;
+                    color: #2d2d2d;
+                    font-size: 12px;
+               }
+               @media(min-width: 481px) {
+                display: none;
+               }
+            }
+            & .btn-compare {
+                display: inline-block;
+                position: static;
+                font-style: normal;
+                margin-top: 15px;
+                & label {
+                    font-weight: 500;
+                    color: #2d2d2d;
+                    font-size: 12px;
+                    &::before {
+                        top: 1;
+                    }
+                    &::after {
+                        top: 1px;
+                    }
+                    &:hover span {
+                        color: #000;
+                        border-bottom: 1px dotted #000;
+                    }
+
+                    .icon-compare {
+                        width: 20px;
+                        height: 20px;
+                        fill: #2d2d2d;
+                        display: none;
+                    }
+                }
+            }
+            & [data-product-option-change] > div[data-product-attribute="swatch"] {
+                text-align: left;
+                margin-top: 20px;
+            }
+        }
+    }
+    & + .prod-item > .card {
+        padding-top: 40px;
+        border-top: 1px solid #ccc;
+    }
+
+    @media(max-width: 480px) {
+        padding: 0 10px;
+    }
+}

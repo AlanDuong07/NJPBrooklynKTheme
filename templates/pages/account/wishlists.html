@@ -1,0 +1,23 @@
+---
+products:
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+---
+
+{{#partial "page"}}
+{{#if settings.show_wishlist}}
+<div class="container">
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+    <div class="account account--fixedLarge">
+        <h2 class="page-heading">{{lang 'account.wishlists.heading' }}</h2>
+        {{> components/account/navigation account_page='wishlists'}}
+        {{> components/account/wishlist-list}}
+    </div>
+</div>
+{{/if}}
+{{/partial}}
+{{> layout/base}}

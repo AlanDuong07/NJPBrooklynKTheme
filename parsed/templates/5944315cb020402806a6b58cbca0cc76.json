@@ -1,0 +1,3 @@
+{
+  "components/halothemes/options-2/input-numbers": "<div class=\"form-field\" data-product-attribute=\"input-number\">\n    <input class=\"form-input\" type=\"number\" id=\"ed_attribute_number_{{id}}\" {{#unless this.integer_only}}step=\"any\"{{/unless}} name=\"attribute[{{this.id}}]\" value=\"{{this.prefill}}\" {{#if required}}required{{/if}}>\n</div>\n"
+}

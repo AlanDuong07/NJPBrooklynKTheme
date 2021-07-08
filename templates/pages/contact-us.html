@@ -1,0 +1,60 @@
+---
+products:
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+---
+
+{{#partial "page"}}
+
+<!-- BEGIN Google Map -->
+{{#if theme_settings.halothemes_contact_us_map}}
+    {{> components/halothemes/contact-us-map}}
+{{/if}}
+<!-- END Google Map -->
+
+    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<div class="container">
+
+
+    <main class="page">
+
+        <h1 class="page-heading">{{page.title}}</h1>
+
+        {{#if page.sub_pages}}
+            <nav class="navBar" aria-label="Navigation Sub Pages">
+                <ul class="navBar-section">
+                    {{#each page.sub_pages}}
+                        <li class="navBar-item"><a class="navBar-action" href="{{url}}">{{title}}</a></li>
+                    {{/each}}
+                </ul>
+            </nav>
+        {{/if}}
+
+
+        <div class="page-content page-content--centered">
+            <div class="row">
+                <div class="col-sm-5 col-sm-push-7 col-md-5 col-md-push-7">
+                    <!-- BEGIN Store Localtion -->
+                    {{> components/halothemes/contact-store-location}}
+                    <!-- END Store Localtion -->
+                </div>
+                <div class="col-sm-7 col-sm-pull-5 col-md-7 col-md-pull-5">
+                    {{#if forms.contact.success}}
+                        {{{lang 'forms.contact_us.successful' shopPath=urls.home}}}
+                    {{else}}
+                        {{{page.content}}}
+                        {{> components/page/contact-us-form}}
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+
+    </main>
+</div>
+{{/partial}}
+
+{{> layout/base}}

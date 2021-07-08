@@ -1,0 +1,61 @@
+---
+products:
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+---
+
+{{#partial "page"}}
+{{#if settings.account_creation_enabled}}
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<div class="container">
+    <div class="login">
+        <h1 class="page-heading">{{lang 'common.login' }}</h1>
+        {{#if forms.login.error}}
+            {{> components/common/alert-error forms.login.error}}
+        {{/if}}
+        {{#if forms.login.success}}
+            {{> components/common/alert-success forms.login.success}}
+        {{/if}}
+        <div class="login-row row">
+            <form class="login-form form col-sm-6" action="{{urls.auth.check_login}}" method="post">
+                <div class="form-field">
+                    <label class="form-label" for="login_email">{{lang 'login.field_email'}} <small>{{lang 'common.required' }}</small></label>
+                    <input class="form-input" name="login_email" id="login_email" type="email">
+                </div>
+                <div class="form-field">
+                    <label class="form-label" for="login_pass">{{lang 'login.field_password'}} <small>{{lang 'common.required' }}</small></label>
+                    <input class="form-input" id="login_pass" type="password" name="login_pass">
+                </div>
+                <div class="form-actions">
+                    <input type="submit" class="btn btn-primary" value="{{lang 'login.submit_value' }}">
+                    <a class="forgot-password" href="{{urls.auth.forgot_password}}">{{lang 'login.forgot_password' }}</a>
+                </div>
+            </form>
+            <div class="new-customer col-sm-6">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2 class="panel-title">{{lang 'login.new_customer.heading' }}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p class="new-customer-intro">{{lang 'login.new_customer.intro' }}</p>
+                        <ul class="new-customer-fact-list">
+                            <li class="new-customer-fact">{{lang 'login.new_customer.fact1' }}</li>
+                            <li class="new-customer-fact">{{lang 'login.new_customer.fact2' }}</li>
+                            <li class="new-customer-fact">{{lang 'login.new_customer.fact3' }}</li>
+                            <li class="new-customer-fact">{{lang 'login.new_customer.fact4' }}</li>
+                            <li class="new-customer-fact">{{lang 'login.new_customer.fact5' }}</li>
+                        </ul>
+                        <a href="{{urls.auth.create_account}}"><button class="btn btn-checkout">{{lang 'login.new_customer.create_account' }}</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/if}}
+{{/partial}}
+{{> layout/base}}

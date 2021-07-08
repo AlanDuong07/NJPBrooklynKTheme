@@ -1,0 +1,73 @@
+// =============================================================================
+// SOCIAL LINKS (CSS)
+// =============================================================================
+.social-icons {
+    margin: 0;
+    margin-top: 2px;
+}
+
+.social-icons li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 24px;
+    margin-bottom: 12px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.social-icons a {
+    background-color: transparent;
+    border-radius: 50%;
+    text-align: center;
+    & svg {
+        width: 16px;
+        fill: #fff;
+    }
+    &:hover {
+       background-color: transparent;
+       border-bottom: 0 !important;
+    }
+    &.icon--facebook:hover svg {
+         fill: rgba(74, 115, 189, 1) !important;
+    }
+    &.icon--twitter:hover svg {
+         fill: rgba(70, 176, 226, 1) !important;
+    }
+    &.icon--google:hover svg {
+         fill: rgba(234, 59, 2, 1) !important;
+    }
+    &.icon--instagram:hover svg {
+         fill: rgba(251, 51, 88, 1) !important;
+    }
+    &.icon--rss:hover svg {
+         fill: rgba(249, 188, 46, 1) !important;
+    }
+    &.icon--pinterest:hover svg {
+         fill: rgba(204, 33, 39, 1) !important;
+    }
+    &.icon--tumblr:hover svg {
+         fill: rgba(51, 70, 93, 1) !important;
+    }
+    &.icon--youtube:hover svg {
+         fill: rgba(207, 52, 39, 1) !important;
+    }
+    &.icon--linkedin:hover svg {
+         fill: rgba(0, 119, 181, 1) !important;
+    }
+    &.icon--stumbleupon:hover svg {
+         fill: rgba(235, 73, 36, 1) !important;
+    }
+}
+
+.black-icons .social-icons a {
+    background-color: transparent;
+    & svg {
+        fill: #000;
+    }
+    &:hover{
+        & svg{
+            fill: #2d2d2d !important;
+        }
+    }
+}

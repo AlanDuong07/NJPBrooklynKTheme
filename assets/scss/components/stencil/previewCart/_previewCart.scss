@@ -1,0 +1,156 @@
+// =============================================================================
+// PREVIEW CART (CSS)
+// =============================================================================
+//
+// 1. Override server-generated inline-css
+//
+// -----------------------------------------------------------------------------
+#previewModal {
+   @media (min-width: 768px) and (max-width: 991px) {
+      max-width: 768px;
+   }
+}
+
+#previewModal .previewCart {
+   display: flex;
+   @media (max-width: 600px) {
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+   }
+   & .productView {
+      width: calc(100% - 270px);
+      padding-right: 50px;
+      display: flex;
+      @media (max-width: 767px) {
+         flex-wrap: wrap;
+      }
+      @media (max-width: 600px) {
+         width: 100%;
+         padding-right: 0;
+      }
+      & .productView-image {
+         width: 210px;
+         max-height: 270px;         
+         & img:hover {
+            cursor: default;
+         }
+         @media (max-width: 991px) {
+            width: 120px;
+            max-height: 120px;
+         }
+         @media (max-width: 767px) {
+            width: 100%;
+            max-height: 100%;
+         }
+         @media (max-width: 600px) {
+            & img {
+               width: auto;
+               max-height: 150px;
+            }
+         }
+      }
+      & .productView-details {
+         width: calc(100% - 270px);
+         padding-left: 30px;
+         & .productView-brand {
+            text-transform: none;
+            font-size: 13px;
+            padding-top: 15px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            color: #000;
+         }
+         & .productView-title {
+            margin: 0;
+            font-size: fontSize("base");
+            font-weight: 500;
+            line-height: 22px;
+            letter-spacing: 0.02em;
+            padding-bottom: 12px;
+            font-family: stencilFontFamily('card-title-font'), Arial, Helvetica, sans-serif;
+         }
+         & .productView-price {
+            font-size: 16px;
+            padding-bottom: 20px;
+            span{
+               font-weight: 500;
+            }
+         }
+         & .productView-info {
+            padding-bottom: 0;
+            & .productView-info-name {
+               width: 50px;
+            }
+            & .productView-info-value {
+               margin-bottom: 0.5rem;
+               padding-top: 0;
+            }
+         }
+         @media (max-width: 991px) {
+            width: calc(100% - 120px);
+         }
+         @media (max-width: 767px) {
+            width: 100%;
+            padding-left: 0;
+            padding-top: 15px;
+         }
+      }
+   }
+   & .previewCartCheckout {
+      width: 270px;
+      text-align: center;
+      @media (max-width: 600px) {
+         width: 100%;
+         padding-bottom: 30px;
+      }
+      & .btn {
+         width: 100%;
+         max-width: 100%;
+         text-align: center;
+         margin-bottom: 13px;
+      }
+      & .RemoteCheckout > p {
+         margin-bottom: 10px;
+      }
+      p[data-cart-quantity] {
+         padding-top: 2px;
+         margin-bottom: 15px;
+      }
+      & .previewCartCheckout-additionalCheckoutButtons {
+         padding-bottom: 10px;
+
+         .CheckoutButton {
+           margin-bottom: spacing("base");
+
+           &:last-child {
+               margin-bottom: 0;
+           }
+       }
+      }
+      & .previewCartCheckout-subtotal {
+         font-weight: 500;
+         color: #000;
+         padding-bottom: 0.5rem;
+         margin-bottom: 1rem;
+         border-bottom: 1px solid #dcdcdc;
+         & .previewCartCheckout-price {
+            display: block;
+            font-size: 22px;
+            font-family: $fontFamily-sans;
+            font-weight: 700;
+            padding: 13px 0 15px;
+         }
+      }
+      & .previewCartAction-checkoutMultiple {
+         padding-top: 0;
+         padding-bottom: 15px;
+         & a {
+            border-bottom: 1px dotted #000;
+            &:hover {
+               border-color: $anchor-font-color-hover;
+            }
+         }
+      }
+   }
+}
+

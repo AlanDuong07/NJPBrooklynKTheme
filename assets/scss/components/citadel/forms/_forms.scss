@@ -1,0 +1,622 @@
+// =============================================================================
+// FORMS (CSS)
+// =============================================================================
+
+
+// Form variants
+// -----------------------------------------------------------------------------
+
+.form--hiddenLabels {
+
+    .form-label {
+        @include u-hidden("visually");
+    }
+}
+.form-label {
+    font-weight: 600;
+    font-family: $fontFamily-sans;
+    letter-spacing: 0.05em;
+    font-size: fontSize("base");
+    margin-bottom: 10px;
+}
+.form-field{
+    margin-bottom: 20px;
+}
+.form-input{
+    height: 42px;
+}
+[data-contact-form] input.form-input{
+    max-width: 470px;
+}
+[data-contact-form] textarea.form-input{
+    max-width: 570px;
+}
+// Citadel inline messages
+// -----------------------------------------------------------------------------
+
+.form-inlineMessage {
+    display: block;
+}
+
+
+// Citadel field states
+// -----------------------------------------------------------------------------
+
+.form-field--error {
+
+    .form-input {
+        float: none;
+    }
+
+    .form-inlineMessage {
+
+        // scss-lint:disable NestingDepth
+        &:before {
+            background: $form-error-icon no-repeat;
+            background-size: $form-inlineMessage-backgroundSize;
+            content: "";
+            display: inline-block;
+            height: $form-error-icon-height;
+            left: $form-error-icon-left;
+            margin-right: $form-error-icon-marginRight;
+            position: relative;
+            top: $form-error-icon-top;
+            width: $form-error-icon-width;
+        }
+    }
+}
+
+.form-field--success {
+
+    .form-input[type="text"] {
+        background: {
+            image: $form-success-icon;
+            position: right $form-success-icon-right center;
+            repeat: no-repeat;
+        }
+        padding-right: $form-success-input-paddingRight;
+    }
+}
+
+
+// Citadel checkbox/radio positioning
+// -----------------------------------------------------------------------------
+
+.form-checkbox,
+.form-radio {
+
+    + .form-label {
+
+        // scss-lint:disable NestingDepth
+        &:last-child {
+            display: block;
+            margin-bottom: $form-checkRadio-label-last-marginBottom;
+        }
+
+        &::after {
+            top: 2px;
+        }
+
+        &::before {
+            top: 1px;
+        }
+    }
+}
+
+
+// Citadel form-actions
+// -----------------------------------------------------------------------------
+
+.form-actions {
+    @include grid-row();
+    display: block;
+    //text-align: center;
+
+    @include breakpoint("small") {
+        margin-top: spacing("single");
+    }
+
+    .button,
+    input,
+    a {
+        vertical-align: top;
+        width: 100%;
+
+        @include breakpoint("small") {
+            margin-bottom: 0;
+            width: auto;
+        }
+
+        // scss-lint:disable NestingDepth
+        + .button,
+        + input,
+        + a {
+            margin-top: spacing("half");
+
+            @include breakpoint("small") {
+                margin: 0 0 0 spacing("half");
+            }
+        }
+        // scss-lint:enable NestingDepth
+    }
+}
+
+// Stencil form additions
+// -----------------------------------------------------------------------------
+//
+// 1. Order has been placed here so that if a form error is shown, it will
+//    appear before the button.
+//
+// -----------------------------------------------------------------------------
+
+.form-label--alternate {
+    font-weight: 600;
+    margin-bottom: spacing("half");
+    color: #000000;
+}
+
+.form-select--date {
+    width: initial;
+    margin-right: spacing("quarter");
+    margin-bottom: spacing("quarter");
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+
+.form-select--small,
+.form-select--date {
+    background-position: right;
+    background-size: auto;
+    font-size: fontSize("base");
+    height: $input-small-height;
+    line-height: 1rem;
+    max-width: 20rem;
+    padding: $input-small-padding;
+    padding-right: $select-small-paddingRight;
+    min-width: 90px;
+}
+
+.form-select--short {
+    max-width: 6rem;
+    width: 4.5rem;
+}
+
+.form-file {
+    margin-bottom: spacing("third");
+}
+
+.form-fileDescription {
+    color: color("greys", "light");
+    font-size: fontSize("smallest");
+}
+
+.form-field-group {
+    border: $input-border-width $input-border-style $input-border-color;
+    border-radius: $input-border-radius;
+    padding: spacing("single");
+}
+
+// This component should live inside a .form-row
+.form-column {
+    @include grid-column(12);
+
+    @include breakpoint("small") {
+        @include grid-column(6);
+    }
+}
+
+.form-prefixPostfix {
+
+    &.wrap {
+        flex-wrap: wrap;
+    }
+
+    .form-input,
+    .button {
+        display: block;
+        width: 100%;
+    }
+
+    .form-input {
+        @include breakpoint("large") {
+            width: auto;
+        }
+    }
+
+    .button {
+        @include breakpoint("medium") {
+            width: auto;
+        }
+    }
+
+    .form-inlineMessage {
+        margin-bottom: spacing("quarter");
+
+        @include breakpoint("large") {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.form-prefixPostfix-button--postfix {
+    // margin: spacing("half") 0 0;
+    order: 1; // 1
+
+    @include breakpoint("large") {
+        // margin: 0 0 0 spacing("half");
+        order: 0; // 1
+    }
+}
+
+
+// Increment field
+// -----------------------------------------------------------------------------
+
+.form-increment {
+    .button {
+        margin: 0;
+        padding: remCalc(3px) remCalc(5px);
+        width: 42px;
+        height: 42px;
+        border-color: #dedede;
+        font-size: 16px;
+        color: #000;
+        &[data-action="dec"] {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+         }
+         &[data-action="inc"] {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+         }
+        &:hover {
+            border-color: #000;
+        }
+    }
+}
+
+.form-input--incrementTotal {
+    border: 0;
+    display: inline-block;
+    font-size: fontSize("base");
+    height: auto;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    width: remCalc(52px);
+    min-width: 68px;
+    height: 42px;
+    border: 1px solid #dedede;
+    border-width: 1px 0;
+    border-radius: 0;
+    &:disabled {
+        border: transparent;
+    }
+}
+
+
+// Stencil form options
+// -----------------------------------------------------------------------------
+//
+// 1. Issue with FastClick JS library workaround: https://github.com/ftlabs/fastclick/issues/351
+// 2. Resetting font due to inline-block whitespace issue.
+//
+/*[data-product-attribute="swatch"],
+[data-product-attribute="set-rectangle"] {
+    margin-bottom: 0 !important;
+}*/
+[data-product-attribute="swatch"] .form-option {    
+    width: 38px;
+    height: 38px;
+    & > span {
+        position: static;
+    }
+}
+[data-product-attribute="set-rectangle"] .form-option {
+    min-width: 38px;
+    height: 38px;
+    text-align: center;
+    /*padding: 8px 7px 7px;*/
+}
+.form-option {
+    -webkit-border: 1px solid #dedede;
+    -moz-border: 1px solid #dedede;
+    border: 1px solid #dedede;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0; // 2
+    margin-bottom: 14px;
+    margin-right: 14px;
+    transition: all 0.15s ease;
+
+    &:hover {
+        border-color: #000;
+    }
+
+}
+
+.form-radio:checked + .form-option{
+    border-color: #000;
+    > span {
+        -webkit-box-shadow: inset 0px 0px 0px 2px rgba(0,0,0,1);
+        -moz-box-shadow: inset 0px 0px 0px 2px rgba(0,0,0,1);
+        box-shadow: inset 0px 0px 0px 2px rgba(0,0,0,1);
+        &.form-option-expanded{
+            box-shadow: none;
+        }
+    }
+}
+
+.form-option-variant {
+    display: inline-block;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: $body-fontSize; // 2
+    padding: 0 14px;
+    pointer-events: none; // 1
+    text-align: center;
+}
+
+.form-option-variant--color,
+.form-option-variant--pattern {
+    @include square(100%);
+    min-width: initial;
+    padding: 0;
+}
+
+.form-option-variant--pattern {
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+// Form input (small)
+// -----------------------------------------------------------------------------
+.form-input--small {
+    font-size: $input-small-fontSize;
+    height: $input-small-height;
+    line-height: 1rem;
+    padding: $input-small-padding;
+}
+
+
+// Form min/max input row
+// -----------------------------------------------------------------------------
+.form-minMaxRow {
+    @include clearfix();
+    margin-left: -$form-minMaxRow-column-gutter;
+    margin-right: -$form-minMaxRow-column-gutter;
+
+    .form-field {
+        @include grid-column(4);
+        margin-bottom: 0;
+        padding-left: $form-minMaxRow-column-gutter;
+        padding-right: $form-minMaxRow-column-gutter;
+    }
+
+    .button {
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+    }
+}
+
+
+// Form row modifications
+// -----------------------------------------------------------------------------
+//
+// 1. If there are more than 2 fields per form-row--half, clear the left of every
+// odd one.
+//
+// -----------------------------------------------------------------------------
+
+.form-row--half > .form-field:nth-child(odd) {
+    @include breakpoint("small") {
+        clear: left;
+    }
+}
+
+// Out of stock product attributes
+[data-product-attribute] {
+    .form-option {
+        overflow: hidden;
+        position: static;
+
+        // scss-lint:disable NestingDepth
+        &.unavailable {
+            //background-color: $productOptions-disable-background-color;
+            //opacity: $productOptions-disable-opacity;
+            position: relative;
+
+            &:before {
+                background-color: $productOptions-strikethrough-color;
+                content: "";
+                height: 1px;
+                left: 50%;
+                margin-left: -25px;
+                position: absolute;
+                top: 18px;
+                transform: rotate(-45deg);
+                width: 50px;
+            }
+        }
+    }
+}
+
+[data-product-attribute="set-radio"],
+[data-product-attribute="product-list"] {
+    .unavailable {
+        opacity: $productOptions-disable-opacity * 2;
+        text-decoration: line-through;
+    }
+}
+
+.gift-certificate-form {
+    .form-label {
+        float: left;
+        width: 195px;
+        margin-bottom: 0;
+        @media (max-width: 600px) {
+            width: 100%;
+            margin-bottom: 15px;
+            .note_optional {
+                margin-left: 0;
+                display: inline-block;
+            }
+            .form-actions {
+                margin-left: 0;
+            }
+        }
+    }
+    @media (min-width: 600px) {
+        .form-field {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+        
+    }
+    @media (min-width: 880px) {
+    .form-actions {
+            margin-left: 195px;
+            margin-top: 15px;
+        }
+    }
+}
+
+.form-radio-group {
+    max-width: 420px;
+    width: 100%;
+    float: left;
+    .form-label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+.form-textarea {
+    textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border-color: stencilColor('textarea-border-color');
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        &:focus {
+            border-color: stencilColor('textarea-border-color-active');
+        }
+    }
+    max-width: 378px;
+    width: 100%;
+    float: left;
+    @media (min-width: 991px) {
+        max-width: 570px;
+    }
+}
+
+.form-field-group {
+    max-width: 378px;
+    width: 100%;
+    float: left;
+}
+
+.form-input-item {
+    margin-bottom: 5px;
+}
+
+.form-input-group {
+    max-width: 378px;
+    width: 100%;
+    float: left;
+    .form-input {
+        width: 100%;
+    }
+    .form-inlineMessage {
+        margin-left: 0;
+    }
+}
+
+.note_optional {
+    font-weight: 500;
+    color: #848484;
+    opacity: 0.6;
+    font-weight: 400;
+    display: block;
+}
+
+.note_input {
+    font-weight: 500;
+    color: #848484;
+    opacity: 0.6;
+    clear: both;
+    margin-bottom: 0;
+}
+
+.form-check {
+    width: 100%;
+    margin-top: 15px;
+    .form-label {
+        float: none;
+        width: 100%;
+    }
+    .form-inlineMessage {
+        margin-left: 0;
+    }
+}
+
+* &::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    opacity: 1;
+    position: relative;
+    left: 0;
+    transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    visibility: visible;
+}
+
+* &::-moz-placeholder {
+    /* Firefox 19+ */
+    opacity: 1;
+    position: relative;
+    left: 0;
+    transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    visibility: visible;
+}
+
+* &:-ms-input-placeholder {
+    /* IE 10+ */
+    opacity: 1;
+    position: relative;
+    left: 0;
+    transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    visibility: visible;
+}
+
+* &:-moz-placeholder {
+    /* Firefox 18- */
+    opacity: 1;
+    position: relative;
+    left: 0;
+    transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    visibility: visible;
+}
+
+* &:focus::-webkit-input-placeholder {
+    opacity: 0;
+    left: 5%;
+    visibility: hidden;
+}

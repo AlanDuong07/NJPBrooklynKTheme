@@ -1,0 +1,14 @@
+
+{{#each categories}}
+  {{#if id '==' ../cateId}}
+     <section class="haloProductsByCategory" id="product-by-category-{{id}}" data-prod-by-cat-name="{{name}}" data-prod-by-cat-url="{{this.url}}">
+      <h2 class="module-heading"><span>{{name}}</span></h2>
+      <div class="category-products">
+          <div class="productBlockContainer productCarousel columns-4"></div>
+      </div>
+
+  </section>
+  {{/if}}
+{{/each}}
+
+

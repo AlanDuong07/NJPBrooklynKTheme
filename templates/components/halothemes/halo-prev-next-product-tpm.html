@@ -1,0 +1,21 @@
+<div class="card card-custom" data-product-id="{{product.id}}">
+    <div class="card-image">
+        <a class="card-link" href="{{product.url}}" aria-label="Link Go To This Product">
+            <div class="card-img-container">
+                <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage product.main_image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}">
+            </div>
+        </a>
+    </div>
+    <div class="card-content">
+        <h4 class="card-title">
+            <a {{#if theme_settings.card_title_type '==' 'clamp'}}class="clamp"{{/if}}{{#if theme_settings.card_title_type '==' 'clamp'}} style="-webkit-box-orient: vertical; -webkit-line-clamp: 1;"{{/if}} href="{{product.url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}} aria-label="Link Go To This Product">{{product.title}}</a>
+        </h4>
+        <div class="card-price" data-test-info-type="price">
+            {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                {{> components/products/price price=product.price}}
+            {{else}}
+                {{> components/common/login-for-pricing}}
+            {{/or}}
+        </div>
+    </div>
+</div>

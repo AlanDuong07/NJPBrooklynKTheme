@@ -1,0 +1,130 @@
+<div id="sticky_addtocart">
+    <div class="container">
+        <div class="item-wrap">
+            <div class="item product-info{{#each product.custom_fields}}{{#if name '===' '__countDown'}} has-countDown{{/if}}
+                {{/each}}{{#or theme_settings.countDownText theme_settings.product-countDown}} has-countDown{{/or}}">
+                <div class="product-wrapper">
+                    <div class="product-image">
+                        <span class="productContent-subTitle">{{lang 'common.selected'}}</span>
+                    </div>
+                    <div class="product-content">
+                        <h1 class="productView-title clamp" style="-webkit-box-orient: vertical;" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>       
+                    </div>
+                </div>
+            </div>
+            <div class="item count-down{{#each product.custom_fields}}{{#if name '===' '__countDown'}} has-countDown{{/if}}
+                {{/each}}{{#or theme_settings.countDownText theme_settings.product-countDown}} has-countDown{{/or}}">
+                {{#if theme_settings.enable-product-countDown}}
+                    {{#if theme_settings.product-countDown-type '==' 'all'}}
+                        {{#or theme_settings.countDownText theme_settings.product-countDown}}
+                            <div class="productCountDown">
+                                <span class="CountDownText"><svg class="CountDown-icon"><use xlink:href="#icon-clock"/></svg></span>
+                                {{#if theme_settings.product-countDown}}
+                                    <div class="countDowntimer2 product-count-down" data-count-down2="{{theme_settings.product-countDown}}"></div>
+                                {{/if}}
+                            </div>
+                        {{/or}}
+                    {{else}}
+                        {{#each product.custom_fields}}
+                            {{#if name '===' '__countDown'}}
+                                <div class="productCountDown">
+                                    <span class="CountDownText"><svg class="CountDown-icon"><use xlink:href="#icon-clock"/></svg></span>
+                                    <div class="countDowntimer2 product-count-down" data-count-down2="{{{value}}}"></div>
+                                </div>
+                            {{/if}}
+                        {{/each}}
+                    {{/if}}
+                {{/if}}
+            </div>
+            <div class="item item-right{{#each product.custom_fields}}{{#if name '===' '__countDown'}} has-countDown{{/if}}
+                {{/each}}{{#or theme_settings.countDownText theme_settings.product-countDown}} has-countDown{{/or}}">
+                <form class="form form-popup product-main" method="post" action="{{product.cart_url}}" enctype="multipart/form-data" data-cart-item-add-2>
+                    <input type="hidden" name="action" value="add">
+                    <input type="hidden" name="product_id" value="{{product.id}}"/>
+                    {{#each product.customizations}}
+                        {{{dynamicComponent 'components/products/customizations'}}}
+                    {{/each}}
+
+                    <div class="productView-price">
+                        {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                            {{> components/products/price price=product.price schema_org=schema}}
+                        {{else}}
+                            {{> components/common/login-for-pricing}}
+                        {{/or}}
+                    </div>
+                    {{#if product.can_purchase}}
+                        <div class="form-field form-field--increments increments-product">
+                            <label class="form-label form-label--alternate"
+                                 for="qty[]">{{lang 'products.quantity'}}</label>
+
+                            <div class="form-increment" data-quantity-change>
+                              <button class="button button--icon" data-action="dec">
+                                  <span class="is-srOnly">{{lang 'products.quantity_decrease'}}</span>
+                                  <i class="fa fa-angle-down"></i>
+                              </button>
+                              <input class="form-input form-input--incrementTotal"
+                                     id="{{product.id}}-qty[]"
+                                     name="qty[]"
+                                     type="tel"
+                                     value="{{#if product.min_purchase_quantity}}{{product.min_purchase_quantity}}{{else}}1{{/if}}"
+                                     data-quantity-min="{{product.min_purchase_quantity}}"
+                                     data-quantity-max="{{product.max_purchase_quantity}}"
+                                     min="1"
+                                     pattern="[0-9]*"
+                                     aria-live="polite">
+                              <button class="button button--icon" data-action="inc">
+                                  <span class="is-srOnly">{{lang 'products.quantity_increase'}}</span>
+                                  <i class="fa fa-angle-up"></i>
+                              </button>
+                            </div>
+                        </div>
+                    {{/if}}
+                    {{#if product.can_purchase}}
+                        {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                            <div class="form-action">
+                                <input id="form-action-addToCart2" data-wait-message="{{lang 'products.adding_to_cart'}}" class="button button--primary button--large themevale" type="button" value="{{#if product.pre_order}}{{lang 'products.pre_order'}}{{else}}{{lang 'products.add_to_cart'}}{{/if}}">
+
+                                {{#if product.options}}
+                                    <a href="javascript:void(0)" class="button button--primary button--large choose_options_add">
+                                        <span>{{lang 'products.choose_options'}}</span>
+                                    </a>
+                                {{/if}}
+                            </div>
+                             {{{snippet 'product_addtocart'}}}
+
+                        {{/or}}
+                    {{/if}}
+                    {{#if product.out_of_stock}}
+                        {{#if product.out_of_stock_message}}
+                            {{> components/common/alert-error product.out_of_stock_message}}
+                        {{else}}
+                            {{> components/common/alert-error (lang 'products.sold_out')}}
+                        {{/if}}
+                    {{/if}}
+                    {{#if product.options}}
+                        <div class="pop-up-option">
+                            <div class="container">
+                                <a href="javascript:void(0)" class="close">✕</a>
+                                <div class="data-product-name">
+                                    <h1 class="productView-title" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
+                                    <div class="productView-price">
+                                        {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                                            {{> components/products/price price=product.price schema_org=schema}}
+                                        {{else}}
+                                            {{> components/common/login-for-pricing}}
+                                        {{/or}}
+                                    </div>
+                                </div>
+                                <div class="data-product-option scrollbar" data-product-option-change-4>
+                                    {{#each product.options}}
+                                        {{{dynamicComponent 'components/halothemes/options-sticky-cart'}}}
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                    {{/if}}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

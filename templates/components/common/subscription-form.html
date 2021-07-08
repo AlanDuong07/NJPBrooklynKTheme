@@ -1,0 +1,18 @@
+<div id="footerSubcribeForm" class="{{#if theme_settings.halothemes_lazy_loading_effect}}wow fadeIn{{/if}}">
+    <h3>{{theme_settings.newsletter_popup_heading_1}}</h3>
+    <div class="desNewsletter">
+        <p>{{theme_settings.newsletter_popup_heading_2}}</p>
+    </div>
+    <form class="form" action="{{urls.subscribe.action}}" method="post" id="footerSubcribeFormSubmit">
+        <fieldset class="form-fieldset">
+            <input type="hidden" name="action" value="subscribe">
+            <input type="hidden" name="check" value="1">
+            <div class="form-field">
+                <div class="form-wrap">
+                    <input class="form-input" id="nl_email" name="nl_email" type="email" value="{{customer.email}}" placeholder="{{lang 'newsletter.email_placeholder'}}" aria-label="{{lang 'newsletter.email_placeholder'}}">
+                    <button type="submit" class="btn-subcribe" aria-label="Submit Button"><svg aria-hidden="true"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right-d"></use></svg></button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

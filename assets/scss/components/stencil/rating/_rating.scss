@@ -1,0 +1,29 @@
+// =============================================================================
+// RATING (CSS)
+// =============================================================================
+
+.fa.fa-star-o {
+    color: stencilColor("icon-ratingEmpty");
+}
+
+.fa.fa-star.color {
+    color: stencilColor("icon-ratingFull");
+}
+
+
+// Small rating
+// -----------------------------------------------------------------------------
+//
+// 1. Vertically aligns stars to container. Icons are off by default.
+//    Icons are all vertically aligned to middle, however middle is not middle,
+//    and therefore need to be adjusted to actually sit at middle.
+//
+// -----------------------------------------------------------------------------
+
+.rating--small {
+    display: inline-block;
+
+    i.fa {
+        font-size: 14px;
+    }
+}

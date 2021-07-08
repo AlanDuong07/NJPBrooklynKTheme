@@ -1,0 +1,310 @@
+// =============================================================================
+// Banners Component
+// =============================================================================
+
+
+.fluid-grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.banner-item {
+    padding: 0 15px 30px;
+    & a {
+        position: relative;
+        display: block;
+        text-align: center;
+        overflow: hidden;
+        & img:not(.overlay) {
+            -moz-transition: 1s ease 0s;
+            -webkit-transition: 1s ease 0s;
+            transition: 1s ease 0s;
+        }
+        & img.overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: none !important;
+            transform: none !important;
+        }
+        &:hover {
+            img:not(.overlay) {
+                -moz-transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                -o-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+        }
+    }
+
+}
+
+
+/*Home Top Banners*/
+
+#homeTopBanners {
+    padding-bottom: 5px;
+    & .banner-item {
+        width: 50%;
+        @media (max-width: 480px) {
+            width: 100%;
+            max-width: 370px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+
+/*Home Bottom Banners*/
+#homeBottomBanners {
+    padding-bottom: 40px;
+    & .banner-item {
+        padding: 0 15px 30px;
+        @media (max-width: 480px) {
+            width: 100%;
+            max-width: 370px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &.wide {
+            width: 66.67%;
+            @media (max-width: 480px) {
+                width: 100%;
+                max-width: 370px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+}
+
+#instafeed .feed-item .feed-itemImg,
+#homeTopCustomBlock .banner-item .banner-item-img > a,
+#homeBottomCustomBlock .banner-item .banner-item-img > a {
+    position: relative;
+    overflow: hidden;
+    display: block;
+
+    & img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        height: auto;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 0;
+    }
+}
+
+#homeTopCustomBlock .banner-item:hover .banner-item-img > a img:not(.overlay),
+#homeBottomCustomBlock .banner-item:hover .banner-item-img > a img:not(.overlay) {
+    -webkit-transform: translate(-50%, -50%) scale(1.1);
+    -moz-transform: translate(-50%, -50%) scale(1.1);
+    -ms-transform: translate(-50%, -50%) scale(1.1);
+    -o-transform: translate(-50%, -50%) scale(1.1);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+#instafeed .feed-item .feed-itemImg:after {
+    padding-bottom: 100%;
+}
+
+#homeTopCustomBlock .banner-item .banner-item-img > a:after {
+    padding-bottom: 81.081%;
+}
+
+#homeBottomCustomBlock .banner-item .banner-item-img > a:after {
+    padding-bottom: 82.457%;
+}
+
+#homeBrands .brand-item {
+    position: relative;
+    overflow: hidden;
+    display: block;
+
+    & img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        -o-object-fit: none;
+        object-fit: none;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 0;
+        padding-bottom: 20%;
+    }
+}
+
+@media(min-width: 552px) {
+    .heroCarousel .heroCarousel-image-wrap {
+        position: relative;
+        overflow: hidden;
+        display: block;
+
+        & img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: auto;
+            height: auto;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 0;
+            padding-bottom: 37.363%;
+        }
+    }
+}
+
+#homeBrands .owl-carousel:not(.owl-loaded) {
+    font-size: 0;
+    display: block;
+    overflow: hidden;
+
+    .brand-item {
+        font-size: 1rem;
+        width: 20%;
+        display: inline-block;
+        vertical-align: top;
+
+        &:nth-child(n+6) {
+            display: none;
+        }
+    }
+}
+
+#instafeed.owl-carousel:not(.owl-loaded) {
+    font-size: 0;
+    display: block;
+    overflow: hidden;
+
+    .feed-item-wrap {
+        font-size: 1rem;
+        width: 25%;
+        display: inline-block;
+        vertical-align: top;
+
+        &:nth-child(n+5) {
+            display: none;
+        }
+    }
+}
+
+#homeTopSellersProducts .productCarousel.owl-carousel:not(.owl-loaded) {
+    font-size: 0;
+    display: block;
+    overflow: hidden;
+
+    .prod-item  {
+        font-size: 1rem;
+        width: 25%;
+        display: inline-block;
+        vertical-align: top;
+
+        &:nth-child(n+5) {
+            display: none;
+        }
+    }
+}
+
+@media(max-width: 1199px) and (min-width: 768px) {
+    #homeBrands .owl-carousel:not(.owl-loaded) .brand-item {
+        width: 25%;
+
+        &:nth-child(n+5) {
+            display: none;
+        }
+    }
+}
+@media(max-width: 991px) {
+    #homeTopSellersProducts .productCarousel.owl-carousel:not(.owl-loaded) .prod-item {
+        width: 33.33%;
+
+        &:nth-child(n+4) {
+            display: none;
+        }
+    }
+}
+@media(max-width: 767px) and (min-width: 560px) {
+    #homeBrands .owl-carousel:not(.owl-loaded) .brand-item {
+        width: 33.33%;
+
+        &:nth-child(n+4) {
+            display: none;
+        }
+    }
+
+    #instafeed.owl-carousel:not(.owl-loaded) .feed-item-wrap {
+        width: 33.33%;
+
+        &:nth-child(n+4) {
+            display: none;
+        }
+    }
+}
+@media(max-width: 640px) {
+    #homeTopSellersProducts .productCarousel.owl-carousel:not(.owl-loaded) .prod-item {
+        width: 50%;
+
+        &:nth-child(n+3) {
+            display: none;
+        }
+    }
+}
+@media(max-width: 559px) {
+    #homeBrands .owl-carousel:not(.owl-loaded) .brand-item {
+        width: 50%;
+
+        &:nth-child(n+3) {
+            display: none;
+        }
+    }
+
+    #instafeed.owl-carousel:not(.owl-loaded) .feed-item-wrap {
+        width: 50%;
+
+        &:nth-child(n+3) {
+            display: none;
+        }
+    }
+}
+@media(max-width: 419px) {
+    #homeBrands .owl-carousel:not(.owl-loaded) .brand-item {
+        width: 100%;
+
+        &:nth-child(n+2) {
+            display: none;
+        }
+    }
+}

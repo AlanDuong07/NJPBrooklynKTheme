@@ -1,0 +1,43 @@
+<!-- Begin Halo Newsletter Popup -->
+<div id="halo-newsletter-popup" class="hide">
+    <div class="popup-overlay"></div>
+    <div class="newsletter-popup-container">
+        <div class="newsletter-popup-inner">
+            <button title="Close" type="button" class="popup-close" data-close-newsletter-popup>
+                <span aria-hidden="true"><svg><use xlink:href="#icon-close"></use></svg></span>
+            </button>
+            <div class="newsletter-left">
+                <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/{{theme_settings.newsletter_popup_img}}" alt="Newsletter Image">
+            </div>
+            <div class="newsletter-right">
+                <h2 class="newsletter-heading">{{theme_settings.newsletter_popup_heading_1}}</h2>
+                <p class="newsletter-sub-heading">{{theme_settings.newsletter_popup_heading_2}}</p>
+                <div id="popupSubcribeForm">
+                    <form class="form" action="{{urls.subscribe.action}}" method="post" id="popupSubcribeFormSubmit">
+                        <fieldset class="form-fieldset">
+                            <input type="hidden" name="action" value="subscribe">
+                            <input type="hidden" name="check" value="1">
+                            <input type="hidden" name="nl_first_name" value="{{customer.name}}"> 
+                            <div class="form-field">
+                                <div class="form-wrap">
+                                    <input class="form-input" id="nls_email" name="nl_email" type="email" placeholder="{{lang 'newsletter.email_placeholder'}}" aria-label="{{lang 'newsletter.email_placeholder'}}">
+                                    <button type="submit" class="btn-subcribe" aria-label="Submit Button">
+                                        <svg aria-hidden="true">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-right-d"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+                <p class="newsletter-message">{{theme_settings.newsletter_popup_message}}</p>
+                <div class="black-icons">
+                    {{> components/common/social-links}}
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Halo Newsletter Popup -->

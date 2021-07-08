@@ -1,0 +1,43 @@
+<section class="productCarousel owl-carousel"
+    {{#if settings.data_tag_enabled}} data-list-name="Related Products" {{/if}}
+    data-owl='{
+        "nav": true,
+        "dots": false,
+        "items": {{columns}},
+        "margin": 30,
+        "slideBy": {{columns}},
+        "responsive": {
+         "0": {
+            "items": 2,
+            "slideBy": 2,
+            "margin": 20
+         },
+         "480": {
+            "items": 2,
+            "slideBy": 2
+         },
+         "641": {
+            "items": 3,
+            "slideBy": 3
+         },
+         "768": {
+            "items": 2,
+            "slideBy": 2
+         },
+         "992": {
+            "items": 3,
+            "slideBy": 3
+         },
+         "1200": {
+            "items": {{columns}},
+            "slideBy": {{columns}}
+         }
+      },
+      "responsiveRefreshRate": 0
+    }'>
+    {{#each products}}
+    <div class="prod-item">
+        {{> components/products/card theme_settings=../theme_settings customer=../customer productsnew=../productsnew settings=../settings event="list" position=(add @index 1)}}
+    </div>
+    {{/each}}
+</section>

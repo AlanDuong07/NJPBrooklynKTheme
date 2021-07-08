@@ -1,0 +1,3 @@
+{
+  "components/halothemes/options-2/set-select-custom": "<div class=\"form-field\" data-product-attribute=\"set-select\" data-product-option-id=\"{{id}}\">\r\n    <select class=\"form-select\" name=\"attribute[{{this.id}}]\" id=\"ed_attribute_select_{{id}}\" {{#if required}}required{{/if}}>\r\n        <option value=\"\">{{lang 'products.choose_options'}}</option>\r\n        {{#each this.values}}\r\n            <option data-product-attribute-value=\"{{id}}\" value=\"{{id}}\" data-title=\"{{label}}\" data-index=\"{{@index}}\" {{#if selected}}selected data-default{{/if}}>{{label}}</option>\r\n        {{/each}}\r\n    </select>\r\n</div>\r\n"
+}

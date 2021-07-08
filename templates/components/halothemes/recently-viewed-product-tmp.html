@@ -1,0 +1,38 @@
+<div class="item" data-target="img-1" data-id="product-{{product.id}}">
+  <a href="{{product.url}}" class="recent_item_url">
+      <img src="{{getImage product.main_image 'thumb_size' (cdn ../theme_settings.default_image_product)}}" alt="{{product.main_image.alt}}" />
+  </a>
+  <div class="second-info">
+    <div class="first product-item" data-product-id="product-{{product.id}}">
+      <div class="product-vendor">
+        <a href="{{product.brand.url}}" title="{{product.brand.name}}">{{product.brand.name}}</a>                
+      </div>
+      <a class="product-title product-grid-image" href="{{product.url}}">
+          <span class="lang1">{{product.title}}</span>
+      </a>
+      <div class="prod-price" data-test-info-type="price">
+          {{#or customer (if theme_settings.restrict_to_login '!==' true)}}                    
+              {{#if price_range}}
+                  {{> components/products/price-range}}
+              {{else}}
+                  {{> components/products/price price=product.price customer=customer}}
+              {{/if}}
+          {{else}}
+              {{> components/common/login-for-pricing}}
+          {{/or}}
+      </div>
+
+      {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+            
+          {{#if product.options}}
+              <a href="{{product.url}}" class="button button--primary" data-product-id="{{product.id}}">{{lang 'products.choose_options'}}</a>
+          {{else}}
+              {{#if product.can_purchase }}
+                  <a href="/cart.php?action=add&product_id={{product.id}}" class="button button--primary">{{lang 'products.add_to_cart'}}</a>
+              {{/if}}
+          {{/if}}
+      {{/or}}
+    </div>
+    <a class="text-no-underline second" href="{{product.url}}"></a>
+  </div>
+</div>

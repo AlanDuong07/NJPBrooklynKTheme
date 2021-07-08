@@ -1,0 +1,34 @@
+---
+products:
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+---
+{{#partial "page"}}
+        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<div class="container">
+    <div class="account">
+        <h2 class="page-heading">{{lang 'account.recent_items.heading' }}</h2>
+        {{> components/account/navigation account_page='recent_items'}}
+
+        {{#unless customer.recently_viewed_products.items}}
+            {{> components/common/alert-info (lang 'account.recent_items.no_items')}}
+        {{/unless}}
+
+        <form action="{{urls.compare}}" method="post">
+            {{> components/products/grid products=customer.recently_viewed_products.items show_compare=customer.recently_viewed_products.show_compare columns=4 productsnew=products.new}}
+            <div class="product-pagination bottom">
+
+                {{#if customer.recently_viewed_products.show_compare}}
+                <div class="compare-link">
+                    <a class="btn btn-alt" href="{{urls.compare}}" data-compare-nav><span class="compare-text">Compare Selected</span><span class="countPill countPill--positive countPill--alt"></span></a>
+                </div>
+                {{/if}}
+
+            </div>
+
+       </form>
+
+    </div>
+</div>
+{{/partial}}
+{{> layout/base}}

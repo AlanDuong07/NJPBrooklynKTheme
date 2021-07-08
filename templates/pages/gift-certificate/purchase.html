@@ -1,0 +1,137 @@
+---
+products:
+    top_sellers:
+         limit: {{theme_settings.side_top_products_count}}
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.side_featured_products_count}}
+---
+{{#partial "page"}}
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<div class="container">
+<h1 class="page-heading">{{lang 'gift_certificate.heading' }}</h1>
+<div class="row">
+{{> components/gift-certificate/navigation gift_page='purchase'}}
+<main class="account account--fixed col-sm-8 col-md-9">     
+     <p class="info">
+       {{lang 'forms.gift_certificate.purchase.intro' }}
+    </p>
+    {{#each forms.gift_certificate.errors}}
+        {{> components/common/alert-error this}}
+    {{/each}}
+
+    <form class="form gift-certificate-form" method="post" id="gift-certificate-form" action="{{forms.gift_certificate.action}}">                    
+        {{#if forms.gift_certificate.cart_item_id}}
+        <input type="hidden" name="cartitemid" value="{{forms.gift_certificate.cart_item_id}}"> {{/if}}
+        <div class="form-row">
+            <div class="form-field">
+                <label class="form-label form-label--inlineSmall" for="to_name">
+                    <small>{{lang 'common.required' }}</small>{{lang 'forms.gift_certificate.purchase.to_name' }}
+                </label>
+                <div class="form-input-group">
+                    <input type="text" class="form-input" name="to_name" id="to_name" value="{{forms.gift_certificate.values.to_name}}">
+                </div>
+            </div>
+            <div class="form-field">
+                <label class="form-label form-label--inlineSmall" for="to_email">
+                    <small>{{lang 'common.required' }}</small>{{lang 'forms.gift_certificate.purchase.to_email' }}
+                </label>
+                <div class="form-input-group">
+                    <input type="text" class="form-input" name="to_email" id="to_email" value="{{forms.gift_certificate.values.to_email}}">
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-field">
+                <label class="form-label form-label--inlineSmall" for="from_name">
+                    <small>{{lang 'common.required' }}</small>{{lang 'forms.gift_certificate.purchase.from_name' }}
+                </label>
+                <div class="form-input-group">
+                    <input type="text" class="form-input" name="from_name" id="from_name" value="{{forms.gift_certificate.values.from_name}}">
+                </div>
+            </div>
+            <div class="form-field">
+                <label class="form-label form-label--inlineSmall" for="from_email">
+                    <small>{{lang 'common.required' }}</small>{{lang 'forms.gift_certificate.purchase.from_email' }}
+                </label>
+                <div class="form-input-group">
+                    <input type="text" class="form-input" name="from_email" id="from_email" value="{{forms.gift_certificate.values.from_email}}">
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <fieldset class="form-fieldset ">
+                <div class="form-field">
+                    <label class="form-label" for="message">{{lang 'forms.gift_certificate.purchase.message' }}
+                        <span class="note_optional">{{lang 'forms.gift_certificate.purchase.optional' }}</span>
+                    </label>
+                    <div class="form-textarea">
+                        <textarea name="message" id="message" rows="8">{{forms.gift_certificate.values.message}}</textarea>
+                        <p class="note_input">{{lang 'forms.gift_certificate.purchase.note_optional'}}</p>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="form-row">
+            <fieldset class="form-fieldset ">
+                {{#if forms.gift_certificate.can_use_custom_amount }}
+                <div class="form-field">
+                    <label class="form-label form-label--inlineSmall" for="certificate_amount">
+                        <small>{{lang 'common.required' }}</small>{{lang 'forms.gift_certificate.purchase.amount' }}
+                    </label>
+                    <div class="form-input-group">
+                        <div class="form-input-item">
+                            <input type="text" data-min="{{forms.gift_certificate.minimum.value}}" data-max="{{forms.gift_certificate.maximum.value}}" data-min-formatted="{{forms.gift_certificate.minimum.formatted}}" data-max-formatted="{{forms.gift_certificate.maximum.formatted}}" class="form-input" name="certificate_amount" id="certificate_amount" value="{{forms.gift_certificate.values.amount.value}}">
+                        
+                        </div>
+                        <p class="note_input">{{lang 'forms.gift_certificate.purchase.note_amount'}}</p>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-checkbox" name="agree2" id="agree2" {{#if forms.gift_certificate.editing}} checked{{/if}}>
+                            <label class="form-label" for="agree2">{{lang 'forms.gift_certificate.purchase.agree2' }}</label>
+                        </div>
+                    </div>
+                </div>
+                {{else}}
+                <div class="form-field">
+                    <label class="form-label form-label--inlineSmall" for="selected_amount">
+                        <small>{{lang 'common.required' }}</small>{{lang 'forms.gift_certificate.purchase.amount' }}
+                    </label>
+                    <select class="form-select" name="selected_amount" id="selected_amount">
+                        {{#each forms.gift_certificate.amount_options}}
+                        <option value="{{value}}">{{formatted}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                {{/if}} {{#if forms.gift_certificate.expires_in_days }}
+                <div class="form-field">
+                    <input type="checkbox" class="form-checkbox" name="agree" id="agree">
+                    <label class="form-label" for="agree">{{lang 'forms.gift_certificate.purchase.agree' days=forms.gift_certificate.expires_in_days}}</label>
+                </div>
+                {{/if}}
+            </fieldset>
+            <fieldset class="form-fieldset">
+                <div class="form-field ">
+                    <label class="form-label form-label--inlineSmall">
+                        <small>{{lang 'common.required' }}</small>{{lang 'forms.gift_certificate.purchase.theme' }}
+                    </label>
+                    <div class="form-radio-group">
+                        {{#each forms.gift_certificate.themes}}
+                        <input type="radio" class="form-radio" name="certificate_theme" id="theme_{{this.value}}" value="{{this.value}}" {{#if this.value '==' ../forms.gift_certificate.values.theme}} checked{{/if}}>
+                        <label class="form-label" for="theme_{{this.value}}">{{this.display}}</label>
+                        {{/each}}
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="form-actions">
+            {{inject 'previewError' (lang 'forms.gift_certificate.purchase.preview_error')}}
+            <input id="gift-certificate-preview" class="btn btn-alt btn-border" type="submit" value="{{lang 'forms.gift_certificate.purchase.preview' }}" data-preview-url="{{forms.gift_certificate.preview}}">
+            <input id="gift-certificate-submit" class="btn btn-primary" type="submit" value="{{lang 'forms.gift_certificate.purchase.submit_value' }}">
+        </div>
+    </form>
+</main>
+</div>
+</div>
+{{/partial}}
+{{> layout/base}}

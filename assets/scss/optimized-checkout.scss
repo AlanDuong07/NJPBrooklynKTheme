@@ -1,0 +1,735 @@
+// =============================================================================
+// Stencil Checkout - Customize the Optimized Single-Page Checkout experience
+// =============================================================================
+// =============================================================================
+//
+// IMPORTANT DISCLAIMER
+// Please do not nest elements within class selectors, and do not use class selectors other than those given below.
+// Future support is guaranteed only if class selectors' structure and naming are left unchanged.
+//
+// =============================================================================
+//
+// Header Section
+// Background, Logo Position
+// -----------------------------------------------------------------------------
+.optimizedCheckout-header {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto; // max-width: 1480px;
+    min-height: 190px;
+    // background-image: url(/s-wek9ye9/product_images/uploaded_images/header-checkout.jpg); 
+    background-color: stencilColor("optimizedCheckout-header-backgroundColor");
+    // scss-lint:disable StringQuotes
+    background-image: url(stencilImage('optimizedCheckout-backgroundImage', 'optimizedCheckout-backgroundImage-size'));
+    // scss-lint:enable StringQuotes
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; //
+    // TODO:
+    // Configure media query to be 'desktop' breakpoint size
+    // -----------------------------------------------------------------------------
+    @media (min-width: 801px) {
+        text-align: stencilString("optimizedCheckout-logo-position");
+    }
+}
+
+.checkoutHeader-content {
+    padding: 75px 0 70px;
+    max-width: 1180px;
+}
+
+.checkoutHeader-link {
+    position: relative;
+    display: inline-block;
+    width: 280px;
+    height: 30px;
+    .checkoutHeader-logo {
+        width: auto;
+        max-width: 100%;
+    }
+}
+
+//
+// Primary and Secondary Headings
+// Text Color & Typography
+// .optimizedCheckout-headingPrimary styles top-level headings.
+// .optimizedCheckout-headingSecondary styles certain lower-level elements, such as descriptions of cart items.
+// -----------------------------------------------------------------------------
+.optimizedCheckout-headingPrimary {
+    color: stencilColor("optimizedCheckout-headingPrimary-color");
+    font-family: stencilFontFamily("optimizedCheckout-headingPrimary-font"), Arial, Helvetica, sans-serif;
+    font-weight: stencilFontWeight("optimizedCheckout-headingPrimary-font");
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    margin-left: 25px;
+}
+
+.optimizedCheckout-headingSecondary {
+    color: stencilColor("optimizedCheckout-headingSecondary-color");
+    font-family: stencilFontFamily("optimizedCheckout-contentSecondary-font"), Arial, Helvetica, sans-serif;
+    font-weight: stencilFontWeight("optimizedCheckout-headingSecondary-font");
+    letter-spacing: 0.05em;
+}
+
+legend.form-legend.optimizedCheckout-headingSecondary {
+    font-size: 14px;
+}
+
+//
+// Body
+// Background & Shipping Method Overlay
+// -----------------------------------------------------------------------------
+body {
+    background-color: stencilColor("optimizedCheckout-body-backgroundColor");
+    font-family: stencilFontFamily("optimizedCheckout-contentPrimary-font"), Arial, Helvetica, sans-serif;
+    letter-spacing: 0.02em;
+}
+
+.optimizedCheckout-overlay {
+    background-color: stencilColor("optimizedCheckout-body-backgroundColor");
+}
+
+//
+// Primary & Secondary Content
+// Text Color & Typography
+// .optimizedCheckout-contentPrimary styles body text in the Order Summary/Order Confirmation; drop-down-list items; and text that summarizes completed steps.
+// .optimizedCheckout-contentSecondary styles check boxes' text labels, and lower-level text in the Order Summary.
+// -----------------------------------------------------------------------------
+.optimizedCheckout-contentPrimary {
+    color: stencilColor("optimizedCheckout-contentPrimary-color");
+    font-family: stencilFontFamily("optimizedCheckout-contentPrimary-font"), Arial, Helvetica, sans-serif;
+    font-weight: stencilFontWeight("optimizedCheckout-contentPrimary-font");
+    font-size: 12px;
+}
+
+.optimizedCheckout-contentSecondary {
+    color: stencilColor("optimizedCheckout-contentSecondary-color");
+    font-family: stencilFontFamily("optimizedCheckout-contentSecondary-font"), Arial, Helvetica, sans-serif;
+    font-weight: stencilFontWeight("optimizedCheckout-contentSecondary-font");
+}
+
+//
+// Primary Button
+// Background & Border & Text Color & Typography
+// Styles the CONTINUE button for each step, & the final confirmation button.
+// -----------------------------------------------------------------------------
+.optimizedCheckout-buttonPrimary {
+    background-color: stencilColor("optimizedCheckout-buttonPrimary-backgroundColor");
+    border-color: stencilColor("optimizedCheckout-buttonPrimary-borderColor");
+    border-radius: 0;
+    color: stencilColor("optimizedCheckout-buttonPrimary-color");
+    font-family: stencilFontFamily("optimizedCheckout-buttonPrimary-font"), Arial, Helvetica, sans-serif;
+    font-weight: stencilFontWeight("optimizedCheckout-buttonPrimary-font");
+    height: 40px;
+    &:focus,
+    &:hover {
+        background-color: stencilColor("optimizedCheckout-buttonPrimary-backgroundColorHover");
+        border-color: stencilColor("optimizedCheckout-buttonPrimary-borderColorHover");
+        color: stencilColor("optimizedCheckout-buttonPrimary-colorHover");
+    }
+    &:active {
+        background-color: stencilColor("optimizedCheckout-buttonPrimary-backgroundColorActive");
+        border-color: stencilColor("optimizedCheckout-buttonPrimary-borderColorActive");
+        color: stencilColor("optimizedCheckout-buttonPrimary-colorActive");
+    }
+}
+
+//
+// Secondary Button
+// Background & Border & Text Color & Typography
+// Styles the EDIT button for each step.
+// -----------------------------------------------------------------------------
+.optimizedCheckout-buttonSecondary {
+    background-color: stencilColor("optimizedCheckout-buttonSecondary-backgroundColor");
+    border-color: stencilColor("optimizedCheckout-buttonSecondary-borderColor");
+    color: stencilColor("optimizedCheckout-buttonSecondary-color");
+    font-family: stencilFontFamily("optimizedCheckout-buttonSecondary-font"), Arial, Helvetica, sans-serif;
+    font-weight: stencilFontWeight("optimizedCheckout-buttonSecondary-font");
+}
+
+//
+// Links
+// Text Color & Typography
+// -----------------------------------------------------------------------------
+a {
+    color: stencilColor("optimizedCheckout-link-color");
+    font-family: stencilFontFamily("optimizedCheckout-link-font"), Arial, Helvetica, sans-serif;
+    font-weight: stencilFontWeight("optimizedCheckout-link-font");
+}
+
+//
+// Order Summary (Mobile Drawer & Modal)
+// Background Color
+// -----------------------------------------------------------------------------
+.optimizedCheckout-orderSummary {
+    background-color: stencilColor("optimizedCheckout-orderSummary-backgroundColor");
+}
+
+//
+// Checkout Steps
+// Background & Text Color
+// Styles the large step-number indicators on the page's left side.
+// -----------------------------------------------------------------------------
+.optimizedCheckout-step {
+    background-color: stencilColor("optimizedCheckout-step-backgroundColor");
+    &::before {
+        color: stencilColor("optimizedCheckout-step-textColor");
+    }
+    svg {
+        fill: stencilColor("optimizedCheckout-step-textColor");
+    }
+}
+
+//
+// Form Labels
+// Text Color
+// Styles text labels on form fields.
+// -----------------------------------------------------------------------------
+.optimizedCheckout-form-label {
+    color: stencilColor("optimizedCheckout-form-textColor");
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+//
+// Form Input
+// Background & Border Color
+// Styles form fields.
+// -----------------------------------------------------------------------------
+.optimizedCheckout-form-input {
+    background-color: stencilColor("optimizedCheckout-formField-backgroundColor");
+    border-color: stencilColor("optimizedCheckout-formField-borderColor");
+    border-radius: 0;
+    padding: .5rem 0.75rem 0.5rem;
+    font-size: 12px;
+    height: 40px;
+}
+
+//
+// Discount Banners
+// Background & Text & Icon Color
+// Styles discount banners.
+// -----------------------------------------------------------------------------
+.optimizedCheckout-discountBanner {
+    background-color: stencilColor("optimizedCheckout-discountBanner-backgroundColor");
+    color: stencilColor("optimizedCheckout-discountBanner-textColor");
+    svg {
+        fill: stencilColor("optimizedCheckout-discountBanner-iconColor");
+    }
+}
+
+
+
+
+/*halothemes styles*/
+
+.ng-checkout-container {
+    background: #ffffff;
+    max-width: 1480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-body {
+    & p {
+        font-size: 12px;
+    }
+}
+
+.layout-main {
+    padding-top: 40px;
+    @media(max-width: 968px){
+        margin-bottom: 80px;
+    }
+}
+
+.layout {
+    max-width: 1180px;
+    padding: 0;
+}
+
+@media (min-width: 1261px) {
+    .layout-main {
+        width: 60%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .layout-cart {
+        width: 40%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+.checkout-steps {
+    padding-right: 2rem;
+}
+
+.stepHeader {
+    padding: 1.5rem 0 0.75rem;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+.stepHeader-counter {
+    font-size: 18px;
+    font-weight: stencilFontWeight("optimizedCheckout-step-font");
+    font-family: stencilFontFamily("optimizedCheckout-step-font"), Arial, Helvetica, sans-serif;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+}
+
+.stepHeader-counter--complete {
+    transform: none;
+    & svg {
+        padding: 6px;
+    }
+}
+
+.optimizedCheckout-orderSummary {
+    border: 1px solid #d0d0d0;
+    border-radius: 0;
+    margin-top: 80px;
+    & .cart-header {
+        background-color: #000000;
+        text-transform: uppercase;
+        display: -webkit-box;
+        /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;
+        /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;
+        /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        /* NEW - Chrome */
+        display: flex;
+        /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 30px 14px;
+        & .cart-title {
+            font-family: stencilFontFamily("optimizedCheckout-step-font"), Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            text-transform: capitalize;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: #fff;
+        }
+    }
+    & .cart-section {
+        border-top: 0;
+        padding: 27px 30px 27px;
+        & .cart-priceItem {
+            font-size: 13px;
+            margin-bottom: 1rem;
+            & .cart-priceItem-value {
+                font-weight: 600;
+            }
+        }
+        &:last-child {
+            border-top: 1px solid #eeeeee;
+            padding: 24px 30px 24px;
+        }
+    }
+    & .product-title {
+        font-weight: 500;
+        margin-bottom: 15px;
+        color: #000;
+        line-height: 20px;
+        margin-top: -4px;
+    }
+}
+
+.redeemable-entry {
+    margin-top: 1rem;
+    &>.form-body {
+        margin-bottom: 0;
+        &>.form-field {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.checkout-form {
+    margin-top: 0;
+}
+
+.stepHeader-body {
+    color: #5a5a5a;
+    font-size: 12px;
+    order: 3;
+    margin-left: 56px;
+
+}
+
+.checkout-address--static .address-entry {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.cart-header-link {
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 600;
+    line-height: 20px;
+    border-bottom: 1px dotted #ffffff;
+    letter-spacing: 0.05em;
+    display: inline-block;
+}
+
+.product-price--beforeDiscount {
+    color: #8c8c8c;
+    font-style: italic;
+    font-size: 13px;
+}
+
+.product-price.ng-binding.ng-scope {
+    font-weight: 700;
+}
+
+a.redeemable-label {
+    color: #000;
+    display: block;
+    padding-top: 0px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.cart-priceItem--total {
+    & .cart-priceItem-label {
+        font-size: 16px;
+        color: #000;
+    }
+    & .cart-priceItem-value {
+        font-size: 20px;
+        color: #000;
+    }
+}
+
+.cart-priceItem-value,
+.shippingOption-price,
+[data-test="cart-item-product-price"] {
+    letter-spacing: 0;
+}
+
+.optimizedCheckout-orderSummary .cart-section .cart-priceItem--total {
+    margin-bottom: 2px;
+}
+
+.form-prefixPostfix .button {
+    height: 40px;
+    border-radius: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+    font-family: stencilFontFamily("optimizedCheckout-headingPrimary-font"), Arial, Helvetica, sans-serif;
+    font-weight: stencilFontWeight("optimizedCheckout-headingPrimary-font");
+    font-size: 12px;
+    letter-spacing: 0.08em;
+}
+
+.button.button--primary {
+    background-color: stencilColor("optimizedCheckout-buttonPrimary-backgroundColor");
+    border-color: stencilColor("optimizedCheckout-buttonPrimary-borderColor");
+    border-radius: 0;
+    color: stencilColor("optimizedCheckout-buttonPrimary-color");
+    font-family: stencilFontFamily("optimizedCheckout-buttonPrimary-font"), Arial, Helvetica, sans-serif;
+    font-weight: stencilFontWeight("optimizedCheckout-buttonPrimary-font");
+    height: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+    &:focus,
+    &:hover {
+        background-color: stencilColor("optimizedCheckout-buttonPrimary-backgroundColorHover");
+        border-color: stencilColor("optimizedCheckout-buttonPrimary-borderColorHover");
+        color: stencilColor("optimizedCheckout-buttonPrimary-colorHover");
+    }
+    &:active {
+        background-color: stencilColor("optimizedCheckout-buttonPrimary-backgroundColorActive");
+        border-color: stencilColor("optimizedCheckout-buttonPrimary-borderColorActive");
+        color: stencilColor("optimizedCheckout-buttonPrimary-colorActive");
+    }
+}
+
+.dropdown-toggle--select {
+    min-height: 40px;
+    border-radius: 0;
+    padding: 0.8rem 1rem;
+    font-size: 12px;
+    font-family: stencilFontFamily('optimizedCheckout-contentSecondary-font');
+}
+
+.form-select {
+    font-family: stencilFontFamily('optimizedCheckout-contentSecondary-font');
+}
+
+a#checkout-customer-login {
+    border-bottom: 1px dotted #000;
+    font-weight: 600;
+    
+}
+
+a#checkout-customer-login:not(:hover) {
+    color: #000;
+}
+
+.form-inlineMessage {
+    font-size: 12px;
+}
+
+.customerView-actions>button {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    border-color: #000;
+    border-radius: 0px;
+    padding: 7px 13px;
+    color: #000;
+    &:hover {
+        border-color: #000;
+        color: #000;
+    }
+}
+
+.stepHeader-actions {
+    position: absolute;
+    right: 0;
+    top: 32px;
+}
+
+.stepHeader-actions .button {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    border-color: #000;
+    border-radius: 0px;
+    padding: 6px 11px 5px;
+    padding: 0;
+    color: #000;
+    border: 0;
+    box-shadow: none !important;
+    border-radius: 0px;
+    &:not(:focus) {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+    }
+}
+
+.form-label small {
+    font-size: 12px;
+    color: #969696;
+}
+
+.form-checklist {
+    border-radius: 0 !important;
+    border-width: 0 0 1px;
+    border-color: #cbcbcb;
+    & .form-checklist-item {
+        border-bottom: 1px solid #eeeeee;
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+}
+
+.checkout-step {
+    padding-right: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.stepHeader-figure {
+    height: 52px;
+    width: 100%;
+    margin-right: 0;
+    display: flex;
+    margin-bottom: 18px;
+    border-bottom: 2px solid stencilColor('optimizedCheckout-step-borderColor');
+}
+
+.checkout-step.checkout-step--payment {
+    .form-checklist {
+        border-width: 1px;
+    }
+}
+
+.shippingOption {
+    font-size: 14px;
+}
+
+.form-checklist-checkbox~.form-label {
+    min-height: 50px;
+    padding: 0.6rem 2.25rem 0.5rem 4.5rem;
+}
+
+
+
+.optimizedCheckout-form-input#order-comments {
+    height: 80px;
+}
+
+#checkout-payment-continue {
+    background-color: #ff7677;
+    border-color: #ff7677;
+    height: 52px;
+    letter-spacing: 0.08em;
+    font-size: 16px;
+    &:hover {
+        background-color: #000;
+        border-color: #000;
+    }
+}
+
+a[data-test="forgot-password-link"] {
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+#checkout-customer-continue {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #ff7677;
+    border-color: #ff7677;
+    letter-spacing: 0.05em;
+}
+
+#checkout-customer-cancel {
+    line-height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: stencilColor("optimizedCheckout-buttonSecondary-backgroundColor");
+    border-color: stencilColor("optimizedCheckout-buttonSecondary-borderColor");
+    border-radius: 0;
+    color: stencilColor("optimizedCheckout-buttonSecondary-color");
+    font-family: stencilFontFamily("optimizedCheckout-buttonSecondary-font"), Arial, Helvetica, sans-serif;
+    font-weight: stencilFontWeight("optimizedCheckout-buttonSecondary-font");
+    height: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+    &:focus,
+    &:hover {
+        background-color: stencilColor("optimizedCheckout-buttonSecondary-backgroundColorHover");
+        border-color: stencilColor("optimizedCheckout-buttonSecondary-borderColorHover");
+        color: stencilColor("optimizedCheckout-buttonSecondary-colorHover");
+    }
+    &:active {
+        background-color: stencilColor("optimizedCheckout-buttonSecondary-backgroundColorActive");
+        border-color: stencilColor("optimizedCheckout-buttonSecondary-borderColorActive");
+        color: stencilColor("optimizedCheckout-buttonSecondary-colorActive");
+    }
+}
+
+cart-item.product {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    
+    & .product-price {
+        font-size: 13px;
+        font-weight: 600;
+        color: #000;
+        margin-top: -4px;
+    }
+}
+
+cart-prices {
+    border-top: 1px solid #eeeeee;
+    display: block;
+    & .cart-priceItem-label,
+    .cart-priceItem-value {
+        font-weight: 600;
+        color: #000;
+        font-size: 14px;
+    }
+}
+
+.form-field {
+    margin-bottom: 1.5rem;
+}
+
+.form-select {
+    height: 40px;
+    border-radius: 0;
+    appearance: none;
+    padding: 0 15px;
+    background-color: #ffffff;
+    background-image: url('../img/select-arr.png');
+    border-color: #e5e5e5;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    &:focus {
+        background-image: url('../img/select-arr-focus.png');
+    }
+}
+
+
+
+
+/*for IE10*/
+
+select.form-select::-ms-expand {
+    display: none;
+}
+
+.form-input {
+    border-radius: 0;
+    height: 40px;
+    box-shadow: none;
+    border-color: #e5e5e5;
+    padding-left: 15px;
+    padding-top: 8px;
+}
+
+.form-input.has-icon+.icon {
+    height: 40px;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #000;
+}
+
+.checkout-address {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.checkout-address .dynamic-form-addressState,
+.checkout-address .dynamic-form-field {
+    padding: 0 15px;
+}
+
+#checkout-shipping-options {
+    margin-top: 40px;
+}
+
+.checkout-address .dynamic-form-field--postCode {
+    flex-basis: 50%;
+}

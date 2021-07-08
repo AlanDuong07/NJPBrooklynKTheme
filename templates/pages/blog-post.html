@@ -1,0 +1,18 @@
+---
+products:
+    top_sellers:
+         limit: {{theme_settings.side_top_products_count}}
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.side_featured_products_count}}
+---
+
+{{#partial "page"}}
+   {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<div class="container">
+
+   {{> components/blog/post post=blog.post show_tags=true}}
+</div>
+{{/partial}}
+{{> layout/base}}

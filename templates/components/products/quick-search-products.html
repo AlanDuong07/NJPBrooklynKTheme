@@ -1,0 +1,30 @@
+<article class="result-item {{#if alternate}}item--alternate{{/if}}">
+    <figure>
+        <div class="item-image">
+            <a href="{{url}}">
+                <img src="{{getImage image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{image.alt}}" title="{{image.alt}}">
+            </a>
+        </div>
+    </figure>
+    <figcaption class="item-desc">
+        {{#if theme_settings.show_product_brand}}
+            <p class="prod-brand" data-test-info-type="brandName">{{brand.name}}</p>
+        {{/if}}
+        <h4 class="item-name">
+            <a href="{{url}}">{{name}}</a>
+        </h4>
+
+        <div class="item-price" data-test-info-type="price">
+            {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                {{> components/products/price price=price schema_org=schema}}
+            {{else}}
+                {{> components/common/login-for-pricing}}
+            {{/or}}
+        </div>
+        <div class="star-rating" data-test-info-type="productRating">
+            <div class="rating--small">
+                {{> components/products/ratings rating=rating}}
+            </div>
+        </div>
+    </figcaption>
+</article>

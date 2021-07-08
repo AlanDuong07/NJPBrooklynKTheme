@@ -1,0 +1,9 @@
+<nav aria-label="Navigation Brand SideBar">
+    {{#if brand.faceted_search_enabled}}
+        {{> components/faceted-search/index brand}}
+    {{else}}
+        {{#if shop_by_brand}}
+            {{> components/category/side-shop-by-brand}}
+        {{/if}}
+    {{/if}}
+</nav>

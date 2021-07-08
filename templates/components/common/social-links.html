@@ -1,0 +1,17 @@
+{{#if social_media}}
+    <ul class="social-icons">
+        {{#each social_media}}
+            <li class="socialLinks-item">
+                {{#if display_name '===' 'google+'}}
+                    <a class="icon icon--google" href="{{url}}" target="_blank" aria-label="Open {{display_name}} in a new tab">
+                        <svg aria-label="{{display_name}}"><use xlink:href="#icon-google" /></svg>
+                    </a>
+                {{else}}
+                    <a class="icon icon--{{display_name}}" href="{{url}}" target="_blank" aria-label="Open {{display_name}} in a new tab">
+                        <svg aria-label="{{display_name}}"><use xlink:href="#icon-{{display_name}}" /></svg>
+                    </a>
+                {{/if}}
+            </li>
+        {{/each}}
+    </ul>
+{{/if}}

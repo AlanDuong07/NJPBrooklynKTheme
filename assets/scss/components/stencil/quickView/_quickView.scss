@@ -1,0 +1,14 @@
+// =============================================================================
+// QUICK VIEW (CSS)
+// =============================================================================
+.quickView {
+   padding: 40px;
+   @include clearfix();
+   article.responsive-tabs,
+   article.productView-description {
+      display: none;
+   }
+   .productView-images {
+      margin-bottom: 0;
+   }
+}

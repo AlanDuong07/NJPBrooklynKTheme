@@ -1,0 +1,43 @@
+---
+products:
+    top_sellers:
+        limit: {{theme_settings.homepage_top_products_count}}
+    new:
+        limit: {{theme_settings.homepage_new_products_count}}
+    featured:
+        limit: {{theme_settings.homepage_featured_products_count}}
+---
+
+{{#partial "page"}}
+<div class="container sitemapPage">
+<h1 class="titlePage">{{lang 'sitemap.page_title'}}</h1>
+
+<ul>
+{{#each sitemap}}
+    <li>
+        <h3 class="titleName">{{label}}</h3>
+        <ul class="contentSitemap">
+            {{#each body}}
+            <li>
+                <a href="{{url}}">{{label}}</a>
+                {{#if children}}
+                    <ul>
+                    {{#each children}}
+                        {{> components/sitemap/links}}
+                    {{/each}}
+                    </ul>
+                {{/if}}
+            </li>
+            {{/each}}
+            {{#if show_all_link}}
+            <li>
+                <a href="{{subsection_url}}">{{lang 'sitemap.show_all_link'}}</a>
+            </li>
+            {{/if}}
+        </ul>
+    </li>
+{{/each}}
+</ul>
+</div>
+{{/partial}}
+{{> layout/base}}

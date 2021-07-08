@@ -1,0 +1,61 @@
+{{{ snippet "forms_search"}}}
+<div class="search-icon-mobile hidden-desktop">
+	<a class="search-toggle" aria-label="Search Toggle">
+	    <svg aria-label="{{lang 'common.close'}}">
+	        <use xlink:href="#icon-close"></use>
+	    </svg>
+	    <svg aria-label="Search Mobile">
+	        <use xlink:href="#icon-search-mobile"></use>
+	    </svg>
+	</a>
+</div>
+<form class="form" action="{{urls.search}}">
+	<h3 class="form-title">{{lang "search.quick_search.input_label"}}</h3>
+    <fieldset class="form-fieldset">
+        <div class="form-field">
+            <label class="is-srOnly" for="search_query">{{lang "search.quick_search.input_label"}}</label>
+            <input class="form-input" data-search-quick name="search_query" id="search_query" data-error-message="{{lang 'search.error.empty_field'}}" placeholder="{{lang 'search.quick_search.input_placeholder'}}" autocomplete="off">
+            <button type="submit" aria-label="Submit Search"><svg aria-hidden="true"><use xlink:href="#icon-search-2"></use></svg></button>
+        </div>
+    </fieldset>
+</form>
+
+<div class="search-block-recommended">
+	<div class="block-most-searched">
+		<h3 class="bms-title">{{lang "search.quick_search.bms_title"}}</h3>
+		<ul class="bms-list">
+			{{#if theme_settings.most_searched_1}}
+				<li class="bms-item"><a class="bms-item-btn" href="/search.php?search_query=">{{theme_settings.most_searched_1}}</a></li>
+			{{/if}}
+			{{#if theme_settings.most_searched_2}}
+				<li class="bms-item"><a class="bms-item-btn" href="/search.php?search_query=">{{theme_settings.most_searched_2}}</a></li>
+			{{/if}}
+			{{#if theme_settings.most_searched_3}}
+				<li class="bms-item"><a class="bms-item-btn" href="/search.php?search_query=">{{theme_settings.most_searched_3}}</a></li>
+			{{/if}}
+			{{#if theme_settings.most_searched_4}}
+				<li class="bms-item"><a class="bms-item-btn" href="/search.php?search_query=">{{theme_settings.most_searched_4}}</a></li>
+			{{/if}}
+			{{#if theme_settings.most_searched_5}}
+				<li class="bms-item"><a class="bms-item-btn" href="/search.php?search_query=">{{theme_settings.most_searched_5}}</a></li>
+			{{/if}}
+		</ul>
+	</div>
+	<div class="search-product-recommended">
+		<div class="container">
+			<h3 class="spr-title">{{lang "search.quick_search.spr_title"}}</h3>
+			<p class="spr-des">{{lang "search.quick_search.spr_des"}}</p>
+		</div>
+		<div class="spr-product">
+			{{#if products.featured}}
+		        {{> components/products/featured products=products.featured columns=theme_settings.homepage_new_products_column_count}}
+		    {{/if}}
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="quickSearchResultsWrap" data-prevent-quick-search-close>
+	    <section class="quickSearchResults" data-bind="html: results"></section>
+	</div>
+</div>

@@ -1,0 +1,94 @@
+// =============================================================================
+// PRODUCT REVIEWS (CSS)
+// =============================================================================
+// Review list
+//
+// 1. Kill extra display inline-block spacing
+// -----------------------------------------------------------------------------
+.productReviews-list {
+   @include u-listBullets("none");
+   font-size: 0; // 1
+}
+
+// Review item
+// -----------------------------------------------------------------------------
+.productReview {
+   display: block;
+   float: none;
+   font-size: fontSize("base");
+   vertical-align: top;
+   margin-bottom: 27px;
+   width: 100%;
+   border-top: 1px solid #eeeeee;
+   padding-top: 27px;
+   &:first-child{
+      border-top: 0;
+   }
+}
+#tab-reviews-panel{
+   .toggle-title{
+      border-top: 1px solid #eeeeee;    
+      margin-top: 0;
+    padding-top: 2.25rem;  
+   }
+}
+.btn-createReview{
+   display: flex;
+   justify-content: flex-end;
+   .btn{
+      min-width: 208px;
+      margin-bottom: 35px;
+   }
+}
+.productReview-title {
+   margin: 0;
+   text-transform: none;
+   font-size: 13px;
+   letter-spacing: 0.02em;
+   display: inline-block;
+   margin-right: 20px;
+}
+
+.productReview-author {
+   color: #797979;
+   margin-bottom: remCalc(18px);
+}
+
+.productReview-rating {
+   display: inline-block;
+   margin-bottom: remCalc(10px);
+   @media (max-width: 480px) {
+      display: block;
+      margin-top: 7px;
+   }
+}
+
+.productReview-ratingNumber {
+   @include u-hidden("visually");
+}
+
+.productReview-body {
+   margin-bottom: 1.4em;
+}
+
+#productReviews-content .pagination-list {
+   margin-bottom: 30px;
+   & li {
+      padding-left: 0;
+      padding-right: 0;
+      & a {
+         padding-left: 0;
+         padding-right: 0;
+      }
+      & + li {
+         margin-left: 20px;
+      }
+   }
+}
+
+[data-product-reviews] .alert {
+   margin-bottom: 30px;
+}
+[data-product-reviews] a.btn {
+   margin-bottom: 30px;
+}

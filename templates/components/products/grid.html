@@ -1,0 +1,9 @@
+<div class="module-wrapper">
+   <div class="productBlockContainer columns-{{columns}}">
+       {{#each products}}
+       <div class="prod-item {{#if theme_settings.halothemes_lazy_loading_effect}}wow fadeIn{{/if}}" data-wow-delay="{{@index}}ms">
+           {{>components/products/card show_compare=../show_compare show_rating=../settings.show_product_rating theme_settings=../theme_settings customer=../customer productsnew=../productsnew settings=../settings event=../event position=(add @index 1)}}
+       </div>
+       {{/each}}
+   </div>
+</div>

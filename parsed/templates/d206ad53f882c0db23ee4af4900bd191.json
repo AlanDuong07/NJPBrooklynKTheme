@@ -1,0 +1,3 @@
+{
+  "components/products/ratings": "{{#for 1 5}}\r\n    {{#if ../this.rating '>=' $index}}\r\n        <i class=\"fa fa-star color\"></i>\r\n    {{else}}\r\n        <i class=\"fa fa-star-o\"></i>\r\n    {{/if}}\r\n{{/for}}\r\n{{{snippet 'product_rating'}}}\r\n"
+}

@@ -1,0 +1,118 @@
+{{#if theme_settings.bigcommerce_banners }}
+    {{#if banners.bottom}}
+        {{#if settings.data_tag_enabled}}
+            <div class="banners" data-banner-location="bottom">
+                {{#each (limit banners.bottom_metadata 1)}}
+                    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
+                        <div data-event-type="promotion-click">
+                            {{{this.content}}}
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        {{else}}
+            <div class="banners" data-banner-location="bottom">
+                <div class="banner">
+                    {{{limit banners.bottom 1}}}
+                </div>
+            </div>
+        {{/if}}
+    {{/if}}
+{{/if}}
+
+<footer id="footer-wrapper">
+    <section id="main-footer">
+        <div class="container">
+            <div class="footer-newsletter {{#if theme_settings.halothemes_lazy_loading_effect}}wow fadeIn{{/if}} col-lg-12 animated">
+                {{#if settings.show_newsletter_box}} {{> components/common/subscription-form}} {{/if}}
+            </div>
+            <!-- Begin Footer Columns -->
+            <div class="row">
+                <div class="footer-columns {{#if theme_settings.halothemes_lazy_loading_effect}}wow fadeIn{{/if}} col-lg-12 animated">
+                    <div class="column-item {{#if theme_settings.halothemes_lazy_loading_effect}}wow fadeIn{{/if}}" data-wow-delay="100ms">
+                        <h3 class="footer-info-heading">{{theme_settings.footer_col1_heading}}</h3>
+                        <ul class="footer-info-list">
+                            <li><a href="/">Home</a></li>
+                            {{#each categories}}
+                            <li>
+                                <a href="{{url}}">{{name}}</a>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div class="column-item {{#if theme_settings.halothemes_lazy_loading_effect}}wow fadeIn{{/if}}" data-wow-delay="200ms">
+                        <h3 class="footer-info-heading">{{theme_settings.footer_col2_heading}}</h3>
+                        <ul class="footer-info-list">
+                            <li><a href="{{theme_settings.footer_col2_link_1}}">{{theme_settings.footer_col2_title_1}}</a></li>
+                            <li><a href="{{theme_settings.footer_col2_link_2}}">{{theme_settings.footer_col2_title_2}}</a></li>
+                            <li><a href="{{theme_settings.footer_col2_link_3}}">{{theme_settings.footer_col2_title_3}}</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="column-item {{#if theme_settings.halothemes_lazy_loading_effect}}wow fadeIn{{/if}}" data-wow-delay="300ms">
+                        <h3 class="footer-info-heading">{{theme_settings.footer_col3_heading}}</h3>
+                        <ul class="footer-info-list">
+                            <li><a href="{{theme_settings.footer_col3_link_1}}">{{theme_settings.footer_col3_title_1}}</a></li>
+                            <li><a href="{{theme_settings.footer_col3_link_2}}">{{theme_settings.footer_col3_title_2}}</a></li>
+                            <li><a href="{{theme_settings.footer_col3_link_3}}">{{theme_settings.footer_col3_title_3}}</a></li>
+                            <li><a href="{{theme_settings.footer_col3_link_4}}">{{theme_settings.footer_col3_title_4}}</a></li>
+                            <li><a href="{{theme_settings.footer_col3_link_5}}">{{theme_settings.footer_col3_title_5}}</a></li>
+                            <li><a href="{{theme_settings.footer_col3_link_6}}">{{theme_settings.footer_col3_title_6}}</a></li>                        
+                        </ul>
+                    </div>
+
+                    <div class="column-item {{#if theme_settings.halothemes_lazy_loading_effect}}wow fadeIn{{/if}}" data-wow-delay="400ms">
+                        <h3 class="footer-info-heading">{{theme_settings.footer_col4_heading}}</h3>
+                        <ul class="footer-info-list">
+                            <li><a href="{{theme_settings.footer_col4_link_1}}">{{theme_settings.footer_col4_title_1}}</a></li>
+                            <li><a href="{{theme_settings.footer_col4_link_2}}">{{theme_settings.footer_col4_title_2}}</a></li> 
+                            <li><a href="{{theme_settings.footer_col4_link_3}}">{{theme_settings.footer_col4_title_3}}</a></li> 
+                            <li><a href="{{theme_settings.footer_col4_link_4}}">{{theme_settings.footer_col4_title_4}}</a></li> 
+                            <li><a href="{{theme_settings.footer_col4_link_5}}">{{theme_settings.footer_col4_title_5}}</a></li>                         
+                        </ul>
+                    </div>
+
+                    <div class="column-item {{#if theme_settings.halothemes_lazy_loading_effect}}wow fadeIn{{/if}}" data-wow-delay="500ms">
+
+                        <h3 class="footer-info-heading">Stay Connected</h3>
+                        <div class="black-icons footer-info-list">
+                            {{> components/common/social-links}}</div>
+                        </div>
+                </div>
+            </div>
+            <!-- End Footer Columns -->
+        </div>
+    </section>
+    <section id="bottom-footer">
+        <div class="container {{#if theme_settings.halothemes_lazy_loading_effect}}wow fadeIn{{/if}}">
+            <div class="row1">
+                <div class="col-center">
+                    {{#if theme_settings.show_copyright_footer}}
+                        <div class="footer-copyright">
+                            <p>&copy; {{moment format="YYYY"}} {{settings.store_name}} {{theme_settings.footer_bot_info_1}}</p>
+                        </div>
+                    {{/if}}
+
+                    {{#if theme_settings.show_powered_by}}
+                        <div class="powered-by">
+                            <p>{{theme_settings.footer_bot_info_2}} <a href="{{theme_settings.footer_bot_info_link_1}}">{{theme_settings.footer_bot_info_3}}</a>.</p>
+                        </div>
+                    {{/if}}
+                    {{#if theme_settings.show_template_by}}
+                        <div class="template-by">
+                            <p>{{theme_settings.footer_bot_info_4}} <a href="{{theme_settings.footer_bot_info_link_2}}" target="_blank" rel="nofollow" aria-label="Open {{theme_settings.footer_bot_info_5}} in a new tab">{{theme_settings.footer_bot_info_5}}</a></p>
+                        </div>
+                    {{/if}}
+                     {{> components/common/payment-icons}}
+                     {{#if theme_settings.geotrust_ssl_common_name}}
+                        {{> components/common/geotrust-ssl-seal}}
+                    {{/if}}
+                </div>
+               
+            </div>
+        </div>
+    </section>
+</footer>
+{{#unless theme_settings.enable_button_top }}
+    <a href="javascript:void(0);" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+{{/unless}}

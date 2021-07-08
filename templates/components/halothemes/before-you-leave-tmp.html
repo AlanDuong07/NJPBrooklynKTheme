@@ -1,0 +1,92 @@
+<div class="productCarousel-slide" data-id="product-{{product.id}}">
+    <div class="product">
+        <article class="card" data-product-id="{{product.id}}">
+            <figure class="card-figure">
+                {{#if theme_settings.show_new_badges}}
+                    {{#each products.new}}
+                        {{#if this.id '==' ../product.id}}
+                            <div class="product-badge new-badge">
+                                <span class="text">{{lang 'themevale.new'}}</span>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                {{/if}}
+                {{#if theme_settings.show_sale_badges}}
+                    {{#or product.price.non_sale_price_with_tax product.price.non_sale_price_without_tax}}
+                        <div class="product-badge sale-badge">
+                            {{#if product.price.non_sale_price_with_tax}}
+                                <span class="text">-{{round (subtract 100 (multiply (divide product.price.with_tax.value product.price.non_sale_price_with_tax.value) 100)) 0}}%</span>
+                            {{/if}}
+                            {{#if product.price.non_sale_price_without_tax}}
+                                <span class="text">-{{round (subtract 100 (multiply (divide product.price.without_tax.value product.price.non_sale_price_without_tax.value) 100)) 0}}%</span>
+                            {{/if}}
+                        </div>
+                    {{/or}}
+                {{/if}}
+                {{#if theme_settings.show_soldout_badges}}
+                    {{#if product.out_of_stock_message}}
+                        <div class="product-badge soldout-badge">
+                            <span class="text">{{lang 'themevale.sold_out'}}</span>
+                        </div>
+                    {{/if}}
+                {{/if}}
+
+                {{#if theme_settings.show_custom_badges}}
+                    {{#each product.custom_fields}}
+                        {{#if name '===' 'custom-label'}}
+                            <div class="custom-badge product-badge">
+                                <span class="text">{{{value}}}</span>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                {{/if}}
+                <a href="{{product.url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>
+                        <div class="card-img-container">
+                            <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage product.main_image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}">
+                        </div>
+                    </a>
+            </figure>
+            <div class="card-body">
+                {{#if product.brand.name}}
+                    <p class="card-text card-brand" data-test-info-type="brandName">{{product.brand.name}}</p>
+                {{/if}}
+
+                <h4 class="card-title">
+                    <a {{#if theme_settings.card_title_type '==' 'clamp'}}class="clamp"{{/if}}{{#if theme_settings.card_title_type '==' 'clamp'}}style="-webkit-box-orient: vertical; -webkit-line-clamp: 1;"{{/if}} href="{{product.url}}" {{#if settings.data_tag_enabled}} data-event-type="product-click" {{/if}}>{{product.title}}</a>
+                </h4>
+                {{#if product.show_rating}}
+                    <p class="card-rating" data-test-info-type="productRating">
+                        <span class="rating--small">
+                            {{> components/products/ratings rating=product.rating}}
+                        </span>
+                    </p>
+                {{/if}}
+                <p class="card-text card-color"></p>
+                <div class="card-price" data-test-info-type="price">
+                    {{#or customer (if theme_settings.restrict_to_login '!==' true)}}                    
+                        {{#if price_range}}
+                            {{> components/products/price-range}}
+                        {{else}}
+                            {{> components/products/price price=product.price customer=customer}}
+                        {{/if}}
+                    {{else}}
+                        {{> components/common/login-for-pricing}}
+                    {{/or}}
+                </div>
+
+                <div class="card_optionImage product-option-{{product.id}}">
+                    <div data-product-option-change4>
+                        {{#each product.options}}
+                            {{#if type '===' 'Configurable_PickList_Swatch'}}
+                                {{> components/halothemes/halo-add-option-for-product-swatch url=../../product.url}}
+                            {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+                {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                    <a href="{{product.url}}" class="button button--small card-figcaption-button"><span>Add</span></a>
+                {{/or}}
+            </div>
+        </article>
+    </div>
+</div>    

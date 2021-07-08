@@ -1,0 +1,61 @@
+{{#each product.custom_fields}}
+    {{#startsWith '__bundle' name}}
+		<div class="halo-block halo-bundle-products halo-block-disable" id="halo-bundle-products">
+			<div class="loadingOverlay"></div>
+			<div class="container">
+				<div class="halo-block-header">
+			        <h2 class="title">Frequently Bought Together</h2>
+			    </div>
+			    <div class="bundle-products-wrapper">
+			    	<div class="bundle-product-left">
+			    		<div class="halo-product-list">
+					        <div class="halo-product-item {{#if ../../product.can_purchase}}isChecked{{/if}}" data-product-id="{{../../product.id}}">
+					        	<div class="halo-product-image">
+				                    <a class="halo-product-link" href="{{../../product.url}}" aria-label="Go To {{product.main_image.alt}}">
+				                    	<div class="card-img-container">
+				                            <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage ../../product.main_image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{product.main_image.alt}}" title="{{product.main_image.alt}}">
+				                        </div>
+				                    </a>
+				                </div>
+				                <div class="halo-product-content">
+						            <form method="post" action="/cart.php" enctype="multipart/form-data">
+						                <input type="hidden" name="action" value="add">
+						                <input type="hidden" name="product_id" value="{{../../product.id}}">
+						                <input type="hidden" name="qty[]" value="1">
+						                <div class="halo-detail-field">
+						                    <input class="halo-detail-checkbox form-checkbox" type="checkbox" id="fbt_product{{../../product.id}}" checked disabled>
+						                    <label class="halo-detail-label form-label" for="fbt_product{{../../product.id}}">
+						                        <span class="halo-detail-name"><span>This Item:</span> {{../../product.title}}</span>
+						                        <span class="halo-detai-price">
+						                        	{{> components/products/price price=../../product.price}}
+						                        </span>
+						                    </label>
+						                </div>
+						                {{#if ../../product.options}}
+							                <a class="halo-toggle-options button button--secondary" href="#">Choose Options</a>
+							                <div class="halo-detail-options" data-fbt-option-change>
+							                	<a href="#" class="halo-option-close" aria-label="Close" role="button">
+									                <span aria-hidden="true">×</span>
+									            </a>
+							                    {{#each ../../../product.options}}
+							                        {{{dynamicComponent 'components/halothemes/options'}}}
+							                    {{/each}}
+							                    <div class="productAttributes-message">
+													<p class="alertBox-message"></p>
+							                    </div>
+							                </div>
+						                {{/if}}
+						            </form>
+				                </div>
+					        </div>
+					    </div>
+			    	</div>
+			    	<div class="bundle-product-right">
+			    		
+			    	</div>
+			    </div>
+			</div>
+		</div>
+    {{/startsWith}}
+{{/each}}
+{{inject 'productCustomFields' product.custom_fields}}

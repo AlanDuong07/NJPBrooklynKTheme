@@ -1,0 +1,31 @@
+<!-- BEGIN LOGIN POPUP -->
+<div id="halo-login-popup" class="modal" data-reveal>
+    <a href="#" class="modal-close" aria-label="{{lang 'common.close'}}" role="button">
+        <span aria-hidden="true"><svg><use xlink:href="#icon-close"></use></svg></span>
+    </a>
+    <div class="modal-body">
+        <div class="text-left">
+            <h3>{{lang 'login.heading'}}</h3>
+            <form class="login-popup" id="loginForm" action="{{settings.secure_base_url}}/login.php?action=check_login" method="post" name="mainLoginForm">
+               <fieldset class="form-fieldset">
+                    <div class="form-field">
+                        <label class="form-label" for="login_email">{{lang 'login.field_email'}} <small>{{lang 'common.required' }}</small></label>
+                        <input class="form-input" name="login_email" id="login_email" type="email" placeholder="">
+                    </div>
+                    <div class="form-field">
+                        <label class="form-label" for="login_pass">{{lang 'login.field_password'}} <small>{{lang 'common.required' }}</small></label>
+                        <input class="form-input" id="login_pass" type="password" name="login_pass">
+                    </div>
+
+                    <p style="text-align: center;display: none;" id="popup-loading"><img src="{{cdn '/assets/img/vendor/jstree/throbber.gif'}}"></p>
+                    <div class="form-actions">
+                        <input type="submit" class="btn btn-alt" value="{{lang 'login.submit_value' }}">
+                        <a href="{{urls.auth.create_account}}" class="createAccount btn btn-primary"><span>{{lang 'login.register'}}</span></a>
+                        <a class="forgot-password" href="{{urls.auth.forgot_password}}">{{lang 'login.forgot_password' }}</a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- END LOGIN POPUP -->

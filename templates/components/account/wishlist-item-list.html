@@ -1,0 +1,15 @@
+<div class="module-wrapper">
+    <div class="productBlockContainer columns-{{theme_settings.wishlist_products_column_count}}">
+        {{#each wishlist.items}}
+        <div class="prod-item">
+            {{> components/products/card id=product_id theme_settings=../theme_settings customer=../customer productsnew=../productsnew}}
+
+            {{#if ../show_remove}}
+                <form action="{{remove_url}}" class="form" method="post">
+                    <input type="submit" class="btn btn-alt btn-sm" value="{{lang 'account.wishlists.remove_item'}}" />
+                </form>
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+</div>
