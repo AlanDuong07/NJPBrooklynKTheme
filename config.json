@@ -724,7 +724,7 @@
         "brandpage_products_per_page": 16,
         "homepage_brands_count": 1000,
         "searchpage_products_per_page": 20,
-        "show_product_quick_view": true,
+        "show_product_quick_view": false,
         "show_product_brand": true,
         "show_copyright_footer": true,
         "show_powered_by": true,
