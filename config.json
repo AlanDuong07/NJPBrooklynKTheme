@@ -1017,7 +1017,7 @@
         "top-page-promotion-bgColor": "#ff7677",
         "top-page-promotion-text-color": "#ffffff",
         "halothemes_sticky_navigation": true,
-        "halothemes_newsletter_popup": true,
+        "halothemes_newsletter_popup": false,
         "halothemes_megamenu": true,
         "halothemes_lazy_loading_effect": false,
         "halothemes_images_swap": true,
