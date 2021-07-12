@@ -1013,7 +1013,7 @@
         "footer-text-color": "#ffffff",
         "footer-link-color": "#ffffff",
         "footer-bottom-background": "#f5f5f5",
-        "halo_top_page_promotion": true,
+        "halo_top_page_promotion": false,
         "top-page-promotion-bgColor": "#ff7677",
         "top-page-promotion-text-color": "#ffffff",
         "halothemes_sticky_navigation": true,
