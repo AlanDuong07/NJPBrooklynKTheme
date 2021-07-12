@@ -737,7 +737,7 @@
         "show_accept_maestro": true,
         "show_accept_google_wallet": true,
         "product_list_display_mode": "grid",
-        "logo_size": "420x45",
+        "logo_size": "630x67.5",
         "brand_size": "190x250",
         "productgallery_size": "270x360",
         "product_size": "380x507",
