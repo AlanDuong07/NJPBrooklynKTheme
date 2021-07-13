@@ -1881,30 +1881,31 @@ button[data-reveal-id="halo-ask-an-expert-form"] {
     }
 }
 
-@media (min-width: 1025px) {
+//removed this in order to increase margin between featured products, top products, new products on homepage
+// @media (min-width: 1025px) {
 
-    #homeNewProducts {
-        margin-bottom: -55px;
-        position: relative;
-        &:not(:hover) {
-            z-index: 0;
-        }
-    }
-    #homeFeaturedProducts {
-        margin-bottom: -55px;
-        position: relative;
-        &:not(:hover) {
-            z-index: 0;
-        }
-    }
-    #relatedProducts {
-        margin-bottom: -45px;
-        position: relative;
-        &:not(:hover) {
-            z-index: 0;
-        }
-    }
-}
+//     #homeNewProducts {
+//         margin-bottom: -55px;
+//         position: relative;
+//         &:not(:hover) {
+//             z-index: 0;
+//         }
+//     }
+//     #homeFeaturedProducts {
+//         margin-bottom: -55px;
+//         position: relative;
+//         &:not(:hover) {
+//             z-index: 0;
+//         }
+//     }
+//     #relatedProducts {
+//         margin-bottom: -45px;
+//         position: relative;
+//         &:not(:hover) {
+//             z-index: 0;
+//         }
+//     }
+// }
 
 
 
