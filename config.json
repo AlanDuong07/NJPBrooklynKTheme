@@ -730,7 +730,7 @@
         "show_powered_by": true,
         "show_template_by": true,
         "show_accept_visa": true,
-        "show_accept_amex": false,
+        "show_accept_amex": true,
         "show_accept_mastercard": true,
         "show_accept_paypal": true,
         "show_accept_discover": true,
