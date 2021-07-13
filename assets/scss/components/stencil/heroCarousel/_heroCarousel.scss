@@ -102,9 +102,8 @@
 }
 
 .heroCarousel {
-    margin-bottom: 30px;
-    min-height: 100px;
     /*min-width: 320px;*/
+    /* border: 1px solid black; */
     & .owl-nav>div {
         border: 0;
         opacity: 0;
@@ -145,12 +144,13 @@
         }
     }
     .heroCarousel-image-wrap {
+        /* border: 1px solid green; */
         display: block;
     }
     & .heroCarousel-image {
+        /* border: 1px solid red; */
         width: 100%;
         padding: 0;
-        margin: 0 auto;
     }
     & .owl-dots {
         position: absolute;
@@ -231,7 +231,7 @@
     @media (max-width: 991px) {
         margin-bottom: 40px;
     }
-    @media (max-width: 551px) {
+    /* @media (max-width: 551px) {
         .heroCarousel-image-wrap {
             position: relative;
             overflow: hidden;
@@ -256,7 +256,7 @@
                 object-fit: cover;
             }
         }
-    }
+    } */
 }
 
 .heroCarousel-content {
