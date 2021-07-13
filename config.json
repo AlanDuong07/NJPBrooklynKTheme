@@ -1208,7 +1208,7 @@
         "themevale_soldProduct_text": "sold in last",
         "themevale_soldProduct_hours_text": "hour",
         "themevale_soldProduct_textColor": "#e13f3f",
-        "enable-product-countDown": true,
+        "enable-product-countDown": false,
         "product-countDown-type": "all",
         "countDownText": "Limited-Time Offer, End Ins:",
         "product-countDown": "Dec 31, 2022 18:00:00",
