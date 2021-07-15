@@ -1,7 +1,7 @@
 {{{ snippet "forms_search"}}}
 <div class="search-icon-mobile hidden-desktop">
 	<a class="search-toggle" aria-label="Search Toggle">
-	    <svg aria-label="{{lang 'common.close'}}">
+	    <svg style="fill: #E93556" aria-label="{{lang 'common.close'}}">
 	        <use xlink:href="#icon-close"></use>
 	    </svg>
 	    <svg aria-label="Search Mobile">
@@ -12,7 +12,7 @@
 <form class="form" action="{{urls.search}}">
 	<h3 class="form-title">{{lang "search.quick_search.input_label"}}</h3>
     <fieldset class="form-fieldset">
-        <div class="form-field">
+        <div style="border: 2px solid #17B2E3;" class="form-field">
             <label class="is-srOnly" for="search_query">{{lang "search.quick_search.input_label"}}</label>
             <input class="form-input" data-search-quick name="search_query" id="search_query" data-error-message="{{lang 'search.error.empty_field'}}" placeholder="{{lang 'search.quick_search.input_placeholder'}}" autocomplete="off">
             <button type="submit" aria-label="Submit Search"><svg aria-hidden="true"><use xlink:href="#icon-search-2"></use></svg></button>
