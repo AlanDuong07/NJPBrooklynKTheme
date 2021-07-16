@@ -168,6 +168,9 @@ export default function(context){
 	
 	$(document).ready(function(){
 		var view = true;
+		if (window.innerWidth < 425) {
+			view = false;
+		}
 		if( context.themeSettings.layout_recently != 'default'){
 			view = false;
 		}
