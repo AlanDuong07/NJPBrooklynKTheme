@@ -108,7 +108,7 @@
     z-index: 10;
     margin: 0;
     display: none;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     & .form-field {
         margin: auto;
         position: relative;
@@ -122,7 +122,7 @@
             height: 100%;
             font-size: 14px;
             padding: 10px 0 10px 50px;
-            background-color: transparent;
+            background-color: white;
             color: stencilColor('searchBox-textField-color');
             font-family: stencilFontFamily('body-font'), Arial, Helvetica, sans-serif;
             border: 0;
@@ -193,7 +193,29 @@
         font-size: 28px;
         color: #000;
     }
+
+    #div-advanced-search-link {
+        display: flex;
+        justify-content: start;
+        margin: 0px auto 15px;
+        max-width: 670px;
+        /* border: 1px solid blue; */
+    }
+    #advanced-search-link {
+        font-size: 14px;
+        font-weight: 500;
+        border: 1px solid rgb(126, 126, 126);
+        padding: 3px 5px;
+        &:hover {
+            background-color: black;
+            color: white;
+        }
+    }
     &:not(.is-open) .search-block-recommended {
+        display: none !important;
+    }
+
+    &:not(.is-open) #div-advanced-search-link {
         display: none !important;
     }
 
@@ -307,7 +329,15 @@
             overflow-y: auto;
             max-height: 55vh;
         }
-
+        
+        #div-advanced-search-link {
+            justify-self: start;
+            margin: 0px 0px 0px 5px;
+            padding-top: 5px;
+        }
+        #advanced-search-link {
+            font-size: 13px;
+        }
         > .container {
             background-color: #fff;
 
@@ -360,18 +390,19 @@
     opacity: 1;
     visibility: visible;
     z-index: 102;
-    // transition: all 0.3s ease-in-out 0s;
-    // -webkit-transition: all 0.3s ease-in-out 0s;
+    /* transition: all 0.3s ease-in-out 0s;
+    -webkit-transition: all 0.3s ease-in-out 0s; */
     @media (max-width: 1024px) {
         position: absolute;
-        top: 55px;
+        top: 0px;
         left: 0px;
-        background: transparent;
+        background: white;
         height: 52px;
         z-index: 102;
     }
     .search-block-recommended {
         display: block;
+        height: 100px;
     }
     > .container {
         display: block;

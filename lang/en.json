@@ -620,8 +620,8 @@
         "search":
         {
             "query": "Search Keyword",
-            "show": "Show Search Form",
-            "hide": "Hide Search Form",
+            "show": "Edit Advanced Search",
+            "hide": "Hide Advanced Search",
             "title": "Advanced Search",
             "price_range": "Price Range",
             "by_price": "Search By Price",
