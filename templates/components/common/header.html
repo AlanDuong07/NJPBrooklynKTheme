@@ -44,7 +44,16 @@
             </div>
         </div>
         <div class="header-center">
-            <p>{{theme_settings.header_center_text}} <a href="{{theme_settings.header_center_link}}" title="All Collections">{{theme_settings.header_center_button}}</a></p>
+            <img style="max-width:70px; margin-right: 10px;" class="lazyload hidden-mobile" src="{{cdn 'img/loading.svg'}}" 
+                data-src="https://cdn11.bigcommerce.com/s-{{settings.store_hash}}/product_images/uploaded_images/icon-bbb.png?t=1626897209&_gl=1*1imluss*_ga*MTY0NTU5MTQ1MS4xNjIzNjgzNDIw*_ga_WS2VZYPC6G*MTYyNjg5NDY3Ny4yMi4xLjE2MjY4OTcxODguNjA." 
+                alt="A+ BBB Accredited Business">
+            <p>
+                <a href="/contact/" title="Contact Header Link">Contact Us:</a>
+                1 (832) 848-0123 |
+                {{theme_settings.header_center_text}} 
+                <a href="{{theme_settings.header_center_link}}" title="All Collections">{{theme_settings.header_center_button}}
+                </a>
+            </p>
         </div>
     </div>
     <div class="header-bottom">
