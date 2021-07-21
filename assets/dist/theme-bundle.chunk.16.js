@@ -1,16 +1,1 @@
-webpackJsonp([16],{
-
-/***/ 296:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__page_manager__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
-function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function')}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError('this hasn\'t been initialised - super() hasn\'t been called')}return call&&(typeof call==='object'||typeof call==='function')?call:self}function _inherits(subClass,superClass){if(typeof superClass!=='function'&&superClass!==null){throw new TypeError('Super expression must either be null or a function, not '+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}var Compare=function(_PageManager){_inherits(Compare,_PageManager);function Compare(){_classCallCheck(this,Compare);return _possibleConstructorReturn(this,_PageManager.apply(this,arguments))}Compare.prototype.loaded=function loaded(){var _this2=this;var message=this.context.compareRemoveMessage;__WEBPACK_IMPORTED_MODULE_1_jquery___default()('body').on('click','[data-comparison-remove]',function(event){if(_this2.context.comparisons.length<=2){alert(message);event.preventDefault()}})};return Compare}(__WEBPACK_IMPORTED_MODULE_0__page_manager__["a" /* default */]);/* harmony default export */ __webpack_exports__["default"] = (Compare);
-
-/***/ })
-
-});
-//# sourceMappingURL=theme-bundle.chunk.16.js.map
+webpackJsonp([16],{296:function(e,t,o){"use strict";function n(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function r(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function c(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}Object.defineProperty(t,"__esModule",{value:!0});var i=o(116),a=o(1),s=o.n(a),u=function(e){function t(){return n(this,t),r(this,e.apply(this,arguments))}return c(t,e),t.prototype.loaded=function(){var e=this,t=this.context.compareRemoveMessage;s()("body").on("click","[data-comparison-remove]",function(o){e.context.comparisons.length<=2&&(alert(t),o.preventDefault())})},t}(i.a);t.default=u}});
