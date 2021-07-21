@@ -1,1 +1,3979 @@
-webpackJsonp([3],{115:function(t,e,o){"use strict";function i(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function n(t,e){if(!t)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!e||"object"!=typeof e&&"function"!=typeof e?t:e}function a(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function, not "+typeof e);t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,enumerable:!1,writable:!0,configurable:!0}}),e&&(Object.setPrototypeOf?Object.setPrototypeOf(t,e):t.__proto__=e)}Object.defineProperty(e,"__esModule",{value:!0});var r=o(1),l=o.n(r),s=o(116),c=o(466),d=o(441),u=o(283),h=o(82),p=o(467),f=o(465),v=o(461),g=o(462),m=o(469),b=o(463),w=function(t){function e(o){i(this,e);var a=n(this,t.call(this,o));return a.url=location.href,a.$reviewLink=l()('[data-reveal-id="modal-review-form"]'),a}return a(e,t),e.prototype.before=function(t){var e=this;l()(document).on("close.fndtn.reveal",function(){-1!==e.url.indexOf("#writeReview")&&"function"==typeof window.history.replaceState&&window.history.replaceState(null,document.title,window.location.pathname)}),t()},e.prototype.loaded=function(t){var e=void 0;o.i(d.a)(),this.productDetails=new u.a(l()(".productView"),this.context,window.BCData.product_attributes),o.i(f.a)(),o.i(v.a)(),o.i(p.a)(),1==this.context.themeSettings.halo_bundle_products_enable&&o.i(g.a)(this.context),o.i(b.a)(),l()("a.videos-tab").click(function(t){t.preventDefault(),l()(".productView-1 .productView-videos-wrap").removeClass("is-hidden"),l()(".productView-1 .productView-image-wrap").addClass("is-hidden")}),l()("a.photos-tab").click(function(t){t.preventDefault(),l()(".productView-1 .productView-image-wrap").removeClass("is-hidden"),l()(".productView-1 .productView-videos-wrap").addClass("is-hidden")}),l()("[data-accordion-item]").find(".toggle-title").click(function(t){l()(this).toggleClass("is-active"),l()(this).siblings(".toggle-content").stop().slideToggle(200)}),l()(".productDescription .toggle-title").trigger("click");var i=o.i(h.b)(".writeReview-form"),n=new c.a(i);l()("body").on("click",'[data-reveal-id="modal-review-form"]',function(){e=n.registerValidation()}),i.on("submit",function(){return!!e&&(e.performCheck(),e.areAll("valid"))}),t()},e.prototype.after=function(t){this.productReviewHandler(),1==this.context.themeSettings.halo_compare_colors&&this.compareColors(),this.add_sizeChart(),t()},e.prototype.productReviewHandler=function(){-1!==this.url.indexOf("#writeReview")&&this.$reviewLink.click()},e.prototype.compareColors=function(){l()(".halo-compareColors-swatch .form-option").on("click",function(t){l()(this).toggleClass("show-color");var e,o,i,n,a=l()(this).find(".form-option-variant").attr("title"),r=l()(this).data("product-swatch-value");if(l()(this).hasClass("show-color")?l()(this).find(".form-option-variant--color").length?(e=l()(this).find(".form-option-variant--color").attr("style"),l()(".halo-compareColors-image").append('<div class="item item-color item-'+r+'"><span class="color" style="'+e+';"></span><span class="title">'+a+"</span></div>")):l()(this).find(".form-option-variant--color2").length?(e=l()(this).find(".form-option-variant--color2 span:nth-child(1)").attr("style"),o=l()(this).find(".form-option-variant--color2 span:nth-child(2)").attr("style"),l()(".halo-compareColors-image").append('<div class="item item-color item-'+r+'"><span class="color color2"><span style="'+e+';"></span><span style="'+o+';"></span></span><span class="title">'+a+"</span></div>")):l()(this).find(".form-option-variant--color3").length?(e=l()(this).find(".form-option-variant--color3 span:nth-child(1)").attr("style"),o=l()(this).find(".form-option-variant--color3 span:nth-child(2)").attr("style"),i=l()(this).find(".form-option-variant--color3 span:nth-child(3)").attr("style"),l()(".halo-compareColors-image").append('<div class="item item-color item-'+r+'"><span class="color color3"><span style="'+e+';"></span><span style="'+o+';"></span><span style="'+i+';"></span></span><span class="title">'+a+"</span></div>")):l()(this).find(".form-option-variant--pattern").length&&(n=l()(this).find(".form-option-variant--pattern").attr("style").split("'")[1],l()(".halo-compareColors-image").append('<div class="item item-partern item-'+r+'"><span class="image"><img src='+n+" alt="+a+" title="+a+'></span><span class="title">'+a+"</span></div>")):l()(".halo-compareColors-image .item-"+r).remove(),l()(window).width()>=1025){var s=document.getElementById("color-swatch-image");new m.a(s,{animation:150})}})},e.prototype.add_sizeChart=function(){var t=l()('[data-reveal-id="modal-size-chart-form"]'),e=l()(".productView-options [data-product-option-change] .form-field");t.length&&e.each(function(){var e=l()(this).find("[data-option-value]").text(),o=l()(this).find(".form-label--alternate small").text();"size"==l()(this).find(".form-label--alternate").text().replace(o,"").replace(e,"").replace(":","").trim().toLowerCase()&&l()(this).prepend(t)})},e}(s.a);e.default=w},441:function(t,e,o){"use strict";function i(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function n(t){return t&&0===t.indexOf("#")?t:"#"+t}function a(t){return{disabledBreakpoint:t.data(p+"-disabled-breakpoint"),disabledState:t.data(p+"-disabled-state"),enabledState:t.data(p+"-enabled-state"),openClassName:t.data(p+"-open-class-name")}}function r(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"[data-"+p+"]",e=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{};return d()(t,e.$context).map(function(t,o){var i=d()(o),r=p+"-instance",l=i.data(r);if(l instanceof g)return l;var c=n(i.data(p)||i.data(p+"-target")||i.attr("href")),u=s()(a(i),e),h=new g(i,d()(c),u);return i.data(r,h),h}).toArray()}e.a=r;var l=o(276),s=o.n(l),c=o(1),d=o.n(c),u=o(278),h=function(){function t(t,e){for(var o=0;o<e.length;o++){var i=e[o];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(t,i.key,i)}}return function(e,o,i){return o&&t(e.prototype,o),i&&t(e,i),e}}(),p="collapsible",f={open:"open.collapsible",close:"close.collapsible",toggle:"toggle.collapsible",click:"click.collapsible"},v={closed:"closed",open:"open"},g=function(){function t(e,n){var a=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{},r=a.disabledBreakpoint,l=a.disabledState,s=a.enabledState,c=a.openClassName,d=void 0===c?"is-open":c;i(this,t),this.$toggle=e,this.$target=n,this.targetId=n.attr("id"),this.openClassName=d,this.disabledState=l,this.enabledState=s,r&&(this.disabledMediaQueryList=o.i(u.a)(r)),this.disabledMediaQueryList?this.disabled=this.disabledMediaQueryList.matches:this.disabled=!1,this.onClicked=this.onClicked.bind(this),this.onDisabledMediaQueryListMatch=this.onDisabledMediaQueryListMatch.bind(this),this.$target.attr("aria-hidden",this.isCollapsed),this.$toggle.attr("aria-controls",n.attr("id")).attr("aria-expanded",this.isOpen),this.bindEvents()}return t.prototype.open=function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=t.notify,o=void 0===e||e;this.$toggle.addClass(this.openClassName).attr("aria-expanded",!0),this.$target.addClass(this.openClassName).attr("aria-hidden",!1),o&&(this.$toggle.trigger(f.open,[this]),this.$toggle.trigger(f.toggle,[this]))},t.prototype.close=function(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},e=t.notify,o=void 0===e||e;this.$toggle.removeClass(this.openClassName).attr("aria-expanded",!1),this.$target.removeClass(this.openClassName).attr("aria-hidden",!0),o&&(this.$toggle.trigger(f.close,[this]),this.$toggle.trigger(f.toggle,[this]))},t.prototype.toggle=function(){this.isCollapsed?this.open():this.close()},t.prototype.toggleByState=function(t){for(var e=arguments.length,o=Array(e>1?e-1:0),i=1;i<e;i++)o[i-1]=arguments[i];switch(t){case v.open:return this.open.apply(this,o);case v.closed:return this.close.apply(this,o);default:return}},t.prototype.hasCollapsible=function(t){return d.a.contains(this.$target.get(0),t.$target.get(0))},t.prototype.bindEvents=function(){this.$toggle.on(f.click,this.onClicked),this.disabledMediaQueryList&&this.disabledMediaQueryList.addListener&&this.disabledMediaQueryList.addListener(this.onDisabledMediaQueryListMatch)},t.prototype.unbindEvents=function(){this.$toggle.off(f.click,this.onClicked),this.disabledMediaQueryList&&this.disabledMediaQueryList.removeListener&&this.disabledMediaQueryList.removeListener(this.onDisabledMediaQueryListMatch)},t.prototype.onClicked=function(t){this.disabled||(t.preventDefault(),this.toggle())},t.prototype.onDisabledMediaQueryListMatch=function(t){this.disabled=t.matches},h(t,[{key:"isCollapsed",get:function(){return!this.$target.hasClass(this.openClassName)||this.$target.is(":hidden")}},{key:"isOpen",get:function(){return!this.isCollapsed}},{key:"disabled",set:function(t){this._disabled=t,t?this.toggleByState(this.disabledState):this.toggleByState(this.enabledState)},get:function(){return this._disabled}}]),t}()},461:function(t,e,o){"use strict";var i=o(1),n=o.n(i);e.a=function(){n()("ul.all-categories-list li").each(function(){var t=n()(".page-type-product #breadcrumbs-wrapper ul li.breadcrumb.is-active").prev(".breadcrumb").children("a").attr("href");n()(this).children("a").attr("href")===n()('link[rel="canonical"]').attr("href")&&(n()(this).addClass("current-cat"),n()(this).children(".dropdown-category-list").addClass("cat-expanded").siblings("i.fa.fa-angle-down").addClass("is-clicked"),n()(this).parents(".dropdown-category-list").addClass("cat-expanded").siblings("i.fa.fa-angle-down").addClass("is-clicked")),n()(this).children("a").attr("href")===t&&(n()(this).addClass("current-cat"),n()(this).children(".dropdown-category-list").addClass("cat-expanded").siblings("i.fa.fa-angle-down").addClass("is-clicked"),n()(this).parents(".dropdown-category-list").addClass("cat-expanded").siblings("i.fa.fa-angle-down").addClass("is-clicked"))}),n()("ul.all-categories-list i.fa.fa-angle-down").click(function(){n()(this).toggleClass("is-clicked"),n()(this).siblings("ul.dropdown-category-list").toggleClass("cat-expanded")})}},462:function(t,e,o){"use strict";var i=o(9),n=o.n(i),a=o(120),r=o.n(a),l=o(1),s=o.n(l),c=o(7);e.a=function(t){function e(){var t=s()("#halo-bundle-products .halo-product-list .halo-product-item:first-child"),e=t.data("product-id"),o=t.find("form"),i=o.find("[data-fbt-option-change]").length,n=o.find("[data-default]").length;n&&i&&c.c.api.productAttributes.optionChange(e,o.serialize(),function(t,e){var i=e.data||{},a=e.content||{};m(o,i),n?T(o,i,a):S(i)})}function o(t){t.forEach(function(t){var e=t.data;if(s()("#halo-bundle-products .halo-product-list").append(e.item),""!=e.options.trim()){var o=s()(e.item).data("product-id"),i=s()('#halo-bundle-products .halo-product-list .halo-product-item[data-product-id="'+o+'"] form');i.append(e.options);var n=s()("[data-fbt-option-change]",i),a=n.html().trim().length,r=s()(e.options).find("[data-default]").length;r&&a&&c.c.api.productAttributes.optionChange(o,i.serialize(),function(t,e){var o=e.data||{},n=e.content||{};m(i,o),r?T(i,o,n):S(o)}),v()}}),f(),i(),p()}function i(){s()("#halo-bundle-products .halo-product-list").slick({dots:!0,arrows:!1,slidesToShow:2,slidesToScroll:1,mobileFirst:!0,infinite:!1,nextArrow:"<div class='slick-next slick-arrow'>next</div>",prevArrow:"<div class='slick-prev slick-arrow'>prev</div>",responsive:[{breakpoint:1200,settings:{slidesToScroll:1,slidesToShow:4,dots:!1,arrows:!0}},{breakpoint:1025,settings:{slidesToShow:3,slidesToScroll:1,dots:!1,arrows:!0}},{breakpoint:768,settings:{slidesToShow:4,slidesToScroll:1}},{breakpoint:551,settings:{slidesToShow:3,slidesToScroll:1}}]})}function a(t,e){for(var o=!0,i=0,n=e.length;i<n;i++){var a=e[i],r=s()(t[a]);if(r.find("[data-fbt-option-change]").length&&0==(o=l(r)))return!1}return o}function l(t){var e=!0;t.find("input:text, input:password, input:file, textarea").each(function(){s()(this).prop("required")&&(s()(this).val()||(s()(this).focus(),e=!1))}),t.find("select").each(function(){s()(this).prop("required")&&(s()(this).val()||(s()(this).focus(),e=!1))});var o="";return t.find("input:radio, input:checkbox").each(function(){o!=s()(this).attr("name")&&(o=s()(this).attr("name"),s()(this).prop("required")?("checkbox"==s()(this).attr("type")&&(s()("[name='"+o+"']:checked").val()||(e=!1)),"radio"==s()(this).attr("type")&&(s()("[name='"+o+"']:checked").val()||(e=!1))):("checkbox"==s()(this).attr("type")&&s()("[name='"+o+"']:checked").val(),"radio"==s()(this).attr("type")&&s()("[name='"+o+"']:checked").val()))}),e}function d(t,e,o){if(e>=o.length)return void(window.location="/cart.php");if(void 0!==window.FormData){var i=o[e];c.c.api.cart.itemAdd(M(new FormData(t[i])),function(i,n){var a=i||n.data.error;if(a){var r=document.createElement("DIV");r.innerHTML=a,alert(r.textContent||r.innerText)}if(++e>=o.length)return s()("#halo-bundle-products .loadingOverlay").hide(),void u(n.data.cart_item.id);d(t,e,o)})}}function u(t,e){var o=s()("body"),i=s()("#halo-cart-sidebar"),n=s()('<div class="loadingOverlay"></div>');o.addClass("openCartSidebar");var a;a=s()(window).scrollTop()>0&&!s()(".header").hasClass("is-sticky")?s()(".header").outerHeight()-s()(window).scrollTop():s()(".header").outerHeight(),i.addClass("is-loading").html(n).css("top",a),n.show(),h(t,function(t,a){if(!t){i.removeClass("is-loading").html(a),n.hide();var r=s()("[data-cart-quantity]").data("cartQuantity")||0;o.trigger("cart-quantity-update",r),e&&e(a)}})}function h(t,e){var o={template:"common/cart-preview"};c.c.api.cart.getContent(o,e)}function p(){var t=0,e=0,o="$";s()(".halo-product-item.isChecked").each(function(i,n){var a,r,l;a=s()(n).find(".price-section .price.price--withTax").length?s()(n).find(".price-section .price.price--withTax").text():s()(n).find(".price-section .price.price--withoutTax").text(),r=parseFloat(a.replace(/[^0-9.-]+/g,"")),l=a.replace(parseFloat(r).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,","),""),isNaN(parseFloat(l.replace(/[^0-9.-]+/g,"")))&&(o=l),-1!=a.indexOf(o)&&(e=a.indexOf(o)),t+=r}),t=parseFloat(t).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,","),0==e?t=o+t:t+=o,s()(".halo-product-total .price").html(t)}function f(){p();var t=s()("form",s()(document)),e=s()("[data-fbt-option-change]",t);s()(document).on("change",e,function(t){g(t),v()})}function v(){var t=[],e=[];s.a.each(s()("[data-fbt-option-change] [data-product-attribute]"),function(o,i){var n=i.children[0].innerText,a=n.split(":")[0].trim(),r=n.toLowerCase().includes("required"),l=i.getAttribute("data-product-attribute");if("input-file"!==l&&"input-text"!==l&&"input-number"!==l||""!==i.querySelector("input").value||!r||t.push(i),"textarea"===l&&""===i.querySelector("textarea").value&&r&&t.push(i),"date"===l){if(Array.from(i.querySelectorAll("select")).every(function(t){return 0!==t.selectedIndex})){var c=Array.from(i.querySelectorAll("select")).map(function(t){return t.value}).join("-");return void e.push(a+":"+c)}r&&t.push(i)}if("set-select"===l){var d=i.querySelector("select"),u=d.selectedIndex;if(0!==u)return e.push(a+":"+d.options[u].innerText),void s()(i.children[0]).find("[data-option-value]").text(d.options[u].innerText);r&&t.push(i)}if("set-rectangle"===l||"set-radio"===l||"swatch"===l||"input-checkbox"===l||"product-list"===l){var h=i.querySelector(":checked");if(h){if("set-rectangle"===l||"set-radio"===l||"product-list"===l){var p=h.labels[0].innerText;p&&(e.push(a+":"+p),s()(i.children[0]).find("[data-option-value]").text(p))}if("swatch"===l){var f=h.labels[0].children[0];f&&(e.push(a+":"+f.title),s()(i.children[0]).find("[data-option-value]").text(f.title))}return void("input-checkbox"===l&&e.push(a+":Yes"))}"input-checkbox"===l&&e.push(a+":No"),r&&t.push(i)}})}function g(t){var e=s()(t.target),o=e.parents("form"),i=s()('[name="product_id"]',o).val();if("file"!==e.attr("type")&&void 0!==window.FormData&&e.attr("id")!=="fbt_product"+i)return c.c.api.productAttributes.optionChange(i,o.serialize(),function(t,e){var n=e.data||{},a=e.content||{};x(i,n),m(o,n),T(o,n,a),p()}),!1}function m(t,e){var o=e.out_of_stock_behavior,i=e.in_stock_attributes,n=" ("+e.out_of_stock_message+")";"hide_option"!==o&&"label_option"!==o||s()("[data-product-attribute-value]",t).each(function(t,e){var a=s()(e),r=parseInt(a.data("productAttributeValue"),10);-1!==i.indexOf(r)?y(a,o,n):b(a,o,n)})}function b(t,e,o){if("set-select"===_(t))return w(t,e,o);"hide_option"===e?t.hide():t.addClass("unavailable")}function w(t,e,o){var i=t.parent();"hide_option"===e?(t.toggleOption(!1),i.val()===t.attr("value")&&(i[0].selectedIndex=0)):(t.attr("disabled","disabled"),t.html(t.html().replace(o,"")+o))}function y(t,e,o){if("set-select"===_(t))return C(t,e,o);"hide_option"===e?t.show():t.removeClass("unavailable")}function C(t,e,o){"hide_option"===e?t.toggleOption(!0):(t.prop("disabled",!1),t.html(t.html().replace(o,"")))}function _(t){var e=t.closest("[data-product-attribute]");return e?e.data("productAttribute"):null}function x(e,o){if(r()(o.image)){var i=c.c.tools.image.getSrc(o.image.data,t.themeSettings.productgallery_size);s()('.halo-product-item[data-product-id="'+e+'"]').find("img").attr({srcset:i,"data-srcset":s()(this).attr("srcset")})}else{var n=s()('.halo-product-item[data-product-id="'+e+'"]').find("img").attr("data-srcset");s()('.halo-product-item[data-product-id="'+e+'"]').find("img").attr({srcset:n,"data-srcset":s()(this).attr("srcset")})}}function T(t,e){var o=(arguments.length>2&&void 0!==arguments[2]&&arguments[2],k(t));E(e.stock_message||e.purchasing_message),n()(e.price)&&O(o,e.price);var i=s()('[name="product_id"]',t).val();if(e.purchasable&&e.instock){if(s()('.halo-product-item[data-product-id="'+i+'"]').addClass("isChecked"),s()("#fbt_product"+i).prop("checked",!0).prop("disabled",!1),t.find("[data-fbt-option-change]").length){var a=l(t);1==a&&s()('.halo-product-item[data-product-id="'+i+'"]').addClass("hasOptions--selected")}}else s()('.halo-product-item[data-product-id="'+i+'"]').removeClass("isChecked"),s()("#fbt_product"+i).prop("checked",!1).prop("disabled",!0),s()('.halo-product-item[data-product-id="'+i+'"]').removeClass("hasOptions--selected")}function S(t,e){var o=s()('[name="product_id"]',t).val();if(e.purchasable&&e.instock){if(s()('.halo-product-item[data-product-id="'+o+'"]').addClass("isChecked"),s()("#fbt_product"+o).prop("checked",!0).prop("disabled",!1),t.find("[data-fbt-option-change]").length){var i=l(t);1==i&&s()('.halo-product-item[data-product-id="'+o+'"]').addClass("hasOptions--selected")}}else s()('.halo-product-item[data-product-id="'+o+'"]').removeClass("isChecked"),s()("#fbt_product"+o).prop("checked",!1).prop("disabled",!0),s()('.halo-product-item[data-product-id="'+o+'"]').removeClass("hasOptions--selected")}function k(t){return{$priceWithTax:s()("[data-product-price-with-tax]",t),$priceWithoutTax:s()("[data-product-price-without-tax]",t),rrpWithTax:{$div:s()(".rrp-price--withTax",t),$span:s()("[data-product-rrp-with-tax]",t)},rrpWithoutTax:{$div:s()(".rrp-price--withoutTax",t),$span:s()("[data-product-rrp-price-without-tax]",t)},nonSaleWithTax:{$div:s()(".non-sale-price--withTax",t),$span:s()("[data-product-non-sale-price-with-tax]",t)},nonSaleWithoutTax:{$div:s()(".non-sale-price--withoutTax",t),$span:s()("[data-product-non-sale-price-without-tax]",t)},priceSaved:{$div:s()(".price-section--saving",t),$span:s()("[data-product-price-saved]",t)},priceNowLabel:{$span:s()(".price-now-label",t)},priceLabel:{$span:s()(".price-label",t)},$weight:s()(".productView-info [data-product-weight]",t),$increments:s()(".form-field--increments :input",t),$addToCart:s()("#form-action-addToCart",t),$wishlistVariation:s()('[data-wishlist-add] [name="variation_id"]',t),stock:{$container:s()(".form-field--stock",t),$input:s()("[data-product-stock]",t)},$sku:s()("[data-product-sku]"),$upc:s()("[data-product-upc]"),quantity:{$text:s()(".incrementTotal",t),$input:s()("[name=qty\\[\\]]",t)},$bulkPricing:s()(".productView-info-bulkPricing",t)}}function E(t){var e=s()(".productAttributes-message");t?(s()(".alertBox-message",e).text(t),e.show()):e.hide()}function D(t){t.rrpWithTax.$div.hide(),t.rrpWithoutTax.$div.hide(),t.nonSaleWithTax.$div.hide(),t.nonSaleWithoutTax.$div.hide(),t.priceSaved.$div.hide(),t.priceNowLabel.$span.hide(),t.priceLabel.$span.hide()}function O(t,e){D(t),e.with_tax&&(t.priceLabel.$span.show(),t.$priceWithTax.html(e.with_tax.formatted)),e.without_tax&&(t.priceLabel.$span.show(),t.$priceWithoutTax.html(e.without_tax.formatted)),e.rrp_with_tax&&(t.rrpWithTax.$div.show(),t.rrpWithTax.$span.html(e.rrp_with_tax.formatted)),e.rrp_without_tax&&(t.rrpWithoutTax.$div.show(),t.rrpWithoutTax.$span.html(e.rrp_without_tax.formatted)),e.saved&&(t.priceSaved.$div.show(),t.priceSaved.$span.html(e.saved.formatted)),e.non_sale_price_with_tax&&(t.priceLabel.$span.hide(),t.nonSaleWithTax.$div.show(),t.priceNowLabel.$span.show(),t.nonSaleWithTax.$span.html(e.non_sale_price_with_tax.formatted)),e.non_sale_price_without_tax&&(t.priceLabel.$span.hide(),t.nonSaleWithoutTax.$div.show(),t.priceNowLabel.$span.show(),t.nonSaleWithoutTax.$span.html(e.non_sale_price_without_tax.formatted))}function M(t){try{for(var e=t,o=Array.isArray(e),i=0,e=o?e:e[Symbol.iterator]();;){var n;if(o){if(i>=e.length)break;n=e[i++]}else{if(i=e.next(),i.done)break;n=i.value}var a=n,r=a[0],l=a[1];l instanceof File&&!l.name&&!l.size&&t.delete(r)}}catch(t){console.error(t)}return t}var A="#relatedProducts";!function(){var i={template:{item:"halothemes/halo-bundle-products-tmp",options:"halothemes/halo-bundle-products-options"}},n=[];if(s()("#halo-bundle-products").removeClass("halo-block-disable"),e(),s()("#halo-bundle-products .bundle-product-right").append('<div class="halo-product-total"><div class="total-price"><span class="text">Total:</span><span class="price"></span></div><a class="button button--primary halo-product-total-button" id="halo-addAll">Add All To Cart</a></div>'),s.a.each(t.productCustomFields,function(t,e){"__bundleid"==e.name&&(n=JSON.parse("["+e.value+"]"))}),s()("#halo-bundle-products").length>0&&0==n.length){var a=0,r=[];s()(A+" .card").each(function(t,e){r.push({i:t,data:""});var n=s()(e).data("product-id");void 0!=n&&c.c.api.product.getById(n,i,function(e,i){if(e)return!1;r.forEach(function(e){e.i==t&&(e.data=i)}),++a==s()(A+" .card").length&&o(r)})})}else if(s()("#halo-bundle-products").length>0&&n.length>0){var a=0,r=[];s.a.each(n,function(t,e){r.push({i:t,data:""});var l=n[t];void 0!=l&&c.c.api.product.getById(l,i,function(e,i){if(e)return!1;r.forEach(function(e){e.i==t&&(e.data=i)}),++a==n.length&&o(r)})})}}(),s()(document).on("click",".halo-toggle-options",function(t){t.preventDefault(),s()(".halo-toggle-options").not(s()(this)).removeClass("is-focus"),s()(".halo-detail-options").not(s()(this).next(".halo-detail-options")).removeClass("is-open"),s()(this).next(".halo-detail-options").hasClass("is-open")?(s()(this).next(".halo-detail-options").removeClass("is-open"),s()(this).removeClass("is-focus")):(s()(this).addClass("is-focus"),s()(this).next(".halo-detail-options").addClass("is-open"))}),s()(document).on("click",".halo-option-close",function(t){t.preventDefault(),s()(".halo-detail-options").removeClass("is-open"),s()(".halo-toggle-options").removeClass("is-focus")}),s()(document).on("click",function(t){s()(".halo-detail-options").hasClass("is-open")&&0===s()(t.target).closest(".halo-detail-options").length&&0===s()(t.target).closest(".halo-toggle-options").length&&(s()(".halo-detail-options").removeClass("is-open"),s()(".halo-toggle-options").removeClass("is-focus"))}),s()(document).on("change",".halo-detail-checkbox",function(){var t=s()(this).attr("id").replace("fbt_product","");0==s()(this).is(":checked")?s()('.halo-product-item[data-product-id="'+t+'"]').removeClass("isChecked"):s()('.halo-product-item[data-product-id="'+t+'"]').addClass("isChecked"),p()}),s()(document).on("click","#halo-addAll",function(t){var e=s()("form",s()("#halo-bundle-products")),o=new Array;s()(".halo-detail-checkbox").each(function(t,e){s()(e).is(":checked")&&o.push(t)});var i=!1;if(o.length>0&&(i=a(e,o)),!i){var n="Please make sure all options have been filled in.",r=document.createElement("DIV");return r.innerHTML=n,alert(r.textContent||r.innerText)}o.length>0&&(s()("#halo-bundle-products .loadingOverlay").show(),d(e,0,o)),t.preventDefault()})}},463:function(t,e,o){"use strict";var i=o(1),n=o.n(i),a=(o(7),o(284));o.n(a);e.a=function(){if(n()("#form-action-addToCart").length){var t=n()("#form-action-addToCart").offset(),e=t.top;n()(window).scroll(function(){if(n()(window).scrollTop()>e){if(!n()("#sticky_addtocart").hasClass("show_sticky")){var t=n()(".header").height();n()("#sticky_addtocart").addClass("show_sticky"),n()("body").addClass("is-stickyAddToCart"),n()("body").hasClass("is-sticky")?n()("#sticky_addtocart").css("top",t):n()("#sticky_addtocart").css("top","0px")}}else n()("#sticky_addtocart").removeClass("show_sticky"),n()("body").removeClass("is-stickyAddToCart"),n()(".pop-up-option").removeClass("is-open"),n()(".choose_options_add").removeClass("is-active")}),n()(document).on("click",".choose_options_add",function(t){n()(this).toggleClass("is-active"),n()(".pop-up-option").toggleClass("is-open")}),n()(document).on("click",".pop-up-option .close",function(t){n()(".pop-up-option").removeClass("is-open"),n()(".choose_options_add").removeClass("is-active")}),window.onload=function(){if(n()(window).scrollTop()>e&&!n()("#sticky_addtocart").hasClass("show_sticky")){var t=n()(".header").height();n()("#sticky_addtocart").addClass("show_sticky"),n()("body").addClass("is-stickyAddToCart"),n()("body").hasClass("is-sticky")?n()("#sticky_addtocart").css("top",t):n()("#sticky_addtocart").css("top","0px")}}}}},465:function(t,e,o){"use strict";var i=o(1),n=o.n(i);e.a=function(){n()(".productView-image").magnificPopup({type:"image",closeOnContentClick:!0,image:{verticalFit:!0},mainClass:"mfp-with-zoom",zoom:{enabled:!0,duration:300,easing:"ease-in-out"}})}},466:function(t,e,o){"use strict";function i(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}var n=o(1),a=o.n(n),r=o(81),l=o(118),s=function(){function t(e){i(this,t),this.validator=o.i(r.a)({submit:e.find('input[type="submit"]')}),this.$reviewsContent=a()("#product-reviews"),this.$collapsible=a()("[data-collapsible]",this.$reviewsContent),this.initLinkBind(),this.injectPaginationLink(),this.collapseReviews()}return t.prototype.initLinkBind=function(){a()(".reviewLinkCount").click(function(){a()("#tab-reviews").is(":checked")||a()("#tab-reviews").click(),a()("html, body").animate({scrollTop:a()(".flex-tabs").offset().top},600)})},t.prototype.collapseReviews=function(){window.location.hash&&0===window.location.hash.indexOf("#product-reviews")&&(a()("#tab-reviews").click(),a()("html, body").animate({scrollTop:a()(".flex-tabs").offset().top},600))},t.prototype.injectPaginationLink=function(){var t=a()(".pagination-item--next .pagination-link",this.$reviewsContent),e=a()(".pagination-item--previous .pagination-link",this.$reviewsContent);t.length&&t.attr("href",t.attr("href")+" #product-reviews"),e.length&&e.attr("href",e.attr("href")+" #product-reviews")},t.prototype.registerValidation=function(){return this.validator.add([{selector:'[name="revrating"]',validate:"presence",errorMessage:"The 'Rating' field cannot be blank."},{selector:'[name="revtitle"]',validate:"min-length:2",errorMessage:"The 'Review Subject' field cannot be blank."},{selector:'[name="revtext"]',validate:"min-length:2",errorMessage:"The 'Comments' field cannot be blank."},{selector:'[name="email"]',validate:function(t,e){t(l.a.email(e))},errorMessage:"Please use a valid email address, such as user@example.com."}]),this.validator},t.prototype.validate=function(){return this.validator.performCheck()},t}();e.a=s},467:function(t,e,o){"use strict";function i(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}function n(){r()("[data-video-gallery]").each(function(t,e){var o=r()(e);o.data("video-gallery")instanceof l||o.data("video-gallery",new l(o))})}e.a=n;var a=o(1),r=o.n(a),l=function(){function t(e){i(this,t),this.$player=e.find("[data-video-player]"),this.$videos=e.find("[data-video-item]"),this.currentVideo={},this.bindEvents()}return t.prototype.selectNewVideo=function(t){t.preventDefault();var e=r()(t.currentTarget);this.currentVideo={id:e.data("video-id"),$selectedThumb:e},this.setMainVideo(),this.setActiveThumb()},t.prototype.setMainVideo=function(){this.$player.attr("src","//www.youtube.com/embed/"+this.currentVideo.id)},t.prototype.setActiveThumb=function(){this.$videos.removeClass("is-active"),this.currentVideo.$selectedThumb.addClass("is-active")},t.prototype.bindEvents=function(){this.$videos.on("click",this.selectNewVideo.bind(this))},t}()},469:function(t,e,o){"use strict";(function(t){function o(t,e){var o=Object.keys(t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(t);e&&(i=i.filter(function(e){return Object.getOwnPropertyDescriptor(t,e).enumerable})),o.push.apply(o,i)}return o}function i(t){for(var e=1;e<arguments.length;e++){var i=null!=arguments[e]?arguments[e]:{};e%2?o(Object(i),!0).forEach(function(e){a(t,e,i[e])}):Object.getOwnPropertyDescriptors?Object.defineProperties(t,Object.getOwnPropertyDescriptors(i)):o(Object(i)).forEach(function(e){Object.defineProperty(t,e,Object.getOwnPropertyDescriptor(i,e))})}return t}function n(t){"@babel/helpers - typeof";return(n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}function a(t,e,o){return e in t?Object.defineProperty(t,e,{value:o,enumerable:!0,configurable:!0,writable:!0}):t[e]=o,t}function r(){return r=Object.assign||function(t){for(var e=1;e<arguments.length;e++){var o=arguments[e];for(var i in o)Object.prototype.hasOwnProperty.call(o,i)&&(t[i]=o[i])}return t},r.apply(this,arguments)}function l(t,e){if(null==t)return{};var o,i,n={},a=Object.keys(t);for(i=0;i<a.length;i++)o=a[i],e.indexOf(o)>=0||(n[o]=t[o]);return n}function s(t,e){if(null==t)return{};var o,i,n=l(t,e);if(Object.getOwnPropertySymbols){var a=Object.getOwnPropertySymbols(t);for(i=0;i<a.length;i++)o=a[i],e.indexOf(o)>=0||Object.prototype.propertyIsEnumerable.call(t,o)&&(n[o]=t[o])}return n}function c(t){if("undefined"!=typeof window&&window.navigator)return!!navigator.userAgent.match(t)}function d(t,e,o){t.addEventListener(e,o,!Ot&&It)}function u(t,e,o){t.removeEventListener(e,o,!Ot&&It)}function h(t,e){if(e){if(">"===e[0]&&(e=e.substring(1)),t)try{if(t.matches)return t.matches(e);if(t.msMatchesSelector)return t.msMatchesSelector(e);if(t.webkitMatchesSelector)return t.webkitMatchesSelector(e)}catch(t){return!1}return!1}}function p(t){return t.host&&t!==document&&t.host.nodeType?t.host:t.parentNode}function f(t,e,o,i){if(t){o=o||document;do{if(null!=e&&(">"===e[0]?t.parentNode===o&&h(t,e):h(t,e))||i&&t===o)return t;if(t===o)break}while(t=p(t))}return null}function v(t,e,o){if(t&&e)if(t.classList)t.classList[o?"add":"remove"](e);else{var i=(" "+t.className+" ").replace(Lt," ").replace(" "+e+" "," ");t.className=(i+(o?" "+e:"")).replace(Lt," ")}}function g(t,e,o){var i=t&&t.style;if(i){if(void 0===o)return document.defaultView&&document.defaultView.getComputedStyle?o=document.defaultView.getComputedStyle(t,""):t.currentStyle&&(o=t.currentStyle),void 0===e?o:o[e];e in i||-1!==e.indexOf("webkit")||(e="-webkit-"+e),i[e]=o+("string"==typeof o?"":"px")}}function m(t,e){var o="";if("string"==typeof t)o=t;else do{var i=g(t,"transform");i&&"none"!==i&&(o=i+" "+o)}while(!e&&(t=t.parentNode));var n=window.DOMMatrix||window.WebKitCSSMatrix||window.CSSMatrix||window.MSCSSMatrix;return n&&new n(o)}function b(t,e,o){if(t){var i=t.getElementsByTagName(e),n=0,a=i.length;if(o)for(;n<a;n++)o(i[n],n);return i}return[]}function w(){var t=document.scrollingElement;return t||document.documentElement}function y(t,e,o,i,n){if(t.getBoundingClientRect||t===window){var a,r,l,s,c,d,u;if(t!==window&&t.parentNode&&t!==w()?(a=t.getBoundingClientRect(),r=a.top,l=a.left,s=a.bottom,c=a.right,d=a.height,u=a.width):(r=0,l=0,s=window.innerHeight,c=window.innerWidth,d=window.innerHeight,u=window.innerWidth),(e||o)&&t!==window&&(n=n||t.parentNode,!Ot))do{if(n&&n.getBoundingClientRect&&("none"!==g(n,"transform")||o&&"static"!==g(n,"position"))){var h=n.getBoundingClientRect();r-=h.top+parseInt(g(n,"border-top-width")),l-=h.left+parseInt(g(n,"border-left-width")),s=r+a.height,c=l+a.width;break}}while(n=n.parentNode);if(i&&t!==window){var p=m(n||t),f=p&&p.a,v=p&&p.d;p&&(r/=v,l/=f,u/=f,d/=v,s=r+d,c=l+u)}return{top:r,left:l,bottom:s,right:c,width:u,height:d}}}function C(t,e,o){for(var i=E(t,!0),n=y(t)[e];i;){var a=y(i)[o];if(!("top"===o||"left"===o?n>=a:n<=a))return i;if(i===w())break;i=E(i,!1)}return!1}function _(t,e,o,i){for(var n=0,a=0,r=t.children;a<r.length;){if("none"!==r[a].style.display&&r[a]!==F.ghost&&(i||r[a]!==F.dragged)&&f(r[a],o.draggable,t,!1)){if(n===e)return r[a];n++}a++}return null}function x(t,e){for(var o=t.lastElementChild;o&&(o===F.ghost||"none"===g(o,"display")||e&&!h(o,e));)o=o.previousElementSibling;return o||null}function T(t,e){var o=0;if(!t||!t.parentNode)return-1;for(;t=t.previousElementSibling;)"TEMPLATE"===t.nodeName.toUpperCase()||t===F.clone||e&&!h(t,e)||o++;return o}function S(t){var e=0,o=0,i=w();if(t)do{var n=m(t),a=n.a,r=n.d;e+=t.scrollLeft*a,o+=t.scrollTop*r}while(t!==i&&(t=t.parentNode));return[e,o]}function k(t,e){for(var o in t)if(t.hasOwnProperty(o))for(var i in e)if(e.hasOwnProperty(i)&&e[i]===t[o][i])return Number(o);return-1}function E(t,e){if(!t||!t.getBoundingClientRect)return w();var o=t,i=!1;do{if(o.clientWidth<o.scrollWidth||o.clientHeight<o.scrollHeight){var n=g(o);if(o.clientWidth<o.scrollWidth&&("auto"==n.overflowX||"scroll"==n.overflowX)||o.clientHeight<o.scrollHeight&&("auto"==n.overflowY||"scroll"==n.overflowY)){if(!o.getBoundingClientRect||o===document.body)return w();if(i||e)return o;i=!0}}}while(o=o.parentNode);return w()}function D(t,e){if(t&&e)for(var o in e)e.hasOwnProperty(o)&&(t[o]=e[o]);return t}function O(t,e){return Math.round(t.top)===Math.round(e.top)&&Math.round(t.left)===Math.round(e.left)&&Math.round(t.height)===Math.round(e.height)&&Math.round(t.width)===Math.round(e.width)}function M(t,e){return function(){if(!it){var o=arguments,i=this;1===o.length?t.call(i,o[0]):t.apply(i,o),it=setTimeout(function(){it=void 0},e)}}}function A(){clearTimeout(it),it=void 0}function $(t,e,o){t.scrollLeft+=e,t.scrollTop+=o}function N(e){var o=window.Polymer,i=t||window.Zepto;return o&&o.dom?o.dom(e).cloneNode(!0):i?i(e).clone(!0)[0]:e.cloneNode(!0)}function P(){var t,e=[];return{captureAnimationState:function(){if(e=[],this.options.animation){[].slice.call(this.el.children).forEach(function(t){if("none"!==g(t,"display")&&t!==F.ghost){e.push({target:t,rect:y(t)});var o=i({},e[e.length-1].rect);if(t.thisAnimationDuration){var n=m(t,!0);n&&(o.top-=n.f,o.left-=n.e)}t.fromRect=o}})}},addAnimationState:function(t){e.push(t)},removeAnimationState:function(t){e.splice(k(e,{target:t}),1)},animateAll:function(o){var i=this;if(!this.options.animation)return clearTimeout(t),void("function"==typeof o&&o());var n=!1,a=0;e.forEach(function(t){var e=0,o=t.target,r=o.fromRect,l=y(o),s=o.prevFromRect,c=o.prevToRect,d=t.rect,u=m(o,!0);u&&(l.top-=u.f,l.left-=u.e),o.toRect=l,o.thisAnimationDuration&&O(s,l)&&!O(r,l)&&(d.top-l.top)/(d.left-l.left)==(r.top-l.top)/(r.left-l.left)&&(e=L(d,s,c,i.options)),O(l,r)||(o.prevFromRect=r,o.prevToRect=l,e||(e=i.options.animation),i.animate(o,d,l,e)),e&&(n=!0,a=Math.max(a,e),clearTimeout(o.animationResetTimer),o.animationResetTimer=setTimeout(function(){o.animationTime=0,o.prevFromRect=null,o.fromRect=null,o.prevToRect=null,o.thisAnimationDuration=null},e),o.thisAnimationDuration=e)}),clearTimeout(t),n?t=setTimeout(function(){"function"==typeof o&&o()},a):"function"==typeof o&&o(),e=[]},animate:function(t,e,o,i){if(i){g(t,"transition",""),g(t,"transform","");var n=m(this.el),a=n&&n.a,r=n&&n.d,l=(e.left-o.left)/(a||1),s=(e.top-o.top)/(r||1);t.animatingX=!!l,t.animatingY=!!s,g(t,"transform","translate3d("+l+"px,"+s+"px,0)"),this.forRepaintDummy=I(t),g(t,"transition","transform "+i+"ms"+(this.options.easing?" "+this.options.easing:"")),g(t,"transform","translate3d(0,0,0)"),"number"==typeof t.animated&&clearTimeout(t.animated),t.animated=setTimeout(function(){g(t,"transition",""),g(t,"transform",""),t.animated=!1,t.animatingX=!1,t.animatingY=!1},i)}}}}function I(t){return t.offsetWidth}function L(t,e,o,i){return Math.sqrt(Math.pow(e.top-t.top,2)+Math.pow(e.left-t.left,2))/Math.sqrt(Math.pow(e.top-o.top,2)+Math.pow(e.left-o.left,2))*i.animation}function R(t){var e=t.sortable,o=t.rootEl,n=t.name,a=t.targetEl,r=t.cloneEl,l=t.toEl,s=t.fromEl,c=t.oldIndex,d=t.newIndex,u=t.oldDraggableIndex,h=t.newDraggableIndex,p=t.originalEvent,f=t.putSortable,v=t.extraEventProperties;if(e=e||o&&o[Rt]){var g,m=e.options,b="on"+n.charAt(0).toUpperCase()+n.substr(1);!window.CustomEvent||Ot||Mt?(g=document.createEvent("Event"),g.initEvent(n,!0,!0)):g=new CustomEvent(n,{bubbles:!0,cancelable:!0}),g.to=l||o,g.from=s||o,g.item=a||o,g.clone=r,g.oldIndex=c,g.newIndex=d,g.oldDraggableIndex=u,g.newDraggableIndex=h,g.originalEvent=p,g.pullMode=f?f.lastPutMode:void 0;var w=i(i({},v),Xt.getEventProperties(n,e));for(var y in w)g[y]=w[y];o&&o.dispatchEvent(g),m[b]&&m[b].call(e,g)}}function B(t){R(i({putSortable:mt,cloneEl:dt,targetEl:nt,rootEl:lt,oldIndex:ht,oldDraggableIndex:ft,newIndex:pt,newDraggableIndex:vt},t))}function F(t,e){if(!t||!t.nodeType||1!==t.nodeType)throw"Sortable: `el` must be an HTMLElement, not ".concat({}.toString.call(t));this.el=t,this.options=e=r({},e),t[Rt]=this;var o={group:null,sort:!0,disabled:!1,store:null,handle:null,draggable:/^[uo]l$/i.test(t.nodeName)?">li":">*",swapThreshold:1,invertSwap:!1,invertedSwapThreshold:null,removeCloneOnHide:!0,direction:function(){return oe(t,this.options)},ghostClass:"sortable-ghost",chosenClass:"sortable-chosen",dragClass:"sortable-drag",ignore:"a, img",filter:null,preventOnFilter:!0,animation:0,easing:null,setData:function(t,e){t.setData("Text",e.textContent)},dropBubble:!1,dragoverBubble:!1,dataIdAttr:"data-id",delay:0,delayOnTouchOnly:!1,touchStartThreshold:(Number.parseInt?Number:window).parseInt(window.devicePixelRatio,10)||1,forceFallback:!1,fallbackClass:"sortable-fallback",fallbackOnBody:!1,fallbackTolerance:0,fallbackOffset:{x:0,y:0},supportPointer:!1!==F.supportPointer&&"PointerEvent"in window&&!$t,emptyInsertThreshold:5};Xt.initializePlugins(this,t,o);for(var i in o)!(i in e)&&(e[i]=o[i]);ae(e);for(var n in this)"_"===n.charAt(0)&&"function"==typeof this[n]&&(this[n]=this[n].bind(this));this.nativeDraggable=!e.forceFallback&&te,this.nativeDraggable&&(this.options.touchStartThreshold=1),e.supportPointer?d(t,"pointerdown",this._onTapStart):(d(t,"mousedown",this._onTapStart),d(t,"touchstart",this._onTapStart)),this.nativeDraggable&&(d(t,"dragover",this),d(t,"dragenter",this)),Ht.push(this.el),e.store&&e.store.get&&this.sort(e.store.get(this)||[]),r(this,P())}function X(t){t.dataTransfer&&(t.dataTransfer.dropEffect="move"),t.cancelable&&t.preventDefault()}function Y(t,e,o,i,n,a,r,l){var s,c,d=t[Rt],u=d.options.onMove;return!window.CustomEvent||Ot||Mt?(s=document.createEvent("Event"),s.initEvent("move",!0,!0)):s=new CustomEvent("move",{bubbles:!0,cancelable:!0}),s.to=e,s.from=t,s.dragged=o,s.draggedRect=i,s.related=n||e,s.relatedRect=a||y(e),s.willInsertAfter=l,s.originalEvent=r,t.dispatchEvent(s),u&&(c=u.call(d,s,r)),c}function W(t){t.draggable=!1}function V(){Gt=!1}function j(t,e,o){var i=y(_(o.el,0,o.options,!0));return e?t.clientX<i.left-10||t.clientY<i.top&&t.clientX<i.right:t.clientY<i.top-10||t.clientY<i.bottom&&t.clientX<i.left}function H(t,e,o){var i=y(x(o.el,o.options.draggable));return e?t.clientX>i.right+10||t.clientX<=i.right&&t.clientY>i.bottom&&t.clientX>=i.left:t.clientX>i.right&&t.clientY>i.top||t.clientX<=i.right&&t.clientY>i.bottom+10}function z(t,e,o,i,n,a,r,l){var s=i?t.clientY:t.clientX,c=i?o.height:o.width,d=i?o.top:o.left,u=i?o.bottom:o.right,h=!1;if(!r)if(l&&Et<c*n){if(!zt&&(1===kt?s>d+c*a/2:s<u-c*a/2)&&(zt=!0),zt)h=!0;else if(1===kt?s<d+Et:s>u-Et)return-kt}else if(s>d+c*(1-n)/2&&s<u-c*(1-n)/2)return q(e);return h=h||r,h&&(s<d+c*a/2||s>u-c*a/2)?s>d+c/2?1:-1:0}function q(t){return T(nt)<T(t)?1:-1}function Q(t){for(var e=t.tagName+t.className+t.src+t.href+t.textContent,o=e.length,i=0;o--;)i+=e.charCodeAt(o);return i.toString(36)}function G(t){Ut.length=0;for(var e=t.getElementsByTagName("input"),o=e.length;o--;){var i=e[o];i.checked&&Ut.push(i)}}function U(t){return setTimeout(t,0)}function J(t){return clearTimeout(t)}function Z(){function t(){this.defaults={scroll:!0,forceAutoScrollFallback:!1,scrollSensitivity:30,scrollSpeed:10,bubbleScroll:!0};for(var t in this)"_"===t.charAt(0)&&"function"==typeof this[t]&&(this[t]=this[t].bind(this))}return t.prototype={dragStarted:function(t){var e=t.originalEvent;this.sortable.nativeDraggable?d(document,"dragover",this._handleAutoScroll):this.options.supportPointer?d(document,"pointermove",this._handleFallbackAutoScroll):e.touches?d(document,"touchmove",this._handleFallbackAutoScroll):d(document,"mousemove",this._handleFallbackAutoScroll)},dragOverCompleted:function(t){var e=t.originalEvent;this.options.dragOverBubble||e.rootEl||this._handleAutoScroll(e)},drop:function(){this.sortable.nativeDraggable?u(document,"dragover",this._handleAutoScroll):(u(document,"pointermove",this._handleFallbackAutoScroll),u(document,"touchmove",this._handleFallbackAutoScroll),u(document,"mousemove",this._handleFallbackAutoScroll)),tt(),K(),A()},nulling:function(){fe=ue=de=me=ve=he=pe=null,ge.length=0},_handleFallbackAutoScroll:function(t){this._handleAutoScroll(t,!0)},_handleAutoScroll:function(t,e){var o=this,i=(t.touches?t.touches[0]:t).clientX,n=(t.touches?t.touches[0]:t).clientY,a=document.elementFromPoint(i,n);if(fe=t,e||this.options.forceAutoScrollFallback||Mt||Ot||$t){be(t,this.options,a,e);var r=E(a,!0);!me||ve&&i===he&&n===pe||(ve&&tt(),ve=setInterval(function(){var a=E(document.elementFromPoint(i,n),!0);a!==r&&(r=a,K()),be(t,o.options,a,e)},10),he=i,pe=n)}else{if(!this.options.bubbleScroll||E(a,!0)===w())return void K();be(t,this.options,E(a,!1),!1)}}},r(t,{pluginName:"scroll",initializeByDefault:!0})}function K(){ge.forEach(function(t){clearInterval(t.pid)}),ge=[]}function tt(){clearInterval(ve)}function et(){}function ot(){}var it,nt,at,rt,lt,st,ct,dt,ut,ht,pt,ft,vt,gt,mt,bt,wt,yt,Ct,_t,xt,Tt,St,kt,Et,Dt,Ot=c(/(?:Trident.*rv[ :]?11\.|msie|iemobile|Windows Phone)/i),Mt=c(/Edge/i),At=c(/firefox/i),$t=c(/safari/i)&&!c(/chrome/i)&&!c(/android/i),Nt=c(/iP(ad|od|hone)/i),Pt=c(/chrome/i)&&c(/android/i),It={capture:!1,passive:!1},Lt=/\s+/g,Rt="Sortable"+(new Date).getTime(),Bt=[],Ft={initializeByDefault:!0},Xt={mount:function(t){for(var e in Ft)!Ft.hasOwnProperty(e)||e in t||(t[e]=Ft[e]);Bt.forEach(function(e){if(e.pluginName===t.pluginName)throw"Sortable: Cannot mount plugin ".concat(t.pluginName," more than once")}),Bt.push(t)},pluginEvent:function(t,e,o){var n=this;this.eventCanceled=!1,o.cancel=function(){n.eventCanceled=!0};var a=t+"Global";Bt.forEach(function(n){e[n.pluginName]&&(e[n.pluginName][a]&&e[n.pluginName][a](i({sortable:e},o)),e.options[n.pluginName]&&e[n.pluginName][t]&&e[n.pluginName][t](i({sortable:e},o)))})},initializePlugins:function(t,e,o,i){Bt.forEach(function(i){var n=i.pluginName;if(t.options[n]||i.initializeByDefault){var a=new i(t,e,t.options);a.sortable=t,a.options=t.options,t[n]=a,r(o,a.defaults)}});for(var n in t.options)if(t.options.hasOwnProperty(n)){var a=this.modifyOption(t,n,t.options[n]);void 0!==a&&(t.options[n]=a)}},getEventProperties:function(t,e){var o={};return Bt.forEach(function(i){"function"==typeof i.eventProperties&&r(o,i.eventProperties.call(e[i.pluginName],t))}),o},modifyOption:function(t,e,o){var i;return Bt.forEach(function(n){t[n.pluginName]&&n.optionListeners&&"function"==typeof n.optionListeners[e]&&(i=n.optionListeners[e].call(t[n.pluginName],o))}),i}},Yt=["evt"],Wt=function(t,e){var o=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{},n=o.evt,a=s(o,Yt);Xt.pluginEvent.bind(F)(t,e,i({dragEl:nt,parentEl:at,ghostEl:rt,rootEl:lt,nextEl:st,lastDownEl:ct,cloneEl:dt,cloneHidden:ut,dragStarted:Tt,putSortable:mt,activeSortable:F.active,originalEvent:n,oldIndex:ht,oldDraggableIndex:ft,newIndex:pt,newDraggableIndex:vt,hideGhostForTarget:re,unhideGhostForTarget:le,cloneNowHidden:function(){ut=!0},cloneNowShown:function(){ut=!1},dispatchSortableEvent:function(t){B({sortable:e,name:t,originalEvent:n})}},a))},Vt=!1,jt=!1,Ht=[],zt=!1,qt=!1,Qt=[],Gt=!1,Ut=[],Jt="undefined"!=typeof document,Zt=Nt,Kt=Mt||Ot?"cssFloat":"float",te=Jt&&!Pt&&!Nt&&"draggable"in document.createElement("div"),ee=function(){if(Jt){if(Ot)return!1;var t=document.createElement("x");return t.style.cssText="pointer-events:auto","auto"===t.style.pointerEvents}}(),oe=function(t,e){var o=g(t),i=parseInt(o.width)-parseInt(o.paddingLeft)-parseInt(o.paddingRight)-parseInt(o.borderLeftWidth)-parseInt(o.borderRightWidth),n=_(t,0,e),a=_(t,1,e),r=n&&g(n),l=a&&g(a),s=r&&parseInt(r.marginLeft)+parseInt(r.marginRight)+y(n).width,c=l&&parseInt(l.marginLeft)+parseInt(l.marginRight)+y(a).width;if("flex"===o.display)return"column"===o.flexDirection||"column-reverse"===o.flexDirection?"vertical":"horizontal";if("grid"===o.display)return o.gridTemplateColumns.split(" ").length<=1?"vertical":"horizontal";if(n&&r.float&&"none"!==r.float){var d="left"===r.float?"left":"right";return!a||"both"!==l.clear&&l.clear!==d?"horizontal":"vertical"}return n&&("block"===r.display||"flex"===r.display||"table"===r.display||"grid"===r.display||s>=i&&"none"===o[Kt]||a&&"none"===o[Kt]&&s+c>i)?"vertical":"horizontal"},ie=function(t,e,o){var i=o?t.left:t.top,n=o?t.right:t.bottom,a=o?t.width:t.height,r=o?e.left:e.top,l=o?e.right:e.bottom,s=o?e.width:e.height;return i===r||n===l||i+a/2===r+s/2},ne=function(t,e){var o;return Ht.some(function(i){var n=i[Rt].options.emptyInsertThreshold;if(n&&!x(i)){var a=y(i),r=t>=a.left-n&&t<=a.right+n,l=e>=a.top-n&&e<=a.bottom+n;return r&&l?o=i:void 0}}),o},ae=function(t){function e(t,o){return function(i,n,a,r){var l=i.options.group.name&&n.options.group.name&&i.options.group.name===n.options.group.name;if(null==t&&(o||l))return!0;if(null==t||!1===t)return!1;if(o&&"clone"===t)return t;if("function"==typeof t)return e(t(i,n,a,r),o)(i,n,a,r);var s=(o?i:n).options.group.name;return!0===t||"string"==typeof t&&t===s||t.join&&t.indexOf(s)>-1}}var o={},i=t.group;i&&"object"==n(i)||(i={name:i}),o.name=i.name,o.checkPull=e(i.pull,!0),o.checkPut=e(i.put),o.revertClone=i.revertClone,t.group=o},re=function(){!ee&&rt&&g(rt,"display","none")},le=function(){!ee&&rt&&g(rt,"display","")};Jt&&document.addEventListener("click",function(t){if(jt)return t.preventDefault(),t.stopPropagation&&t.stopPropagation(),t.stopImmediatePropagation&&t.stopImmediatePropagation(),jt=!1,!1},!0);var se=function(t){if(nt){t=t.touches?t.touches[0]:t;var e=ne(t.clientX,t.clientY);if(e){var o={};for(var i in t)t.hasOwnProperty(i)&&(o[i]=t[i]);o.target=o.rootEl=e,o.preventDefault=void 0,o.stopPropagation=void 0,e[Rt]._onDragOver(o)}}},ce=function(t){nt&&nt.parentNode[Rt]._isOutsideThisEl(t.target)};F.prototype={constructor:F,_isOutsideThisEl:function(t){this.el.contains(t)||t===this.el||(St=null)},_getDirection:function(t,e){return"function"==typeof this.options.direction?this.options.direction.call(this,t,e,nt):this.options.direction},_onTapStart:function(t){if(t.cancelable){var e=this,o=this.el,i=this.options,n=i.preventOnFilter,a=t.type,r=t.touches&&t.touches[0]||t.pointerType&&"touch"===t.pointerType&&t,l=(r||t).target,s=t.target.shadowRoot&&(t.path&&t.path[0]||t.composedPath&&t.composedPath()[0])||l,c=i.filter;if(G(o),!nt&&!(/mousedown|pointerdown/.test(a)&&0!==t.button||i.disabled)&&!s.isContentEditable&&(this.nativeDraggable||!$t||!l||"SELECT"!==l.tagName.toUpperCase())&&!((l=f(l,i.draggable,o,!1))&&l.animated||ct===l)){if(ht=T(l),ft=T(l,i.draggable),"function"==typeof c){if(c.call(this,t,l,this))return B({sortable:e,rootEl:s,name:"filter",targetEl:l,toEl:o,fromEl:o}),Wt("filter",e,{evt:t}),void(n&&t.cancelable&&t.preventDefault())}else if(c&&(c=c.split(",").some(function(i){if(i=f(s,i.trim(),o,!1))return B({sortable:e,rootEl:i,name:"filter",targetEl:l,fromEl:o,toEl:o}),Wt("filter",e,{evt:t}),!0})))return void(n&&t.cancelable&&t.preventDefault());i.handle&&!f(s,i.handle,o,!1)||this._prepareDragStart(t,r,l)}}},_prepareDragStart:function(t,e,o){var i,n=this,a=n.el,r=n.options,l=a.ownerDocument;if(o&&!nt&&o.parentNode===a){var s=y(o);if(lt=a,nt=o,at=nt.parentNode,st=nt.nextSibling,ct=o,gt=r.group,F.dragged=nt,bt={target:nt,clientX:(e||t).clientX,clientY:(e||t).clientY},_t=bt.clientX-s.left,xt=bt.clientY-s.top,this._lastX=(e||t).clientX,this._lastY=(e||t).clientY,nt.style["will-change"]="all",i=function(){if(Wt("delayEnded",n,{evt:t}),F.eventCanceled)return void n._onDrop();n._disableDelayedDragEvents(),!At&&n.nativeDraggable&&(nt.draggable=!0),n._triggerDragStart(t,e),B({sortable:n,name:"choose",originalEvent:t}),v(nt,r.chosenClass,!0)},r.ignore.split(",").forEach(function(t){b(nt,t.trim(),W)}),d(l,"dragover",se),d(l,"mousemove",se),d(l,"touchmove",se),d(l,"mouseup",n._onDrop),d(l,"touchend",n._onDrop),d(l,"touchcancel",n._onDrop),At&&this.nativeDraggable&&(this.options.touchStartThreshold=4,nt.draggable=!0),Wt("delayStart",this,{evt:t}),!r.delay||r.delayOnTouchOnly&&!e||this.nativeDraggable&&(Mt||Ot))i();else{if(F.eventCanceled)return void this._onDrop();d(l,"mouseup",n._disableDelayedDrag),d(l,"touchend",n._disableDelayedDrag),d(l,"touchcancel",n._disableDelayedDrag),d(l,"mousemove",n._delayedDragTouchMoveHandler),d(l,"touchmove",n._delayedDragTouchMoveHandler),r.supportPointer&&d(l,"pointermove",n._delayedDragTouchMoveHandler),n._dragStartTimer=setTimeout(i,r.delay)}}},_delayedDragTouchMoveHandler:function(t){var e=t.touches?t.touches[0]:t;Math.max(Math.abs(e.clientX-this._lastX),Math.abs(e.clientY-this._lastY))>=Math.floor(this.options.touchStartThreshold/(this.nativeDraggable&&window.devicePixelRatio||1))&&this._disableDelayedDrag()},_disableDelayedDrag:function(){nt&&W(nt),clearTimeout(this._dragStartTimer),this._disableDelayedDragEvents()},_disableDelayedDragEvents:function(){var t=this.el.ownerDocument;u(t,"mouseup",this._disableDelayedDrag),u(t,"touchend",this._disableDelayedDrag),u(t,"touchcancel",this._disableDelayedDrag),u(t,"mousemove",this._delayedDragTouchMoveHandler),u(t,"touchmove",this._delayedDragTouchMoveHandler),u(t,"pointermove",this._delayedDragTouchMoveHandler)},_triggerDragStart:function(t,e){e=e||"touch"==t.pointerType&&t,!this.nativeDraggable||e?this.options.supportPointer?d(document,"pointermove",this._onTouchMove):e?d(document,"touchmove",this._onTouchMove):d(document,"mousemove",this._onTouchMove):(d(nt,"dragend",this),d(lt,"dragstart",this._onDragStart));try{document.selection?U(function(){document.selection.empty()}):window.getSelection().removeAllRanges()}catch(t){}},_dragStarted:function(t,e){if(Vt=!1,lt&&nt){Wt("dragStarted",this,{evt:e}),this.nativeDraggable&&d(document,"dragover",ce);var o=this.options;!t&&v(nt,o.dragClass,!1),v(nt,o.ghostClass,!0),F.active=this,t&&this._appendGhost(),B({sortable:this,name:"start",originalEvent:e})}else this._nulling()},_emulateDragOver:function(){if(wt){this._lastX=wt.clientX,this._lastY=wt.clientY,re();for(var t=document.elementFromPoint(wt.clientX,wt.clientY),e=t;t&&t.shadowRoot&&(t=t.shadowRoot.elementFromPoint(wt.clientX,wt.clientY))!==e;)e=t;if(nt.parentNode[Rt]._isOutsideThisEl(t),e)do{if(e[Rt]){if(e[Rt]._onDragOver({clientX:wt.clientX,clientY:wt.clientY,target:t,rootEl:e})&&!this.options.dragoverBubble)break}t=e}while(e=e.parentNode);le()}},_onTouchMove:function(t){if(bt){var e=this.options,o=e.fallbackTolerance,i=e.fallbackOffset,n=t.touches?t.touches[0]:t,a=rt&&m(rt,!0),r=rt&&a&&a.a,l=rt&&a&&a.d,s=Zt&&Dt&&S(Dt),c=(n.clientX-bt.clientX+i.x)/(r||1)+(s?s[0]-Qt[0]:0)/(r||1),d=(n.clientY-bt.clientY+i.y)/(l||1)+(s?s[1]-Qt[1]:0)/(l||1);if(!F.active&&!Vt){if(o&&Math.max(Math.abs(n.clientX-this._lastX),Math.abs(n.clientY-this._lastY))<o)return;this._onDragStart(t,!0)}if(rt){a?(a.e+=c-(yt||0),a.f+=d-(Ct||0)):a={a:1,b:0,c:0,d:1,e:c,f:d};var u="matrix(".concat(a.a,",").concat(a.b,",").concat(a.c,",").concat(a.d,",").concat(a.e,",").concat(a.f,")");g(rt,"webkitTransform",u),g(rt,"mozTransform",u),g(rt,"msTransform",u),g(rt,"transform",u),yt=c,Ct=d,wt=n}t.cancelable&&t.preventDefault()}},_appendGhost:function(){if(!rt){var t=this.options.fallbackOnBody?document.body:lt,e=y(nt,!0,Zt,!0,t),o=this.options;if(Zt){for(Dt=t;"static"===g(Dt,"position")&&"none"===g(Dt,"transform")&&Dt!==document;)Dt=Dt.parentNode;Dt!==document.body&&Dt!==document.documentElement?(Dt===document&&(Dt=w()),e.top+=Dt.scrollTop,e.left+=Dt.scrollLeft):Dt=w(),Qt=S(Dt)}rt=nt.cloneNode(!0),v(rt,o.ghostClass,!1),v(rt,o.fallbackClass,!0),v(rt,o.dragClass,!0),g(rt,"transition",""),g(rt,"transform",""),g(rt,"box-sizing","border-box"),g(rt,"margin",0),g(rt,"top",e.top),g(rt,"left",e.left),g(rt,"width",e.width),g(rt,"height",e.height),g(rt,"opacity","0.8"),g(rt,"position",Zt?"absolute":"fixed"),g(rt,"zIndex","100000"),g(rt,"pointerEvents","none"),F.ghost=rt,t.appendChild(rt),g(rt,"transform-origin",_t/parseInt(rt.style.width)*100+"% "+xt/parseInt(rt.style.height)*100+"%")}},_onDragStart:function(t,e){var o=this,i=t.dataTransfer,n=o.options;if(Wt("dragStart",this,{evt:t}),F.eventCanceled)return void this._onDrop();Wt("setupClone",this),F.eventCanceled||(dt=N(nt),dt.draggable=!1,dt.style["will-change"]="",this._hideClone(),v(dt,this.options.chosenClass,!1),F.clone=dt),o.cloneId=U(function(){Wt("clone",o),F.eventCanceled||(o.options.removeCloneOnHide||lt.insertBefore(dt,nt),o._hideClone(),B({sortable:o,name:"clone"}))}),!e&&v(nt,n.dragClass,!0),e?(jt=!0,o._loopId=setInterval(o._emulateDragOver,50)):(u(document,"mouseup",o._onDrop),u(document,"touchend",o._onDrop),u(document,"touchcancel",o._onDrop),i&&(i.effectAllowed="move",n.setData&&n.setData.call(o,i,nt)),d(document,"drop",o),g(nt,"transform","translateZ(0)")),Vt=!0,o._dragStartId=U(o._dragStarted.bind(o,e,t)),d(document,"selectstart",o),Tt=!0,$t&&g(document.body,"user-select","none")},_onDragOver:function(t){function e(e,o){Wt(e,k,i({evt:t,isOwner:b,axis:c?"vertical":"horizontal",revert:s,dragRect:r,targetRect:l,canSort:w,fromSortable:S,target:u,completed:n,onMove:function(e,o){return Y(lt,d,nt,r,e,y(e),t,o)},changed:a},o))}function o(){e("dragOverAnimationCapture"),k.captureAnimationState(),k!==S&&S.captureAnimationState()}function n(o){return e("dragOverCompleted",{insertion:o}),o&&(b?m._hideClone():m._showClone(k),k!==S&&(v(nt,mt?mt.options.ghostClass:m.options.ghostClass,!1),v(nt,h.ghostClass,!0)),mt!==k&&k!==F.active?mt=k:k===F.active&&mt&&(mt=null),S===k&&(k._ignoreWhileAnimating=u),k.animateAll(function(){e("dragOverAnimationComplete"),k._ignoreWhileAnimating=null}),k!==S&&(S.animateAll(),S._ignoreWhileAnimating=null)),(u===nt&&!nt.animated||u===d&&!u.animated)&&(St=null),h.dragoverBubble||t.rootEl||u===document||(nt.parentNode[Rt]._isOutsideThisEl(t.target),!o&&se(t)),!h.dragoverBubble&&t.stopPropagation&&t.stopPropagation(),E=!0}function a(){pt=T(nt),vt=T(nt,h.draggable),B({sortable:k,name:"change",toEl:d,newIndex:pt,newDraggableIndex:vt,originalEvent:t})}var r,l,s,c,d=this.el,u=t.target,h=this.options,p=h.group,m=F.active,b=gt===p,w=h.sort,S=mt||m,k=this,E=!1;if(!Gt){if(void 0!==t.preventDefault&&t.cancelable&&t.preventDefault(),u=f(u,h.draggable,d,!0),e("dragOver"),F.eventCanceled)return E;if(nt.contains(t.target)||u.animated&&u.animatingX&&u.animatingY||k._ignoreWhileAnimating===u)return n(!1);if(jt=!1,m&&!h.disabled&&(b?w||(s=at!==lt):mt===this||(this.lastPutMode=gt.checkPull(this,m,nt,t))&&p.checkPut(this,m,nt,t))){if(c="vertical"===this._getDirection(t,u),r=y(nt),e("dragOverValid"),F.eventCanceled)return E;if(s)return at=lt,o(),this._hideClone(),e("revert"),F.eventCanceled||(st?lt.insertBefore(nt,st):lt.appendChild(nt)),n(!0);var D=x(d,h.draggable);if(!D||H(t,c,this)&&!D.animated){if(D===nt)return n(!1);if(D&&d===t.target&&(u=D),u&&(l=y(u)),!1!==Y(lt,d,nt,r,u,l,t,!!u))return o(),d.appendChild(nt),at=d,a(),n(!0)}else if(D&&j(t,c,this)){var O=_(d,0,h,!0);if(O===nt)return n(!1);if(u=O,l=y(u),!1!==Y(lt,d,nt,r,u,l,t,!1))return o(),d.insertBefore(nt,O),at=d,a(),n(!0)}else if(u.parentNode===d){l=y(u);var M,A=0,N=nt.parentNode!==d,P=!ie(nt.animated&&nt.toRect||r,u.animated&&u.toRect||l,c),I=c?"top":"left",L=C(u,"top","top")||C(nt,"top","top"),R=L?L.scrollTop:void 0;St!==u&&(M=l[I],zt=!1,qt=!P&&h.invertSwap||N),A=z(t,u,l,c,P?1:h.swapThreshold,null==h.invertedSwapThreshold?h.swapThreshold:h.invertedSwapThreshold,qt,St===u);var X;if(0!==A){var W=T(nt);do{W-=A,X=at.children[W]}while(X&&("none"===g(X,"display")||X===rt))}if(0===A||X===u)return n(!1);St=u,kt=A;var q=u.nextElementSibling,Q=!1;Q=1===A;var G=Y(lt,d,nt,r,u,l,t,Q);if(!1!==G)return 1!==G&&-1!==G||(Q=1===G),Gt=!0,setTimeout(V,30),o(),Q&&!q?d.appendChild(nt):u.parentNode.insertBefore(nt,Q?q:u),L&&$(L,0,R-L.scrollTop),at=nt.parentNode,void 0===M||qt||(Et=Math.abs(M-y(u)[I])),a(),n(!0)}if(d.contains(nt))return n(!1)}return!1}},_ignoreWhileAnimating:null,_offMoveEvents:function(){u(document,"mousemove",this._onTouchMove),u(document,"touchmove",this._onTouchMove),u(document,"pointermove",this._onTouchMove),u(document,"dragover",se),u(document,"mousemove",se),u(document,"touchmove",se)},_offUpEvents:function(){var t=this.el.ownerDocument;u(t,"mouseup",this._onDrop),u(t,"touchend",this._onDrop),u(t,"pointerup",this._onDrop),u(t,"touchcancel",this._onDrop),u(document,"selectstart",this)},_onDrop:function(t){var e=this.el,o=this.options;if(pt=T(nt),vt=T(nt,o.draggable),Wt("drop",this,{evt:t}),at=nt&&nt.parentNode,pt=T(nt),vt=T(nt,o.draggable),F.eventCanceled)return void this._nulling();Vt=!1,qt=!1,zt=!1,clearInterval(this._loopId),clearTimeout(this._dragStartTimer),J(this.cloneId),J(this._dragStartId),this.nativeDraggable&&(u(document,"drop",this),u(e,"dragstart",this._onDragStart)),this._offMoveEvents(),this._offUpEvents(),$t&&g(document.body,"user-select",""),g(nt,"transform",""),t&&(Tt&&(t.cancelable&&t.preventDefault(),!o.dropBubble&&t.stopPropagation()),rt&&rt.parentNode&&rt.parentNode.removeChild(rt),(lt===at||mt&&"clone"!==mt.lastPutMode)&&dt&&dt.parentNode&&dt.parentNode.removeChild(dt),nt&&(this.nativeDraggable&&u(nt,"dragend",this),W(nt),nt.style["will-change"]="",Tt&&!Vt&&v(nt,mt?mt.options.ghostClass:this.options.ghostClass,!1),v(nt,this.options.chosenClass,!1),B({sortable:this,name:"unchoose",toEl:at,newIndex:null,newDraggableIndex:null,originalEvent:t}),lt!==at?(pt>=0&&(B({rootEl:at,name:"add",toEl:at,fromEl:lt,originalEvent:t}),B({sortable:this,name:"remove",toEl:at,originalEvent:t}),B({rootEl:at,name:"sort",toEl:at,fromEl:lt,originalEvent:t}),B({sortable:this,name:"sort",toEl:at,originalEvent:t})),mt&&mt.save()):pt!==ht&&pt>=0&&(B({sortable:this,name:"update",toEl:at,originalEvent:t}),B({sortable:this,name:"sort",toEl:at,originalEvent:t})),F.active&&(null!=pt&&-1!==pt||(pt=ht,vt=ft),B({sortable:this,name:"end",toEl:at,originalEvent:t}),this.save()))),this._nulling()},_nulling:function(){Wt("nulling",this),lt=nt=at=rt=st=dt=ct=ut=bt=wt=Tt=pt=vt=ht=ft=St=kt=mt=gt=F.dragged=F.ghost=F.clone=F.active=null,Ut.forEach(function(t){t.checked=!0}),Ut.length=yt=Ct=0},handleEvent:function(t){switch(t.type){case"drop":case"dragend":this._onDrop(t);break;case"dragenter":case"dragover":nt&&(this._onDragOver(t),X(t));break;case"selectstart":t.preventDefault()}},toArray:function(){for(var t,e=[],o=this.el.children,i=0,n=o.length,a=this.options;i<n;i++)t=o[i],f(t,a.draggable,this.el,!1)&&e.push(t.getAttribute(a.dataIdAttr)||Q(t));return e},sort:function(t,e){var o={},i=this.el;this.toArray().forEach(function(t,e){var n=i.children[e];f(n,this.options.draggable,i,!1)&&(o[t]=n)},this),e&&this.captureAnimationState(),t.forEach(function(t){o[t]&&(i.removeChild(o[t]),i.appendChild(o[t]))}),e&&this.animateAll()},save:function(){var t=this.options.store;t&&t.set&&t.set(this)},closest:function(t,e){return f(t,e||this.options.draggable,this.el,!1)},option:function(t,e){var o=this.options;if(void 0===e)return o[t];var i=Xt.modifyOption(this,t,e);o[t]=void 0!==i?i:e,"group"===t&&ae(o)},destroy:function(){Wt("destroy",this);var t=this.el;t[Rt]=null,u(t,"mousedown",this._onTapStart),u(t,"touchstart",this._onTapStart),u(t,"pointerdown",this._onTapStart),this.nativeDraggable&&(u(t,"dragover",this),u(t,"dragenter",this)),Array.prototype.forEach.call(t.querySelectorAll("[draggable]"),function(t){t.removeAttribute("draggable")}),this._onDrop(),this._disableDelayedDragEvents(),Ht.splice(Ht.indexOf(this.el),1),this.el=t=null},_hideClone:function(){if(!ut){if(Wt("hideClone",this),F.eventCanceled)return;g(dt,"display","none"),this.options.removeCloneOnHide&&dt.parentNode&&dt.parentNode.removeChild(dt),ut=!0}},_showClone:function(t){if("clone"!==t.lastPutMode)return void this._hideClone();if(ut){if(Wt("showClone",this),F.eventCanceled)return;nt.parentNode!=lt||this.options.group.revertClone?st?lt.insertBefore(dt,st):lt.appendChild(dt):lt.insertBefore(dt,nt),this.options.group.revertClone&&this.animate(nt,dt),g(dt,"display",""),ut=!1}}},Jt&&d(document,"touchmove",function(t){(F.active||Vt)&&t.cancelable&&t.preventDefault()}),F.utils={on:d,off:u,css:g,find:b,is:function(t,e){return!!f(t,e,t,!1)},extend:D,throttle:M,closest:f,toggleClass:v,clone:N,index:T,nextTick:U,cancelNextTick:J,detectDirection:oe,getChild:_},F.get=function(t){return t[Rt]},F.mount=function(){for(var t=arguments.length,e=new Array(t),o=0;o<t;o++)e[o]=arguments[o];e[0].constructor===Array&&(e=e[0]),e.forEach(function(t){if(!t.prototype||!t.prototype.constructor)throw"Sortable: Mounted plugin must be a constructor function, not ".concat({}.toString.call(t));t.utils&&(F.utils=i(i({},F.utils),t.utils)),Xt.mount(t)})},F.create=function(t,e){return new F(t,e)},F.version="1.14.0";var de,ue,he,pe,fe,ve,ge=[],me=!1,be=M(function(t,e,o,i){if(e.scroll){var n,a=(t.touches?t.touches[0]:t).clientX,r=(t.touches?t.touches[0]:t).clientY,l=e.scrollSensitivity,s=e.scrollSpeed,c=w(),d=!1;ue!==o&&(ue=o,K(),de=e.scroll,n=e.scrollFn,!0===de&&(de=E(o,!0)));var u=0,h=de;do{var p=h,f=y(p),v=f.top,m=f.bottom,b=f.left,C=f.right,_=f.width,x=f.height,T=void 0,S=void 0,k=p.scrollWidth,D=p.scrollHeight,O=g(p),M=p.scrollLeft,A=p.scrollTop;p===c?(T=_<k&&("auto"===O.overflowX||"scroll"===O.overflowX||"visible"===O.overflowX),S=x<D&&("auto"===O.overflowY||"scroll"===O.overflowY||"visible"===O.overflowY)):(T=_<k&&("auto"===O.overflowX||"scroll"===O.overflowX),S=x<D&&("auto"===O.overflowY||"scroll"===O.overflowY));var N=T&&(Math.abs(C-a)<=l&&M+_<k)-(Math.abs(b-a)<=l&&!!M),P=S&&(Math.abs(m-r)<=l&&A+x<D)-(Math.abs(v-r)<=l&&!!A);if(!ge[u])for(var I=0;I<=u;I++)ge[I]||(ge[I]={});ge[u].vx==N&&ge[u].vy==P&&ge[u].el===p||(ge[u].el=p,ge[u].vx=N,ge[u].vy=P,clearInterval(ge[u].pid),0==N&&0==P||(d=!0,ge[u].pid=setInterval(function(){i&&0===this.layer&&F.active._onTouchMove(fe);var e=ge[this.layer].vy?ge[this.layer].vy*s:0,o=ge[this.layer].vx?ge[this.layer].vx*s:0;"function"==typeof n&&"continue"!==n.call(F.dragged.parentNode[Rt],o,e,t,fe,ge[this.layer].el)||$(ge[this.layer].el,o,e)}.bind({layer:u}),24))),u++}while(e.bubbleScroll&&h!==c&&(h=E(h,!1)));me=d}},30),we=function(t){var e=t.originalEvent,o=t.putSortable,i=t.dragEl,n=t.activeSortable,a=t.dispatchSortableEvent,r=t.hideGhostForTarget,l=t.unhideGhostForTarget;if(e){var s=o||n;r();var c=e.changedTouches&&e.changedTouches.length?e.changedTouches[0]:e,d=document.elementFromPoint(c.clientX,c.clientY);l(),s&&!s.el.contains(d)&&(a("spill"),this.onSpill({dragEl:i,putSortable:o}))}};et.prototype={startIndex:null,dragStart:function(t){var e=t.oldDraggableIndex;this.startIndex=e},onSpill:function(t){var e=t.dragEl,o=t.putSortable;this.sortable.captureAnimationState(),o&&o.captureAnimationState();var i=_(this.sortable.el,this.startIndex,this.options);i?this.sortable.el.insertBefore(e,i):this.sortable.el.appendChild(e),this.sortable.animateAll(),o&&o.animateAll()},drop:we},r(et,{pluginName:"revertOnSpill"}),ot.prototype={onSpill:function(t){var e=t.dragEl,o=t.putSortable,i=o||this.sortable;i.captureAnimationState(),e.parentNode&&e.parentNode.removeChild(e),i.animateAll()},drop:we},r(ot,{pluginName:"removeOnSpill"});F.mount(new Z),F.mount(ot,et),e.a=F}).call(e,o(1))}});
+webpackJsonp([3],{
+
+/***/ 115:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__page_manager__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__product_reviews__ = __webpack_require__(466);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__common_collapsible__ = __webpack_require__(441);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__common_product_details__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__common_form_utils__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__product_video_gallery__ = __webpack_require__(467);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__halothemes_productViewMagnificPopup__ = __webpack_require__(465);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__halothemes_setActiveCategory__ = __webpack_require__(461);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__halothemes_haloBundleProducts__ = __webpack_require__(462);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_sortablejs__ = __webpack_require__(469);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__halothemes_haloStickyAddToCart__ = __webpack_require__(463);
+function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function')}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError('this hasn\'t been initialised - super() hasn\'t been called')}return call&&(typeof call==='object'||typeof call==='function')?call:self}function _inherits(subClass,superClass){if(typeof superClass!=='function'&&superClass!==null){throw new TypeError('Super expression must either be null or a function, not '+typeof superClass)}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass}/*
+ Import all product specific js
+ *//* eslint-disable prefer-template *//* eslint-disable space-infix-ops *//* eslint-disable func-names *//* eslint-disable prefer-arrow-callback *//* eslint-disable semi *//* eslint-disable space-before-function-paren *//* eslint-disable no-unused-vars */var Product=function(_PageManager){_inherits(Product,_PageManager);function Product(context){_classCallCheck(this,Product);var _this=_possibleConstructorReturn(this,_PageManager.call(this,context));_this.url=location.href;_this.$reviewLink=__WEBPACK_IMPORTED_MODULE_0_jquery___default()('[data-reveal-id="modal-review-form"]');return _this}Product.prototype.before=function before(next){var _this2=this;// Listen for foundation modal close events to sanitize URL after review.
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).on('close.fndtn.reveal',function(){if(_this2.url.indexOf('#writeReview')!==-1&&typeof window.history.replaceState==='function'){window.history.replaceState(null,document.title,window.location.pathname)}});next()};Product.prototype.loaded=function loaded(next){var validator=void 0;// Init collapsible
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__common_collapsible__["a" /* default */])();this.productDetails=new __WEBPACK_IMPORTED_MODULE_4__common_product_details__["a" /* default */](__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.productView'),this.context,window.BCData.product_attributes);// HaloThemes functions
+__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7__halothemes_productViewMagnificPopup__["a" /* default */])();__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__halothemes_setActiveCategory__["a" /* default */])();__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_6__product_video_gallery__["a" /* default */])();if(this.context.themeSettings.halo_bundle_products_enable==true){__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_9__halothemes_haloBundleProducts__["a" /* default */])(this.context)}__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_11__halothemes_haloStickyAddToCart__["a" /* default */])();__WEBPACK_IMPORTED_MODULE_0_jquery___default()('a.videos-tab').click(function(event){event.preventDefault();__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.productView-1 .productView-videos-wrap').removeClass('is-hidden');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.productView-1 .productView-image-wrap').addClass('is-hidden');// $('a.photos-tab').removeClass('current-tab');
+// $(this).addClass('current-tab');
+// $('.productView-images').addClass('current-videos-tab');
+// $('#product-photos').addClass('hide');
+// $('#product-videos').removeClass('hide');
+// $('.productView-image').addClass('hide');
+// $('.productView-videos').removeClass('hide');
+// $('.productView-videos iframe')[0].contentWindow.postMessage('{'+'"event":"command",'+'"func":"playVideo"'+',"args":""}', '*');
+});__WEBPACK_IMPORTED_MODULE_0_jquery___default()('a.photos-tab').click(function(event){event.preventDefault();__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.productView-1 .productView-image-wrap').removeClass('is-hidden');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.productView-1 .productView-videos-wrap').addClass('is-hidden');// $('a.videos-tab').removeClass('current-tab');
+// $(this).addClass('current-tab');
+// $('.productView-images').removeClass('current-videos-tab');
+// $('#product-videos').addClass('hide');
+// $('#product-photos').removeClass('hide');
+// $('.productView-image').removeClass('hide');
+// $('.productView-videos').addClass('hide');
+// $('.productView-videos iframe')[0].contentWindow.postMessage('{'+'"event":"command",'+'"func":"pauseVideo"'+',"args":""}', '*');
+});// $('a.video-thumbnail').click(function(event) {
+//     event.preventDefault();
+//     $('.productView-videos iframe').attr('src', '//www.youtube.com/embed/'+$(this).data('video-id')+'?enablejsapi=1');
+//     setTimeout(function() {
+//         $('.productView-videos iframe')[0].contentWindow.postMessage('{'+'"event":"command",'+'"func":"playVideo"'+',"args":""}', '*');
+//     }, 500);
+// });
+// Product Accordion Toggle
+var accordionItem=__WEBPACK_IMPORTED_MODULE_0_jquery___default()('[data-accordion-item]');var accordionToggle=accordionItem.find('.toggle-title');accordionToggle.click(function(event){__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).toggleClass('is-active');__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).siblings('.toggle-content').stop().slideToggle(200)});__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.productDescription .toggle-title').trigger('click');var $reviewForm=__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__common_form_utils__["b" /* classifyForm */])('.writeReview-form');var review=new __WEBPACK_IMPORTED_MODULE_2__product_reviews__["a" /* default */]($reviewForm);__WEBPACK_IMPORTED_MODULE_0_jquery___default()('body').on('click','[data-reveal-id="modal-review-form"]',function(){validator=review.registerValidation()});$reviewForm.on('submit',function(){if(validator){validator.performCheck();return validator.areAll('valid')}return false});next()};Product.prototype.after=function after(next){this.productReviewHandler();if(this.context.themeSettings.halo_compare_colors==true){this.compareColors()}this.add_sizeChart();next()};Product.prototype.productReviewHandler=function productReviewHandler(){if(this.url.indexOf('#writeReview')!==-1){this.$reviewLink.click()}};Product.prototype.compareColors=function compareColors(){__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.halo-compareColors-swatch .form-option').on('click',function(event){__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).toggleClass('show-color');var title=__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.form-option-variant').attr('title'),id=__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).data('product-swatch-value'),$color,$color2,$color3,$img;if(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).hasClass('show-color')){if(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.form-option-variant--color').length){$color=__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.form-option-variant--color').attr('style');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.halo-compareColors-image').append('<div class="item item-color item-'+id+'"><span class="color" style="'+$color+';"></span><span class="title">'+title+'</span></div>')}else if(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.form-option-variant--color2').length){$color=__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.form-option-variant--color2 span:nth-child(1)').attr('style');$color2=__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.form-option-variant--color2 span:nth-child(2)').attr('style');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.halo-compareColors-image').append('<div class="item item-color item-'+id+'"><span class="color color2"><span style="'+$color+';"></span><span style="'+$color2+';"></span></span><span class="title">'+title+'</span></div>')}else if(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.form-option-variant--color3').length){$color=__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.form-option-variant--color3 span:nth-child(1)').attr('style');$color2=__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.form-option-variant--color3 span:nth-child(2)').attr('style');$color3=__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.form-option-variant--color3 span:nth-child(3)').attr('style');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.halo-compareColors-image').append('<div class="item item-color item-'+id+'"><span class="color color3"><span style="'+$color+';"></span><span style="'+$color2+';"></span><span style="'+$color3+';"></span></span><span class="title">'+title+'</span></div>')}else if(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.form-option-variant--pattern').length){$img=__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.form-option-variant--pattern').attr('style').split('\'')[1];__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.halo-compareColors-image').append('<div class="item item-partern item-'+id+'"><span class="image"><img src='+$img+' alt='+title+' title='+title+'></span><span class="title">'+title+'</span></div>')}}else{__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.halo-compareColors-image .item-'+id+'').remove()}if(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).width()>=1025){var el=document.getElementById('color-swatch-image');new __WEBPACK_IMPORTED_MODULE_10_sortablejs__["a" /* default */](el,{animation:150})}})};Product.prototype.add_sizeChart=function add_sizeChart(){var $size_chart=__WEBPACK_IMPORTED_MODULE_0_jquery___default()('[data-reveal-id="modal-size-chart-form"]');var $form_field=__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.productView-options [data-product-option-change] .form-field');if($size_chart.length){$form_field.each(function(){var title_val=__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('[data-option-value]').text();var title_small=__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.form-label--alternate small').text();var t_title=__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).find('.form-label--alternate').text().replace(title_small,'').replace(title_val,'').replace(':','').trim().toLowerCase();if(t_title=='size'){__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).prepend($size_chart)}})}};return Product}(__WEBPACK_IMPORTED_MODULE_1__page_manager__["a" /* default */]);/* harmony default export */ __webpack_exports__["default"] = (Product);
+
+/***/ }),
+
+/***/ 441:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export CollapsibleEvents */
+/* unused harmony export Collapsible */
+/* harmony export (immutable) */ __webpack_exports__["a"] = collapsibleFactory;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_object_extend__ = __webpack_require__(276);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_object_extend___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash_object_extend__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__media_query_list__ = __webpack_require__(278);
+var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if('value'in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function')}}var PLUGIN_KEY='collapsible';var CollapsibleEvents={open:'open.collapsible',close:'close.collapsible',toggle:'toggle.collapsible',click:'click.collapsible'};var CollapsibleState={closed:'closed',open:'open'};function prependHash(id){if(id&&id.indexOf('#')===0){return id}return'#'+id}function optionsFromData($element){return{disabledBreakpoint:$element.data(PLUGIN_KEY+'-disabled-breakpoint'),disabledState:$element.data(PLUGIN_KEY+'-disabled-state'),enabledState:$element.data(PLUGIN_KEY+'-enabled-state'),openClassName:$element.data(PLUGIN_KEY+'-open-class-name')}}/**
+ * Collapse/Expand toggle
+ */var Collapsible=function(){/**
+     * @param {jQuery} $toggle - Trigger button
+     * @param {jQuery} $target - Content to collapse / expand
+     * @param {Object} [options] - Configurable options
+     * @param {Object} [options.$context]
+     * @param {Object} [options.disabledBreakpoint]
+     * @param {Object} [options.disabledState]
+     * @param {Object} [options.enabledState]
+     * @param {Object} [options.openClassName]
+     * @example
+     *
+     * <button id="#more">Collapse</button>
+     * <div id="content">...</div>
+     *
+     * new Collapsible($('#more'), $('#content'));
+     */function Collapsible($toggle,$target){var _ref=arguments.length>2&&arguments[2]!==undefined?arguments[2]:{},disabledBreakpoint=_ref.disabledBreakpoint,disabledState=_ref.disabledState,enabledState=_ref.enabledState,_ref$openClassName=_ref.openClassName,openClassName=_ref$openClassName===undefined?'is-open':_ref$openClassName;_classCallCheck(this,Collapsible);this.$toggle=$toggle;this.$target=$target;this.targetId=$target.attr('id');this.openClassName=openClassName;this.disabledState=disabledState;this.enabledState=enabledState;if(disabledBreakpoint){this.disabledMediaQueryList=__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__media_query_list__["a" /* default */])(disabledBreakpoint)}if(this.disabledMediaQueryList){this.disabled=this.disabledMediaQueryList.matches}else{this.disabled=false}// Auto-bind
+this.onClicked=this.onClicked.bind(this);this.onDisabledMediaQueryListMatch=this.onDisabledMediaQueryListMatch.bind(this);// Assign DOM attributes
+this.$target.attr('aria-hidden',this.isCollapsed);this.$toggle.attr('aria-controls',$target.attr('id')).attr('aria-expanded',this.isOpen);// Listen
+this.bindEvents()}Collapsible.prototype.open=function open(){var _ref2=arguments.length>0&&arguments[0]!==undefined?arguments[0]:{},_ref2$notify=_ref2.notify,notify=_ref2$notify===undefined?true:_ref2$notify;this.$toggle.addClass(this.openClassName).attr('aria-expanded',true);this.$target.addClass(this.openClassName).attr('aria-hidden',false);if(notify){this.$toggle.trigger(CollapsibleEvents.open,[this]);this.$toggle.trigger(CollapsibleEvents.toggle,[this])}};Collapsible.prototype.close=function close(){var _ref3=arguments.length>0&&arguments[0]!==undefined?arguments[0]:{},_ref3$notify=_ref3.notify,notify=_ref3$notify===undefined?true:_ref3$notify;this.$toggle.removeClass(this.openClassName).attr('aria-expanded',false);this.$target.removeClass(this.openClassName).attr('aria-hidden',true);if(notify){this.$toggle.trigger(CollapsibleEvents.close,[this]);this.$toggle.trigger(CollapsibleEvents.toggle,[this])}};Collapsible.prototype.toggle=function toggle(){if(this.isCollapsed){this.open()}else{this.close()}};Collapsible.prototype.toggleByState=function toggleByState(state){for(var _len=arguments.length,args=Array(_len>1?_len-1:0),_key=1;_key<_len;_key++){args[_key-1]=arguments[_key]}switch(state){case CollapsibleState.open:return this.open.apply(this,args);case CollapsibleState.closed:return this.close.apply(this,args);default:return undefined;}};Collapsible.prototype.hasCollapsible=function hasCollapsible(collapsibleInstance){return __WEBPACK_IMPORTED_MODULE_1_jquery___default.a.contains(this.$target.get(0),collapsibleInstance.$target.get(0))};Collapsible.prototype.bindEvents=function bindEvents(){this.$toggle.on(CollapsibleEvents.click,this.onClicked);if(this.disabledMediaQueryList&&this.disabledMediaQueryList.addListener){this.disabledMediaQueryList.addListener(this.onDisabledMediaQueryListMatch)}};Collapsible.prototype.unbindEvents=function unbindEvents(){this.$toggle.off(CollapsibleEvents.click,this.onClicked);if(this.disabledMediaQueryList&&this.disabledMediaQueryList.removeListener){this.disabledMediaQueryList.removeListener(this.onDisabledMediaQueryListMatch)}};Collapsible.prototype.onClicked=function onClicked(event){if(this.disabled){return}event.preventDefault();this.toggle()};Collapsible.prototype.onDisabledMediaQueryListMatch=function onDisabledMediaQueryListMatch(media){this.disabled=media.matches};_createClass(Collapsible,[{key:'isCollapsed',get:function get(){return!this.$target.hasClass(this.openClassName)||this.$target.is(':hidden')}},{key:'isOpen',get:function get(){return!this.isCollapsed}},{key:'disabled',set:function set(disabled){this._disabled=disabled;if(disabled){this.toggleByState(this.disabledState)}else{this.toggleByState(this.enabledState)}},get:function get(){return this._disabled}}]);return Collapsible}();/**
+ * Convenience method for constructing Collapsible instance
+ *
+ * @param {string} [selector]
+ * @param {Object} [options]
+ * @param {Object} [options.$context]
+ * @param {Object} [options.disabledBreakpoint]
+ * @param {Object} [options.disabledState]
+ * @param {Object} [options.enabledState]
+ * @param {Object} [options.openClassName]
+ * @return {Array} array of Collapsible instances
+ *
+ * @example
+ * <a href="#content" data-collapsible>Collapse</a>
+ * <div id="content">...</div>
+ *
+ * collapsibleFactory();
+ */function collapsibleFactory(){var selector=arguments.length>0&&arguments[0]!==undefined?arguments[0]:'[data-'+PLUGIN_KEY+']';var overrideOptions=arguments.length>1&&arguments[1]!==undefined?arguments[1]:{};var $collapsibles=__WEBPACK_IMPORTED_MODULE_1_jquery___default()(selector,overrideOptions.$context);return $collapsibles.map(function(index,element){var $toggle=__WEBPACK_IMPORTED_MODULE_1_jquery___default()(element);var instanceKey=PLUGIN_KEY+'-instance';var cachedCollapsible=$toggle.data(instanceKey);if(cachedCollapsible instanceof Collapsible){return cachedCollapsible}var targetId=prependHash($toggle.data(PLUGIN_KEY)||$toggle.data(PLUGIN_KEY+'-target')||$toggle.attr('href'));var options=__WEBPACK_IMPORTED_MODULE_0_lodash_object_extend___default()(optionsFromData($toggle),overrideOptions);var collapsible=new Collapsible($toggle,__WEBPACK_IMPORTED_MODULE_1_jquery___default()(targetId),options);$toggle.data(instanceKey,collapsible);return collapsible}).toArray()}
+
+/***/ }),
+
+/***/ 461:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+/* eslint-disable func-names *//* harmony default export */ __webpack_exports__["a"] = (function(){__WEBPACK_IMPORTED_MODULE_0_jquery___default()('ul.all-categories-list li').each(function(){var breadLink=__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.page-type-product #breadcrumbs-wrapper ul li.breadcrumb.is-active').prev('.breadcrumb').children('a').attr('href');// set active category on category page
+if(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).children('a').attr('href')===__WEBPACK_IMPORTED_MODULE_0_jquery___default()('link[rel="canonical"]').attr('href')){__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).addClass('current-cat');__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).children('.dropdown-category-list').addClass('cat-expanded').siblings('i.fa.fa-angle-down').addClass('is-clicked');__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).parents('.dropdown-category-list').addClass('cat-expanded').siblings('i.fa.fa-angle-down').addClass('is-clicked')}// set active category on product detail page
+if(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).children('a').attr('href')===breadLink){__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).addClass('current-cat');__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).children('.dropdown-category-list').addClass('cat-expanded').siblings('i.fa.fa-angle-down').addClass('is-clicked');__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).parents('.dropdown-category-list').addClass('cat-expanded').siblings('i.fa.fa-angle-down').addClass('is-clicked')}});__WEBPACK_IMPORTED_MODULE_0_jquery___default()('ul.all-categories-list i.fa.fa-angle-down').click(function(){/* Act on the event */__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).toggleClass('is-clicked');__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).siblings('ul.dropdown-category-list').toggleClass('cat-expanded')})});
+
+/***/ }),
+
+/***/ 462:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_lang_isObject__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_lang_isObject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash_lang_isObject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_lang_isPlainObject__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_lang_isPlainObject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash_lang_isPlainObject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_jquery__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__bigcommerce_stencil_utils__ = __webpack_require__(7);
+/* harmony default export */ __webpack_exports__["a"] = (function(context){var relate_tab='#relatedProducts';showBundle();__WEBPACK_IMPORTED_MODULE_2_jquery___default()(document).on('click','.halo-toggle-options',function(event){event.preventDefault();__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-toggle-options').not(__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this)).removeClass('is-focus');__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-detail-options').not(__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).next('.halo-detail-options')).removeClass('is-open');if(!__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).next('.halo-detail-options').hasClass('is-open')){__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).addClass('is-focus');__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).next('.halo-detail-options').addClass('is-open')}else{__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).next('.halo-detail-options').removeClass('is-open');__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).removeClass('is-focus')}});__WEBPACK_IMPORTED_MODULE_2_jquery___default()(document).on('click','.halo-option-close',function(event){event.preventDefault();__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-detail-options').removeClass('is-open');__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-toggle-options').removeClass('is-focus')});__WEBPACK_IMPORTED_MODULE_2_jquery___default()(document).on('click',function(event){if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-detail-options').hasClass('is-open')){if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()(event.target).closest('.halo-detail-options').length===0&&__WEBPACK_IMPORTED_MODULE_2_jquery___default()(event.target).closest('.halo-toggle-options').length===0){__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-detail-options').removeClass('is-open');__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-toggle-options').removeClass('is-focus')}}});__WEBPACK_IMPORTED_MODULE_2_jquery___default()(document).on('change','.halo-detail-checkbox',function(){var id=__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).attr('id').replace('fbt_product','');if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).is(':checked')==false){__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-item[data-product-id="'+id+'"]').removeClass('isChecked')}else{__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-item[data-product-id="'+id+'"]').addClass('isChecked')}totalPrice()});__WEBPACK_IMPORTED_MODULE_2_jquery___default()(document).on('click','#halo-addAll',function(event){var $form=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('form',__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#halo-bundle-products'));var arrPro=new Array;__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-detail-checkbox').each(function(i,val){if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()(val).is(':checked')){arrPro.push(i)}});var check=false;if(arrPro.length>0){check=checkProduct($form,arrPro)}if(check){if(arrPro.length>0){__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#halo-bundle-products .loadingOverlay').show();addToCart($form,0,arrPro)}}else{var errorMessage='Please make sure all options have been filled in.';if(errorMessage){// Strip the HTML from the error message
+var tmp=document.createElement('DIV');tmp.innerHTML=errorMessage;return alert(tmp.textContent||tmp.innerText)}}event.preventDefault()});function showBundle(){var options={template:{item:'halothemes/halo-bundle-products-tmp',options:'halothemes/halo-bundle-products-options'}};var prodBundleId=[];__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#halo-bundle-products').removeClass('halo-block-disable');firstItem();__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#halo-bundle-products .bundle-product-right').append('<div class="halo-product-total"><div class="total-price"><span class="text">Total:</span><span class="price"></span></div><a class="button button--primary halo-product-total-button" id="halo-addAll">Add All To Cart</a></div>');__WEBPACK_IMPORTED_MODULE_2_jquery___default.a.each(context.productCustomFields,function(index,obj){if(obj.name=='__bundleid'){prodBundleId=JSON.parse('['+obj.value+']')}});if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#halo-bundle-products').length>0&&prodBundleId.length==0){var num=0;var list=[];__WEBPACK_IMPORTED_MODULE_2_jquery___default()(relate_tab+' .card').each(function(i,val){list.push({i:i,data:''});var pId=__WEBPACK_IMPORTED_MODULE_2_jquery___default()(val).data('product-id');if(pId!=undefined){__WEBPACK_IMPORTED_MODULE_3__bigcommerce_stencil_utils__["c" /* default */].api.product.getById(pId,options,function(err,response){if(err){return false}list.forEach(function(element){if(element.i==i){element.data=response}});num++;if(num==__WEBPACK_IMPORTED_MODULE_2_jquery___default()(relate_tab+' .card').length){showList(list)}})}})}else if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#halo-bundle-products').length>0&&prodBundleId.length>0){var num=0;var list=[];__WEBPACK_IMPORTED_MODULE_2_jquery___default.a.each(prodBundleId,function(i,val){list.push({i:i,data:''});var pId=prodBundleId[i];if(pId!=undefined){__WEBPACK_IMPORTED_MODULE_3__bigcommerce_stencil_utils__["c" /* default */].api.product.getById(pId,options,function(err,response){if(err){return false}list.forEach(function(element){if(element.i==i){element.data=response}});num++;if(num==prodBundleId.length){showList(list)}})}})}}function firstItem(){var firstItem=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#halo-bundle-products .halo-product-list .halo-product-item:first-child'),pId=firstItem.data('product-id'),$form=firstItem.find('form'),hasOptions=$form.find('[data-fbt-option-change]').length,hasDefaultOptions=$form.find('[data-default]').length;if(hasDefaultOptions&&hasOptions){__WEBPACK_IMPORTED_MODULE_3__bigcommerce_stencil_utils__["c" /* default */].api.productAttributes.optionChange(pId,$form.serialize(),function(err,response){var attributesData=response.data||{};var attributesContent=response.content||{};updateProductAttributes($form,attributesData);if(hasDefaultOptions){updateView($form,attributesData,attributesContent)}else{updateDefaultAttributesForOOS(attributesData)}})}}function showList(list){list.forEach(function(element){var response=element.data;__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#halo-bundle-products .halo-product-list').append(response.item);if(response.options.trim()!=''){var pId=__WEBPACK_IMPORTED_MODULE_2_jquery___default()(response.item).data('product-id');var $form=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#halo-bundle-products .halo-product-list .halo-product-item[data-product-id="'+pId+'"] form');$form.append(response.options);var $productOptionsElement=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-fbt-option-change]',$form);var hasOptions=$productOptionsElement.html().trim().length;var hasDefaultOptions=__WEBPACK_IMPORTED_MODULE_2_jquery___default()(response.options).find('[data-default]').length;if(hasDefaultOptions&&hasOptions){__WEBPACK_IMPORTED_MODULE_3__bigcommerce_stencil_utils__["c" /* default */].api.productAttributes.optionChange(pId,$form.serialize(),function(err,response){var attributesData=response.data||{};var attributesContent=response.content||{};updateProductAttributes($form,attributesData);if(hasDefaultOptions){updateView($form,attributesData,attributesContent)}else{updateDefaultAttributesForOOS(attributesData)}})}setProductVariant()}});productOptions();showSlickSlider();totalPrice()}function showSlickSlider(){__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#halo-bundle-products .halo-product-list').slick({dots:true,arrows:false,slidesToShow:2,slidesToScroll:1,mobileFirst:true,infinite:false,nextArrow:'<div class=\'slick-next slick-arrow\'>next</div>',prevArrow:'<div class=\'slick-prev slick-arrow\'>prev</div>',responsive:[{breakpoint:1200,settings:{slidesToScroll:1,slidesToShow:4,dots:false,arrows:true}},{breakpoint:1025,settings:{slidesToShow:3,slidesToScroll:1,dots:false,arrows:true}},{breakpoint:768,settings:{slidesToShow:4,slidesToScroll:1}},{breakpoint:551,settings:{slidesToShow:3,slidesToScroll:1}}]})}function checkProduct(form,arrPro){var check=true;for(var i=0,len=arrPro.length;i<len;i++){var k=arrPro[i];var $form=__WEBPACK_IMPORTED_MODULE_2_jquery___default()(form[k]);if($form.find('[data-fbt-option-change]').length){check=checkBeforeAdd($form);if(check==false)return false}}return check}function checkBeforeAdd($attributes){var check=true;$attributes.find('input:text, input:password, input:file, textarea').each(function(){if(!__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).prop('required')){}else{if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).val()){}else{__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).focus();check=false}}});$attributes.find('select').each(function(){if(!__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).prop('required')){}else{if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).val()){}else{__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).focus();check=false}}});var att='';$attributes.find('input:radio, input:checkbox').each(function(){if(att!=__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).attr('name')){att=__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).attr('name');if(!__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).prop('required')){if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).attr('type')=='checkbox'){if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[name=\''+att+'\']:checked').val()){}}if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).attr('type')=='radio'){if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[name=\''+att+'\']:checked').val()){}}}else{if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).attr('type')=='checkbox'){if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[name=\''+att+'\']:checked').val()){}else{check=false}}if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).attr('type')=='radio'){if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[name=\''+att+'\']:checked').val()){}else{check=false}}}}});return check}function addToCart(form,i,arrP){if(i>=arrP.length){window.location='/cart.php';return}if(window.FormData===undefined){return}var k=arrP[i];// Add item to cart
+__WEBPACK_IMPORTED_MODULE_3__bigcommerce_stencil_utils__["c" /* default */].api.cart.itemAdd(filterEmptyFilesFromForm(new FormData(form[k])),function(err,response){var errorMessage=err||response.data.error;if(errorMessage){// Strip the HTML from the error message
+var tmp=document.createElement('DIV');tmp.innerHTML=errorMessage;alert(tmp.textContent||tmp.innerText)}i++;if(i>=arrP.length){__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#halo-bundle-products .loadingOverlay').hide();updateCartContent(response.data.cart_item.id);return}addToCart(form,i,arrP)})}function updateCartContent(cartItemId,onComplete){var $body=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('body');var loadingClass='is-loading';var $cartDropdown=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#halo-cart-sidebar');var $cartLoading=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('<div class="loadingOverlay"></div>');$body.addClass('openCartSidebar');var topCartDropdown;if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()(window).scrollTop()>0&&!__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.header').hasClass('is-sticky')){topCartDropdown=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.header').outerHeight()-__WEBPACK_IMPORTED_MODULE_2_jquery___default()(window).scrollTop()}else{topCartDropdown=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.header').outerHeight()}$cartDropdown.addClass(loadingClass).html($cartLoading).css('top',topCartDropdown);$cartLoading.show();getCartContent(cartItemId,function(err,response){if(err){return}$cartDropdown.removeClass(loadingClass).html(response);$cartLoading.hide();var quantity=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-cart-quantity]').data('cartQuantity')||0;$body.trigger('cart-quantity-update',quantity);if(onComplete){onComplete(response)}})}function getCartContent(cartItemId,onComplete){var options={template:'common/cart-preview'};__WEBPACK_IMPORTED_MODULE_3__bigcommerce_stencil_utils__["c" /* default */].api.cart.getContent(options,onComplete)}function totalPrice(){var total=0,pos=0,symbol='$';__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-item.isChecked').each(function(i,val){var currency,price,s;if(__WEBPACK_IMPORTED_MODULE_2_jquery___default()(val).find('.price-section .price.price--withTax').length){currency=__WEBPACK_IMPORTED_MODULE_2_jquery___default()(val).find('.price-section .price.price--withTax').text()}else{currency=__WEBPACK_IMPORTED_MODULE_2_jquery___default()(val).find('.price-section .price.price--withoutTax').text()}price=parseFloat(currency.replace(/[^0-9.-]+/g,''));s=currency.replace(parseFloat(price).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','),'');if(isNaN(parseFloat(s.replace(/[^0-9.-]+/g,'')))){symbol=s}if(currency.indexOf(symbol)!=-1){pos=currency.indexOf(symbol)}total=total+price});total=parseFloat(total).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');if(pos==0){total=symbol+total}else{total=total+symbol}__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-total .price').html(total)}function productOptions(){totalPrice();var $form=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('form',__WEBPACK_IMPORTED_MODULE_2_jquery___default()(document));var $productOptionsElement=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-fbt-option-change]',$form);__WEBPACK_IMPORTED_MODULE_2_jquery___default()(document).on('change',$productOptionsElement,function(event){productOptionsChanged(event);setProductVariant(event)})}function setProductVariant(){var unsatisfiedRequiredFields=[];var options=[];__WEBPACK_IMPORTED_MODULE_2_jquery___default.a.each(__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-fbt-option-change] [data-product-attribute]'),function(index,value){var optionLabel=value.children[0].innerText;var optionTitle=optionLabel.split(':')[0].trim();var required=optionLabel.toLowerCase().includes('required');var type=value.getAttribute('data-product-attribute');if((type==='input-file'||type==='input-text'||type==='input-number')&&value.querySelector('input').value===''&&required){unsatisfiedRequiredFields.push(value)}if(type==='textarea'&&value.querySelector('textarea').value===''&&required){unsatisfiedRequiredFields.push(value)}if(type==='date'){var isSatisfied=Array.from(value.querySelectorAll('select')).every(function(select){return select.selectedIndex!==0});if(isSatisfied){var dateString=Array.from(value.querySelectorAll('select')).map(function(x){return x.value}).join('-');options.push(optionTitle+':'+dateString);return}if(required){unsatisfiedRequiredFields.push(value)}}if(type==='set-select'){var select=value.querySelector('select');var selectedIndex=select.selectedIndex;if(selectedIndex!==0){options.push(optionTitle+':'+select.options[selectedIndex].innerText);__WEBPACK_IMPORTED_MODULE_2_jquery___default()(value.children[0]).find('[data-option-value]').text(select.options[selectedIndex].innerText);return}if(required){unsatisfiedRequiredFields.push(value)}}if(type==='set-rectangle'||type==='set-radio'||type==='swatch'||type==='input-checkbox'||type==='product-list'){var checked=value.querySelector(':checked');if(checked){if(type==='set-rectangle'||type==='set-radio'||type==='product-list'){var label=checked.labels[0].innerText;if(label){options.push(optionTitle+':'+label);__WEBPACK_IMPORTED_MODULE_2_jquery___default()(value.children[0]).find('[data-option-value]').text(label)}}if(type==='swatch'){var _label=checked.labels[0].children[0];if(_label){options.push(optionTitle+':'+_label.title);__WEBPACK_IMPORTED_MODULE_2_jquery___default()(value.children[0]).find('[data-option-value]').text(_label.title)}}if(type==='input-checkbox'){options.push(optionTitle+':Yes')}return}if(type==='input-checkbox'){options.push(optionTitle+':No')}if(required){unsatisfiedRequiredFields.push(value)}}})}function productOptionsChanged(event){var $changedOption=__WEBPACK_IMPORTED_MODULE_2_jquery___default()(event.target);var $form=$changedOption.parents('form');var productId=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[name="product_id"]',$form).val();if($changedOption.attr('type')==='file'||window.FormData===undefined){return}if($changedOption.attr('id')==='fbt_product'+productId){return}__WEBPACK_IMPORTED_MODULE_3__bigcommerce_stencil_utils__["c" /* default */].api.productAttributes.optionChange(productId,$form.serialize(),function(err,response){var productAttributesData=response.data||{};var productAttributesContent=response.content||{};showProductImage(productId,productAttributesData);updateProductAttributes($form,productAttributesData);updateView($form,productAttributesData,productAttributesContent);totalPrice()});return false}function updateProductAttributes($scope,data){var behavior=data.out_of_stock_behavior;var inStockIds=data.in_stock_attributes;var outOfStockMessage=' ('+data.out_of_stock_message+')';if(behavior!=='hide_option'&&behavior!=='label_option'){return}__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-product-attribute-value]',$scope).each(function(i,attribute){var $attribute=__WEBPACK_IMPORTED_MODULE_2_jquery___default()(attribute);var attrId=parseInt($attribute.data('productAttributeValue'),10);if(inStockIds.indexOf(attrId)!==-1){enableAttribute($attribute,behavior,outOfStockMessage)}else{disableAttribute($attribute,behavior,outOfStockMessage)}})}function disableAttribute($attribute,behavior,outOfStockMessage){if(getAttributeType($attribute)==='set-select'){return disableSelectOptionAttribute($attribute,behavior,outOfStockMessage)}if(behavior==='hide_option'){$attribute.hide()}else{$attribute.addClass('unavailable')}}function disableSelectOptionAttribute($attribute,behavior,outOfStockMessage){var $select=$attribute.parent();if(behavior==='hide_option'){$attribute.toggleOption(false);if($select.val()===$attribute.attr('value')){$select[0].selectedIndex=0}}else{$attribute.attr('disabled','disabled');$attribute.html($attribute.html().replace(outOfStockMessage,'')+outOfStockMessage)}}function enableAttribute($attribute,behavior,outOfStockMessage){if(getAttributeType($attribute)==='set-select'){return enableSelectOptionAttribute($attribute,behavior,outOfStockMessage)}if(behavior==='hide_option'){$attribute.show()}else{$attribute.removeClass('unavailable')}}function enableSelectOptionAttribute($attribute,behavior,outOfStockMessage){if(behavior==='hide_option'){$attribute.toggleOption(true)}else{$attribute.prop('disabled',false);$attribute.html($attribute.html().replace(outOfStockMessage,''))}}function getAttributeType($attribute){var $parent=$attribute.closest('[data-product-attribute]');return $parent?$parent.data('productAttribute'):null}function showProductImage(productId,data){if(__WEBPACK_IMPORTED_MODULE_1_lodash_lang_isPlainObject___default()(data.image)){var mainImageUrl=__WEBPACK_IMPORTED_MODULE_3__bigcommerce_stencil_utils__["c" /* default */].tools.image.getSrc(data.image.data,context.themeSettings.productgallery_size);__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-item[data-product-id="'+productId+'"]').find('img').attr({'srcset':mainImageUrl,'data-srcset':__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).attr('srcset')})}else{var _mainImageUrl=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-item[data-product-id="'+productId+'"]').find('img').attr('data-srcset');__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-item[data-product-id="'+productId+'"]').find('img').attr({'srcset':_mainImageUrl,'data-srcset':__WEBPACK_IMPORTED_MODULE_2_jquery___default()(this).attr('srcset')})}}function updateView($scope,data){var content=arguments.length>2&&arguments[2]!==undefined?arguments[2]:null;var viewModel=getViewModel($scope);showMessageBox(data.stock_message||data.purchasing_message);if(__WEBPACK_IMPORTED_MODULE_0_lodash_lang_isObject___default()(data.price)){updatePriceView(viewModel,data.price)}var productId=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[name="product_id"]',$scope).val();if(!data.purchasable||!data.instock){__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-item[data-product-id="'+productId+'"]').removeClass('isChecked');__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#fbt_product'+productId).prop('checked',false).prop('disabled',true);__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-item[data-product-id="'+productId+'"]').removeClass('hasOptions--selected')}else{__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-item[data-product-id="'+productId+'"]').addClass('isChecked');__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#fbt_product'+productId).prop('checked',true).prop('disabled',false);if($scope.find('[data-fbt-option-change]').length){var check=checkBeforeAdd($scope);if(check==true){__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-item[data-product-id="'+productId+'"]').addClass('hasOptions--selected')}}}}function updateDefaultAttributesForOOS($scope,data){var productId=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[name="product_id"]',$scope).val();if(!data.purchasable||!data.instock){__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-item[data-product-id="'+productId+'"]').removeClass('isChecked');__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#fbt_product'+productId).prop('checked',false).prop('disabled',true);__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-item[data-product-id="'+productId+'"]').removeClass('hasOptions--selected')}else{__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-item[data-product-id="'+productId+'"]').addClass('isChecked');__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#fbt_product'+productId).prop('checked',true).prop('disabled',false);if($scope.find('[data-fbt-option-change]').length){var check=checkBeforeAdd($scope);if(check==true){__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.halo-product-item[data-product-id="'+productId+'"]').addClass('hasOptions--selected')}}}}function getViewModel($scope){return{$priceWithTax:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-product-price-with-tax]',$scope),$priceWithoutTax:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-product-price-without-tax]',$scope),rrpWithTax:{$div:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.rrp-price--withTax',$scope),$span:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-product-rrp-with-tax]',$scope)},rrpWithoutTax:{$div:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.rrp-price--withoutTax',$scope),$span:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-product-rrp-price-without-tax]',$scope)},nonSaleWithTax:{$div:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.non-sale-price--withTax',$scope),$span:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-product-non-sale-price-with-tax]',$scope)},nonSaleWithoutTax:{$div:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.non-sale-price--withoutTax',$scope),$span:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-product-non-sale-price-without-tax]',$scope)},priceSaved:{$div:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.price-section--saving',$scope),$span:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-product-price-saved]',$scope)},priceNowLabel:{$span:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.price-now-label',$scope)},priceLabel:{$span:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.price-label',$scope)},$weight:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.productView-info [data-product-weight]',$scope),$increments:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.form-field--increments :input',$scope),$addToCart:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('#form-action-addToCart',$scope),$wishlistVariation:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-wishlist-add] [name="variation_id"]',$scope),stock:{$container:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.form-field--stock',$scope),$input:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-product-stock]',$scope)},$sku:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-product-sku]'),$upc:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[data-product-upc]'),quantity:{$text:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.incrementTotal',$scope),$input:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('[name=qty\\[\\]]',$scope)},$bulkPricing:__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.productView-info-bulkPricing',$scope)}}function showMessageBox(message){var $messageBox=__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.productAttributes-message');if(message){__WEBPACK_IMPORTED_MODULE_2_jquery___default()('.alertBox-message',$messageBox).text(message);$messageBox.show()}else{$messageBox.hide()}}function clearPricingNotFound(viewModel){viewModel.rrpWithTax.$div.hide();viewModel.rrpWithoutTax.$div.hide();viewModel.nonSaleWithTax.$div.hide();viewModel.nonSaleWithoutTax.$div.hide();viewModel.priceSaved.$div.hide();viewModel.priceNowLabel.$span.hide();viewModel.priceLabel.$span.hide()}function updatePriceView(viewModel,price){clearPricingNotFound(viewModel);if(price.with_tax){viewModel.priceLabel.$span.show();viewModel.$priceWithTax.html(price.with_tax.formatted)}if(price.without_tax){viewModel.priceLabel.$span.show();viewModel.$priceWithoutTax.html(price.without_tax.formatted)}if(price.rrp_with_tax){viewModel.rrpWithTax.$div.show();viewModel.rrpWithTax.$span.html(price.rrp_with_tax.formatted)}if(price.rrp_without_tax){viewModel.rrpWithoutTax.$div.show();viewModel.rrpWithoutTax.$span.html(price.rrp_without_tax.formatted)}if(price.saved){viewModel.priceSaved.$div.show();viewModel.priceSaved.$span.html(price.saved.formatted)}if(price.non_sale_price_with_tax){viewModel.priceLabel.$span.hide();viewModel.nonSaleWithTax.$div.show();viewModel.priceNowLabel.$span.show();viewModel.nonSaleWithTax.$span.html(price.non_sale_price_with_tax.formatted)}if(price.non_sale_price_without_tax){viewModel.priceLabel.$span.hide();viewModel.nonSaleWithoutTax.$div.show();viewModel.priceNowLabel.$span.show();viewModel.nonSaleWithoutTax.$span.html(price.non_sale_price_without_tax.formatted)}}function filterEmptyFilesFromForm(formData){try{for(var _iterator=formData,_isArray=Array.isArray(_iterator),_i=0,_iterator=_isArray?_iterator:_iterator[Symbol.iterator]();;){var _ref2;if(_isArray){if(_i>=_iterator.length)break;_ref2=_iterator[_i++]}else{_i=_iterator.next();if(_i.done)break;_ref2=_i.value}var _ref=_ref2;var key=_ref[0];var val=_ref[1];if(val instanceof File&&!val.name&&!val.size){formData.delete(key)}}}catch(e){console.error(e)}return formData}});
+
+/***/ }),
+
+/***/ 463:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__bigcommerce_stencil_utils__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_sweetalert2__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_sweetalert2__);
+/* harmony default export */ __webpack_exports__["a"] = (function(){if(__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#form-action-addToCart').length){var scroll=__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#form-action-addToCart').offset();var scrollTop=scroll.top;__WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).scroll(function(){if(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).scrollTop()>scrollTop){if(!__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#sticky_addtocart').hasClass('show_sticky')){var heightHeader=__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.header').height();__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#sticky_addtocart').addClass('show_sticky');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('body').addClass('is-stickyAddToCart');if(__WEBPACK_IMPORTED_MODULE_0_jquery___default()('body').hasClass('is-sticky')){__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#sticky_addtocart').css('top',heightHeader)}else{__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#sticky_addtocart').css('top','0px')}}}else{__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#sticky_addtocart').removeClass('show_sticky');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('body').removeClass('is-stickyAddToCart');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.pop-up-option').removeClass('is-open');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.choose_options_add').removeClass('is-active')}});__WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).on('click','.choose_options_add',function(event){__WEBPACK_IMPORTED_MODULE_0_jquery___default()(this).toggleClass('is-active');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.pop-up-option').toggleClass('is-open')});__WEBPACK_IMPORTED_MODULE_0_jquery___default()(document).on('click','.pop-up-option .close',function(event){__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.pop-up-option').removeClass('is-open');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.choose_options_add').removeClass('is-active')});window.onload=function(){if(__WEBPACK_IMPORTED_MODULE_0_jquery___default()(window).scrollTop()>scrollTop){if(!__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#sticky_addtocart').hasClass('show_sticky')){var heightHeader=__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.header').height();__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#sticky_addtocart').addClass('show_sticky');__WEBPACK_IMPORTED_MODULE_0_jquery___default()('body').addClass('is-stickyAddToCart');if(__WEBPACK_IMPORTED_MODULE_0_jquery___default()('body').hasClass('is-sticky')){__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#sticky_addtocart').css('top',heightHeader)}else{__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#sticky_addtocart').css('top','0px')}}}}}});
+
+/***/ }),
+
+/***/ 465:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+/* harmony default export */ __webpack_exports__["a"] = (function(){__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.productView-image').magnificPopup({type:'image',closeOnContentClick:true,image:{verticalFit:true},mainClass:'mfp-with-zoom',zoom:{enabled:true,// By default it's false, so don't forget to enable it
+duration:300,// duration of the effect, in milliseconds
+easing:'ease-in-out'}})});
+
+/***/ }),
+
+/***/ 466:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__common_nod__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__common_models_forms__ = __webpack_require__(118);
+function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function')}}var _class=function(){function _class($reviewForm){_classCallCheck(this,_class);this.validator=__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__common_nod__["a" /* default */])({submit:$reviewForm.find('input[type="submit"]')});this.$reviewsContent=__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#product-reviews');this.$collapsible=__WEBPACK_IMPORTED_MODULE_0_jquery___default()('[data-collapsible]',this.$reviewsContent);this.initLinkBind();this.injectPaginationLink();this.collapseReviews()}/**
+     * On initial page load, the user clicks on "(12 Reviews)" link
+     * The browser jumps to the review page and should expand the reviews section
+     */_class.prototype.initLinkBind=function initLinkBind(){__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.reviewLinkCount').click(function(){if(!__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#tab-reviews').is(':checked')){__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#tab-reviews').click()}__WEBPACK_IMPORTED_MODULE_0_jquery___default()('html, body').animate({scrollTop:__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.flex-tabs').offset().top},600)})};_class.prototype.collapseReviews=function collapseReviews(){// We're in paginating state, do not collapse
+if(window.location.hash&&window.location.hash.indexOf('#product-reviews')===0){// force collapse on page load
+__WEBPACK_IMPORTED_MODULE_0_jquery___default()('#tab-reviews').click();__WEBPACK_IMPORTED_MODULE_0_jquery___default()('html, body').animate({scrollTop:__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.flex-tabs').offset().top},600)}};/**
+     * Inject ID into the pagination link
+     */_class.prototype.injectPaginationLink=function injectPaginationLink(){var $nextLink=__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.pagination-item--next .pagination-link',this.$reviewsContent);var $prevLink=__WEBPACK_IMPORTED_MODULE_0_jquery___default()('.pagination-item--previous .pagination-link',this.$reviewsContent);if($nextLink.length){$nextLink.attr('href',$nextLink.attr('href')+' #product-reviews')}if($prevLink.length){$prevLink.attr('href',$prevLink.attr('href')+' #product-reviews')}};_class.prototype.registerValidation=function registerValidation(){this.validator.add([{selector:'[name="revrating"]',validate:'presence',errorMessage:'The \'Rating\' field cannot be blank.'},{selector:'[name="revtitle"]',validate:'min-length:2',errorMessage:'The \'Review Subject\' field cannot be blank.'},{selector:'[name="revtext"]',validate:'min-length:2',errorMessage:'The \'Comments\' field cannot be blank.'},{selector:'[name="email"]',validate:function validate(cb,val){var result=__WEBPACK_IMPORTED_MODULE_2__common_models_forms__["a" /* default */].email(val);cb(result)},errorMessage:'Please use a valid email address, such as user@example.com.'}]);return this.validator};_class.prototype.validate=function validate(){return this.validator.performCheck()};return _class}();/* harmony default export */ __webpack_exports__["a"] = (_class);
+
+/***/ }),
+
+/***/ 467:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export VideoGallery */
+/* harmony export (immutable) */ __webpack_exports__["a"] = videoGallery;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
+function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function')}}var VideoGallery=function(){function VideoGallery($element){_classCallCheck(this,VideoGallery);this.$player=$element.find('[data-video-player]');this.$videos=$element.find('[data-video-item]');this.currentVideo={};this.bindEvents()}VideoGallery.prototype.selectNewVideo=function selectNewVideo(e){e.preventDefault();var $target=__WEBPACK_IMPORTED_MODULE_0_jquery___default()(e.currentTarget);this.currentVideo={id:$target.data('video-id'),$selectedThumb:$target};this.setMainVideo();this.setActiveThumb()};VideoGallery.prototype.setMainVideo=function setMainVideo(){this.$player.attr('src','//www.youtube.com/embed/'+this.currentVideo.id)};VideoGallery.prototype.setActiveThumb=function setActiveThumb(){this.$videos.removeClass('is-active');this.currentVideo.$selectedThumb.addClass('is-active')};VideoGallery.prototype.bindEvents=function bindEvents(){this.$videos.on('click',this.selectNewVideo.bind(this))};return VideoGallery}();function videoGallery(){var pluginKey='video-gallery';var $videoGallery=__WEBPACK_IMPORTED_MODULE_0_jquery___default()('[data-'+pluginKey+']');$videoGallery.each(function(index,element){var $el=__WEBPACK_IMPORTED_MODULE_0_jquery___default()(element);var isInitialized=$el.data(pluginKey)instanceof VideoGallery;if(isInitialized){return}$el.data(pluginKey,new VideoGallery($el))})}
+
+/***/ }),
+
+/***/ 469:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_jQuery) {/* unused harmony export MultiDrag */
+/* unused harmony export Sortable */
+/* unused harmony export Swap */
+/**!
+ * Sortable 1.14.0
+ * @author	RubaXa   <trash@rubaxa.org>
+ * @author	owenm    <owen23355@gmail.com>
+ * @license MIT
+ */
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    var symbols = Object.getOwnPropertySymbols(object);
+
+    if (enumerableOnly) {
+      symbols = symbols.filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      });
+    }
+
+    keys.push.apply(keys, symbols);
+  }
+
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(Object(source), true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(Object(source)).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function (obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function (obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
+
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+  return arr2;
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+var version = "1.14.0";
+
+function userAgent(pattern) {
+  if (typeof window !== 'undefined' && window.navigator) {
+    return !! /*@__PURE__*/navigator.userAgent.match(pattern);
+  }
+}
+
+var IE11OrLess = userAgent(/(?:Trident.*rv[ :]?11\.|msie|iemobile|Windows Phone)/i);
+var Edge = userAgent(/Edge/i);
+var FireFox = userAgent(/firefox/i);
+var Safari = userAgent(/safari/i) && !userAgent(/chrome/i) && !userAgent(/android/i);
+var IOS = userAgent(/iP(ad|od|hone)/i);
+var ChromeForAndroid = userAgent(/chrome/i) && userAgent(/android/i);
+
+var captureMode = {
+  capture: false,
+  passive: false
+};
+
+function on(el, event, fn) {
+  el.addEventListener(event, fn, !IE11OrLess && captureMode);
+}
+
+function off(el, event, fn) {
+  el.removeEventListener(event, fn, !IE11OrLess && captureMode);
+}
+
+function matches(
+/**HTMLElement*/
+el,
+/**String*/
+selector) {
+  if (!selector) return;
+  selector[0] === '>' && (selector = selector.substring(1));
+
+  if (el) {
+    try {
+      if (el.matches) {
+        return el.matches(selector);
+      } else if (el.msMatchesSelector) {
+        return el.msMatchesSelector(selector);
+      } else if (el.webkitMatchesSelector) {
+        return el.webkitMatchesSelector(selector);
+      }
+    } catch (_) {
+      return false;
+    }
+  }
+
+  return false;
+}
+
+function getParentOrHost(el) {
+  return el.host && el !== document && el.host.nodeType ? el.host : el.parentNode;
+}
+
+function closest(
+/**HTMLElement*/
+el,
+/**String*/
+selector,
+/**HTMLElement*/
+ctx, includeCTX) {
+  if (el) {
+    ctx = ctx || document;
+
+    do {
+      if (selector != null && (selector[0] === '>' ? el.parentNode === ctx && matches(el, selector) : matches(el, selector)) || includeCTX && el === ctx) {
+        return el;
+      }
+
+      if (el === ctx) break;
+      /* jshint boss:true */
+    } while (el = getParentOrHost(el));
+  }
+
+  return null;
+}
+
+var R_SPACE = /\s+/g;
+
+function toggleClass(el, name, state) {
+  if (el && name) {
+    if (el.classList) {
+      el.classList[state ? 'add' : 'remove'](name);
+    } else {
+      var className = (' ' + el.className + ' ').replace(R_SPACE, ' ').replace(' ' + name + ' ', ' ');
+      el.className = (className + (state ? ' ' + name : '')).replace(R_SPACE, ' ');
+    }
+  }
+}
+
+function css(el, prop, val) {
+  var style = el && el.style;
+
+  if (style) {
+    if (val === void 0) {
+      if (document.defaultView && document.defaultView.getComputedStyle) {
+        val = document.defaultView.getComputedStyle(el, '');
+      } else if (el.currentStyle) {
+        val = el.currentStyle;
+      }
+
+      return prop === void 0 ? val : val[prop];
+    } else {
+      if (!(prop in style) && prop.indexOf('webkit') === -1) {
+        prop = '-webkit-' + prop;
+      }
+
+      style[prop] = val + (typeof val === 'string' ? '' : 'px');
+    }
+  }
+}
+
+function matrix(el, selfOnly) {
+  var appliedTransforms = '';
+
+  if (typeof el === 'string') {
+    appliedTransforms = el;
+  } else {
+    do {
+      var transform = css(el, 'transform');
+
+      if (transform && transform !== 'none') {
+        appliedTransforms = transform + ' ' + appliedTransforms;
+      }
+      /* jshint boss:true */
+
+    } while (!selfOnly && (el = el.parentNode));
+  }
+
+  var matrixFn = window.DOMMatrix || window.WebKitCSSMatrix || window.CSSMatrix || window.MSCSSMatrix;
+  /*jshint -W056 */
+
+  return matrixFn && new matrixFn(appliedTransforms);
+}
+
+function find(ctx, tagName, iterator) {
+  if (ctx) {
+    var list = ctx.getElementsByTagName(tagName),
+        i = 0,
+        n = list.length;
+
+    if (iterator) {
+      for (; i < n; i++) {
+        iterator(list[i], i);
+      }
+    }
+
+    return list;
+  }
+
+  return [];
+}
+
+function getWindowScrollingElement() {
+  var scrollingElement = document.scrollingElement;
+
+  if (scrollingElement) {
+    return scrollingElement;
+  } else {
+    return document.documentElement;
+  }
+}
+/**
+ * Returns the "bounding client rect" of given element
+ * @param  {HTMLElement} el                       The element whose boundingClientRect is wanted
+ * @param  {[Boolean]} relativeToContainingBlock  Whether the rect should be relative to the containing block of (including) the container
+ * @param  {[Boolean]} relativeToNonStaticParent  Whether the rect should be relative to the relative parent of (including) the contaienr
+ * @param  {[Boolean]} undoScale                  Whether the container's scale() should be undone
+ * @param  {[HTMLElement]} container              The parent the element will be placed in
+ * @return {Object}                               The boundingClientRect of el, with specified adjustments
+ */
+
+
+function getRect(el, relativeToContainingBlock, relativeToNonStaticParent, undoScale, container) {
+  if (!el.getBoundingClientRect && el !== window) return;
+  var elRect, top, left, bottom, right, height, width;
+
+  if (el !== window && el.parentNode && el !== getWindowScrollingElement()) {
+    elRect = el.getBoundingClientRect();
+    top = elRect.top;
+    left = elRect.left;
+    bottom = elRect.bottom;
+    right = elRect.right;
+    height = elRect.height;
+    width = elRect.width;
+  } else {
+    top = 0;
+    left = 0;
+    bottom = window.innerHeight;
+    right = window.innerWidth;
+    height = window.innerHeight;
+    width = window.innerWidth;
+  }
+
+  if ((relativeToContainingBlock || relativeToNonStaticParent) && el !== window) {
+    // Adjust for translate()
+    container = container || el.parentNode; // solves #1123 (see: https://stackoverflow.com/a/37953806/6088312)
+    // Not needed on <= IE11
+
+    if (!IE11OrLess) {
+      do {
+        if (container && container.getBoundingClientRect && (css(container, 'transform') !== 'none' || relativeToNonStaticParent && css(container, 'position') !== 'static')) {
+          var containerRect = container.getBoundingClientRect(); // Set relative to edges of padding box of container
+
+          top -= containerRect.top + parseInt(css(container, 'border-top-width'));
+          left -= containerRect.left + parseInt(css(container, 'border-left-width'));
+          bottom = top + elRect.height;
+          right = left + elRect.width;
+          break;
+        }
+        /* jshint boss:true */
+
+      } while (container = container.parentNode);
+    }
+  }
+
+  if (undoScale && el !== window) {
+    // Adjust for scale()
+    var elMatrix = matrix(container || el),
+        scaleX = elMatrix && elMatrix.a,
+        scaleY = elMatrix && elMatrix.d;
+
+    if (elMatrix) {
+      top /= scaleY;
+      left /= scaleX;
+      width /= scaleX;
+      height /= scaleY;
+      bottom = top + height;
+      right = left + width;
+    }
+  }
+
+  return {
+    top: top,
+    left: left,
+    bottom: bottom,
+    right: right,
+    width: width,
+    height: height
+  };
+}
+/**
+ * Checks if a side of an element is scrolled past a side of its parents
+ * @param  {HTMLElement}  el           The element who's side being scrolled out of view is in question
+ * @param  {String}       elSide       Side of the element in question ('top', 'left', 'right', 'bottom')
+ * @param  {String}       parentSide   Side of the parent in question ('top', 'left', 'right', 'bottom')
+ * @return {HTMLElement}               The parent scroll element that the el's side is scrolled past, or null if there is no such element
+ */
+
+
+function isScrolledPast(el, elSide, parentSide) {
+  var parent = getParentAutoScrollElement(el, true),
+      elSideVal = getRect(el)[elSide];
+  /* jshint boss:true */
+
+  while (parent) {
+    var parentSideVal = getRect(parent)[parentSide],
+        visible = void 0;
+
+    if (parentSide === 'top' || parentSide === 'left') {
+      visible = elSideVal >= parentSideVal;
+    } else {
+      visible = elSideVal <= parentSideVal;
+    }
+
+    if (!visible) return parent;
+    if (parent === getWindowScrollingElement()) break;
+    parent = getParentAutoScrollElement(parent, false);
+  }
+
+  return false;
+}
+/**
+ * Gets nth child of el, ignoring hidden children, sortable's elements (does not ignore clone if it's visible)
+ * and non-draggable elements
+ * @param  {HTMLElement} el       The parent element
+ * @param  {Number} childNum      The index of the child
+ * @param  {Object} options       Parent Sortable's options
+ * @return {HTMLElement}          The child at index childNum, or null if not found
+ */
+
+
+function getChild(el, childNum, options, includeDragEl) {
+  var currentChild = 0,
+      i = 0,
+      children = el.children;
+
+  while (i < children.length) {
+    if (children[i].style.display !== 'none' && children[i] !== Sortable.ghost && (includeDragEl || children[i] !== Sortable.dragged) && closest(children[i], options.draggable, el, false)) {
+      if (currentChild === childNum) {
+        return children[i];
+      }
+
+      currentChild++;
+    }
+
+    i++;
+  }
+
+  return null;
+}
+/**
+ * Gets the last child in the el, ignoring ghostEl or invisible elements (clones)
+ * @param  {HTMLElement} el       Parent element
+ * @param  {selector} selector    Any other elements that should be ignored
+ * @return {HTMLElement}          The last child, ignoring ghostEl
+ */
+
+
+function lastChild(el, selector) {
+  var last = el.lastElementChild;
+
+  while (last && (last === Sortable.ghost || css(last, 'display') === 'none' || selector && !matches(last, selector))) {
+    last = last.previousElementSibling;
+  }
+
+  return last || null;
+}
+/**
+ * Returns the index of an element within its parent for a selected set of
+ * elements
+ * @param  {HTMLElement} el
+ * @param  {selector} selector
+ * @return {number}
+ */
+
+
+function index(el, selector) {
+  var index = 0;
+
+  if (!el || !el.parentNode) {
+    return -1;
+  }
+  /* jshint boss:true */
+
+
+  while (el = el.previousElementSibling) {
+    if (el.nodeName.toUpperCase() !== 'TEMPLATE' && el !== Sortable.clone && (!selector || matches(el, selector))) {
+      index++;
+    }
+  }
+
+  return index;
+}
+/**
+ * Returns the scroll offset of the given element, added with all the scroll offsets of parent elements.
+ * The value is returned in real pixels.
+ * @param  {HTMLElement} el
+ * @return {Array}             Offsets in the format of [left, top]
+ */
+
+
+function getRelativeScrollOffset(el) {
+  var offsetLeft = 0,
+      offsetTop = 0,
+      winScroller = getWindowScrollingElement();
+
+  if (el) {
+    do {
+      var elMatrix = matrix(el),
+          scaleX = elMatrix.a,
+          scaleY = elMatrix.d;
+      offsetLeft += el.scrollLeft * scaleX;
+      offsetTop += el.scrollTop * scaleY;
+    } while (el !== winScroller && (el = el.parentNode));
+  }
+
+  return [offsetLeft, offsetTop];
+}
+/**
+ * Returns the index of the object within the given array
+ * @param  {Array} arr   Array that may or may not hold the object
+ * @param  {Object} obj  An object that has a key-value pair unique to and identical to a key-value pair in the object you want to find
+ * @return {Number}      The index of the object in the array, or -1
+ */
+
+
+function indexOfObject(arr, obj) {
+  for (var i in arr) {
+    if (!arr.hasOwnProperty(i)) continue;
+
+    for (var key in obj) {
+      if (obj.hasOwnProperty(key) && obj[key] === arr[i][key]) return Number(i);
+    }
+  }
+
+  return -1;
+}
+
+function getParentAutoScrollElement(el, includeSelf) {
+  // skip to window
+  if (!el || !el.getBoundingClientRect) return getWindowScrollingElement();
+  var elem = el;
+  var gotSelf = false;
+
+  do {
+    // we don't need to get elem css if it isn't even overflowing in the first place (performance)
+    if (elem.clientWidth < elem.scrollWidth || elem.clientHeight < elem.scrollHeight) {
+      var elemCSS = css(elem);
+
+      if (elem.clientWidth < elem.scrollWidth && (elemCSS.overflowX == 'auto' || elemCSS.overflowX == 'scroll') || elem.clientHeight < elem.scrollHeight && (elemCSS.overflowY == 'auto' || elemCSS.overflowY == 'scroll')) {
+        if (!elem.getBoundingClientRect || elem === document.body) return getWindowScrollingElement();
+        if (gotSelf || includeSelf) return elem;
+        gotSelf = true;
+      }
+    }
+    /* jshint boss:true */
+
+  } while (elem = elem.parentNode);
+
+  return getWindowScrollingElement();
+}
+
+function extend(dst, src) {
+  if (dst && src) {
+    for (var key in src) {
+      if (src.hasOwnProperty(key)) {
+        dst[key] = src[key];
+      }
+    }
+  }
+
+  return dst;
+}
+
+function isRectEqual(rect1, rect2) {
+  return Math.round(rect1.top) === Math.round(rect2.top) && Math.round(rect1.left) === Math.round(rect2.left) && Math.round(rect1.height) === Math.round(rect2.height) && Math.round(rect1.width) === Math.round(rect2.width);
+}
+
+var _throttleTimeout;
+
+function throttle(callback, ms) {
+  return function () {
+    if (!_throttleTimeout) {
+      var args = arguments,
+          _this = this;
+
+      if (args.length === 1) {
+        callback.call(_this, args[0]);
+      } else {
+        callback.apply(_this, args);
+      }
+
+      _throttleTimeout = setTimeout(function () {
+        _throttleTimeout = void 0;
+      }, ms);
+    }
+  };
+}
+
+function cancelThrottle() {
+  clearTimeout(_throttleTimeout);
+  _throttleTimeout = void 0;
+}
+
+function scrollBy(el, x, y) {
+  el.scrollLeft += x;
+  el.scrollTop += y;
+}
+
+function clone(el) {
+  var Polymer = window.Polymer;
+  var $ = __webpack_provided_window_dot_jQuery || window.Zepto;
+
+  if (Polymer && Polymer.dom) {
+    return Polymer.dom(el).cloneNode(true);
+  } else if ($) {
+    return $(el).clone(true)[0];
+  } else {
+    return el.cloneNode(true);
+  }
+}
+
+function setRect(el, rect) {
+  css(el, 'position', 'absolute');
+  css(el, 'top', rect.top);
+  css(el, 'left', rect.left);
+  css(el, 'width', rect.width);
+  css(el, 'height', rect.height);
+}
+
+function unsetRect(el) {
+  css(el, 'position', '');
+  css(el, 'top', '');
+  css(el, 'left', '');
+  css(el, 'width', '');
+  css(el, 'height', '');
+}
+
+var expando = 'Sortable' + new Date().getTime();
+
+function AnimationStateManager() {
+  var animationStates = [],
+      animationCallbackId;
+  return {
+    captureAnimationState: function captureAnimationState() {
+      animationStates = [];
+      if (!this.options.animation) return;
+      var children = [].slice.call(this.el.children);
+      children.forEach(function (child) {
+        if (css(child, 'display') === 'none' || child === Sortable.ghost) return;
+        animationStates.push({
+          target: child,
+          rect: getRect(child)
+        });
+
+        var fromRect = _objectSpread2({}, animationStates[animationStates.length - 1].rect); // If animating: compensate for current animation
+
+
+        if (child.thisAnimationDuration) {
+          var childMatrix = matrix(child, true);
+
+          if (childMatrix) {
+            fromRect.top -= childMatrix.f;
+            fromRect.left -= childMatrix.e;
+          }
+        }
+
+        child.fromRect = fromRect;
+      });
+    },
+    addAnimationState: function addAnimationState(state) {
+      animationStates.push(state);
+    },
+    removeAnimationState: function removeAnimationState(target) {
+      animationStates.splice(indexOfObject(animationStates, {
+        target: target
+      }), 1);
+    },
+    animateAll: function animateAll(callback) {
+      var _this = this;
+
+      if (!this.options.animation) {
+        clearTimeout(animationCallbackId);
+        if (typeof callback === 'function') callback();
+        return;
+      }
+
+      var animating = false,
+          animationTime = 0;
+      animationStates.forEach(function (state) {
+        var time = 0,
+            target = state.target,
+            fromRect = target.fromRect,
+            toRect = getRect(target),
+            prevFromRect = target.prevFromRect,
+            prevToRect = target.prevToRect,
+            animatingRect = state.rect,
+            targetMatrix = matrix(target, true);
+
+        if (targetMatrix) {
+          // Compensate for current animation
+          toRect.top -= targetMatrix.f;
+          toRect.left -= targetMatrix.e;
+        }
+
+        target.toRect = toRect;
+
+        if (target.thisAnimationDuration) {
+          // Could also check if animatingRect is between fromRect and toRect
+          if (isRectEqual(prevFromRect, toRect) && !isRectEqual(fromRect, toRect) && // Make sure animatingRect is on line between toRect & fromRect
+          (animatingRect.top - toRect.top) / (animatingRect.left - toRect.left) === (fromRect.top - toRect.top) / (fromRect.left - toRect.left)) {
+            // If returning to same place as started from animation and on same axis
+            time = calculateRealTime(animatingRect, prevFromRect, prevToRect, _this.options);
+          }
+        } // if fromRect != toRect: animate
+
+
+        if (!isRectEqual(toRect, fromRect)) {
+          target.prevFromRect = fromRect;
+          target.prevToRect = toRect;
+
+          if (!time) {
+            time = _this.options.animation;
+          }
+
+          _this.animate(target, animatingRect, toRect, time);
+        }
+
+        if (time) {
+          animating = true;
+          animationTime = Math.max(animationTime, time);
+          clearTimeout(target.animationResetTimer);
+          target.animationResetTimer = setTimeout(function () {
+            target.animationTime = 0;
+            target.prevFromRect = null;
+            target.fromRect = null;
+            target.prevToRect = null;
+            target.thisAnimationDuration = null;
+          }, time);
+          target.thisAnimationDuration = time;
+        }
+      });
+      clearTimeout(animationCallbackId);
+
+      if (!animating) {
+        if (typeof callback === 'function') callback();
+      } else {
+        animationCallbackId = setTimeout(function () {
+          if (typeof callback === 'function') callback();
+        }, animationTime);
+      }
+
+      animationStates = [];
+    },
+    animate: function animate(target, currentRect, toRect, duration) {
+      if (duration) {
+        css(target, 'transition', '');
+        css(target, 'transform', '');
+        var elMatrix = matrix(this.el),
+            scaleX = elMatrix && elMatrix.a,
+            scaleY = elMatrix && elMatrix.d,
+            translateX = (currentRect.left - toRect.left) / (scaleX || 1),
+            translateY = (currentRect.top - toRect.top) / (scaleY || 1);
+        target.animatingX = !!translateX;
+        target.animatingY = !!translateY;
+        css(target, 'transform', 'translate3d(' + translateX + 'px,' + translateY + 'px,0)');
+        this.forRepaintDummy = repaint(target); // repaint
+
+        css(target, 'transition', 'transform ' + duration + 'ms' + (this.options.easing ? ' ' + this.options.easing : ''));
+        css(target, 'transform', 'translate3d(0,0,0)');
+        typeof target.animated === 'number' && clearTimeout(target.animated);
+        target.animated = setTimeout(function () {
+          css(target, 'transition', '');
+          css(target, 'transform', '');
+          target.animated = false;
+          target.animatingX = false;
+          target.animatingY = false;
+        }, duration);
+      }
+    }
+  };
+}
+
+function repaint(target) {
+  return target.offsetWidth;
+}
+
+function calculateRealTime(animatingRect, fromRect, toRect, options) {
+  return Math.sqrt(Math.pow(fromRect.top - animatingRect.top, 2) + Math.pow(fromRect.left - animatingRect.left, 2)) / Math.sqrt(Math.pow(fromRect.top - toRect.top, 2) + Math.pow(fromRect.left - toRect.left, 2)) * options.animation;
+}
+
+var plugins = [];
+var defaults = {
+  initializeByDefault: true
+};
+var PluginManager = {
+  mount: function mount(plugin) {
+    // Set default static properties
+    for (var option in defaults) {
+      if (defaults.hasOwnProperty(option) && !(option in plugin)) {
+        plugin[option] = defaults[option];
+      }
+    }
+
+    plugins.forEach(function (p) {
+      if (p.pluginName === plugin.pluginName) {
+        throw "Sortable: Cannot mount plugin ".concat(plugin.pluginName, " more than once");
+      }
+    });
+    plugins.push(plugin);
+  },
+  pluginEvent: function pluginEvent(eventName, sortable, evt) {
+    var _this = this;
+
+    this.eventCanceled = false;
+
+    evt.cancel = function () {
+      _this.eventCanceled = true;
+    };
+
+    var eventNameGlobal = eventName + 'Global';
+    plugins.forEach(function (plugin) {
+      if (!sortable[plugin.pluginName]) return; // Fire global events if it exists in this sortable
+
+      if (sortable[plugin.pluginName][eventNameGlobal]) {
+        sortable[plugin.pluginName][eventNameGlobal](_objectSpread2({
+          sortable: sortable
+        }, evt));
+      } // Only fire plugin event if plugin is enabled in this sortable,
+      // and plugin has event defined
+
+
+      if (sortable.options[plugin.pluginName] && sortable[plugin.pluginName][eventName]) {
+        sortable[plugin.pluginName][eventName](_objectSpread2({
+          sortable: sortable
+        }, evt));
+      }
+    });
+  },
+  initializePlugins: function initializePlugins(sortable, el, defaults, options) {
+    plugins.forEach(function (plugin) {
+      var pluginName = plugin.pluginName;
+      if (!sortable.options[pluginName] && !plugin.initializeByDefault) return;
+      var initialized = new plugin(sortable, el, sortable.options);
+      initialized.sortable = sortable;
+      initialized.options = sortable.options;
+      sortable[pluginName] = initialized; // Add default options from plugin
+
+      _extends(defaults, initialized.defaults);
+    });
+
+    for (var option in sortable.options) {
+      if (!sortable.options.hasOwnProperty(option)) continue;
+      var modified = this.modifyOption(sortable, option, sortable.options[option]);
+
+      if (typeof modified !== 'undefined') {
+        sortable.options[option] = modified;
+      }
+    }
+  },
+  getEventProperties: function getEventProperties(name, sortable) {
+    var eventProperties = {};
+    plugins.forEach(function (plugin) {
+      if (typeof plugin.eventProperties !== 'function') return;
+
+      _extends(eventProperties, plugin.eventProperties.call(sortable[plugin.pluginName], name));
+    });
+    return eventProperties;
+  },
+  modifyOption: function modifyOption(sortable, name, value) {
+    var modifiedValue;
+    plugins.forEach(function (plugin) {
+      // Plugin must exist on the Sortable
+      if (!sortable[plugin.pluginName]) return; // If static option listener exists for this option, call in the context of the Sortable's instance of this plugin
+
+      if (plugin.optionListeners && typeof plugin.optionListeners[name] === 'function') {
+        modifiedValue = plugin.optionListeners[name].call(sortable[plugin.pluginName], value);
+      }
+    });
+    return modifiedValue;
+  }
+};
+
+function dispatchEvent(_ref) {
+  var sortable = _ref.sortable,
+      rootEl = _ref.rootEl,
+      name = _ref.name,
+      targetEl = _ref.targetEl,
+      cloneEl = _ref.cloneEl,
+      toEl = _ref.toEl,
+      fromEl = _ref.fromEl,
+      oldIndex = _ref.oldIndex,
+      newIndex = _ref.newIndex,
+      oldDraggableIndex = _ref.oldDraggableIndex,
+      newDraggableIndex = _ref.newDraggableIndex,
+      originalEvent = _ref.originalEvent,
+      putSortable = _ref.putSortable,
+      extraEventProperties = _ref.extraEventProperties;
+  sortable = sortable || rootEl && rootEl[expando];
+  if (!sortable) return;
+  var evt,
+      options = sortable.options,
+      onName = 'on' + name.charAt(0).toUpperCase() + name.substr(1); // Support for new CustomEvent feature
+
+  if (window.CustomEvent && !IE11OrLess && !Edge) {
+    evt = new CustomEvent(name, {
+      bubbles: true,
+      cancelable: true
+    });
+  } else {
+    evt = document.createEvent('Event');
+    evt.initEvent(name, true, true);
+  }
+
+  evt.to = toEl || rootEl;
+  evt.from = fromEl || rootEl;
+  evt.item = targetEl || rootEl;
+  evt.clone = cloneEl;
+  evt.oldIndex = oldIndex;
+  evt.newIndex = newIndex;
+  evt.oldDraggableIndex = oldDraggableIndex;
+  evt.newDraggableIndex = newDraggableIndex;
+  evt.originalEvent = originalEvent;
+  evt.pullMode = putSortable ? putSortable.lastPutMode : undefined;
+
+  var allEventProperties = _objectSpread2(_objectSpread2({}, extraEventProperties), PluginManager.getEventProperties(name, sortable));
+
+  for (var option in allEventProperties) {
+    evt[option] = allEventProperties[option];
+  }
+
+  if (rootEl) {
+    rootEl.dispatchEvent(evt);
+  }
+
+  if (options[onName]) {
+    options[onName].call(sortable, evt);
+  }
+}
+
+var _excluded = ["evt"];
+
+var pluginEvent = function pluginEvent(eventName, sortable) {
+  var _ref = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {},
+      originalEvent = _ref.evt,
+      data = _objectWithoutProperties(_ref, _excluded);
+
+  PluginManager.pluginEvent.bind(Sortable)(eventName, sortable, _objectSpread2({
+    dragEl: dragEl,
+    parentEl: parentEl,
+    ghostEl: ghostEl,
+    rootEl: rootEl,
+    nextEl: nextEl,
+    lastDownEl: lastDownEl,
+    cloneEl: cloneEl,
+    cloneHidden: cloneHidden,
+    dragStarted: moved,
+    putSortable: putSortable,
+    activeSortable: Sortable.active,
+    originalEvent: originalEvent,
+    oldIndex: oldIndex,
+    oldDraggableIndex: oldDraggableIndex,
+    newIndex: newIndex,
+    newDraggableIndex: newDraggableIndex,
+    hideGhostForTarget: _hideGhostForTarget,
+    unhideGhostForTarget: _unhideGhostForTarget,
+    cloneNowHidden: function cloneNowHidden() {
+      cloneHidden = true;
+    },
+    cloneNowShown: function cloneNowShown() {
+      cloneHidden = false;
+    },
+    dispatchSortableEvent: function dispatchSortableEvent(name) {
+      _dispatchEvent({
+        sortable: sortable,
+        name: name,
+        originalEvent: originalEvent
+      });
+    }
+  }, data));
+};
+
+function _dispatchEvent(info) {
+  dispatchEvent(_objectSpread2({
+    putSortable: putSortable,
+    cloneEl: cloneEl,
+    targetEl: dragEl,
+    rootEl: rootEl,
+    oldIndex: oldIndex,
+    oldDraggableIndex: oldDraggableIndex,
+    newIndex: newIndex,
+    newDraggableIndex: newDraggableIndex
+  }, info));
+}
+
+var dragEl,
+    parentEl,
+    ghostEl,
+    rootEl,
+    nextEl,
+    lastDownEl,
+    cloneEl,
+    cloneHidden,
+    oldIndex,
+    newIndex,
+    oldDraggableIndex,
+    newDraggableIndex,
+    activeGroup,
+    putSortable,
+    awaitingDragStarted = false,
+    ignoreNextClick = false,
+    sortables = [],
+    tapEvt,
+    touchEvt,
+    lastDx,
+    lastDy,
+    tapDistanceLeft,
+    tapDistanceTop,
+    moved,
+    lastTarget,
+    lastDirection,
+    pastFirstInvertThresh = false,
+    isCircumstantialInvert = false,
+    targetMoveDistance,
+    // For positioning ghost absolutely
+ghostRelativeParent,
+    ghostRelativeParentInitialScroll = [],
+    // (left, top)
+_silent = false,
+    savedInputChecked = [];
+/** @const */
+
+var documentExists = typeof document !== 'undefined',
+    PositionGhostAbsolutely = IOS,
+    CSSFloatProperty = Edge || IE11OrLess ? 'cssFloat' : 'float',
+    // This will not pass for IE9, because IE9 DnD only works on anchors
+supportDraggable = documentExists && !ChromeForAndroid && !IOS && 'draggable' in document.createElement('div'),
+    supportCssPointerEvents = function () {
+  if (!documentExists) return; // false when <= IE11
+
+  if (IE11OrLess) {
+    return false;
+  }
+
+  var el = document.createElement('x');
+  el.style.cssText = 'pointer-events:auto';
+  return el.style.pointerEvents === 'auto';
+}(),
+    _detectDirection = function _detectDirection(el, options) {
+  var elCSS = css(el),
+      elWidth = parseInt(elCSS.width) - parseInt(elCSS.paddingLeft) - parseInt(elCSS.paddingRight) - parseInt(elCSS.borderLeftWidth) - parseInt(elCSS.borderRightWidth),
+      child1 = getChild(el, 0, options),
+      child2 = getChild(el, 1, options),
+      firstChildCSS = child1 && css(child1),
+      secondChildCSS = child2 && css(child2),
+      firstChildWidth = firstChildCSS && parseInt(firstChildCSS.marginLeft) + parseInt(firstChildCSS.marginRight) + getRect(child1).width,
+      secondChildWidth = secondChildCSS && parseInt(secondChildCSS.marginLeft) + parseInt(secondChildCSS.marginRight) + getRect(child2).width;
+
+  if (elCSS.display === 'flex') {
+    return elCSS.flexDirection === 'column' || elCSS.flexDirection === 'column-reverse' ? 'vertical' : 'horizontal';
+  }
+
+  if (elCSS.display === 'grid') {
+    return elCSS.gridTemplateColumns.split(' ').length <= 1 ? 'vertical' : 'horizontal';
+  }
+
+  if (child1 && firstChildCSS["float"] && firstChildCSS["float"] !== 'none') {
+    var touchingSideChild2 = firstChildCSS["float"] === 'left' ? 'left' : 'right';
+    return child2 && (secondChildCSS.clear === 'both' || secondChildCSS.clear === touchingSideChild2) ? 'vertical' : 'horizontal';
+  }
+
+  return child1 && (firstChildCSS.display === 'block' || firstChildCSS.display === 'flex' || firstChildCSS.display === 'table' || firstChildCSS.display === 'grid' || firstChildWidth >= elWidth && elCSS[CSSFloatProperty] === 'none' || child2 && elCSS[CSSFloatProperty] === 'none' && firstChildWidth + secondChildWidth > elWidth) ? 'vertical' : 'horizontal';
+},
+    _dragElInRowColumn = function _dragElInRowColumn(dragRect, targetRect, vertical) {
+  var dragElS1Opp = vertical ? dragRect.left : dragRect.top,
+      dragElS2Opp = vertical ? dragRect.right : dragRect.bottom,
+      dragElOppLength = vertical ? dragRect.width : dragRect.height,
+      targetS1Opp = vertical ? targetRect.left : targetRect.top,
+      targetS2Opp = vertical ? targetRect.right : targetRect.bottom,
+      targetOppLength = vertical ? targetRect.width : targetRect.height;
+  return dragElS1Opp === targetS1Opp || dragElS2Opp === targetS2Opp || dragElS1Opp + dragElOppLength / 2 === targetS1Opp + targetOppLength / 2;
+},
+
+/**
+ * Detects first nearest empty sortable to X and Y position using emptyInsertThreshold.
+ * @param  {Number} x      X position
+ * @param  {Number} y      Y position
+ * @return {HTMLElement}   Element of the first found nearest Sortable
+ */
+_detectNearestEmptySortable = function _detectNearestEmptySortable(x, y) {
+  var ret;
+  sortables.some(function (sortable) {
+    var threshold = sortable[expando].options.emptyInsertThreshold;
+    if (!threshold || lastChild(sortable)) return;
+    var rect = getRect(sortable),
+        insideHorizontally = x >= rect.left - threshold && x <= rect.right + threshold,
+        insideVertically = y >= rect.top - threshold && y <= rect.bottom + threshold;
+
+    if (insideHorizontally && insideVertically) {
+      return ret = sortable;
+    }
+  });
+  return ret;
+},
+    _prepareGroup = function _prepareGroup(options) {
+  function toFn(value, pull) {
+    return function (to, from, dragEl, evt) {
+      var sameGroup = to.options.group.name && from.options.group.name && to.options.group.name === from.options.group.name;
+
+      if (value == null && (pull || sameGroup)) {
+        // Default pull value
+        // Default pull and put value if same group
+        return true;
+      } else if (value == null || value === false) {
+        return false;
+      } else if (pull && value === 'clone') {
+        return value;
+      } else if (typeof value === 'function') {
+        return toFn(value(to, from, dragEl, evt), pull)(to, from, dragEl, evt);
+      } else {
+        var otherGroup = (pull ? to : from).options.group.name;
+        return value === true || typeof value === 'string' && value === otherGroup || value.join && value.indexOf(otherGroup) > -1;
+      }
+    };
+  }
+
+  var group = {};
+  var originalGroup = options.group;
+
+  if (!originalGroup || _typeof(originalGroup) != 'object') {
+    originalGroup = {
+      name: originalGroup
+    };
+  }
+
+  group.name = originalGroup.name;
+  group.checkPull = toFn(originalGroup.pull, true);
+  group.checkPut = toFn(originalGroup.put);
+  group.revertClone = originalGroup.revertClone;
+  options.group = group;
+},
+    _hideGhostForTarget = function _hideGhostForTarget() {
+  if (!supportCssPointerEvents && ghostEl) {
+    css(ghostEl, 'display', 'none');
+  }
+},
+    _unhideGhostForTarget = function _unhideGhostForTarget() {
+  if (!supportCssPointerEvents && ghostEl) {
+    css(ghostEl, 'display', '');
+  }
+}; // #1184 fix - Prevent click event on fallback if dragged but item not changed position
+
+
+if (documentExists) {
+  document.addEventListener('click', function (evt) {
+    if (ignoreNextClick) {
+      evt.preventDefault();
+      evt.stopPropagation && evt.stopPropagation();
+      evt.stopImmediatePropagation && evt.stopImmediatePropagation();
+      ignoreNextClick = false;
+      return false;
+    }
+  }, true);
+}
+
+var nearestEmptyInsertDetectEvent = function nearestEmptyInsertDetectEvent(evt) {
+  if (dragEl) {
+    evt = evt.touches ? evt.touches[0] : evt;
+
+    var nearest = _detectNearestEmptySortable(evt.clientX, evt.clientY);
+
+    if (nearest) {
+      // Create imitation event
+      var event = {};
+
+      for (var i in evt) {
+        if (evt.hasOwnProperty(i)) {
+          event[i] = evt[i];
+        }
+      }
+
+      event.target = event.rootEl = nearest;
+      event.preventDefault = void 0;
+      event.stopPropagation = void 0;
+
+      nearest[expando]._onDragOver(event);
+    }
+  }
+};
+
+var _checkOutsideTargetEl = function _checkOutsideTargetEl(evt) {
+  if (dragEl) {
+    dragEl.parentNode[expando]._isOutsideThisEl(evt.target);
+  }
+};
+/**
+ * @class  Sortable
+ * @param  {HTMLElement}  el
+ * @param  {Object}       [options]
+ */
+
+
+function Sortable(el, options) {
+  if (!(el && el.nodeType && el.nodeType === 1)) {
+    throw "Sortable: `el` must be an HTMLElement, not ".concat({}.toString.call(el));
+  }
+
+  this.el = el; // root element
+
+  this.options = options = _extends({}, options); // Export instance
+
+  el[expando] = this;
+  var defaults = {
+    group: null,
+    sort: true,
+    disabled: false,
+    store: null,
+    handle: null,
+    draggable: /^[uo]l$/i.test(el.nodeName) ? '>li' : '>*',
+    swapThreshold: 1,
+    // percentage; 0 <= x <= 1
+    invertSwap: false,
+    // invert always
+    invertedSwapThreshold: null,
+    // will be set to same as swapThreshold if default
+    removeCloneOnHide: true,
+    direction: function direction() {
+      return _detectDirection(el, this.options);
+    },
+    ghostClass: 'sortable-ghost',
+    chosenClass: 'sortable-chosen',
+    dragClass: 'sortable-drag',
+    ignore: 'a, img',
+    filter: null,
+    preventOnFilter: true,
+    animation: 0,
+    easing: null,
+    setData: function setData(dataTransfer, dragEl) {
+      dataTransfer.setData('Text', dragEl.textContent);
+    },
+    dropBubble: false,
+    dragoverBubble: false,
+    dataIdAttr: 'data-id',
+    delay: 0,
+    delayOnTouchOnly: false,
+    touchStartThreshold: (Number.parseInt ? Number : window).parseInt(window.devicePixelRatio, 10) || 1,
+    forceFallback: false,
+    fallbackClass: 'sortable-fallback',
+    fallbackOnBody: false,
+    fallbackTolerance: 0,
+    fallbackOffset: {
+      x: 0,
+      y: 0
+    },
+    supportPointer: Sortable.supportPointer !== false && 'PointerEvent' in window && !Safari,
+    emptyInsertThreshold: 5
+  };
+  PluginManager.initializePlugins(this, el, defaults); // Set default options
+
+  for (var name in defaults) {
+    !(name in options) && (options[name] = defaults[name]);
+  }
+
+  _prepareGroup(options); // Bind all private methods
+
+
+  for (var fn in this) {
+    if (fn.charAt(0) === '_' && typeof this[fn] === 'function') {
+      this[fn] = this[fn].bind(this);
+    }
+  } // Setup drag mode
+
+
+  this.nativeDraggable = options.forceFallback ? false : supportDraggable;
+
+  if (this.nativeDraggable) {
+    // Touch start threshold cannot be greater than the native dragstart threshold
+    this.options.touchStartThreshold = 1;
+  } // Bind events
+
+
+  if (options.supportPointer) {
+    on(el, 'pointerdown', this._onTapStart);
+  } else {
+    on(el, 'mousedown', this._onTapStart);
+    on(el, 'touchstart', this._onTapStart);
+  }
+
+  if (this.nativeDraggable) {
+    on(el, 'dragover', this);
+    on(el, 'dragenter', this);
+  }
+
+  sortables.push(this.el); // Restore sorting
+
+  options.store && options.store.get && this.sort(options.store.get(this) || []); // Add animation state manager
+
+  _extends(this, AnimationStateManager());
+}
+
+Sortable.prototype =
+/** @lends Sortable.prototype */
+{
+  constructor: Sortable,
+  _isOutsideThisEl: function _isOutsideThisEl(target) {
+    if (!this.el.contains(target) && target !== this.el) {
+      lastTarget = null;
+    }
+  },
+  _getDirection: function _getDirection(evt, target) {
+    return typeof this.options.direction === 'function' ? this.options.direction.call(this, evt, target, dragEl) : this.options.direction;
+  },
+  _onTapStart: function _onTapStart(
+  /** Event|TouchEvent */
+  evt) {
+    if (!evt.cancelable) return;
+
+    var _this = this,
+        el = this.el,
+        options = this.options,
+        preventOnFilter = options.preventOnFilter,
+        type = evt.type,
+        touch = evt.touches && evt.touches[0] || evt.pointerType && evt.pointerType === 'touch' && evt,
+        target = (touch || evt).target,
+        originalTarget = evt.target.shadowRoot && (evt.path && evt.path[0] || evt.composedPath && evt.composedPath()[0]) || target,
+        filter = options.filter;
+
+    _saveInputCheckedState(el); // Don't trigger start event when an element is been dragged, otherwise the evt.oldindex always wrong when set option.group.
+
+
+    if (dragEl) {
+      return;
+    }
+
+    if (/mousedown|pointerdown/.test(type) && evt.button !== 0 || options.disabled) {
+      return; // only left button and enabled
+    } // cancel dnd if original target is content editable
+
+
+    if (originalTarget.isContentEditable) {
+      return;
+    } // Safari ignores further event handling after mousedown
+
+
+    if (!this.nativeDraggable && Safari && target && target.tagName.toUpperCase() === 'SELECT') {
+      return;
+    }
+
+    target = closest(target, options.draggable, el, false);
+
+    if (target && target.animated) {
+      return;
+    }
+
+    if (lastDownEl === target) {
+      // Ignoring duplicate `down`
+      return;
+    } // Get the index of the dragged element within its parent
+
+
+    oldIndex = index(target);
+    oldDraggableIndex = index(target, options.draggable); // Check filter
+
+    if (typeof filter === 'function') {
+      if (filter.call(this, evt, target, this)) {
+        _dispatchEvent({
+          sortable: _this,
+          rootEl: originalTarget,
+          name: 'filter',
+          targetEl: target,
+          toEl: el,
+          fromEl: el
+        });
+
+        pluginEvent('filter', _this, {
+          evt: evt
+        });
+        preventOnFilter && evt.cancelable && evt.preventDefault();
+        return; // cancel dnd
+      }
+    } else if (filter) {
+      filter = filter.split(',').some(function (criteria) {
+        criteria = closest(originalTarget, criteria.trim(), el, false);
+
+        if (criteria) {
+          _dispatchEvent({
+            sortable: _this,
+            rootEl: criteria,
+            name: 'filter',
+            targetEl: target,
+            fromEl: el,
+            toEl: el
+          });
+
+          pluginEvent('filter', _this, {
+            evt: evt
+          });
+          return true;
+        }
+      });
+
+      if (filter) {
+        preventOnFilter && evt.cancelable && evt.preventDefault();
+        return; // cancel dnd
+      }
+    }
+
+    if (options.handle && !closest(originalTarget, options.handle, el, false)) {
+      return;
+    } // Prepare `dragstart`
+
+
+    this._prepareDragStart(evt, touch, target);
+  },
+  _prepareDragStart: function _prepareDragStart(
+  /** Event */
+  evt,
+  /** Touch */
+  touch,
+  /** HTMLElement */
+  target) {
+    var _this = this,
+        el = _this.el,
+        options = _this.options,
+        ownerDocument = el.ownerDocument,
+        dragStartFn;
+
+    if (target && !dragEl && target.parentNode === el) {
+      var dragRect = getRect(target);
+      rootEl = el;
+      dragEl = target;
+      parentEl = dragEl.parentNode;
+      nextEl = dragEl.nextSibling;
+      lastDownEl = target;
+      activeGroup = options.group;
+      Sortable.dragged = dragEl;
+      tapEvt = {
+        target: dragEl,
+        clientX: (touch || evt).clientX,
+        clientY: (touch || evt).clientY
+      };
+      tapDistanceLeft = tapEvt.clientX - dragRect.left;
+      tapDistanceTop = tapEvt.clientY - dragRect.top;
+      this._lastX = (touch || evt).clientX;
+      this._lastY = (touch || evt).clientY;
+      dragEl.style['will-change'] = 'all';
+
+      dragStartFn = function dragStartFn() {
+        pluginEvent('delayEnded', _this, {
+          evt: evt
+        });
+
+        if (Sortable.eventCanceled) {
+          _this._onDrop();
+
+          return;
+        } // Delayed drag has been triggered
+        // we can re-enable the events: touchmove/mousemove
+
+
+        _this._disableDelayedDragEvents();
+
+        if (!FireFox && _this.nativeDraggable) {
+          dragEl.draggable = true;
+        } // Bind the events: dragstart/dragend
+
+
+        _this._triggerDragStart(evt, touch); // Drag start event
+
+
+        _dispatchEvent({
+          sortable: _this,
+          name: 'choose',
+          originalEvent: evt
+        }); // Chosen item
+
+
+        toggleClass(dragEl, options.chosenClass, true);
+      }; // Disable "draggable"
+
+
+      options.ignore.split(',').forEach(function (criteria) {
+        find(dragEl, criteria.trim(), _disableDraggable);
+      });
+      on(ownerDocument, 'dragover', nearestEmptyInsertDetectEvent);
+      on(ownerDocument, 'mousemove', nearestEmptyInsertDetectEvent);
+      on(ownerDocument, 'touchmove', nearestEmptyInsertDetectEvent);
+      on(ownerDocument, 'mouseup', _this._onDrop);
+      on(ownerDocument, 'touchend', _this._onDrop);
+      on(ownerDocument, 'touchcancel', _this._onDrop); // Make dragEl draggable (must be before delay for FireFox)
+
+      if (FireFox && this.nativeDraggable) {
+        this.options.touchStartThreshold = 4;
+        dragEl.draggable = true;
+      }
+
+      pluginEvent('delayStart', this, {
+        evt: evt
+      }); // Delay is impossible for native DnD in Edge or IE
+
+      if (options.delay && (!options.delayOnTouchOnly || touch) && (!this.nativeDraggable || !(Edge || IE11OrLess))) {
+        if (Sortable.eventCanceled) {
+          this._onDrop();
+
+          return;
+        } // If the user moves the pointer or let go the click or touch
+        // before the delay has been reached:
+        // disable the delayed drag
+
+
+        on(ownerDocument, 'mouseup', _this._disableDelayedDrag);
+        on(ownerDocument, 'touchend', _this._disableDelayedDrag);
+        on(ownerDocument, 'touchcancel', _this._disableDelayedDrag);
+        on(ownerDocument, 'mousemove', _this._delayedDragTouchMoveHandler);
+        on(ownerDocument, 'touchmove', _this._delayedDragTouchMoveHandler);
+        options.supportPointer && on(ownerDocument, 'pointermove', _this._delayedDragTouchMoveHandler);
+        _this._dragStartTimer = setTimeout(dragStartFn, options.delay);
+      } else {
+        dragStartFn();
+      }
+    }
+  },
+  _delayedDragTouchMoveHandler: function _delayedDragTouchMoveHandler(
+  /** TouchEvent|PointerEvent **/
+  e) {
+    var touch = e.touches ? e.touches[0] : e;
+
+    if (Math.max(Math.abs(touch.clientX - this._lastX), Math.abs(touch.clientY - this._lastY)) >= Math.floor(this.options.touchStartThreshold / (this.nativeDraggable && window.devicePixelRatio || 1))) {
+      this._disableDelayedDrag();
+    }
+  },
+  _disableDelayedDrag: function _disableDelayedDrag() {
+    dragEl && _disableDraggable(dragEl);
+    clearTimeout(this._dragStartTimer);
+
+    this._disableDelayedDragEvents();
+  },
+  _disableDelayedDragEvents: function _disableDelayedDragEvents() {
+    var ownerDocument = this.el.ownerDocument;
+    off(ownerDocument, 'mouseup', this._disableDelayedDrag);
+    off(ownerDocument, 'touchend', this._disableDelayedDrag);
+    off(ownerDocument, 'touchcancel', this._disableDelayedDrag);
+    off(ownerDocument, 'mousemove', this._delayedDragTouchMoveHandler);
+    off(ownerDocument, 'touchmove', this._delayedDragTouchMoveHandler);
+    off(ownerDocument, 'pointermove', this._delayedDragTouchMoveHandler);
+  },
+  _triggerDragStart: function _triggerDragStart(
+  /** Event */
+  evt,
+  /** Touch */
+  touch) {
+    touch = touch || evt.pointerType == 'touch' && evt;
+
+    if (!this.nativeDraggable || touch) {
+      if (this.options.supportPointer) {
+        on(document, 'pointermove', this._onTouchMove);
+      } else if (touch) {
+        on(document, 'touchmove', this._onTouchMove);
+      } else {
+        on(document, 'mousemove', this._onTouchMove);
+      }
+    } else {
+      on(dragEl, 'dragend', this);
+      on(rootEl, 'dragstart', this._onDragStart);
+    }
+
+    try {
+      if (document.selection) {
+        // Timeout neccessary for IE9
+        _nextTick(function () {
+          document.selection.empty();
+        });
+      } else {
+        window.getSelection().removeAllRanges();
+      }
+    } catch (err) {}
+  },
+  _dragStarted: function _dragStarted(fallback, evt) {
+
+    awaitingDragStarted = false;
+
+    if (rootEl && dragEl) {
+      pluginEvent('dragStarted', this, {
+        evt: evt
+      });
+
+      if (this.nativeDraggable) {
+        on(document, 'dragover', _checkOutsideTargetEl);
+      }
+
+      var options = this.options; // Apply effect
+
+      !fallback && toggleClass(dragEl, options.dragClass, false);
+      toggleClass(dragEl, options.ghostClass, true);
+      Sortable.active = this;
+      fallback && this._appendGhost(); // Drag start event
+
+      _dispatchEvent({
+        sortable: this,
+        name: 'start',
+        originalEvent: evt
+      });
+    } else {
+      this._nulling();
+    }
+  },
+  _emulateDragOver: function _emulateDragOver() {
+    if (touchEvt) {
+      this._lastX = touchEvt.clientX;
+      this._lastY = touchEvt.clientY;
+
+      _hideGhostForTarget();
+
+      var target = document.elementFromPoint(touchEvt.clientX, touchEvt.clientY);
+      var parent = target;
+
+      while (target && target.shadowRoot) {
+        target = target.shadowRoot.elementFromPoint(touchEvt.clientX, touchEvt.clientY);
+        if (target === parent) break;
+        parent = target;
+      }
+
+      dragEl.parentNode[expando]._isOutsideThisEl(target);
+
+      if (parent) {
+        do {
+          if (parent[expando]) {
+            var inserted = void 0;
+            inserted = parent[expando]._onDragOver({
+              clientX: touchEvt.clientX,
+              clientY: touchEvt.clientY,
+              target: target,
+              rootEl: parent
+            });
+
+            if (inserted && !this.options.dragoverBubble) {
+              break;
+            }
+          }
+
+          target = parent; // store last element
+        }
+        /* jshint boss:true */
+        while (parent = parent.parentNode);
+      }
+
+      _unhideGhostForTarget();
+    }
+  },
+  _onTouchMove: function _onTouchMove(
+  /**TouchEvent*/
+  evt) {
+    if (tapEvt) {
+      var options = this.options,
+          fallbackTolerance = options.fallbackTolerance,
+          fallbackOffset = options.fallbackOffset,
+          touch = evt.touches ? evt.touches[0] : evt,
+          ghostMatrix = ghostEl && matrix(ghostEl, true),
+          scaleX = ghostEl && ghostMatrix && ghostMatrix.a,
+          scaleY = ghostEl && ghostMatrix && ghostMatrix.d,
+          relativeScrollOffset = PositionGhostAbsolutely && ghostRelativeParent && getRelativeScrollOffset(ghostRelativeParent),
+          dx = (touch.clientX - tapEvt.clientX + fallbackOffset.x) / (scaleX || 1) + (relativeScrollOffset ? relativeScrollOffset[0] - ghostRelativeParentInitialScroll[0] : 0) / (scaleX || 1),
+          dy = (touch.clientY - tapEvt.clientY + fallbackOffset.y) / (scaleY || 1) + (relativeScrollOffset ? relativeScrollOffset[1] - ghostRelativeParentInitialScroll[1] : 0) / (scaleY || 1); // only set the status to dragging, when we are actually dragging
+
+      if (!Sortable.active && !awaitingDragStarted) {
+        if (fallbackTolerance && Math.max(Math.abs(touch.clientX - this._lastX), Math.abs(touch.clientY - this._lastY)) < fallbackTolerance) {
+          return;
+        }
+
+        this._onDragStart(evt, true);
+      }
+
+      if (ghostEl) {
+        if (ghostMatrix) {
+          ghostMatrix.e += dx - (lastDx || 0);
+          ghostMatrix.f += dy - (lastDy || 0);
+        } else {
+          ghostMatrix = {
+            a: 1,
+            b: 0,
+            c: 0,
+            d: 1,
+            e: dx,
+            f: dy
+          };
+        }
+
+        var cssMatrix = "matrix(".concat(ghostMatrix.a, ",").concat(ghostMatrix.b, ",").concat(ghostMatrix.c, ",").concat(ghostMatrix.d, ",").concat(ghostMatrix.e, ",").concat(ghostMatrix.f, ")");
+        css(ghostEl, 'webkitTransform', cssMatrix);
+        css(ghostEl, 'mozTransform', cssMatrix);
+        css(ghostEl, 'msTransform', cssMatrix);
+        css(ghostEl, 'transform', cssMatrix);
+        lastDx = dx;
+        lastDy = dy;
+        touchEvt = touch;
+      }
+
+      evt.cancelable && evt.preventDefault();
+    }
+  },
+  _appendGhost: function _appendGhost() {
+    // Bug if using scale(): https://stackoverflow.com/questions/2637058
+    // Not being adjusted for
+    if (!ghostEl) {
+      var container = this.options.fallbackOnBody ? document.body : rootEl,
+          rect = getRect(dragEl, true, PositionGhostAbsolutely, true, container),
+          options = this.options; // Position absolutely
+
+      if (PositionGhostAbsolutely) {
+        // Get relatively positioned parent
+        ghostRelativeParent = container;
+
+        while (css(ghostRelativeParent, 'position') === 'static' && css(ghostRelativeParent, 'transform') === 'none' && ghostRelativeParent !== document) {
+          ghostRelativeParent = ghostRelativeParent.parentNode;
+        }
+
+        if (ghostRelativeParent !== document.body && ghostRelativeParent !== document.documentElement) {
+          if (ghostRelativeParent === document) ghostRelativeParent = getWindowScrollingElement();
+          rect.top += ghostRelativeParent.scrollTop;
+          rect.left += ghostRelativeParent.scrollLeft;
+        } else {
+          ghostRelativeParent = getWindowScrollingElement();
+        }
+
+        ghostRelativeParentInitialScroll = getRelativeScrollOffset(ghostRelativeParent);
+      }
+
+      ghostEl = dragEl.cloneNode(true);
+      toggleClass(ghostEl, options.ghostClass, false);
+      toggleClass(ghostEl, options.fallbackClass, true);
+      toggleClass(ghostEl, options.dragClass, true);
+      css(ghostEl, 'transition', '');
+      css(ghostEl, 'transform', '');
+      css(ghostEl, 'box-sizing', 'border-box');
+      css(ghostEl, 'margin', 0);
+      css(ghostEl, 'top', rect.top);
+      css(ghostEl, 'left', rect.left);
+      css(ghostEl, 'width', rect.width);
+      css(ghostEl, 'height', rect.height);
+      css(ghostEl, 'opacity', '0.8');
+      css(ghostEl, 'position', PositionGhostAbsolutely ? 'absolute' : 'fixed');
+      css(ghostEl, 'zIndex', '100000');
+      css(ghostEl, 'pointerEvents', 'none');
+      Sortable.ghost = ghostEl;
+      container.appendChild(ghostEl); // Set transform-origin
+
+      css(ghostEl, 'transform-origin', tapDistanceLeft / parseInt(ghostEl.style.width) * 100 + '% ' + tapDistanceTop / parseInt(ghostEl.style.height) * 100 + '%');
+    }
+  },
+  _onDragStart: function _onDragStart(
+  /**Event*/
+  evt,
+  /**boolean*/
+  fallback) {
+    var _this = this;
+
+    var dataTransfer = evt.dataTransfer;
+    var options = _this.options;
+    pluginEvent('dragStart', this, {
+      evt: evt
+    });
+
+    if (Sortable.eventCanceled) {
+      this._onDrop();
+
+      return;
+    }
+
+    pluginEvent('setupClone', this);
+
+    if (!Sortable.eventCanceled) {
+      cloneEl = clone(dragEl);
+      cloneEl.draggable = false;
+      cloneEl.style['will-change'] = '';
+
+      this._hideClone();
+
+      toggleClass(cloneEl, this.options.chosenClass, false);
+      Sortable.clone = cloneEl;
+    } // #1143: IFrame support workaround
+
+
+    _this.cloneId = _nextTick(function () {
+      pluginEvent('clone', _this);
+      if (Sortable.eventCanceled) return;
+
+      if (!_this.options.removeCloneOnHide) {
+        rootEl.insertBefore(cloneEl, dragEl);
+      }
+
+      _this._hideClone();
+
+      _dispatchEvent({
+        sortable: _this,
+        name: 'clone'
+      });
+    });
+    !fallback && toggleClass(dragEl, options.dragClass, true); // Set proper drop events
+
+    if (fallback) {
+      ignoreNextClick = true;
+      _this._loopId = setInterval(_this._emulateDragOver, 50);
+    } else {
+      // Undo what was set in _prepareDragStart before drag started
+      off(document, 'mouseup', _this._onDrop);
+      off(document, 'touchend', _this._onDrop);
+      off(document, 'touchcancel', _this._onDrop);
+
+      if (dataTransfer) {
+        dataTransfer.effectAllowed = 'move';
+        options.setData && options.setData.call(_this, dataTransfer, dragEl);
+      }
+
+      on(document, 'drop', _this); // #1276 fix:
+
+      css(dragEl, 'transform', 'translateZ(0)');
+    }
+
+    awaitingDragStarted = true;
+    _this._dragStartId = _nextTick(_this._dragStarted.bind(_this, fallback, evt));
+    on(document, 'selectstart', _this);
+    moved = true;
+
+    if (Safari) {
+      css(document.body, 'user-select', 'none');
+    }
+  },
+  // Returns true - if no further action is needed (either inserted or another condition)
+  _onDragOver: function _onDragOver(
+  /**Event*/
+  evt) {
+    var el = this.el,
+        target = evt.target,
+        dragRect,
+        targetRect,
+        revert,
+        options = this.options,
+        group = options.group,
+        activeSortable = Sortable.active,
+        isOwner = activeGroup === group,
+        canSort = options.sort,
+        fromSortable = putSortable || activeSortable,
+        vertical,
+        _this = this,
+        completedFired = false;
+
+    if (_silent) return;
+
+    function dragOverEvent(name, extra) {
+      pluginEvent(name, _this, _objectSpread2({
+        evt: evt,
+        isOwner: isOwner,
+        axis: vertical ? 'vertical' : 'horizontal',
+        revert: revert,
+        dragRect: dragRect,
+        targetRect: targetRect,
+        canSort: canSort,
+        fromSortable: fromSortable,
+        target: target,
+        completed: completed,
+        onMove: function onMove(target, after) {
+          return _onMove(rootEl, el, dragEl, dragRect, target, getRect(target), evt, after);
+        },
+        changed: changed
+      }, extra));
+    } // Capture animation state
+
+
+    function capture() {
+      dragOverEvent('dragOverAnimationCapture');
+
+      _this.captureAnimationState();
+
+      if (_this !== fromSortable) {
+        fromSortable.captureAnimationState();
+      }
+    } // Return invocation when dragEl is inserted (or completed)
+
+
+    function completed(insertion) {
+      dragOverEvent('dragOverCompleted', {
+        insertion: insertion
+      });
+
+      if (insertion) {
+        // Clones must be hidden before folding animation to capture dragRectAbsolute properly
+        if (isOwner) {
+          activeSortable._hideClone();
+        } else {
+          activeSortable._showClone(_this);
+        }
+
+        if (_this !== fromSortable) {
+          // Set ghost class to new sortable's ghost class
+          toggleClass(dragEl, putSortable ? putSortable.options.ghostClass : activeSortable.options.ghostClass, false);
+          toggleClass(dragEl, options.ghostClass, true);
+        }
+
+        if (putSortable !== _this && _this !== Sortable.active) {
+          putSortable = _this;
+        } else if (_this === Sortable.active && putSortable) {
+          putSortable = null;
+        } // Animation
+
+
+        if (fromSortable === _this) {
+          _this._ignoreWhileAnimating = target;
+        }
+
+        _this.animateAll(function () {
+          dragOverEvent('dragOverAnimationComplete');
+          _this._ignoreWhileAnimating = null;
+        });
+
+        if (_this !== fromSortable) {
+          fromSortable.animateAll();
+          fromSortable._ignoreWhileAnimating = null;
+        }
+      } // Null lastTarget if it is not inside a previously swapped element
+
+
+      if (target === dragEl && !dragEl.animated || target === el && !target.animated) {
+        lastTarget = null;
+      } // no bubbling and not fallback
+
+
+      if (!options.dragoverBubble && !evt.rootEl && target !== document) {
+        dragEl.parentNode[expando]._isOutsideThisEl(evt.target); // Do not detect for empty insert if already inserted
+
+
+        !insertion && nearestEmptyInsertDetectEvent(evt);
+      }
+
+      !options.dragoverBubble && evt.stopPropagation && evt.stopPropagation();
+      return completedFired = true;
+    } // Call when dragEl has been inserted
+
+
+    function changed() {
+      newIndex = index(dragEl);
+      newDraggableIndex = index(dragEl, options.draggable);
+
+      _dispatchEvent({
+        sortable: _this,
+        name: 'change',
+        toEl: el,
+        newIndex: newIndex,
+        newDraggableIndex: newDraggableIndex,
+        originalEvent: evt
+      });
+    }
+
+    if (evt.preventDefault !== void 0) {
+      evt.cancelable && evt.preventDefault();
+    }
+
+    target = closest(target, options.draggable, el, true);
+    dragOverEvent('dragOver');
+    if (Sortable.eventCanceled) return completedFired;
+
+    if (dragEl.contains(evt.target) || target.animated && target.animatingX && target.animatingY || _this._ignoreWhileAnimating === target) {
+      return completed(false);
+    }
+
+    ignoreNextClick = false;
+
+    if (activeSortable && !options.disabled && (isOwner ? canSort || (revert = parentEl !== rootEl) // Reverting item into the original list
+    : putSortable === this || (this.lastPutMode = activeGroup.checkPull(this, activeSortable, dragEl, evt)) && group.checkPut(this, activeSortable, dragEl, evt))) {
+      vertical = this._getDirection(evt, target) === 'vertical';
+      dragRect = getRect(dragEl);
+      dragOverEvent('dragOverValid');
+      if (Sortable.eventCanceled) return completedFired;
+
+      if (revert) {
+        parentEl = rootEl; // actualization
+
+        capture();
+
+        this._hideClone();
+
+        dragOverEvent('revert');
+
+        if (!Sortable.eventCanceled) {
+          if (nextEl) {
+            rootEl.insertBefore(dragEl, nextEl);
+          } else {
+            rootEl.appendChild(dragEl);
+          }
+        }
+
+        return completed(true);
+      }
+
+      var elLastChild = lastChild(el, options.draggable);
+
+      if (!elLastChild || _ghostIsLast(evt, vertical, this) && !elLastChild.animated) {
+        // Insert to end of list
+        // If already at end of list: Do not insert
+        if (elLastChild === dragEl) {
+          return completed(false);
+        } // if there is a last element, it is the target
+
+
+        if (elLastChild && el === evt.target) {
+          target = elLastChild;
+        }
+
+        if (target) {
+          targetRect = getRect(target);
+        }
+
+        if (_onMove(rootEl, el, dragEl, dragRect, target, targetRect, evt, !!target) !== false) {
+          capture();
+          el.appendChild(dragEl);
+          parentEl = el; // actualization
+
+          changed();
+          return completed(true);
+        }
+      } else if (elLastChild && _ghostIsFirst(evt, vertical, this)) {
+        // Insert to start of list
+        var firstChild = getChild(el, 0, options, true);
+
+        if (firstChild === dragEl) {
+          return completed(false);
+        }
+
+        target = firstChild;
+        targetRect = getRect(target);
+
+        if (_onMove(rootEl, el, dragEl, dragRect, target, targetRect, evt, false) !== false) {
+          capture();
+          el.insertBefore(dragEl, firstChild);
+          parentEl = el; // actualization
+
+          changed();
+          return completed(true);
+        }
+      } else if (target.parentNode === el) {
+        targetRect = getRect(target);
+        var direction = 0,
+            targetBeforeFirstSwap,
+            differentLevel = dragEl.parentNode !== el,
+            differentRowCol = !_dragElInRowColumn(dragEl.animated && dragEl.toRect || dragRect, target.animated && target.toRect || targetRect, vertical),
+            side1 = vertical ? 'top' : 'left',
+            scrolledPastTop = isScrolledPast(target, 'top', 'top') || isScrolledPast(dragEl, 'top', 'top'),
+            scrollBefore = scrolledPastTop ? scrolledPastTop.scrollTop : void 0;
+
+        if (lastTarget !== target) {
+          targetBeforeFirstSwap = targetRect[side1];
+          pastFirstInvertThresh = false;
+          isCircumstantialInvert = !differentRowCol && options.invertSwap || differentLevel;
+        }
+
+        direction = _getSwapDirection(evt, target, targetRect, vertical, differentRowCol ? 1 : options.swapThreshold, options.invertedSwapThreshold == null ? options.swapThreshold : options.invertedSwapThreshold, isCircumstantialInvert, lastTarget === target);
+        var sibling;
+
+        if (direction !== 0) {
+          // Check if target is beside dragEl in respective direction (ignoring hidden elements)
+          var dragIndex = index(dragEl);
+
+          do {
+            dragIndex -= direction;
+            sibling = parentEl.children[dragIndex];
+          } while (sibling && (css(sibling, 'display') === 'none' || sibling === ghostEl));
+        } // If dragEl is already beside target: Do not insert
+
+
+        if (direction === 0 || sibling === target) {
+          return completed(false);
+        }
+
+        lastTarget = target;
+        lastDirection = direction;
+        var nextSibling = target.nextElementSibling,
+            after = false;
+        after = direction === 1;
+
+        var moveVector = _onMove(rootEl, el, dragEl, dragRect, target, targetRect, evt, after);
+
+        if (moveVector !== false) {
+          if (moveVector === 1 || moveVector === -1) {
+            after = moveVector === 1;
+          }
+
+          _silent = true;
+          setTimeout(_unsilent, 30);
+          capture();
+
+          if (after && !nextSibling) {
+            el.appendChild(dragEl);
+          } else {
+            target.parentNode.insertBefore(dragEl, after ? nextSibling : target);
+          } // Undo chrome's scroll adjustment (has no effect on other browsers)
+
+
+          if (scrolledPastTop) {
+            scrollBy(scrolledPastTop, 0, scrollBefore - scrolledPastTop.scrollTop);
+          }
+
+          parentEl = dragEl.parentNode; // actualization
+          // must be done before animation
+
+          if (targetBeforeFirstSwap !== undefined && !isCircumstantialInvert) {
+            targetMoveDistance = Math.abs(targetBeforeFirstSwap - getRect(target)[side1]);
+          }
+
+          changed();
+          return completed(true);
+        }
+      }
+
+      if (el.contains(dragEl)) {
+        return completed(false);
+      }
+    }
+
+    return false;
+  },
+  _ignoreWhileAnimating: null,
+  _offMoveEvents: function _offMoveEvents() {
+    off(document, 'mousemove', this._onTouchMove);
+    off(document, 'touchmove', this._onTouchMove);
+    off(document, 'pointermove', this._onTouchMove);
+    off(document, 'dragover', nearestEmptyInsertDetectEvent);
+    off(document, 'mousemove', nearestEmptyInsertDetectEvent);
+    off(document, 'touchmove', nearestEmptyInsertDetectEvent);
+  },
+  _offUpEvents: function _offUpEvents() {
+    var ownerDocument = this.el.ownerDocument;
+    off(ownerDocument, 'mouseup', this._onDrop);
+    off(ownerDocument, 'touchend', this._onDrop);
+    off(ownerDocument, 'pointerup', this._onDrop);
+    off(ownerDocument, 'touchcancel', this._onDrop);
+    off(document, 'selectstart', this);
+  },
+  _onDrop: function _onDrop(
+  /**Event*/
+  evt) {
+    var el = this.el,
+        options = this.options; // Get the index of the dragged element within its parent
+
+    newIndex = index(dragEl);
+    newDraggableIndex = index(dragEl, options.draggable);
+    pluginEvent('drop', this, {
+      evt: evt
+    });
+    parentEl = dragEl && dragEl.parentNode; // Get again after plugin event
+
+    newIndex = index(dragEl);
+    newDraggableIndex = index(dragEl, options.draggable);
+
+    if (Sortable.eventCanceled) {
+      this._nulling();
+
+      return;
+    }
+
+    awaitingDragStarted = false;
+    isCircumstantialInvert = false;
+    pastFirstInvertThresh = false;
+    clearInterval(this._loopId);
+    clearTimeout(this._dragStartTimer);
+
+    _cancelNextTick(this.cloneId);
+
+    _cancelNextTick(this._dragStartId); // Unbind events
+
+
+    if (this.nativeDraggable) {
+      off(document, 'drop', this);
+      off(el, 'dragstart', this._onDragStart);
+    }
+
+    this._offMoveEvents();
+
+    this._offUpEvents();
+
+    if (Safari) {
+      css(document.body, 'user-select', '');
+    }
+
+    css(dragEl, 'transform', '');
+
+    if (evt) {
+      if (moved) {
+        evt.cancelable && evt.preventDefault();
+        !options.dropBubble && evt.stopPropagation();
+      }
+
+      ghostEl && ghostEl.parentNode && ghostEl.parentNode.removeChild(ghostEl);
+
+      if (rootEl === parentEl || putSortable && putSortable.lastPutMode !== 'clone') {
+        // Remove clone(s)
+        cloneEl && cloneEl.parentNode && cloneEl.parentNode.removeChild(cloneEl);
+      }
+
+      if (dragEl) {
+        if (this.nativeDraggable) {
+          off(dragEl, 'dragend', this);
+        }
+
+        _disableDraggable(dragEl);
+
+        dragEl.style['will-change'] = ''; // Remove classes
+        // ghostClass is added in dragStarted
+
+        if (moved && !awaitingDragStarted) {
+          toggleClass(dragEl, putSortable ? putSortable.options.ghostClass : this.options.ghostClass, false);
+        }
+
+        toggleClass(dragEl, this.options.chosenClass, false); // Drag stop event
+
+        _dispatchEvent({
+          sortable: this,
+          name: 'unchoose',
+          toEl: parentEl,
+          newIndex: null,
+          newDraggableIndex: null,
+          originalEvent: evt
+        });
+
+        if (rootEl !== parentEl) {
+          if (newIndex >= 0) {
+            // Add event
+            _dispatchEvent({
+              rootEl: parentEl,
+              name: 'add',
+              toEl: parentEl,
+              fromEl: rootEl,
+              originalEvent: evt
+            }); // Remove event
+
+
+            _dispatchEvent({
+              sortable: this,
+              name: 'remove',
+              toEl: parentEl,
+              originalEvent: evt
+            }); // drag from one list and drop into another
+
+
+            _dispatchEvent({
+              rootEl: parentEl,
+              name: 'sort',
+              toEl: parentEl,
+              fromEl: rootEl,
+              originalEvent: evt
+            });
+
+            _dispatchEvent({
+              sortable: this,
+              name: 'sort',
+              toEl: parentEl,
+              originalEvent: evt
+            });
+          }
+
+          putSortable && putSortable.save();
+        } else {
+          if (newIndex !== oldIndex) {
+            if (newIndex >= 0) {
+              // drag & drop within the same list
+              _dispatchEvent({
+                sortable: this,
+                name: 'update',
+                toEl: parentEl,
+                originalEvent: evt
+              });
+
+              _dispatchEvent({
+                sortable: this,
+                name: 'sort',
+                toEl: parentEl,
+                originalEvent: evt
+              });
+            }
+          }
+        }
+
+        if (Sortable.active) {
+          /* jshint eqnull:true */
+          if (newIndex == null || newIndex === -1) {
+            newIndex = oldIndex;
+            newDraggableIndex = oldDraggableIndex;
+          }
+
+          _dispatchEvent({
+            sortable: this,
+            name: 'end',
+            toEl: parentEl,
+            originalEvent: evt
+          }); // Save sorting
+
+
+          this.save();
+        }
+      }
+    }
+
+    this._nulling();
+  },
+  _nulling: function _nulling() {
+    pluginEvent('nulling', this);
+    rootEl = dragEl = parentEl = ghostEl = nextEl = cloneEl = lastDownEl = cloneHidden = tapEvt = touchEvt = moved = newIndex = newDraggableIndex = oldIndex = oldDraggableIndex = lastTarget = lastDirection = putSortable = activeGroup = Sortable.dragged = Sortable.ghost = Sortable.clone = Sortable.active = null;
+    savedInputChecked.forEach(function (el) {
+      el.checked = true;
+    });
+    savedInputChecked.length = lastDx = lastDy = 0;
+  },
+  handleEvent: function handleEvent(
+  /**Event*/
+  evt) {
+    switch (evt.type) {
+      case 'drop':
+      case 'dragend':
+        this._onDrop(evt);
+
+        break;
+
+      case 'dragenter':
+      case 'dragover':
+        if (dragEl) {
+          this._onDragOver(evt);
+
+          _globalDragOver(evt);
+        }
+
+        break;
+
+      case 'selectstart':
+        evt.preventDefault();
+        break;
+    }
+  },
+
+  /**
+   * Serializes the item into an array of string.
+   * @returns {String[]}
+   */
+  toArray: function toArray() {
+    var order = [],
+        el,
+        children = this.el.children,
+        i = 0,
+        n = children.length,
+        options = this.options;
+
+    for (; i < n; i++) {
+      el = children[i];
+
+      if (closest(el, options.draggable, this.el, false)) {
+        order.push(el.getAttribute(options.dataIdAttr) || _generateId(el));
+      }
+    }
+
+    return order;
+  },
+
+  /**
+   * Sorts the elements according to the array.
+   * @param  {String[]}  order  order of the items
+   */
+  sort: function sort(order, useAnimation) {
+    var items = {},
+        rootEl = this.el;
+    this.toArray().forEach(function (id, i) {
+      var el = rootEl.children[i];
+
+      if (closest(el, this.options.draggable, rootEl, false)) {
+        items[id] = el;
+      }
+    }, this);
+    useAnimation && this.captureAnimationState();
+    order.forEach(function (id) {
+      if (items[id]) {
+        rootEl.removeChild(items[id]);
+        rootEl.appendChild(items[id]);
+      }
+    });
+    useAnimation && this.animateAll();
+  },
+
+  /**
+   * Save the current sorting
+   */
+  save: function save() {
+    var store = this.options.store;
+    store && store.set && store.set(this);
+  },
+
+  /**
+   * For each element in the set, get the first element that matches the selector by testing the element itself and traversing up through its ancestors in the DOM tree.
+   * @param   {HTMLElement}  el
+   * @param   {String}       [selector]  default: `options.draggable`
+   * @returns {HTMLElement|null}
+   */
+  closest: function closest$1(el, selector) {
+    return closest(el, selector || this.options.draggable, this.el, false);
+  },
+
+  /**
+   * Set/get option
+   * @param   {string} name
+   * @param   {*}      [value]
+   * @returns {*}
+   */
+  option: function option(name, value) {
+    var options = this.options;
+
+    if (value === void 0) {
+      return options[name];
+    } else {
+      var modifiedValue = PluginManager.modifyOption(this, name, value);
+
+      if (typeof modifiedValue !== 'undefined') {
+        options[name] = modifiedValue;
+      } else {
+        options[name] = value;
+      }
+
+      if (name === 'group') {
+        _prepareGroup(options);
+      }
+    }
+  },
+
+  /**
+   * Destroy
+   */
+  destroy: function destroy() {
+    pluginEvent('destroy', this);
+    var el = this.el;
+    el[expando] = null;
+    off(el, 'mousedown', this._onTapStart);
+    off(el, 'touchstart', this._onTapStart);
+    off(el, 'pointerdown', this._onTapStart);
+
+    if (this.nativeDraggable) {
+      off(el, 'dragover', this);
+      off(el, 'dragenter', this);
+    } // Remove draggable attributes
+
+
+    Array.prototype.forEach.call(el.querySelectorAll('[draggable]'), function (el) {
+      el.removeAttribute('draggable');
+    });
+
+    this._onDrop();
+
+    this._disableDelayedDragEvents();
+
+    sortables.splice(sortables.indexOf(this.el), 1);
+    this.el = el = null;
+  },
+  _hideClone: function _hideClone() {
+    if (!cloneHidden) {
+      pluginEvent('hideClone', this);
+      if (Sortable.eventCanceled) return;
+      css(cloneEl, 'display', 'none');
+
+      if (this.options.removeCloneOnHide && cloneEl.parentNode) {
+        cloneEl.parentNode.removeChild(cloneEl);
+      }
+
+      cloneHidden = true;
+    }
+  },
+  _showClone: function _showClone(putSortable) {
+    if (putSortable.lastPutMode !== 'clone') {
+      this._hideClone();
+
+      return;
+    }
+
+    if (cloneHidden) {
+      pluginEvent('showClone', this);
+      if (Sortable.eventCanceled) return; // show clone at dragEl or original position
+
+      if (dragEl.parentNode == rootEl && !this.options.group.revertClone) {
+        rootEl.insertBefore(cloneEl, dragEl);
+      } else if (nextEl) {
+        rootEl.insertBefore(cloneEl, nextEl);
+      } else {
+        rootEl.appendChild(cloneEl);
+      }
+
+      if (this.options.group.revertClone) {
+        this.animate(dragEl, cloneEl);
+      }
+
+      css(cloneEl, 'display', '');
+      cloneHidden = false;
+    }
+  }
+};
+
+function _globalDragOver(
+/**Event*/
+evt) {
+  if (evt.dataTransfer) {
+    evt.dataTransfer.dropEffect = 'move';
+  }
+
+  evt.cancelable && evt.preventDefault();
+}
+
+function _onMove(fromEl, toEl, dragEl, dragRect, targetEl, targetRect, originalEvent, willInsertAfter) {
+  var evt,
+      sortable = fromEl[expando],
+      onMoveFn = sortable.options.onMove,
+      retVal; // Support for new CustomEvent feature
+
+  if (window.CustomEvent && !IE11OrLess && !Edge) {
+    evt = new CustomEvent('move', {
+      bubbles: true,
+      cancelable: true
+    });
+  } else {
+    evt = document.createEvent('Event');
+    evt.initEvent('move', true, true);
+  }
+
+  evt.to = toEl;
+  evt.from = fromEl;
+  evt.dragged = dragEl;
+  evt.draggedRect = dragRect;
+  evt.related = targetEl || toEl;
+  evt.relatedRect = targetRect || getRect(toEl);
+  evt.willInsertAfter = willInsertAfter;
+  evt.originalEvent = originalEvent;
+  fromEl.dispatchEvent(evt);
+
+  if (onMoveFn) {
+    retVal = onMoveFn.call(sortable, evt, originalEvent);
+  }
+
+  return retVal;
+}
+
+function _disableDraggable(el) {
+  el.draggable = false;
+}
+
+function _unsilent() {
+  _silent = false;
+}
+
+function _ghostIsFirst(evt, vertical, sortable) {
+  var rect = getRect(getChild(sortable.el, 0, sortable.options, true));
+  var spacer = 10;
+  return vertical ? evt.clientX < rect.left - spacer || evt.clientY < rect.top && evt.clientX < rect.right : evt.clientY < rect.top - spacer || evt.clientY < rect.bottom && evt.clientX < rect.left;
+}
+
+function _ghostIsLast(evt, vertical, sortable) {
+  var rect = getRect(lastChild(sortable.el, sortable.options.draggable));
+  var spacer = 10;
+  return vertical ? evt.clientX > rect.right + spacer || evt.clientX <= rect.right && evt.clientY > rect.bottom && evt.clientX >= rect.left : evt.clientX > rect.right && evt.clientY > rect.top || evt.clientX <= rect.right && evt.clientY > rect.bottom + spacer;
+}
+
+function _getSwapDirection(evt, target, targetRect, vertical, swapThreshold, invertedSwapThreshold, invertSwap, isLastTarget) {
+  var mouseOnAxis = vertical ? evt.clientY : evt.clientX,
+      targetLength = vertical ? targetRect.height : targetRect.width,
+      targetS1 = vertical ? targetRect.top : targetRect.left,
+      targetS2 = vertical ? targetRect.bottom : targetRect.right,
+      invert = false;
+
+  if (!invertSwap) {
+    // Never invert or create dragEl shadow when target movemenet causes mouse to move past the end of regular swapThreshold
+    if (isLastTarget && targetMoveDistance < targetLength * swapThreshold) {
+      // multiplied only by swapThreshold because mouse will already be inside target by (1 - threshold) * targetLength / 2
+      // check if past first invert threshold on side opposite of lastDirection
+      if (!pastFirstInvertThresh && (lastDirection === 1 ? mouseOnAxis > targetS1 + targetLength * invertedSwapThreshold / 2 : mouseOnAxis < targetS2 - targetLength * invertedSwapThreshold / 2)) {
+        // past first invert threshold, do not restrict inverted threshold to dragEl shadow
+        pastFirstInvertThresh = true;
+      }
+
+      if (!pastFirstInvertThresh) {
+        // dragEl shadow (target move distance shadow)
+        if (lastDirection === 1 ? mouseOnAxis < targetS1 + targetMoveDistance // over dragEl shadow
+        : mouseOnAxis > targetS2 - targetMoveDistance) {
+          return -lastDirection;
+        }
+      } else {
+        invert = true;
+      }
+    } else {
+      // Regular
+      if (mouseOnAxis > targetS1 + targetLength * (1 - swapThreshold) / 2 && mouseOnAxis < targetS2 - targetLength * (1 - swapThreshold) / 2) {
+        return _getInsertDirection(target);
+      }
+    }
+  }
+
+  invert = invert || invertSwap;
+
+  if (invert) {
+    // Invert of regular
+    if (mouseOnAxis < targetS1 + targetLength * invertedSwapThreshold / 2 || mouseOnAxis > targetS2 - targetLength * invertedSwapThreshold / 2) {
+      return mouseOnAxis > targetS1 + targetLength / 2 ? 1 : -1;
+    }
+  }
+
+  return 0;
+}
+/**
+ * Gets the direction dragEl must be swapped relative to target in order to make it
+ * seem that dragEl has been "inserted" into that element's position
+ * @param  {HTMLElement} target       The target whose position dragEl is being inserted at
+ * @return {Number}                   Direction dragEl must be swapped
+ */
+
+
+function _getInsertDirection(target) {
+  if (index(dragEl) < index(target)) {
+    return 1;
+  } else {
+    return -1;
+  }
+}
+/**
+ * Generate id
+ * @param   {HTMLElement} el
+ * @returns {String}
+ * @private
+ */
+
+
+function _generateId(el) {
+  var str = el.tagName + el.className + el.src + el.href + el.textContent,
+      i = str.length,
+      sum = 0;
+
+  while (i--) {
+    sum += str.charCodeAt(i);
+  }
+
+  return sum.toString(36);
+}
+
+function _saveInputCheckedState(root) {
+  savedInputChecked.length = 0;
+  var inputs = root.getElementsByTagName('input');
+  var idx = inputs.length;
+
+  while (idx--) {
+    var el = inputs[idx];
+    el.checked && savedInputChecked.push(el);
+  }
+}
+
+function _nextTick(fn) {
+  return setTimeout(fn, 0);
+}
+
+function _cancelNextTick(id) {
+  return clearTimeout(id);
+} // Fixed #973:
+
+
+if (documentExists) {
+  on(document, 'touchmove', function (evt) {
+    if ((Sortable.active || awaitingDragStarted) && evt.cancelable) {
+      evt.preventDefault();
+    }
+  });
+} // Export utils
+
+
+Sortable.utils = {
+  on: on,
+  off: off,
+  css: css,
+  find: find,
+  is: function is(el, selector) {
+    return !!closest(el, selector, el, false);
+  },
+  extend: extend,
+  throttle: throttle,
+  closest: closest,
+  toggleClass: toggleClass,
+  clone: clone,
+  index: index,
+  nextTick: _nextTick,
+  cancelNextTick: _cancelNextTick,
+  detectDirection: _detectDirection,
+  getChild: getChild
+};
+/**
+ * Get the Sortable instance of an element
+ * @param  {HTMLElement} element The element
+ * @return {Sortable|undefined}         The instance of Sortable
+ */
+
+Sortable.get = function (element) {
+  return element[expando];
+};
+/**
+ * Mount a plugin to Sortable
+ * @param  {...SortablePlugin|SortablePlugin[]} plugins       Plugins being mounted
+ */
+
+
+Sortable.mount = function () {
+  for (var _len = arguments.length, plugins = new Array(_len), _key = 0; _key < _len; _key++) {
+    plugins[_key] = arguments[_key];
+  }
+
+  if (plugins[0].constructor === Array) plugins = plugins[0];
+  plugins.forEach(function (plugin) {
+    if (!plugin.prototype || !plugin.prototype.constructor) {
+      throw "Sortable: Mounted plugin must be a constructor function, not ".concat({}.toString.call(plugin));
+    }
+
+    if (plugin.utils) Sortable.utils = _objectSpread2(_objectSpread2({}, Sortable.utils), plugin.utils);
+    PluginManager.mount(plugin);
+  });
+};
+/**
+ * Create sortable instance
+ * @param {HTMLElement}  el
+ * @param {Object}      [options]
+ */
+
+
+Sortable.create = function (el, options) {
+  return new Sortable(el, options);
+}; // Export
+
+
+Sortable.version = version;
+
+var autoScrolls = [],
+    scrollEl,
+    scrollRootEl,
+    scrolling = false,
+    lastAutoScrollX,
+    lastAutoScrollY,
+    touchEvt$1,
+    pointerElemChangedInterval;
+
+function AutoScrollPlugin() {
+  function AutoScroll() {
+    this.defaults = {
+      scroll: true,
+      forceAutoScrollFallback: false,
+      scrollSensitivity: 30,
+      scrollSpeed: 10,
+      bubbleScroll: true
+    }; // Bind all private methods
+
+    for (var fn in this) {
+      if (fn.charAt(0) === '_' && typeof this[fn] === 'function') {
+        this[fn] = this[fn].bind(this);
+      }
+    }
+  }
+
+  AutoScroll.prototype = {
+    dragStarted: function dragStarted(_ref) {
+      var originalEvent = _ref.originalEvent;
+
+      if (this.sortable.nativeDraggable) {
+        on(document, 'dragover', this._handleAutoScroll);
+      } else {
+        if (this.options.supportPointer) {
+          on(document, 'pointermove', this._handleFallbackAutoScroll);
+        } else if (originalEvent.touches) {
+          on(document, 'touchmove', this._handleFallbackAutoScroll);
+        } else {
+          on(document, 'mousemove', this._handleFallbackAutoScroll);
+        }
+      }
+    },
+    dragOverCompleted: function dragOverCompleted(_ref2) {
+      var originalEvent = _ref2.originalEvent;
+
+      // For when bubbling is canceled and using fallback (fallback 'touchmove' always reached)
+      if (!this.options.dragOverBubble && !originalEvent.rootEl) {
+        this._handleAutoScroll(originalEvent);
+      }
+    },
+    drop: function drop() {
+      if (this.sortable.nativeDraggable) {
+        off(document, 'dragover', this._handleAutoScroll);
+      } else {
+        off(document, 'pointermove', this._handleFallbackAutoScroll);
+        off(document, 'touchmove', this._handleFallbackAutoScroll);
+        off(document, 'mousemove', this._handleFallbackAutoScroll);
+      }
+
+      clearPointerElemChangedInterval();
+      clearAutoScrolls();
+      cancelThrottle();
+    },
+    nulling: function nulling() {
+      touchEvt$1 = scrollRootEl = scrollEl = scrolling = pointerElemChangedInterval = lastAutoScrollX = lastAutoScrollY = null;
+      autoScrolls.length = 0;
+    },
+    _handleFallbackAutoScroll: function _handleFallbackAutoScroll(evt) {
+      this._handleAutoScroll(evt, true);
+    },
+    _handleAutoScroll: function _handleAutoScroll(evt, fallback) {
+      var _this = this;
+
+      var x = (evt.touches ? evt.touches[0] : evt).clientX,
+          y = (evt.touches ? evt.touches[0] : evt).clientY,
+          elem = document.elementFromPoint(x, y);
+      touchEvt$1 = evt; // IE does not seem to have native autoscroll,
+      // Edge's autoscroll seems too conditional,
+      // MACOS Safari does not have autoscroll,
+      // Firefox and Chrome are good
+
+      if (fallback || this.options.forceAutoScrollFallback || Edge || IE11OrLess || Safari) {
+        autoScroll(evt, this.options, elem, fallback); // Listener for pointer element change
+
+        var ogElemScroller = getParentAutoScrollElement(elem, true);
+
+        if (scrolling && (!pointerElemChangedInterval || x !== lastAutoScrollX || y !== lastAutoScrollY)) {
+          pointerElemChangedInterval && clearPointerElemChangedInterval(); // Detect for pointer elem change, emulating native DnD behaviour
+
+          pointerElemChangedInterval = setInterval(function () {
+            var newElem = getParentAutoScrollElement(document.elementFromPoint(x, y), true);
+
+            if (newElem !== ogElemScroller) {
+              ogElemScroller = newElem;
+              clearAutoScrolls();
+            }
+
+            autoScroll(evt, _this.options, newElem, fallback);
+          }, 10);
+          lastAutoScrollX = x;
+          lastAutoScrollY = y;
+        }
+      } else {
+        // if DnD is enabled (and browser has good autoscrolling), first autoscroll will already scroll, so get parent autoscroll of first autoscroll
+        if (!this.options.bubbleScroll || getParentAutoScrollElement(elem, true) === getWindowScrollingElement()) {
+          clearAutoScrolls();
+          return;
+        }
+
+        autoScroll(evt, this.options, getParentAutoScrollElement(elem, false), false);
+      }
+    }
+  };
+  return _extends(AutoScroll, {
+    pluginName: 'scroll',
+    initializeByDefault: true
+  });
+}
+
+function clearAutoScrolls() {
+  autoScrolls.forEach(function (autoScroll) {
+    clearInterval(autoScroll.pid);
+  });
+  autoScrolls = [];
+}
+
+function clearPointerElemChangedInterval() {
+  clearInterval(pointerElemChangedInterval);
+}
+
+var autoScroll = throttle(function (evt, options, rootEl, isFallback) {
+  // Bug: https://bugzilla.mozilla.org/show_bug.cgi?id=505521
+  if (!options.scroll) return;
+  var x = (evt.touches ? evt.touches[0] : evt).clientX,
+      y = (evt.touches ? evt.touches[0] : evt).clientY,
+      sens = options.scrollSensitivity,
+      speed = options.scrollSpeed,
+      winScroller = getWindowScrollingElement();
+  var scrollThisInstance = false,
+      scrollCustomFn; // New scroll root, set scrollEl
+
+  if (scrollRootEl !== rootEl) {
+    scrollRootEl = rootEl;
+    clearAutoScrolls();
+    scrollEl = options.scroll;
+    scrollCustomFn = options.scrollFn;
+
+    if (scrollEl === true) {
+      scrollEl = getParentAutoScrollElement(rootEl, true);
+    }
+  }
+
+  var layersOut = 0;
+  var currentParent = scrollEl;
+
+  do {
+    var el = currentParent,
+        rect = getRect(el),
+        top = rect.top,
+        bottom = rect.bottom,
+        left = rect.left,
+        right = rect.right,
+        width = rect.width,
+        height = rect.height,
+        canScrollX = void 0,
+        canScrollY = void 0,
+        scrollWidth = el.scrollWidth,
+        scrollHeight = el.scrollHeight,
+        elCSS = css(el),
+        scrollPosX = el.scrollLeft,
+        scrollPosY = el.scrollTop;
+
+    if (el === winScroller) {
+      canScrollX = width < scrollWidth && (elCSS.overflowX === 'auto' || elCSS.overflowX === 'scroll' || elCSS.overflowX === 'visible');
+      canScrollY = height < scrollHeight && (elCSS.overflowY === 'auto' || elCSS.overflowY === 'scroll' || elCSS.overflowY === 'visible');
+    } else {
+      canScrollX = width < scrollWidth && (elCSS.overflowX === 'auto' || elCSS.overflowX === 'scroll');
+      canScrollY = height < scrollHeight && (elCSS.overflowY === 'auto' || elCSS.overflowY === 'scroll');
+    }
+
+    var vx = canScrollX && (Math.abs(right - x) <= sens && scrollPosX + width < scrollWidth) - (Math.abs(left - x) <= sens && !!scrollPosX);
+    var vy = canScrollY && (Math.abs(bottom - y) <= sens && scrollPosY + height < scrollHeight) - (Math.abs(top - y) <= sens && !!scrollPosY);
+
+    if (!autoScrolls[layersOut]) {
+      for (var i = 0; i <= layersOut; i++) {
+        if (!autoScrolls[i]) {
+          autoScrolls[i] = {};
+        }
+      }
+    }
+
+    if (autoScrolls[layersOut].vx != vx || autoScrolls[layersOut].vy != vy || autoScrolls[layersOut].el !== el) {
+      autoScrolls[layersOut].el = el;
+      autoScrolls[layersOut].vx = vx;
+      autoScrolls[layersOut].vy = vy;
+      clearInterval(autoScrolls[layersOut].pid);
+
+      if (vx != 0 || vy != 0) {
+        scrollThisInstance = true;
+        /* jshint loopfunc:true */
+
+        autoScrolls[layersOut].pid = setInterval(function () {
+          // emulate drag over during autoscroll (fallback), emulating native DnD behaviour
+          if (isFallback && this.layer === 0) {
+            Sortable.active._onTouchMove(touchEvt$1); // To move ghost if it is positioned absolutely
+
+          }
+
+          var scrollOffsetY = autoScrolls[this.layer].vy ? autoScrolls[this.layer].vy * speed : 0;
+          var scrollOffsetX = autoScrolls[this.layer].vx ? autoScrolls[this.layer].vx * speed : 0;
+
+          if (typeof scrollCustomFn === 'function') {
+            if (scrollCustomFn.call(Sortable.dragged.parentNode[expando], scrollOffsetX, scrollOffsetY, evt, touchEvt$1, autoScrolls[this.layer].el) !== 'continue') {
+              return;
+            }
+          }
+
+          scrollBy(autoScrolls[this.layer].el, scrollOffsetX, scrollOffsetY);
+        }.bind({
+          layer: layersOut
+        }), 24);
+      }
+    }
+
+    layersOut++;
+  } while (options.bubbleScroll && currentParent !== winScroller && (currentParent = getParentAutoScrollElement(currentParent, false)));
+
+  scrolling = scrollThisInstance; // in case another function catches scrolling as false in between when it is not
+}, 30);
+
+var drop = function drop(_ref) {
+  var originalEvent = _ref.originalEvent,
+      putSortable = _ref.putSortable,
+      dragEl = _ref.dragEl,
+      activeSortable = _ref.activeSortable,
+      dispatchSortableEvent = _ref.dispatchSortableEvent,
+      hideGhostForTarget = _ref.hideGhostForTarget,
+      unhideGhostForTarget = _ref.unhideGhostForTarget;
+  if (!originalEvent) return;
+  var toSortable = putSortable || activeSortable;
+  hideGhostForTarget();
+  var touch = originalEvent.changedTouches && originalEvent.changedTouches.length ? originalEvent.changedTouches[0] : originalEvent;
+  var target = document.elementFromPoint(touch.clientX, touch.clientY);
+  unhideGhostForTarget();
+
+  if (toSortable && !toSortable.el.contains(target)) {
+    dispatchSortableEvent('spill');
+    this.onSpill({
+      dragEl: dragEl,
+      putSortable: putSortable
+    });
+  }
+};
+
+function Revert() {}
+
+Revert.prototype = {
+  startIndex: null,
+  dragStart: function dragStart(_ref2) {
+    var oldDraggableIndex = _ref2.oldDraggableIndex;
+    this.startIndex = oldDraggableIndex;
+  },
+  onSpill: function onSpill(_ref3) {
+    var dragEl = _ref3.dragEl,
+        putSortable = _ref3.putSortable;
+    this.sortable.captureAnimationState();
+
+    if (putSortable) {
+      putSortable.captureAnimationState();
+    }
+
+    var nextSibling = getChild(this.sortable.el, this.startIndex, this.options);
+
+    if (nextSibling) {
+      this.sortable.el.insertBefore(dragEl, nextSibling);
+    } else {
+      this.sortable.el.appendChild(dragEl);
+    }
+
+    this.sortable.animateAll();
+
+    if (putSortable) {
+      putSortable.animateAll();
+    }
+  },
+  drop: drop
+};
+
+_extends(Revert, {
+  pluginName: 'revertOnSpill'
+});
+
+function Remove() {}
+
+Remove.prototype = {
+  onSpill: function onSpill(_ref4) {
+    var dragEl = _ref4.dragEl,
+        putSortable = _ref4.putSortable;
+    var parentSortable = putSortable || this.sortable;
+    parentSortable.captureAnimationState();
+    dragEl.parentNode && dragEl.parentNode.removeChild(dragEl);
+    parentSortable.animateAll();
+  },
+  drop: drop
+};
+
+_extends(Remove, {
+  pluginName: 'removeOnSpill'
+});
+
+var lastSwapEl;
+
+function SwapPlugin() {
+  function Swap() {
+    this.defaults = {
+      swapClass: 'sortable-swap-highlight'
+    };
+  }
+
+  Swap.prototype = {
+    dragStart: function dragStart(_ref) {
+      var dragEl = _ref.dragEl;
+      lastSwapEl = dragEl;
+    },
+    dragOverValid: function dragOverValid(_ref2) {
+      var completed = _ref2.completed,
+          target = _ref2.target,
+          onMove = _ref2.onMove,
+          activeSortable = _ref2.activeSortable,
+          changed = _ref2.changed,
+          cancel = _ref2.cancel;
+      if (!activeSortable.options.swap) return;
+      var el = this.sortable.el,
+          options = this.options;
+
+      if (target && target !== el) {
+        var prevSwapEl = lastSwapEl;
+
+        if (onMove(target) !== false) {
+          toggleClass(target, options.swapClass, true);
+          lastSwapEl = target;
+        } else {
+          lastSwapEl = null;
+        }
+
+        if (prevSwapEl && prevSwapEl !== lastSwapEl) {
+          toggleClass(prevSwapEl, options.swapClass, false);
+        }
+      }
+
+      changed();
+      completed(true);
+      cancel();
+    },
+    drop: function drop(_ref3) {
+      var activeSortable = _ref3.activeSortable,
+          putSortable = _ref3.putSortable,
+          dragEl = _ref3.dragEl;
+      var toSortable = putSortable || this.sortable;
+      var options = this.options;
+      lastSwapEl && toggleClass(lastSwapEl, options.swapClass, false);
+
+      if (lastSwapEl && (options.swap || putSortable && putSortable.options.swap)) {
+        if (dragEl !== lastSwapEl) {
+          toSortable.captureAnimationState();
+          if (toSortable !== activeSortable) activeSortable.captureAnimationState();
+          swapNodes(dragEl, lastSwapEl);
+          toSortable.animateAll();
+          if (toSortable !== activeSortable) activeSortable.animateAll();
+        }
+      }
+    },
+    nulling: function nulling() {
+      lastSwapEl = null;
+    }
+  };
+  return _extends(Swap, {
+    pluginName: 'swap',
+    eventProperties: function eventProperties() {
+      return {
+        swapItem: lastSwapEl
+      };
+    }
+  });
+}
+
+function swapNodes(n1, n2) {
+  var p1 = n1.parentNode,
+      p2 = n2.parentNode,
+      i1,
+      i2;
+  if (!p1 || !p2 || p1.isEqualNode(n2) || p2.isEqualNode(n1)) return;
+  i1 = index(n1);
+  i2 = index(n2);
+
+  if (p1.isEqualNode(p2) && i1 < i2) {
+    i2++;
+  }
+
+  p1.insertBefore(n2, p1.children[i1]);
+  p2.insertBefore(n1, p2.children[i2]);
+}
+
+var multiDragElements = [],
+    multiDragClones = [],
+    lastMultiDragSelect,
+    // for selection with modifier key down (SHIFT)
+multiDragSortable,
+    initialFolding = false,
+    // Initial multi-drag fold when drag started
+folding = false,
+    // Folding any other time
+dragStarted = false,
+    dragEl$1,
+    clonesFromRect,
+    clonesHidden;
+
+function MultiDragPlugin() {
+  function MultiDrag(sortable) {
+    // Bind all private methods
+    for (var fn in this) {
+      if (fn.charAt(0) === '_' && typeof this[fn] === 'function') {
+        this[fn] = this[fn].bind(this);
+      }
+    }
+
+    if (sortable.options.supportPointer) {
+      on(document, 'pointerup', this._deselectMultiDrag);
+    } else {
+      on(document, 'mouseup', this._deselectMultiDrag);
+      on(document, 'touchend', this._deselectMultiDrag);
+    }
+
+    on(document, 'keydown', this._checkKeyDown);
+    on(document, 'keyup', this._checkKeyUp);
+    this.defaults = {
+      selectedClass: 'sortable-selected',
+      multiDragKey: null,
+      setData: function setData(dataTransfer, dragEl) {
+        var data = '';
+
+        if (multiDragElements.length && multiDragSortable === sortable) {
+          multiDragElements.forEach(function (multiDragElement, i) {
+            data += (!i ? '' : ', ') + multiDragElement.textContent;
+          });
+        } else {
+          data = dragEl.textContent;
+        }
+
+        dataTransfer.setData('Text', data);
+      }
+    };
+  }
+
+  MultiDrag.prototype = {
+    multiDragKeyDown: false,
+    isMultiDrag: false,
+    delayStartGlobal: function delayStartGlobal(_ref) {
+      var dragged = _ref.dragEl;
+      dragEl$1 = dragged;
+    },
+    delayEnded: function delayEnded() {
+      this.isMultiDrag = ~multiDragElements.indexOf(dragEl$1);
+    },
+    setupClone: function setupClone(_ref2) {
+      var sortable = _ref2.sortable,
+          cancel = _ref2.cancel;
+      if (!this.isMultiDrag) return;
+
+      for (var i = 0; i < multiDragElements.length; i++) {
+        multiDragClones.push(clone(multiDragElements[i]));
+        multiDragClones[i].sortableIndex = multiDragElements[i].sortableIndex;
+        multiDragClones[i].draggable = false;
+        multiDragClones[i].style['will-change'] = '';
+        toggleClass(multiDragClones[i], this.options.selectedClass, false);
+        multiDragElements[i] === dragEl$1 && toggleClass(multiDragClones[i], this.options.chosenClass, false);
+      }
+
+      sortable._hideClone();
+
+      cancel();
+    },
+    clone: function clone(_ref3) {
+      var sortable = _ref3.sortable,
+          rootEl = _ref3.rootEl,
+          dispatchSortableEvent = _ref3.dispatchSortableEvent,
+          cancel = _ref3.cancel;
+      if (!this.isMultiDrag) return;
+
+      if (!this.options.removeCloneOnHide) {
+        if (multiDragElements.length && multiDragSortable === sortable) {
+          insertMultiDragClones(true, rootEl);
+          dispatchSortableEvent('clone');
+          cancel();
+        }
+      }
+    },
+    showClone: function showClone(_ref4) {
+      var cloneNowShown = _ref4.cloneNowShown,
+          rootEl = _ref4.rootEl,
+          cancel = _ref4.cancel;
+      if (!this.isMultiDrag) return;
+      insertMultiDragClones(false, rootEl);
+      multiDragClones.forEach(function (clone) {
+        css(clone, 'display', '');
+      });
+      cloneNowShown();
+      clonesHidden = false;
+      cancel();
+    },
+    hideClone: function hideClone(_ref5) {
+      var _this = this;
+
+      var sortable = _ref5.sortable,
+          cloneNowHidden = _ref5.cloneNowHidden,
+          cancel = _ref5.cancel;
+      if (!this.isMultiDrag) return;
+      multiDragClones.forEach(function (clone) {
+        css(clone, 'display', 'none');
+
+        if (_this.options.removeCloneOnHide && clone.parentNode) {
+          clone.parentNode.removeChild(clone);
+        }
+      });
+      cloneNowHidden();
+      clonesHidden = true;
+      cancel();
+    },
+    dragStartGlobal: function dragStartGlobal(_ref6) {
+      var sortable = _ref6.sortable;
+
+      if (!this.isMultiDrag && multiDragSortable) {
+        multiDragSortable.multiDrag._deselectMultiDrag();
+      }
+
+      multiDragElements.forEach(function (multiDragElement) {
+        multiDragElement.sortableIndex = index(multiDragElement);
+      }); // Sort multi-drag elements
+
+      multiDragElements = multiDragElements.sort(function (a, b) {
+        return a.sortableIndex - b.sortableIndex;
+      });
+      dragStarted = true;
+    },
+    dragStarted: function dragStarted(_ref7) {
+      var _this2 = this;
+
+      var sortable = _ref7.sortable;
+      if (!this.isMultiDrag) return;
+
+      if (this.options.sort) {
+        // Capture rects,
+        // hide multi drag elements (by positioning them absolute),
+        // set multi drag elements rects to dragRect,
+        // show multi drag elements,
+        // animate to rects,
+        // unset rects & remove from DOM
+        sortable.captureAnimationState();
+
+        if (this.options.animation) {
+          multiDragElements.forEach(function (multiDragElement) {
+            if (multiDragElement === dragEl$1) return;
+            css(multiDragElement, 'position', 'absolute');
+          });
+          var dragRect = getRect(dragEl$1, false, true, true);
+          multiDragElements.forEach(function (multiDragElement) {
+            if (multiDragElement === dragEl$1) return;
+            setRect(multiDragElement, dragRect);
+          });
+          folding = true;
+          initialFolding = true;
+        }
+      }
+
+      sortable.animateAll(function () {
+        folding = false;
+        initialFolding = false;
+
+        if (_this2.options.animation) {
+          multiDragElements.forEach(function (multiDragElement) {
+            unsetRect(multiDragElement);
+          });
+        } // Remove all auxiliary multidrag items from el, if sorting enabled
+
+
+        if (_this2.options.sort) {
+          removeMultiDragElements();
+        }
+      });
+    },
+    dragOver: function dragOver(_ref8) {
+      var target = _ref8.target,
+          completed = _ref8.completed,
+          cancel = _ref8.cancel;
+
+      if (folding && ~multiDragElements.indexOf(target)) {
+        completed(false);
+        cancel();
+      }
+    },
+    revert: function revert(_ref9) {
+      var fromSortable = _ref9.fromSortable,
+          rootEl = _ref9.rootEl,
+          sortable = _ref9.sortable,
+          dragRect = _ref9.dragRect;
+
+      if (multiDragElements.length > 1) {
+        // Setup unfold animation
+        multiDragElements.forEach(function (multiDragElement) {
+          sortable.addAnimationState({
+            target: multiDragElement,
+            rect: folding ? getRect(multiDragElement) : dragRect
+          });
+          unsetRect(multiDragElement);
+          multiDragElement.fromRect = dragRect;
+          fromSortable.removeAnimationState(multiDragElement);
+        });
+        folding = false;
+        insertMultiDragElements(!this.options.removeCloneOnHide, rootEl);
+      }
+    },
+    dragOverCompleted: function dragOverCompleted(_ref10) {
+      var sortable = _ref10.sortable,
+          isOwner = _ref10.isOwner,
+          insertion = _ref10.insertion,
+          activeSortable = _ref10.activeSortable,
+          parentEl = _ref10.parentEl,
+          putSortable = _ref10.putSortable;
+      var options = this.options;
+
+      if (insertion) {
+        // Clones must be hidden before folding animation to capture dragRectAbsolute properly
+        if (isOwner) {
+          activeSortable._hideClone();
+        }
+
+        initialFolding = false; // If leaving sort:false root, or already folding - Fold to new location
+
+        if (options.animation && multiDragElements.length > 1 && (folding || !isOwner && !activeSortable.options.sort && !putSortable)) {
+          // Fold: Set all multi drag elements's rects to dragEl's rect when multi-drag elements are invisible
+          var dragRectAbsolute = getRect(dragEl$1, false, true, true);
+          multiDragElements.forEach(function (multiDragElement) {
+            if (multiDragElement === dragEl$1) return;
+            setRect(multiDragElement, dragRectAbsolute); // Move element(s) to end of parentEl so that it does not interfere with multi-drag clones insertion if they are inserted
+            // while folding, and so that we can capture them again because old sortable will no longer be fromSortable
+
+            parentEl.appendChild(multiDragElement);
+          });
+          folding = true;
+        } // Clones must be shown (and check to remove multi drags) after folding when interfering multiDragElements are moved out
+
+
+        if (!isOwner) {
+          // Only remove if not folding (folding will remove them anyways)
+          if (!folding) {
+            removeMultiDragElements();
+          }
+
+          if (multiDragElements.length > 1) {
+            var clonesHiddenBefore = clonesHidden;
+
+            activeSortable._showClone(sortable); // Unfold animation for clones if showing from hidden
+
+
+            if (activeSortable.options.animation && !clonesHidden && clonesHiddenBefore) {
+              multiDragClones.forEach(function (clone) {
+                activeSortable.addAnimationState({
+                  target: clone,
+                  rect: clonesFromRect
+                });
+                clone.fromRect = clonesFromRect;
+                clone.thisAnimationDuration = null;
+              });
+            }
+          } else {
+            activeSortable._showClone(sortable);
+          }
+        }
+      }
+    },
+    dragOverAnimationCapture: function dragOverAnimationCapture(_ref11) {
+      var dragRect = _ref11.dragRect,
+          isOwner = _ref11.isOwner,
+          activeSortable = _ref11.activeSortable;
+      multiDragElements.forEach(function (multiDragElement) {
+        multiDragElement.thisAnimationDuration = null;
+      });
+
+      if (activeSortable.options.animation && !isOwner && activeSortable.multiDrag.isMultiDrag) {
+        clonesFromRect = _extends({}, dragRect);
+        var dragMatrix = matrix(dragEl$1, true);
+        clonesFromRect.top -= dragMatrix.f;
+        clonesFromRect.left -= dragMatrix.e;
+      }
+    },
+    dragOverAnimationComplete: function dragOverAnimationComplete() {
+      if (folding) {
+        folding = false;
+        removeMultiDragElements();
+      }
+    },
+    drop: function drop(_ref12) {
+      var evt = _ref12.originalEvent,
+          rootEl = _ref12.rootEl,
+          parentEl = _ref12.parentEl,
+          sortable = _ref12.sortable,
+          dispatchSortableEvent = _ref12.dispatchSortableEvent,
+          oldIndex = _ref12.oldIndex,
+          putSortable = _ref12.putSortable;
+      var toSortable = putSortable || this.sortable;
+      if (!evt) return;
+      var options = this.options,
+          children = parentEl.children; // Multi-drag selection
+
+      if (!dragStarted) {
+        if (options.multiDragKey && !this.multiDragKeyDown) {
+          this._deselectMultiDrag();
+        }
+
+        toggleClass(dragEl$1, options.selectedClass, !~multiDragElements.indexOf(dragEl$1));
+
+        if (!~multiDragElements.indexOf(dragEl$1)) {
+          multiDragElements.push(dragEl$1);
+          dispatchEvent({
+            sortable: sortable,
+            rootEl: rootEl,
+            name: 'select',
+            targetEl: dragEl$1,
+            originalEvt: evt
+          }); // Modifier activated, select from last to dragEl
+
+          if (evt.shiftKey && lastMultiDragSelect && sortable.el.contains(lastMultiDragSelect)) {
+            var lastIndex = index(lastMultiDragSelect),
+                currentIndex = index(dragEl$1);
+
+            if (~lastIndex && ~currentIndex && lastIndex !== currentIndex) {
+              // Must include lastMultiDragSelect (select it), in case modified selection from no selection
+              // (but previous selection existed)
+              var n, i;
+
+              if (currentIndex > lastIndex) {
+                i = lastIndex;
+                n = currentIndex;
+              } else {
+                i = currentIndex;
+                n = lastIndex + 1;
+              }
+
+              for (; i < n; i++) {
+                if (~multiDragElements.indexOf(children[i])) continue;
+                toggleClass(children[i], options.selectedClass, true);
+                multiDragElements.push(children[i]);
+                dispatchEvent({
+                  sortable: sortable,
+                  rootEl: rootEl,
+                  name: 'select',
+                  targetEl: children[i],
+                  originalEvt: evt
+                });
+              }
+            }
+          } else {
+            lastMultiDragSelect = dragEl$1;
+          }
+
+          multiDragSortable = toSortable;
+        } else {
+          multiDragElements.splice(multiDragElements.indexOf(dragEl$1), 1);
+          lastMultiDragSelect = null;
+          dispatchEvent({
+            sortable: sortable,
+            rootEl: rootEl,
+            name: 'deselect',
+            targetEl: dragEl$1,
+            originalEvt: evt
+          });
+        }
+      } // Multi-drag drop
+
+
+      if (dragStarted && this.isMultiDrag) {
+        folding = false; // Do not "unfold" after around dragEl if reverted
+
+        if ((parentEl[expando].options.sort || parentEl !== rootEl) && multiDragElements.length > 1) {
+          var dragRect = getRect(dragEl$1),
+              multiDragIndex = index(dragEl$1, ':not(.' + this.options.selectedClass + ')');
+          if (!initialFolding && options.animation) dragEl$1.thisAnimationDuration = null;
+          toSortable.captureAnimationState();
+
+          if (!initialFolding) {
+            if (options.animation) {
+              dragEl$1.fromRect = dragRect;
+              multiDragElements.forEach(function (multiDragElement) {
+                multiDragElement.thisAnimationDuration = null;
+
+                if (multiDragElement !== dragEl$1) {
+                  var rect = folding ? getRect(multiDragElement) : dragRect;
+                  multiDragElement.fromRect = rect; // Prepare unfold animation
+
+                  toSortable.addAnimationState({
+                    target: multiDragElement,
+                    rect: rect
+                  });
+                }
+              });
+            } // Multi drag elements are not necessarily removed from the DOM on drop, so to reinsert
+            // properly they must all be removed
+
+
+            removeMultiDragElements();
+            multiDragElements.forEach(function (multiDragElement) {
+              if (children[multiDragIndex]) {
+                parentEl.insertBefore(multiDragElement, children[multiDragIndex]);
+              } else {
+                parentEl.appendChild(multiDragElement);
+              }
+
+              multiDragIndex++;
+            }); // If initial folding is done, the elements may have changed position because they are now
+            // unfolding around dragEl, even though dragEl may not have his index changed, so update event
+            // must be fired here as Sortable will not.
+
+            if (oldIndex === index(dragEl$1)) {
+              var update = false;
+              multiDragElements.forEach(function (multiDragElement) {
+                if (multiDragElement.sortableIndex !== index(multiDragElement)) {
+                  update = true;
+                  return;
+                }
+              });
+
+              if (update) {
+                dispatchSortableEvent('update');
+              }
+            }
+          } // Must be done after capturing individual rects (scroll bar)
+
+
+          multiDragElements.forEach(function (multiDragElement) {
+            unsetRect(multiDragElement);
+          });
+          toSortable.animateAll();
+        }
+
+        multiDragSortable = toSortable;
+      } // Remove clones if necessary
+
+
+      if (rootEl === parentEl || putSortable && putSortable.lastPutMode !== 'clone') {
+        multiDragClones.forEach(function (clone) {
+          clone.parentNode && clone.parentNode.removeChild(clone);
+        });
+      }
+    },
+    nullingGlobal: function nullingGlobal() {
+      this.isMultiDrag = dragStarted = false;
+      multiDragClones.length = 0;
+    },
+    destroyGlobal: function destroyGlobal() {
+      this._deselectMultiDrag();
+
+      off(document, 'pointerup', this._deselectMultiDrag);
+      off(document, 'mouseup', this._deselectMultiDrag);
+      off(document, 'touchend', this._deselectMultiDrag);
+      off(document, 'keydown', this._checkKeyDown);
+      off(document, 'keyup', this._checkKeyUp);
+    },
+    _deselectMultiDrag: function _deselectMultiDrag(evt) {
+      if (typeof dragStarted !== "undefined" && dragStarted) return; // Only deselect if selection is in this sortable
+
+      if (multiDragSortable !== this.sortable) return; // Only deselect if target is not item in this sortable
+
+      if (evt && closest(evt.target, this.options.draggable, this.sortable.el, false)) return; // Only deselect if left click
+
+      if (evt && evt.button !== 0) return;
+
+      while (multiDragElements.length) {
+        var el = multiDragElements[0];
+        toggleClass(el, this.options.selectedClass, false);
+        multiDragElements.shift();
+        dispatchEvent({
+          sortable: this.sortable,
+          rootEl: this.sortable.el,
+          name: 'deselect',
+          targetEl: el,
+          originalEvt: evt
+        });
+      }
+    },
+    _checkKeyDown: function _checkKeyDown(evt) {
+      if (evt.key === this.options.multiDragKey) {
+        this.multiDragKeyDown = true;
+      }
+    },
+    _checkKeyUp: function _checkKeyUp(evt) {
+      if (evt.key === this.options.multiDragKey) {
+        this.multiDragKeyDown = false;
+      }
+    }
+  };
+  return _extends(MultiDrag, {
+    // Static methods & properties
+    pluginName: 'multiDrag',
+    utils: {
+      /**
+       * Selects the provided multi-drag item
+       * @param  {HTMLElement} el    The element to be selected
+       */
+      select: function select(el) {
+        var sortable = el.parentNode[expando];
+        if (!sortable || !sortable.options.multiDrag || ~multiDragElements.indexOf(el)) return;
+
+        if (multiDragSortable && multiDragSortable !== sortable) {
+          multiDragSortable.multiDrag._deselectMultiDrag();
+
+          multiDragSortable = sortable;
+        }
+
+        toggleClass(el, sortable.options.selectedClass, true);
+        multiDragElements.push(el);
+      },
+
+      /**
+       * Deselects the provided multi-drag item
+       * @param  {HTMLElement} el    The element to be deselected
+       */
+      deselect: function deselect(el) {
+        var sortable = el.parentNode[expando],
+            index = multiDragElements.indexOf(el);
+        if (!sortable || !sortable.options.multiDrag || !~index) return;
+        toggleClass(el, sortable.options.selectedClass, false);
+        multiDragElements.splice(index, 1);
+      }
+    },
+    eventProperties: function eventProperties() {
+      var _this3 = this;
+
+      var oldIndicies = [],
+          newIndicies = [];
+      multiDragElements.forEach(function (multiDragElement) {
+        oldIndicies.push({
+          multiDragElement: multiDragElement,
+          index: multiDragElement.sortableIndex
+        }); // multiDragElements will already be sorted if folding
+
+        var newIndex;
+
+        if (folding && multiDragElement !== dragEl$1) {
+          newIndex = -1;
+        } else if (folding) {
+          newIndex = index(multiDragElement, ':not(.' + _this3.options.selectedClass + ')');
+        } else {
+          newIndex = index(multiDragElement);
+        }
+
+        newIndicies.push({
+          multiDragElement: multiDragElement,
+          index: newIndex
+        });
+      });
+      return {
+        items: _toConsumableArray(multiDragElements),
+        clones: [].concat(multiDragClones),
+        oldIndicies: oldIndicies,
+        newIndicies: newIndicies
+      };
+    },
+    optionListeners: {
+      multiDragKey: function multiDragKey(key) {
+        key = key.toLowerCase();
+
+        if (key === 'ctrl') {
+          key = 'Control';
+        } else if (key.length > 1) {
+          key = key.charAt(0).toUpperCase() + key.substr(1);
+        }
+
+        return key;
+      }
+    }
+  });
+}
+
+function insertMultiDragElements(clonesInserted, rootEl) {
+  multiDragElements.forEach(function (multiDragElement, i) {
+    var target = rootEl.children[multiDragElement.sortableIndex + (clonesInserted ? Number(i) : 0)];
+
+    if (target) {
+      rootEl.insertBefore(multiDragElement, target);
+    } else {
+      rootEl.appendChild(multiDragElement);
+    }
+  });
+}
+/**
+ * Insert multi-drag clones
+ * @param  {[Boolean]} elementsInserted  Whether the multi-drag elements are inserted
+ * @param  {HTMLElement} rootEl
+ */
+
+
+function insertMultiDragClones(elementsInserted, rootEl) {
+  multiDragClones.forEach(function (clone, i) {
+    var target = rootEl.children[clone.sortableIndex + (elementsInserted ? Number(i) : 0)];
+
+    if (target) {
+      rootEl.insertBefore(clone, target);
+    } else {
+      rootEl.appendChild(clone);
+    }
+  });
+}
+
+function removeMultiDragElements() {
+  multiDragElements.forEach(function (multiDragElement) {
+    if (multiDragElement === dragEl$1) return;
+    multiDragElement.parentNode && multiDragElement.parentNode.removeChild(multiDragElement);
+  });
+}
+
+Sortable.mount(new AutoScrollPlugin());
+Sortable.mount(Remove, Revert);
+
+/* harmony default export */ __webpack_exports__["a"] = (Sortable);
+
+
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
+
+/***/ })
+
+});
+//# sourceMappingURL=theme-bundle.chunk.3.js.map
