@@ -12,8 +12,10 @@
         text-align: center;
         padding: 7px 28px;
         position: relative;
-        @media (max-width: 400px) {
-            font-size: 10px;
+        @media(max-width: 425px){
+            font-size: 9px;
+            letter-spacing:1px;
+            padding: 1px 2px;
         }
         & p {
             margin: 0;
@@ -519,6 +521,10 @@
         letter-spacing: 2px;
         font-family: $fontFamily-sans;
         text-transform: uppercase;
+        @media(max-width: 425px){
+            font-size: 9px;
+            letter-spacing:1px;
+        }
     }
     a {
         border-bottom: 1px dotted;
@@ -532,6 +538,9 @@
         height: auto;
         background-color: #ffffff;
         border-top: 1px solid #eaeaea;
+    }
+    @media (max-width: 425px){
+        padding: 7px 4px; 
     }
 }
 
