@@ -33,20 +33,20 @@ blog:
     {{> components/halothemes/home-banners banner="home-top-banners"}}
     {{{region name="home_below_home_top_custom_block"}}}
 
-    {{#if products.featured}}
-        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+    {{#if products.new}}
+        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
     {{/if}}
-    {{{region name="home_below_featured_products"}}}
+    {{{region name="home_below_new_products"}}}
 
     {{#if products.top_sellers}}
         {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_new_products_column_count}}
     {{/if}}
     {{{region name="home_below_top_products"}}}
-
-    {{#if products.new}}
-        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+    
+    {{#if products.featured}}
+        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
     {{/if}}
-    {{{region name="home_below_new_products"}}}
+    {{{region name="home_below_featured_products"}}}
     
     <div class="module-wrapper">
         <div class="container">           
