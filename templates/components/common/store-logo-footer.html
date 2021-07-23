@@ -1,0 +1,7 @@
+<a href="{{urls.home}}">
+    {{#if settings.store_logo.image}}
+        <img class="header-logo-image" src="https://cdn11.bigcommerce.com/s-hefebieu/product_images/uploaded_images/logo-footer.png?t=1462217533&_gl=1*1v3aiac*_ga*MTY0NTU5MTQ1MS4xNjIzNjgzNDIw*_ga_WS2VZYPC6G*MTYyNjk4NTcxOS4yNC4xLjE2MjY5ODY3NDYuNDg" alt="{{settings.store_logo.title}}" title="{{settings.store_logo.title}}">
+    {{else}}
+        <span class="header-logo-text">{{settings.store_logo.title}}</span>
+    {{/if}}
+</a>
