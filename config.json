@@ -675,9 +675,9 @@
       },
       "settings": {
         "amp_analytics_id": "",
-        "homepage_new_products_count": 20,
-        "homepage_top_products_count": 20,
-        "homepage_featured_products_count": 10,
+        "homepage_new_products_count": 25,
+        "homepage_top_products_count": 25,
+        "homepage_featured_products_count": 25,
         "homepage_show_carousel": true,
         "homepage_carousel_autoplay": true,
         "homepage_carousel_navigation": true,
