@@ -35,9 +35,9 @@ export default class Search extends CatalogPage {
     }
 
     showProducts() {
-        const url = urlUtils.replaceParams(location.href, {
+        /* const url = urlUtils.replaceParams(location.href, {
             section: 'product',
-        });
+        }); */
 
         $('[data-content-results-toggle]').parent('.navBar-item').removeClass('is-active');
         $('[data-product-results-toggle]').parent('.navBar-item').addClass('is-active');
