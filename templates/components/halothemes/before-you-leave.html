@@ -52,11 +52,11 @@
 			<div class="before-you-leave-tab">
 				<div class="tabs-wrapper">
 					<ul class="tabs" data-tab>
-			            {{#if theme_settings.enable-before-you-leave-recommended}}
+			            <!-- {{#if theme_settings.enable-before-you-leave-recommended}}
 			                <li class="tab is-active recommended" data-id="recommended">
 			                    <a class="tab-title" href="#tab-recommended">Recommended <span class="count"></span></a>
 			                </li>
-			            {{/if}}
+			            {{/if}} -->
 			            {{#if theme_settings.enable-before-you-leave-history}}
 			                <li class="tab history{{#if theme_settings.enable-before-you-leave-recommended '==' false}}is-active{{/if}}" data-id="history"><a class="tab-title" href="#tab-history">History <span class="count"></span></a></li>
 			            {{/if}}
@@ -68,23 +68,25 @@
 		            </div>
 				</div>
 		        <div class="tabs-contents themevale_tabs-contents">
-		            {{#if theme_settings.enable-before-you-leave-recommended}}
+		            <!-- {{#if theme_settings.enable-before-you-leave-recommended}}
 		                <div class="tab-content is-active" id="tab-recommended">
 		                	<div class="productGrid{{#if theme_settings.show_brand_product_gallery}} show-brand{{/if}}">
             				</div>
 		              </div>
-		            {{/if}}
+		            {{/if}} -->
 
 		            {{#if theme_settings.enable-before-you-leave-history}}
-		                <div class="tab-content{{#if theme_settings.enable-before-you-leave-recommended '==' false}} is-active{{/if}}" id="tab-history">
-		                	<div class="productGrid" id="history-products-list">
-				                <div class="no-products text-center" style="flex-direction: column;display:none;">
-				                    <svg class="icon"><use xlink:href="#icon-nopicture"/></svg>
-				                     <span class="text">Sorry, there are no products.</span>
-				                </div>
-				            </div>
-				            <div id="history-products-list-tmp" style="display: none !important;">
-				            </div> 
+		                <!-- <div class="tab-content{{#if theme_settings.enable-before-you-leave-recommended '==' false}} is-active{{/if}}" id="tab-history"> -->
+						<!-- replaced the above with below, since I don't want to use recommended tab right now. Later though, you can reactive this.-->
+						<div class="tab-content is-active" id="tab-history">	
+							<div class="productGrid" id="history-products-list">
+								<div class="no-products text-center" style="flex-direction: column;display:none;">
+									<svg class="icon"><use xlink:href="#icon-nopicture"/></svg>
+									<span class="text">Sorry, there are no products.</span>
+								</div>
+							</div>
+							<div id="history-products-list-tmp" style="display: none !important;">
+						</div> 
 		                </div>
 		            {{/if}}
 		        </div>
